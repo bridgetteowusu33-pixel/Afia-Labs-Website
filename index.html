@@ -981,6 +981,145 @@
             color: white;
         }
 
+        .footer-newsletter {
+            margin-top: 24px;
+        }
+
+        .footer-newsletter p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            max-width: 320px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
+            color: white;
+            font-size: 0.85rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--purple-glow);
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--purple-light), var(--purple-glow));
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+        }
+
+        .newsletter-success {
+            display: none;
+            font-size: 0.85rem;
+            color: var(--purple-glow);
+            margin-top: 8px;
+        }
+
+        /* App Store Badge */
+        .app-store-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .app-store-badge svg {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .app-store-badge a:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Founder photo */
+        .founder-photo {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            border-radius: var(--radius-xl);
+            object-fit: cover;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .founder-placeholder {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(160deg, rgba(124, 58, 237, 0.04), rgba(245, 158, 11, 0.04));
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .founder-placeholder .founder-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .founder-placeholder .founder-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .founder-placeholder .founder-role {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: -8px;
+        }
+
+        @media (max-width: 768px) {
+            .founder-placeholder, .founder-photo {
+                max-width: 280px;
+            }
+
+            .newsletter-form {
+                max-width: 100%;
+            }
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 24px;
@@ -1004,6 +1143,25 @@
         .fade-in-delay-1 { transition-delay: 0.1s; }
         .fade-in-delay-2 { transition-delay: 0.2s; }
         .fade-in-delay-3 { transition-delay: 0.3s; }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            padding: 8px 16px;
+            background: var(--purple-deep);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 9999;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
@@ -1165,9 +1323,10 @@
 <body>
 
     <!-- ========== NAV ========== -->
-    <nav class="nav" id="nav">
+    <a href="#apps" class="skip-link" aria-label="Skip to main content">Skip to content</a>
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <div class="container nav-inner">
-            <a href="#" class="nav-logo">Afia Labs</a>
+            <a href="#" class="nav-logo" aria-label="Afia Labs — Home">Afia Labs</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#apps">Apps</a></li>
                 <li><a href="#about">About</a></li>
@@ -1183,7 +1342,8 @@
     </nav>
 
     <!-- ========== HERO ========== -->
-    <section class="hero">
+    <main>
+    <section class="hero" aria-label="Introduction">
         <div class="container hero-content">
             <div class="hero-text">
                 <div class="hero-badge">
@@ -1243,7 +1403,7 @@
     </section>
 
     <!-- ========== APPS ========== -->
-    <section id="apps">
+    <section id="apps" aria-label="Our Apps">
         <div class="container">
             <div class="section-header fade-in">
                 <div class="section-label">Our Apps</div>
@@ -1279,6 +1439,11 @@
                         View App
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
+                    <div class="app-store-badge">
+                        <a href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953" target="_blank" rel="noopener noreferrer" aria-label="Download MemeScanr on the App Store">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40"><rect width="120" height="40" rx="6" fill="#000"/><text x="60" y="15" text-anchor="middle" fill="#fff" font-family="Inter,-apple-system,sans-serif" font-size="7" font-weight="500">Download on the</text><text x="60" y="28" text-anchor="middle" fill="#fff" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="700">App Store</text><path d="M25 10.5c-.14 0-1.87.02-3.12 1.54-.08.1-.15.2-.22.31.7-.26 1.55-.3 2.3.08.53.27.97.7 1.26 1.22.4-.18.76-.44 1.07-.78-.6-.67-1.04-1.57-1.29-2.37zm-1.56 3.56c-.67-.34-1.44-.34-2.11-.02-.47.22-.76.52-.96.77-.2.25-.34.5-.44.68l-.04.07c-.1.2-.2.42-.27.65-.18.6-.22 1.25-.08 1.86.13.56.4 1.08.79 1.52.38.43.87.74 1.4.88.37.1.75.1 1.12.02.29-.07.56-.2.82-.33.26-.13.53-.27.84-.3.31-.02.6.1.88.23.3.14.6.3.94.32.52.03 1.02-.2 1.4-.54.38-.35.64-.8.82-1.27l.02-.04c-.34-.17-.63-.42-.84-.73-.32-.46-.45-1.03-.36-1.58.08-.5.32-.97.68-1.32-.34-.4-.78-.71-1.27-.88-.56-.19-1.17-.17-1.72.04-.34.13-.64.32-.94.33-.3.01-.59-.15-.9-.28-.33-.13-.67-.22-1.02-.17-.2.03-.4.09-.58.18z" fill="#fff"/></svg>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Planet Wonders -->
@@ -1313,7 +1478,7 @@
     </section>
 
     <!-- ========== ABOUT ========== -->
-    <section id="about">
+    <section id="about" aria-label="About Afia Labs">
         <div class="container">
             <div class="about-content">
                 <div class="about-text fade-in">
@@ -1323,25 +1488,11 @@
                     <p>The vision is simple: build great products and inspire the next generation.</p>
                 </div>
                 <div class="about-visual fade-in fade-in-delay-1">
-                    <div class="about-graphic">
-                        <div class="about-icon-grid">
-                            <div class="about-icon-item">
-                                <div class="icon">💡</div>
-                                <div class="label">Ideate</div>
-                            </div>
-                            <div class="about-icon-item">
-                                <div class="icon">🎨</div>
-                                <div class="label">Design</div>
-                            </div>
-                            <div class="about-icon-item">
-                                <div class="icon">⚙️</div>
-                                <div class="label">Build</div>
-                            </div>
-                            <div class="about-icon-item">
-                                <div class="icon">🚀</div>
-                                <div class="label">Launch</div>
-                            </div>
-                        </div>
+                    <!-- Replace with <img src="founder.jpg" alt="Bridgette Owusu, founder of Afia Labs" class="founder-photo" loading="lazy"> when photo is available -->
+                    <div class="founder-placeholder">
+                        <div class="founder-avatar" role="img" aria-label="Bridgette Owusu">B</div>
+                        <div class="founder-name">Bridgette Owusu</div>
+                        <div class="founder-role">Founder, Afia Labs</div>
                     </div>
                 </div>
             </div>
@@ -1349,7 +1500,7 @@
     </section>
 
     <!-- ========== MISSION ========== -->
-    <section id="mission">
+    <section id="mission" aria-label="Our Mission">
         <div class="container">
             <div class="section-header fade-in">
                 <div class="section-label">Our Mission</div>
@@ -1378,12 +1529,21 @@
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer" id="contact">
+    </main>
+    <footer class="footer" id="contact" role="contentinfo">
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
                     <div class="footer-logo">Afia Labs</div>
                     <p>Building smart, fun, and useful mobile experiences for everyone.</p>
+                    <div class="footer-newsletter">
+                        <p>Stay in the loop — get updates on new apps and features.</p>
+                        <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter signup">
+                            <input type="email" placeholder="Your email" required aria-label="Email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <div class="newsletter-success" id="newsletterSuccess">Thanks for subscribing!</div>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
@@ -1461,6 +1621,17 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterSuccess = document.getElementById('newsletterSuccess');
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            // For now, show success. Replace with actual form endpoint later.
+            this.style.display = 'none';
+            newsletterSuccess.style.display = 'block';
         });
     </script>
 
