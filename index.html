@@ -667,6 +667,21 @@
             line-height: 1.6;
         }
 
+        .app-screenshots {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .app-screenshots img {
+            width: 160px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+        }
+
         .app-features {
             list-style: none;
             margin-bottom: 32px;
@@ -1417,6 +1432,10 @@
                     <div class="app-icon">🧹</div>
                     <h3>MemeScanr</h3>
                     <p class="app-desc">A smart storage cleaner for iPhone that helps you reclaim space and organize your camera roll effortlessly.</p>
+                    <div class="app-screenshots">
+                        <img src="image1.jpg" alt="MemeScanr Smart Scan feature" loading="lazy">
+                        <img src="image3.jpg" alt="MemeScanr Video Optimization feature" loading="lazy">
+                    </div>
                     <ul class="app-features">
                         <li>
                             <span class="check">✓</span>
@@ -1488,12 +1507,7 @@
                     <p>The vision is simple: build great products and inspire the next generation.</p>
                 </div>
                 <div class="about-visual fade-in fade-in-delay-1">
-                    <!-- Replace with <img src="founder.jpg" alt="Bridgette Owusu, founder of Afia Labs" class="founder-photo" loading="lazy"> when photo is available -->
-                    <div class="founder-placeholder">
-                        <div class="founder-avatar" role="img" aria-label="Bridgette Owusu">B</div>
-                        <div class="founder-name">Bridgette Owusu</div>
-                        <div class="founder-role">Founder, Afia Labs</div>
-                    </div>
+                    <img src="founder.jpg" alt="Bridgette Owusu, founder of Afia Labs" class="founder-photo" loading="lazy">
                 </div>
             </div>
         </div>
