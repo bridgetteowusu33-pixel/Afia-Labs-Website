@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Privacy Policy — Afia Labs</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Children's Privacy Policy (COPPA Statement) for Afia Labs and Planet Wonders.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-deep: #1a0a2e;
+            --purple-mid: #2d1b69;
+            --purple-light: #7c3aed;
+            --purple-glow: #a78bfa;
+            --gold: #f59e0b;
+            --bg-light: #faf9fc;
+            --bg-white: #ffffff;
+            --text-primary: #1a0a2e;
+            --text-secondary: #5b5675;
+            --border-light: rgba(124, 58, 237, 0.08);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text-primary); background: var(--bg-light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: rgba(255,255,255,0.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--purple-mid), var(--purple-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--purple-light); }
+        .nav-cta { padding: 10px 22px; background: var(--purple-deep); color: white !important; border-radius: 100px; font-size: 0.875rem; font-weight: 600; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); -webkit-text-fill-color: white !important; }
+        .nav-cta:hover { background: var(--purple-mid); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .mobile-toggle span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s; }
+
+        .page-hero { padding: 140px 0 60px; text-align: center; }
+        .page-hero h1 { font-size: 2.75rem; font-weight: 800; letter-spacing: -0.035em; color: var(--purple-deep); margin-bottom: 12px; }
+        .page-hero .last-updated { font-size: 0.9rem; color: var(--text-secondary); }
+
+        .page-content { max-width: 760px; margin: 0 auto; padding: 0 24px 100px; }
+        .page-content p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        .page-content h2 { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .page-content h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-top: 28px; margin-bottom: 12px; }
+        .page-content ul { list-style: none; margin-bottom: 16px; padding-left: 0; }
+        .page-content ul li { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; padding-left: 20px; position: relative; }
+        .page-content ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--purple-light); }
+        .page-content a { color: var(--purple-light); text-decoration: underline; }
+        .page-content a:hover { color: var(--purple-mid); }
+        .page-content hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--border-light), transparent); margin: 48px 0; }
+        .page-content .address { font-style: normal; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; }
+
+        .footer { background: var(--purple-deep); color: white; padding: 64px 0 32px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; }
+        .footer-brand .footer-logo { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; background: linear-gradient(135deg, var(--purple-glow), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.5); max-width: 280px; line-height: 1.6; }
+        .footer-links { display: flex; gap: 48px; }
+        .footer-col h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.65); transition: color 0.2s; text-decoration: none; }
+        .footer-col a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); flex-direction: column; justify-content: center; align-items: center; gap: 32px; z-index: 999; }
+            .nav-links.active { display: flex; }
+            .nav-links a { font-size: 1.2rem; }
+            .mobile-toggle { display: flex; z-index: 1001; }
+            .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+            .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+            .page-hero h1 { font-size: 2rem; }
+            .page-hero { padding: 120px 0 40px; }
+            .footer-inner { flex-direction: column; gap: 40px; }
+            .footer-links { gap: 32px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 1.75rem; }
+            .page-content { padding: 0 16px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo" aria-label="Afia Labs — Home">Afia Labs</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#apps">Apps</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="mailto:support@afialabs.net">Contact</a></li>
+                <li><a href="/#apps" class="nav-cta">Explore Apps</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-hero">
+            <h1>Children's Privacy Policy</h1>
+            <p class="last-updated">Last Updated: March 5, 2026</p>
+        </div>
+
+        <div class="page-content">
+            <p>Afia Labs is committed to protecting the privacy and safety of children who use our applications, in compliance with the Children's Online Privacy Protection Act (COPPA).</p>
+
+            <hr>
+
+            <h2>Apps Designed for Children</h2>
+            <p><strong>Planet Wonders</strong> is designed for children ages 5–10 and is built with child safety as a priority.</p>
+
+            <hr>
+
+            <h2>Information Collection</h2>
+            <p>Afia Labs does not knowingly collect personal information from children under 13. Specifically:</p>
+            <ul>
+                <li>No personal information is collected from children</li>
+                <li>No account creation is required</li>
+                <li>No names, email addresses, or phone numbers are collected</li>
+                <li>No public sharing features are available</li>
+            </ul>
+
+            <hr>
+
+            <h2>Parental Rights</h2>
+            <p>Parents or guardians may:</p>
+            <ul>
+                <li>Review any information collected (none is currently collected)</li>
+                <li>Request deletion of any data</li>
+            </ul>
+            <p>To exercise these rights, contact:</p>
+            <p><a href="mailto:support@afialabs.net">support@afialabs.net</a></p>
+
+            <hr>
+
+            <h2>Safety Measures</h2>
+            <p>Afia Labs takes the following steps to protect children's privacy:</p>
+            <ul>
+                <li>Minimizing data collection</li>
+                <li>Avoiding behavioral tracking</li>
+                <li>Designing age-appropriate experiences</li>
+            </ul>
+
+            <hr>
+
+            <h2>Contact</h2>
+            <p>If you have questions about children's privacy:</p>
+            <p><a href="mailto:support@afialabs.net">support@afialabs.net</a></p>
+            <address class="address">
+                Afia Labs<br>
+                Fredericksburg, Virginia<br>
+                United States
+            </address>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">Afia Labs</div>
+                    <p>Building smart, fun, and useful mobile experiences for everyone.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/#apps">Apps</a></li>
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="mailto:support@afialabs.net">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Apps</h4>
+                        <ul>
+                            <li><a href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953" target="_blank" rel="noopener noreferrer">MemeScanr</a></li>
+                            <li><a href="#">Planet Wonders</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Terms of Service</a></li>
+                            <li><a href="/data-deletion.html">Data Deletion</a></li>
+                            <li><a href="/childrens-privacy.html">Children's Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Afia Labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => { mobileToggle.classList.toggle('active'); navLinks.classList.toggle('active'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileToggle.classList.remove('active'); navLinks.classList.remove('active'); }); });
+    </script>
+
+</body>
+</html>
