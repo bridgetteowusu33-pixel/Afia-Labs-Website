@@ -391,9 +391,9 @@
         .project-card:hover::after { opacity: 1; }
 
         .project-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 15px;
+            width: 64px;
+            height: 64px;
+            border-radius: 17px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -620,25 +620,98 @@
         }
         .prev-companies {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
         }
-        .prev-companies span {
-            padding: 9px 20px;
+        .prev-job {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--text-light);
+            border-radius: 16px;
+            overflow: hidden;
             transition: all 0.4s var(--ease-out-expo);
-            cursor: default;
         }
-        .prev-companies span:hover {
-            background: var(--bg-card-hover);
+        .prev-job:hover {
             border-color: var(--border-glow);
+        }
+        .prev-job-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 22px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .prev-job-header:hover {
+            background: var(--bg-card-hover);
+        }
+        .prev-job-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+        .prev-job.active .prev-job-name {
             color: var(--text-white);
-            transform: translateY(-2px);
+        }
+        .prev-job-toggle {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+        .prev-job.active .prev-job-toggle {
+            transform: rotate(180deg);
+            color: var(--purple-glow);
+        }
+        .prev-job-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s var(--ease-out-expo);
+        }
+        .prev-job.active .prev-job-details {
+            max-height: 400px;
+        }
+        .prev-job-inner {
+            padding: 0 22px 20px;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .prev-job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            margin: 14px 0 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .prev-job-meta .role {
+            color: var(--purple-glow);
+            font-weight: 500;
+        }
+        .prev-job-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .prev-job-bullets li {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
+        }
+        .prev-job-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--purple-light);
         }
 
         /* ========== SKILLS ========== */
@@ -906,7 +979,8 @@
             .hero-subtitle .dot { margin: 0 8px; }
             .container { padding: 0 18px; }
             .prev-companies { gap: 8px; }
-            .prev-companies span { padding: 7px 16px; font-size: 0.75rem; }
+            .prev-job-header { padding: 12px 18px; }
+            .prev-job-inner { padding: 0 18px 16px; }
             .impact-chip { font-size: 0.65rem; padding: 3px 10px; }
             .skill-chip { padding: 9px 18px; font-size: 0.8rem; }
             .btn-download { padding: 16px 32px; font-size: 0.9rem; }
@@ -1008,10 +1082,12 @@
                         <div class="timeline-role">Senior Product Support Engineer <span class="current-pill">Current</span></div>
                         <div class="timeline-company">Veracode &middot; 2025&ndash;Present</div>
                         <ul class="timeline-highlights">
-                            <li>Provide advanced technical support for FedRAMP and commercial SaaS environments</li>
-                            <li>Lead escalated enterprise and federal customer cases</li>
-                            <li>Mentor junior engineers and improve troubleshooting workflows</li>
-                            <li>Perform root cause analysis for complex platform issues</li>
+                            <li>Rejoined Veracode and promoted to Senior Support Engineer, providing advanced technical support for both FedRAMP and commercial instances</li>
+                            <li>Mentor junior teammates, providing guidance on troubleshooting processes, customer communication, and technical escalation paths</li>
+                            <li>Generated reports and conducted root cause analysis for persistent or escalated cases involving federal end-users</li>
+                            <li>Serve as technical lead for escalated federal customer support cases, ensuring resolution of platform and authentication issues</li>
+                            <li>Support cloud-based SaaS application troubleshooting, focusing on secure access, MFA, and SSO across government-compliant environments</li>
+                            <li>Document findings in knowledge base articles to support global customer learning and internal onboarding</li>
                         </ul>
                         <div class="impact-chips">
                             <span class="impact-chip">FedRAMP</span>
@@ -1059,10 +1135,84 @@
             <div class="prev-experience fade-up">
                 <h4>Previous Experience</h4>
                 <div class="prev-companies">
-                    <span>GEICO</span>
-                    <span>FedEx</span>
-                    <span>AT&amp;T</span>
-                    <span>Zenith Bank</span>
+                    <div class="prev-job">
+                        <div class="prev-job-header" onclick="toggleJob(this)">
+                            <span class="prev-job-name">GEICO</span>
+                            <span class="prev-job-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </div>
+                        <div class="prev-job-details">
+                            <div class="prev-job-inner">
+                                <div class="prev-job-meta">
+                                    <span class="role">Support Engineer | Cybersecurity Intern</span>
+                                    <span>Fredericksburg, VA</span>
+                                    <span>Jul 2020 – Aug 2022</span>
+                                </div>
+                                <ul class="prev-job-bullets">
+                                    <li>Managed Salesforce-based support cases, handling an average of 50+ daily interactions while maintaining a 90%+ customer satisfaction rate</li>
+                                    <li>Reduced issue resolution time by 25% through development of internal knowledge base articles and standardized troubleshooting workflows</li>
+                                    <li>Participated in cybersecurity initiatives including phishing simulations, vulnerability assessments, and security awareness training programs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prev-job">
+                        <div class="prev-job-header" onclick="toggleJob(this)">
+                            <span class="prev-job-name">FedEx</span>
+                            <span class="prev-job-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </div>
+                        <div class="prev-job-details">
+                            <div class="prev-job-inner">
+                                <div class="prev-job-meta">
+                                    <span class="role">Information Technology Specialist</span>
+                                    <span>Springfield, VA</span>
+                                    <span>Jun 2019 – Jul 2020</span>
+                                </div>
+                                <ul class="prev-job-bullets">
+                                    <li>Resolved 30+ daily IT incidents across hardware, software, and network systems, achieving a 95% first-call resolution rate</li>
+                                    <li>Diagnosed and resolved complex technical issues using remote support tools, reducing average ticket resolution time by 20%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prev-job">
+                        <div class="prev-job-header" onclick="toggleJob(this)">
+                            <span class="prev-job-name">AT&amp;T</span>
+                            <span class="prev-job-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </div>
+                        <div class="prev-job-details">
+                            <div class="prev-job-inner">
+                                <div class="prev-job-meta">
+                                    <span class="role">Help Desk Analyst</span>
+                                    <span>Huntsville, AL</span>
+                                    <span>Apr 2017 – Jun 2019</span>
+                                </div>
+                                <ul class="prev-job-bullets">
+                                    <li>Ensured PCI DSS compliance across payment processing systems, contributing to zero security breaches during tenure</li>
+                                    <li>Monitored and analyzed security events using SIEM tools, escalating critical incidents to senior analysts with detailed documentation</li>
+                                    <li>Investigated and documented security violations, preparing incident reports that improved organizational response protocols</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prev-job">
+                        <div class="prev-job-header" onclick="toggleJob(this)">
+                            <span class="prev-job-name">Zenith Bank</span>
+                            <span class="prev-job-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </div>
+                        <div class="prev-job-details">
+                            <div class="prev-job-inner">
+                                <div class="prev-job-meta">
+                                    <span class="role">SOC Analyst</span>
+                                    <span>Accra, Ghana</span>
+                                    <span>Feb 2014 – Jul 2016</span>
+                                </div>
+                                <ul class="prev-job-bullets">
+                                    <li>Resolved 100+ IT issues monthly across banking systems, maintaining 99% uptime for critical financial applications</li>
+                                    <li>Led staff training sessions on cybersecurity best practices, reducing phishing-related incidents by 40%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1190,6 +1340,12 @@
         }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Toggle previous job descriptions
+        function toggleJob(header) {
+            const job = header.parentElement;
+            job.classList.toggle('active');
+        }
     </script>
 
 </body>
