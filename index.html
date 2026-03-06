@@ -643,6 +643,13 @@
             box-shadow: var(--shadow-md);
         }
 
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+
         .memescanr .app-icon {
             background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
             color: white;
@@ -1429,7 +1436,7 @@
             <div class="apps-grid">
                 <!-- MemeScanr -->
                 <div class="app-card memescanr fade-in fade-in-delay-1">
-                    <div class="app-icon">🧹</div>
+                    <div class="app-icon"><img src="memescanr_logo.png" alt="MemeScanr logo"></div>
                     <h3>MemeScanr</h3>
                     <p class="app-desc">A smart storage cleaner for iPhone that helps you reclaim space and organize your camera roll effortlessly.</p>
                     <div class="app-screenshots">
@@ -1467,7 +1474,7 @@
 
                 <!-- Planet Wonders -->
                 <div class="app-card planetwonders fade-in fade-in-delay-2">
-                    <div class="app-icon">🌍</div>
+                    <div class="app-icon"><img src="planet_wonders_launchscreen.png" alt="Planet Wonders logo"></div>
                     <h3>Planet Wonders <span class="coming-soon-tag">Coming Soon</span></h3>
                     <p class="app-desc">A kids' educational adventure app that sparks curiosity about cultures and countries around the world.</p>
                     <ul class="app-features">
