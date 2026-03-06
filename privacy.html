@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Afia Labs</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Privacy Policy for Afia Labs, MemeScanr, and Planet Wonders.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-deep: #1a0a2e;
+            --purple-mid: #2d1b69;
+            --purple-light: #7c3aed;
+            --purple-glow: #a78bfa;
+            --gold: #f59e0b;
+            --bg-light: #faf9fc;
+            --bg-white: #ffffff;
+            --text-primary: #1a0a2e;
+            --text-secondary: #5b5675;
+            --border-light: rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 4px 20px rgba(26, 10, 46, 0.06);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Nav */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+        .nav-logo {
+            font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+
+        .nav-links a {
+            font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--purple-light); }
+
+        .nav-cta {
+            padding: 10px 22px; background: var(--purple-deep); color: white !important;
+            border-radius: 100px; font-size: 0.875rem; font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            -webkit-text-fill-color: white !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--purple-mid); transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer; padding: 4px;
+        }
+
+        .mobile-toggle span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s; }
+
+        /* Content */
+        .privacy-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+
+        .privacy-hero h1 {
+            font-size: 2.75rem; font-weight: 800; letter-spacing: -0.035em;
+            color: var(--purple-deep); margin-bottom: 12px;
+        }
+
+        .privacy-hero .last-updated {
+            font-size: 0.9rem; color: var(--text-secondary);
+        }
+
+        .privacy-content {
+            max-width: 760px; margin: 0 auto; padding: 0 24px 100px;
+        }
+
+        .privacy-content p {
+            font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.4rem; font-weight: 700; color: var(--text-primary);
+            margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.02em;
+        }
+
+        .privacy-content h3 {
+            font-size: 1.1rem; font-weight: 600; color: var(--text-primary);
+            margin-top: 28px; margin-bottom: 12px;
+        }
+
+        .privacy-content ul {
+            list-style: none; margin-bottom: 16px; padding-left: 0;
+        }
+
+        .privacy-content ul li {
+            font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;
+            padding-left: 20px; position: relative;
+        }
+
+        .privacy-content ul li::before {
+            content: ''; position: absolute; left: 0; top: 11px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--purple-light);
+        }
+
+        .privacy-content a {
+            color: var(--purple-light); text-decoration: underline;
+        }
+
+        .privacy-content a:hover { color: var(--purple-mid); }
+
+        .privacy-content hr {
+            border: none; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+            margin: 48px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--purple-deep); color: white; padding: 64px 0 32px;
+        }
+
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; }
+
+        .footer-brand .footer-logo {
+            font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--purple-glow), var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.5); max-width: 280px; line-height: 1.6; }
+
+        .footer-links { display: flex; gap: 48px; }
+
+        .footer-col h4 {
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 16px;
+        }
+
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+        .footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.65); transition: color 0.2s; text-decoration: none; }
+
+        .footer-col a:hover { color: white; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
+            text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.35);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+                flex-direction: column; justify-content: center; align-items: center; gap: 32px; z-index: 999;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { font-size: 1.2rem; }
+            .mobile-toggle { display: flex; z-index: 1001; }
+            .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+            .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+            .privacy-hero h1 { font-size: 2rem; }
+            .privacy-hero { padding: 120px 0 40px; }
+            .footer-inner { flex-direction: column; gap: 40px; }
+            .footer-links { gap: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-hero h1 { font-size: 1.75rem; }
+            .privacy-content { padding: 0 16px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo" aria-label="Afia Labs — Home">Afia Labs</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#apps">Apps</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="mailto:support@afialabs.net">Contact</a></li>
+                <li><a href="/#apps" class="nav-cta">Explore Apps</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="privacy-hero">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: March 5, 2026</p>
+        </div>
+
+        <div class="privacy-content">
+            <p>Afia Labs ("Afia Labs," "we," "our," or "us") operates our website and mobile applications, including MemeScanr and Planet Wonders (collectively, the "Services"). This Privacy Policy explains what information we collect, how we use it, and the choices you have when you use our Services.</p>
+            <p>By using our Services, you agree to the practices described in this Privacy Policy.</p>
+
+            <hr>
+
+            <h2>1. Information We Collect</h2>
+
+            <h3>A. Information You Provide</h3>
+            <p>You may choose to provide information when you contact us or interact with our Services, such as:</p>
+            <ul>
+                <li>Name (optional)</li>
+                <li>Email address</li>
+                <li>Support messages or feedback you send to us</li>
+            </ul>
+
+            <h3>B. Information Collected Automatically</h3>
+            <p>When you use our Services, we may automatically collect limited information to help us operate and improve them, such as:</p>
+            <ul>
+                <li>Device type and model</li>
+                <li>Operating system version</li>
+                <li>App version</li>
+                <li>Basic usage data (for example: screens viewed, feature usage)</li>
+                <li>Crash logs and diagnostics</li>
+                <li>Approximate location (derived from IP address when visiting the website)</li>
+            </ul>
+            <p>We use this information to improve performance, fix bugs, and maintain reliability.</p>
+
+            <hr>
+
+            <h2>2. Photo Library and Media Access (MemeScanr)</h2>
+            <p>MemeScanr may request access to your photo library to provide features like finding duplicates, organizing media, and helping you free up storage.</p>
+            <ul>
+                <li>We access photos only if you grant permission.</li>
+                <li>Photos and videos are processed on your device whenever possible.</li>
+                <li>We do not upload or store your personal photos or videos on Afia Labs servers unless a feature explicitly requires it and clearly explains what will be uploaded.</li>
+                <li>You can change or revoke photo permissions anytime in your device settings.</li>
+            </ul>
+
+            <h3>Private "Backroom" Storage</h3>
+            <p>If you use MemeScanr's private storage features (e.g., Face ID/PIN-protected areas), those items remain accessible only through your device and app protections. We do not claim ownership of your content.</p>
+
+            <hr>
+
+            <h2>3. Children's Privacy (Planet Wonders)</h2>
+            <p>Planet Wonders is designed for children ages 5&ndash;10 and is intended to be used with parental involvement.</p>
+            <p>Afia Labs does not knowingly collect personal information from children. We do not ask children to provide personal details such as full name, address, phone number, or email.</p>
+            <p>If you are a parent or guardian and believe your child has provided personal information to us, please contact us at <a href="mailto:support@afialabs.net">support@afialabs.net</a> and we will take steps to delete it.</p>
+
+            <hr>
+
+            <h2>4. How We Use Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and maintain the Services</li>
+                <li>Improve features, design, and user experience</li>
+                <li>Respond to support requests</li>
+                <li>Monitor and fix bugs and crashes</li>
+                <li>Prevent fraud, abuse, or security issues</li>
+                <li>Comply with legal obligations where required</li>
+            </ul>
+            <p>We do not sell your personal information.</p>
+
+            <hr>
+
+            <h2>5. Sharing of Information</h2>
+            <p>We may share limited information in the following cases:</p>
+            <ul>
+                <li><strong>Service providers:</strong> We may use trusted third-party vendors (such as crash reporting or analytics tools) to help operate and improve the Services. These providers are limited to using information only for the services they provide to us.</li>
+                <li><strong>Legal requirements:</strong> If required by law, subpoena, or legal process, we may disclose information.</li>
+                <li><strong>Safety and security:</strong> To protect the rights, safety, and security of Afia Labs, our users, or others.</li>
+            </ul>
+
+            <hr>
+
+            <h2>6. Third-Party Services and Links</h2>
+            <p>Our Services may link to third-party websites or services that are not controlled by Afia Labs. This Privacy Policy does not apply to those third parties. We recommend reviewing their privacy policies.</p>
+
+            <hr>
+
+            <h2>7. Data Security</h2>
+            <p>We take reasonable measures to protect information from loss, misuse, unauthorized access, disclosure, alteration, and destruction. However, no system is 100% secure, and we cannot guarantee absolute security.</p>
+
+            <hr>
+
+            <h2>8. Your Choices and Controls</h2>
+            <p>You can control your privacy in several ways:</p>
+            <ul>
+                <li><strong>App permissions:</strong> You can manage access to photos, notifications, and other permissions in your device settings.</li>
+                <li><strong>Support communications:</strong> You can choose what information you share when you contact us.</li>
+            </ul>
+            <p>If you would like to request access to, correction of, or deletion of personal information you've provided through support communications, contact us at <a href="mailto:support@afialabs.net">support@afialabs.net</a>.</p>
+
+            <hr>
+
+            <h2>9. Data Retention</h2>
+            <p>We retain information only as long as necessary to:</p>
+            <ul>
+                <li>Provide the Services</li>
+                <li>Comply with legal obligations</li>
+                <li>Resolve disputes</li>
+                <li>Enforce our agreements</li>
+                <li>Maintain security and prevent abuse</li>
+            </ul>
+            <p>Support emails and related communications may be retained for a reasonable period to help us assist you and improve our services.</p>
+
+            <hr>
+
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. If we make changes, we will update the "Last Updated" date at the top of this page. Continued use of the Services after changes means you accept the updated policy.</p>
+
+            <hr>
+
+            <h2>11. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy, contact us:</p>
+            <p>Email: <a href="mailto:support@afialabs.net">support@afialabs.net</a></p>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">Afia Labs</div>
+                    <p>Building smart, fun, and useful mobile experiences for everyone.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/#apps">Apps</a></li>
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="mailto:support@afialabs.net">Contact</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Apps</h4>
+                        <ul>
+                            <li><a href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953" target="_blank" rel="noopener noreferrer">MemeScanr</a></li>
+                            <li><a href="#">Planet Wonders</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Afia Labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
