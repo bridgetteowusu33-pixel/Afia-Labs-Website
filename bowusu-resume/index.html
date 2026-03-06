@@ -411,7 +411,7 @@
             top: 12px;
             bottom: 12px;
             width: 1px;
-            background: linear-gradient(180deg, var(--purple-light), var(--border-subtle) 60%, transparent);
+            background: linear-gradient(180deg, var(--purple-light) 0%, var(--purple-glow) 30%, var(--gold) 70%, rgba(245, 158, 11, 0.15) 100%);
             border-radius: 1px;
         }
         .timeline-item {
@@ -491,6 +491,61 @@
             height: 4px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Impact chips */
+        .impact-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .impact-chip {
+            padding: 4px 12px;
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--purple-glow);
+            letter-spacing: 0.02em;
+            transition: all 0.3s var(--ease-out-expo);
+            cursor: default;
+        }
+        .impact-chip:hover {
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(167, 139, 250, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Current role highlight */
+        .timeline-item.current .timeline-card {
+            background: rgba(124, 58, 237, 0.04);
+            border-color: rgba(124, 58, 237, 0.2);
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.05), 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .timeline-item.current .timeline-card:hover {
+            background: rgba(124, 58, 237, 0.07);
+            border-color: rgba(167, 139, 250, 0.35);
+            box-shadow: 0 0 60px rgba(124, 58, 237, 0.08), var(--shadow-card);
+        }
+        .current-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(167, 139, 250, 0.1));
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            border-radius: 100px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--purple-glow);
+            margin-left: 10px;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
         }
 
         .prev-experience {
@@ -790,6 +845,7 @@
             .container { padding: 0 18px; }
             .prev-companies { gap: 8px; }
             .prev-companies span { padding: 7px 16px; font-size: 0.75rem; }
+            .impact-chip { font-size: 0.65rem; padding: 3px 10px; }
             .skill-chip { padding: 9px 18px; font-size: 0.8rem; }
             .btn-download { padding: 16px 32px; font-size: 0.9rem; }
         }
@@ -873,14 +929,14 @@
         <div class="container">
             <div class="section-header fade-up">
                 <div class="section-label">Experience</div>
-                <h2 class="section-title">Professional Journey</h2>
+                <h2 class="section-title">Impact Timeline</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="timeline">
-                <div class="timeline-item fade-up">
+                <div class="timeline-item current fade-up">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <div class="timeline-role">Senior Product Support Engineer</div>
+                        <div class="timeline-role">Senior Product Support Engineer <span class="current-pill">Current</span></div>
                         <div class="timeline-company">Veracode &middot; 2025&ndash;Present</div>
                         <ul class="timeline-highlights">
                             <li>Provide advanced technical support for FedRAMP and commercial SaaS environments</li>
@@ -888,6 +944,13 @@
                             <li>Mentor junior engineers and improve troubleshooting workflows</li>
                             <li>Perform root cause analysis for complex platform issues</li>
                         </ul>
+                        <div class="impact-chips">
+                            <span class="impact-chip">FedRAMP</span>
+                            <span class="impact-chip">SSO/MFA</span>
+                            <span class="impact-chip">Escalation Lead</span>
+                            <span class="impact-chip">Root Cause Analysis</span>
+                            <span class="impact-chip">Mentorship</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item fade-up">
@@ -900,6 +963,11 @@
                             <li>Conducted cybersecurity protocol analysis</li>
                             <li>Supported AWS cloud environments and ServiceNow workflows</li>
                         </ul>
+                        <div class="impact-chips">
+                            <span class="impact-chip">Incident Response</span>
+                            <span class="impact-chip">AWS</span>
+                            <span class="impact-chip">ServiceNow</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item fade-up">
@@ -911,6 +979,10 @@
                             <li>Resolved complex enterprise support cases</li>
                             <li>Improved authentication onboarding including MFA and OTP</li>
                         </ul>
+                        <div class="impact-chips">
+                            <span class="impact-chip">Enterprise Support</span>
+                            <span class="impact-chip">MFA/OTP</span>
+                        </div>
                     </div>
                 </div>
             </div>
