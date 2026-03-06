@@ -145,7 +145,56 @@
             position: relative;
             z-index: 1;
             padding: 180px 0 120px;
-            text-align: center;
+        }
+        .hero-top {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        /* Photo */
+        .hero-photo-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+        .hero-photo-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-light), var(--gold));
+            opacity: 0.5;
+            z-index: 0;
+            animation: ring-glow 4s ease-in-out infinite;
+        }
+        .hero-photo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(12px);
+        }
+        @keyframes ring-glow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
+        .hero-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+            border: 3px solid var(--bg-dark);
+            filter: brightness(0.95) contrast(1.05) saturate(0.9);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(124, 58, 237, 0.08);
+        }
+
+        .hero-text {
+            text-align: left;
         }
         .hero-label {
             display: inline-flex;
@@ -160,7 +209,7 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--purple-glow);
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         .hero-label::before {
             content: '';
@@ -177,11 +226,11 @@
         }
 
         .hero h1 {
-            font-size: 5rem;
+            font-size: 4.2rem;
             font-weight: 800;
             letter-spacing: -0.055em;
             line-height: 1;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
             background: linear-gradient(160deg, var(--text-white) 0%, var(--purple-wash) 40%, var(--purple-glow) 70%, var(--gold) 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
@@ -195,11 +244,10 @@
         }
 
         .hero-subtitle {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 400;
             color: var(--text-muted);
             letter-spacing: 0.01em;
-            margin-bottom: 40px;
             line-height: 1.6;
         }
         .hero-subtitle .accent {
@@ -213,17 +261,17 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.25);
             vertical-align: middle;
-            margin: 0 14px;
+            margin: 0 12px;
         }
 
         .hero-intro {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-light);
-            max-width: 620px;
-            margin: 0 auto 48px;
+            max-width: 680px;
             line-height: 1.85;
             font-weight: 400;
             letter-spacing: -0.005em;
+            margin-bottom: 36px;
         }
 
         .hero-badge {
@@ -359,6 +407,16 @@
         .project-icon.gold {
             background: linear-gradient(135deg, var(--gold-warm), var(--gold));
             box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2);
+        }
+        .project-icon.has-logo {
+            background: none;
+            overflow: hidden;
+        }
+        .project-icon.has-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
         }
 
         .project-card h3 {
@@ -815,9 +873,12 @@
         @media (max-width: 768px) {
             .container { padding: 0 24px; }
             .hero { padding: 140px 0 80px; }
+            .hero-top { flex-direction: column; text-align: center; gap: 32px; }
+            .hero-text { text-align: center; }
+            .hero-photo { width: 120px; height: 120px; }
             .hero h1 { font-size: 3rem; }
             .hero-subtitle { font-size: 0.88rem; }
-            .hero-intro { font-size: 1rem; }
+            .hero-intro { font-size: 1rem; text-align: center; }
             .hero-badge { font-size: 0.82rem; padding: 12px 20px; }
 
             .section { padding: 72px 0; }
@@ -840,6 +901,7 @@
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 2.4rem; }
+            .hero-photo { width: 100px; height: 100px; }
             .hero-subtitle { font-size: 0.82rem; }
             .hero-subtitle .dot { margin: 0 8px; }
             .container { padding: 0 18px; }
@@ -864,19 +926,26 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <div class="hero-label fade-up">Founder Profile</div>
-            <h1 class="fade-up fade-up-d1">Bridgette<br>Owusu</h1>
-            <p class="hero-subtitle fade-up fade-up-d2">
-                Founder of <span class="accent">Afia Labs</span>
-                <span class="dot"></span>
-                Senior Product Support Engineer
-                <span class="dot"></span>
-                Cybersecurity Professional
-            </p>
-            <p class="hero-intro fade-up fade-up-d3">
+            <div class="hero-top fade-up">
+                <div class="hero-photo-wrap">
+                    <img src="/founder.jpg" alt="Bridgette Owusu" class="hero-photo" loading="eager">
+                </div>
+                <div class="hero-text">
+                    <div class="hero-label">Founder Profile</div>
+                    <h1>Bridgette Owusu</h1>
+                    <p class="hero-subtitle">
+                        Founder of <span class="accent">Afia Labs</span>
+                        <span class="dot"></span>
+                        Senior Product Support Engineer
+                        <span class="dot"></span>
+                        Cybersecurity Professional
+                    </p>
+                </div>
+            </div>
+            <p class="hero-intro fade-up fade-up-d1">
                 Bridgette Owusu is a Senior Product Support Engineer with over 11 years of experience supporting complex SaaS and cybersecurity environments. She is also the founder of Afia Labs, an independent app studio focused on building thoughtful mobile applications that simplify digital experiences.
             </p>
-            <div class="hero-badge fade-up fade-up-d4">
+            <div class="hero-badge fade-up fade-up-d2">
                 <span class="badge-icon">&#9733;</span>
                 Building technology for the next generation &mdash; especially my daughter Ava.
             </div>
@@ -895,8 +964,8 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card fade-up fade-up-d1">
-                    <div class="project-icon purple">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <div class="project-icon has-logo">
+                        <img src="/memescanr_logo.png" alt="MemeScanr logo">
                     </div>
                     <h3>MemeScanr</h3>
                     <p class="project-desc">An intelligent iPhone storage cleaner designed to help users reclaim space by detecting duplicate photos, compressing media, and organizing clutter.</p>
@@ -907,8 +976,8 @@
                     </ul>
                 </div>
                 <div class="project-card fade-up fade-up-d2">
-                    <div class="project-icon gold">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" stroke-width="1.5"/><path d="M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9m0-18c-2.5 2.5-4 5.5-4 9s1.5 6.5 4 9M3 12h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <div class="project-icon has-logo">
+                        <img src="/planet_wonders_launchscreen.png" alt="Planet Wonders logo">
                     </div>
                     <h3>Planet Wonders</h3>
                     <p class="project-desc">An educational adventure app for children that teaches cultures and creativity through storytelling, drawing, and interactive exploration.</p>
