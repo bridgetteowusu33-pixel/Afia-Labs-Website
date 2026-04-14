@@ -1,0 +1,108 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr vs Cleanup: Phone Storage Cleaner — which to pick in 2026?';
+const description =
+  'Head-to-head comparison of MemeScanr and Cleanup-category iPhone cleaners for 2026. Features, privacy, pricing, and a clear recommendation for different user needs.';
+const heading = 'MemeScanr vs Cleanup: Phone Storage Cleaner';
+const lede =
+  'Cleanup: Phone Storage Cleaner is one of the most downloaded iPhone cleaners on the App Store, built primarily around a swipe-to-delete review interface. MemeScanr overlaps on the swipe mechanic but diverges on privacy stance, category coverage, and bundled features. Here\'s the direct comparison.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'vs Cleanup app' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/memescanr-vs-cleanup-app/',
+};
+
+const faqItems = [
+  {
+    q: 'Is Cleanup: Phone Storage Cleaner safe to use?',
+    a: 'Cleanup is a legitimate App Store app and has a long history. Its privacy practices depend on the current version — check the App Store Privacy Nutrition Label before installing. If you want the strongest possible privacy guarantee (no server of any kind), MemeScanr is the safer default because it has no server at all.',
+  },
+  {
+    q: 'Which app has a better swipe interface?',
+    a: 'Cleanup popularized the Tinder-style photo review on iOS. MemeScanr ships the same swipe mechanic in Memory Lane and adds it to every cleanup category (duplicates, screenshots, memes, blurry) with streaks, stamps, and time capsule badges. The underlying gesture is the same; the surface area is wider in MemeScanr.',
+  },
+  {
+    q: 'Does Cleanup detect memes?',
+    a: 'Cleanup focuses on generic photo review rather than category-specific detection. MemeScanr ships meme detection as a distinct category via on-device Apple ML Kit.',
+  },
+  {
+    q: 'Which one has a private vault?',
+    a: 'MemeScanr has Backroom, a Face ID and PIN-locked vault with a decoy mode. Cleanup does not position a private vault as a core feature. If vaulting is important to you, MemeScanr is the stronger pick.',
+  },
+  {
+    q: 'Is MemeScanr cheaper?',
+    a: 'MemeScanr offers a $59.99 lifetime Premium purchase, which most subscription-based cleaners do not. Over a year or two, the lifetime option is typically the cheapest path.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/memescanr-vs-cleanup-app/"
+  jsonLd={webPageJsonLd}
+  wide={true}
+>
+  <div class="definition">
+    <strong>Verdict in one sentence</strong>
+    Cleanup is a focused swipe-to-delete app. MemeScanr bundles the same swipe mechanic with category detection, a private vault, compression, and contacts cleanup — and ships a $59.99 lifetime tier most competitors don't offer.
+  </div>
+
+  <h2>Feature comparison</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Feature</th><th>MemeScanr</th><th>Cleanup: Phone Storage Cleaner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Tinder-style swipe review</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Duplicate detection</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Category detection (memes, screenshots, blurry)</td><td class="yes">✓</td><td class="partial">partial</td></tr>
+      <tr><td>"On this day" nostalgia mode</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Monthly personality reveal (Wrapped)</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Daily gallery diagnosis (Phone Therapist)</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Private Face ID-locked vault with decoy mode</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Photo / video / PDF compression</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Duplicate contacts cleanup</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Seasonal app icons</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Widgets + Dynamic Island</td><td class="yes">✓</td><td class="partial">partial</td></tr>
+      <tr><td>Lifetime one-time purchase</td><td class="yes">$59.99</td><td class="partial">varies</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Privacy comparison</h2>
+  <p>
+    Both apps should be verified via their current App Store Privacy Nutrition Labels before install. MemeScanr's stance is absolute: no server, no cloud AI, no account, no photo uploads. Cleanup has historically offered a strong privacy posture; check the current label for your version.
+  </p>
+
+  <h2>Which should you pick?</h2>
+  <p>
+    <strong>Pick Cleanup if</strong> you only want a fast swipe-to-delete flow for your whole gallery, you're happy with its subscription model, and you don't care about category detection or a private vault.
+  </p>
+  <p>
+    <strong>Pick MemeScanr if</strong> you want swipe review plus category cleanup plus a private vault plus compression plus contacts cleanup plus a monthly personality reveal — in one app, with a lifetime purchase option and zero server-side exposure.
+  </p>
+
+  <AppStoreCTA />
+
+  <FAQ items={faqItems} heading="MemeScanr vs Cleanup FAQ" />
+
+  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 32px;">
+    Comparison based on publicly available information as of April 2026. Always verify competitor features and pricing on their current App Store listing before purchase.
+  </p>
+</ArticleLayout>

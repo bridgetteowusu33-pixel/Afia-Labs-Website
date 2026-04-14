@@ -1,0 +1,106 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-03-01';
+const title = 'Seasonal app icons — why we built them';
+const description =
+  'Why MemeScanr ships seven seasonal app icons that automatically switch with the calendar. A small design decision with outsized value for retention, Apple editorial, and product personality.';
+const heading = 'Why MemeScanr ships seasonal app icons';
+const lede =
+  'Every photo cleaner app on the App Store ships one icon. MemeScanr ships seven, and they switch automatically as the seasons change. Here\'s why that tiny decision is one of the features we\'re proudest of.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Seasonal icons' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs', logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' } },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/seasonal-icons-why-we-built-them/',
+  wordCount: 880,
+  articleSection: 'Design story',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Design story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/seasonal-icons-why-we-built-them/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published March 1, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>The home screen is a product surface</h2>
+  <p>
+    Most app teams treat the app icon as done after launch. It sits on the home screen, it never changes, and after two months the user stops seeing it — the icon becomes transparent in the same way the couch does. For utility apps, this is fatal. Photo cleaners are exactly the category that users forget about between emergencies. Out of sight, out of mind, uninstalled.
+  </p>
+  <p>
+    Seasonal icons are a cheap fix to a retention problem. Every time the icon changes, the user\'s eye lands on MemeScanr again on their home screen. For a week or two after a seasonal switch, MemeScanr is "the app that changed" — re-opens tick up, not because of a push notification, but because the visual refresh made the app feel alive.
+  </p>
+
+  <h2>The seven seasons</h2>
+  <ul>
+    <li><strong>🎃 Halloween</strong> — mid-October through November 1</li>
+    <li><strong>❄️ Winter</strong> — December through mid-February</li>
+    <li><strong>💘 Valentine\'s</strong> — mid-February</li>
+    <li><strong>🌸 Spring</strong> — March and April</li>
+    <li><strong>🌞 Summer</strong> — May through August</li>
+    <li><strong>🍂 Autumn</strong> — September and early October</li>
+    <li><strong>✨ Default</strong> — fallback any time and for new installs outside a seasonal window</li>
+  </ul>
+  <p>
+    Each icon is a genuinely different illustration — not just a color tint. The Halloween icon has a jack-o\'-lantern framing. The Winter icon has snow. The Valentine\'s icon has hearts. The Summer icon has a beach sunrise. The illustrations are subtle enough to still be recognizably "MemeScanr" to returning users but clearly seasonal at a glance.
+  </p>
+
+  <h2>How the switch actually works</h2>
+  <p>
+    MemeScanr uses Apple\'s standard <code>UIApplication.setAlternateIconName(_:completionHandler:)</code> API to switch icons. On each app launch, we check the current date against the active seasonal window and, if it\'s a new window since the last check, propose an icon switch. iOS shows a one-time confirmation dialog the first time the app tries to change its icon — after the user taps OK once, subsequent switches are silent.
+  </p>
+  <p>
+    The icons ship pre-bundled in the app binary at iPhone (@2x / @3x) and iPad (167×167, 152×152) sizes. No network download, no CDN, no over-the-air icon updates. This keeps the feature entirely local and means seasonal switches work offline.
+  </p>
+  <p>
+    Users can override the auto-switch at any time. Settings → App Icon shows all seven icons with a manual picker. Manual choices respect the current season — if you pick Autumn in July, MemeScanr won\'t auto-override you on August 1.
+  </p>
+
+  <h2>Why Apple rewards this</h2>
+  <p>
+    Apple\'s App Store editorial team curates seasonal collections — Halloween apps in October, winter apps in December, Valentine\'s apps in February. Apps with seasonal icons are preferentially featured in these collections because they\'re thematically on-brand for the editorial piece. This is free featured placement roughly four times a year, and it costs nothing to earn beyond the initial illustration work.
+  </p>
+  <p>
+    The first time MemeScanr got featured in an App Store "Seasonal" collection, installs spiked for a week. Not because the feature itself was remarkable in isolation, but because it made the app visible to an editorial surface most utility apps never see.
+  </p>
+
+  <h2>Small touches compound</h2>
+  <p>
+    Seasonal icons are a rounding error in the codebase. The implementation is maybe 40 lines of Swift. The design work is seven icons, which for our art direction took about a day and a half. The retention and editorial return on that investment is wildly disproportionate. Most utility apps don\'t bother with this category of work because it doesn\'t ship a user-facing feature — it just makes the product feel more alive.
+  </p>
+  <p>
+    The takeaway we\'d give other app teams: the home screen is not a "fire and forget" surface. Every touchpoint where a user sees your app icon is a chance to either remind them the product exists or let them forget. Seasonal icons are one of the cheapest interventions in that space.
+  </p>
+
+  <AppStoreCTA
+    heading="See which icon MemeScanr is wearing today."
+    body="Download free. The icon switches itself as the seasons change."
+  />
+</ArticleLayout>

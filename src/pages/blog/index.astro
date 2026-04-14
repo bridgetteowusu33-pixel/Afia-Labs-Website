@@ -1,0 +1,57 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr blog — iPhone cleanup, privacy, and design stories';
+const description =
+  'Long-form posts about iPhone photo cleanup, the design decisions behind MemeScanr, the privacy problem with cloud AI cleaners, and real cleanup stories.';
+const heading = 'The MemeScanr blog';
+const lede =
+  'Long-form posts about iPhone cleanup, the design decisions that shaped MemeScanr, the privacy tradeoffs in the photo cleaner category, and real cleanup stories from actual users. Follow the RSS feed for updates.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog' },
+];
+
+const posts = [
+  { href: '/blog/gallery-wrapped-2026-what-personality-are-you/', date: '2026-04-01', title: 'Gallery Wrapped 2026 — which gallery personality are you?', blurb: 'Gallery Wrapped is live for April. Eight personality types, nine cards, one monthly reveal. Here\'s what each personality means.', tag: 'Launch post' },
+  { href: '/blog/the-privacy-problem-with-ai-photo-cleaners/', date: '2026-04-02', title: 'The privacy problem with "AI-powered" iPhone photo cleaners', blurb: 'Most cleaner apps that advertise "AI-powered" cleanup upload your photos to third-party servers. Here\'s the trade nobody explains and how to verify which camp an app is in.', tag: 'Privacy' },
+  { href: '/blog/how-i-freed-20gb-on-my-iphone-in-10-minutes/', date: '2026-03-30', title: 'How I freed 20 GB on my iPhone in 10 minutes', blurb: 'A real cleanup session in ten minutes of active work. The sequence, the tools, and why most of the wins came from compression, not deletion.', tag: 'Story' },
+  { href: '/blog/i-had-10000-photos-heres-how-i-cleaned-my-iphone/', date: '2026-03-25', title: 'I had 10,000 photos — here\'s how I cleaned my iPhone', blurb: 'A real 10,000-photo cleanup walkthrough. What the scan found, what I actually kept, and how much storage came back — category by category.', tag: 'Story' },
+  { href: '/blog/tinder-for-your-camera-roll/', date: '2026-03-18', title: 'Tinder for your camera roll — the Memory Lane origin story', blurb: 'The grid was the problem. Why we built Memory Lane as a Tinder-style swipe review for every photo you\'ve ever taken.', tag: 'Design story' },
+  { href: '/blog/your-phone-needs-therapy/', date: '2026-03-10', title: 'Your phone needs therapy — the Phone Therapist origin story', blurb: 'Cleaner apps are joyless by default. Why we built a daily diagnosis feature that names your camera roll behavior with humor instead of guilt.', tag: 'Design story' },
+  { href: '/blog/why-your-iphone-storage-is-always-full/', date: '2026-03-05', title: 'Why your iPhone storage is always full', blurb: 'iOS does not clean itself. Here\'s what\'s actually eating your storage and why "delete some photos" never fixes it.', tag: 'Explainer' },
+  { href: '/blog/seasonal-icons-why-we-built-them/', date: '2026-03-01', title: 'Why MemeScanr ships seasonal app icons', blurb: 'Seven app icons that switch automatically with the seasons. Tiny feature, outsized value for retention and Apple editorial.', tag: 'Design story' },
+  { href: '/blog/the-decoy-vault-explained/', date: '2026-02-22', title: 'The decoy vault, explained', blurb: 'How Backroom fools snoopers with a believable fake library on wrong PIN entry, and why no other cleaner ships this.', tag: 'Security' },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Blog"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/"
+  ogType="website"
+>
+  <p>
+    <a href="/rss.xml">Subscribe via RSS →</a>
+  </p>
+
+  {posts.map((p) => (
+    <article style="padding: 28px 0; border-bottom: 1px solid var(--border-light);">
+      <div style="display: flex; gap: 12px; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+        <span>{new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+        <span>·</span>
+        <span>{p.tag}</span>
+      </div>
+      <h2 style="margin-top: 0 !important; margin-bottom: 8px !important;"><a href={p.href} style="text-decoration: none; color: var(--purple-deep);">{p.title}</a></h2>
+      <p style="margin-bottom: 0;">{p.blurb}</p>
+    </article>
+  ))}
+
+  <AppStoreCTA />
+</ArticleLayout>

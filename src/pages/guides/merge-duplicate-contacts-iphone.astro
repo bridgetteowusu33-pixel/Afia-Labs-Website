@@ -1,0 +1,123 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to merge duplicate contacts on iPhone (fuzzy matching)';
+const description =
+  'How to find and merge duplicate iPhone contacts, including fuzzy matches where names are typed differently. Native iOS Link Contacts steps plus MemeScanr fuzzy-matching engine.';
+const heading = 'How to merge duplicate contacts on iPhone';
+const lede =
+  'iPhone contacts accumulate duplicates because they sync from multiple sources — iCloud, Google, Exchange, SIM. Native iOS has a basic "Link Contacts" feature but doesn\'t do fuzzy matching. Here\'s how to find and merge every duplicate, including fuzzy ones.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Merge duplicate contacts' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to merge duplicate contacts on iPhone',
+  description,
+  totalTime: 'PT10M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Try the native Link Contacts feature', text: 'Contacts app → find a contact with a duplicate → tap Edit → scroll to Linked Contacts → Add → pick the duplicate.' },
+    { '@type': 'HowToStep', position: 2, name: 'Install MemeScanr for fuzzy matching', text: 'Install MemeScanr, open the Contacts Cleanup feature, grant contacts permission.' },
+    { '@type': 'HowToStep', position: 3, name: 'Review duplicate groups', text: 'MemeScanr surfaces duplicate groups via fuzzy name matching, phone normalization, and Union-Find clustering. Review each group as a preview card.' },
+    { '@type': 'HowToStep', position: 4, name: 'Merge each group', text: 'Pick which fields to keep and tap Merge. MemeScanr writes the merged contact back to iOS Contacts in a single transaction.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Why does my iPhone have so many duplicate contacts?',
+    a: 'Duplicates come from multiple contact sources syncing into one address book: iCloud, Google, Exchange, SIM, WhatsApp, and sometimes LinkedIn. Each source normalizes names differently. iCloud might store "Doe, Jane" while Google stores "Jane Doe." Same person, two entries.',
+  },
+  {
+    q: 'Does iOS merge duplicate contacts automatically?',
+    a: 'Partially. iOS has a Link Contacts feature that lets you manually merge two entries you know are duplicates, and it auto-groups entries that iCloud considers exact duplicates. It does not do fuzzy matching for typos, comma-flipped names, or normalized phone numbers.',
+  },
+  {
+    q: 'How does MemeScanr detect fuzzy contact duplicates?',
+    a: 'MemeScanr runs multiple matching signals: exact phone match with US country code normalization, exact email match, Levenshtein distance of 1–2 for name typos, comma-flip detection, token reorder, whitespace normalization, and suffix stripping (Jr, Sr, III). Groups are clustered with a Union-Find algorithm with rank optimization.',
+  },
+  {
+    q: 'Does MemeScanr upload my contacts?',
+    a: 'No. Contacts cleanup runs entirely on-device via the iOS Contacts framework. Your contact list never leaves the phone.',
+  },
+  {
+    q: 'Can I preview a merge before it happens?',
+    a: 'Yes. Every duplicate group opens as an expandable card showing every field from every matched contact side by side. You pick which fields to keep. Nothing merges until you confirm.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/merge-duplicate-contacts-iphone/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    Use iOS Link Contacts for obvious duplicates. Use MemeScanr\'s Contacts Cleanup engine for fuzzy duplicates — same person, different spelling — because iOS doesn\'t handle those.
+  </div>
+
+  <h2>Why duplicates happen</h2>
+  <p>
+    Your iPhone pulls contacts from multiple sources by default: iCloud, Google, Exchange (if work email is linked), and your SIM card. Every source normalizes names differently. Google stores "Jane Doe." iCloud stores "Doe, Jane." WhatsApp might put a country code in front of the phone number. Three sources = three entries for one real person.
+  </p>
+  <p>
+    The native iOS Contacts app will sometimes detect these as linked, but only when the match is very clean. Name typos, comma-flipped variants, and phone numbers with different country code formats all slip through.
+  </p>
+
+  <h2>Native iOS: the Link Contacts feature</h2>
+  <p>
+    For obvious duplicates you\'ve already noticed, open <strong>Contacts → find the contact → tap Edit → scroll to the bottom → Linked Contacts → Add</strong>. Pick the duplicate entry. iOS keeps both underlying contacts (so each source stays in sync) but shows them as one unified card in your address book.
+  </p>
+  <p>
+    The limitation: you have to find the duplicates manually. iOS won\'t surface a list of "probable duplicates you missed." For a contacts list with 1,000+ entries, that\'s impractical.
+  </p>
+
+  <h2>MemeScanr: fuzzy-matching contacts cleanup</h2>
+  <p>
+    MemeScanr ships a dedicated contacts cleanup engine that does fuzzy matching. When you open Contacts Cleanup, it walks your entire address book once and computes a signature for each entry: normalized phone number, normalized email, name with suffixes stripped, reversed last-first variant. It then scores pairs across all of those signatures.
+  </p>
+  <p>
+    The matching signals:
+  </p>
+  <ul>
+    <li><strong>Exact phone match</strong> after country code normalization</li>
+    <li><strong>Exact email match</strong></li>
+    <li><strong>Levenshtein distance ≤ 2</strong> on names (catches "Michael" vs "Micheal")</li>
+    <li><strong>Comma-flip</strong> ("Doe, Jane" = "Jane Doe")</li>
+    <li><strong>Token reorder</strong> (middle name reordering)</li>
+    <li><strong>Suffix strip</strong> (Jr, Sr, III, PhD)</li>
+  </ul>
+  <p>
+    Matches get clustered with a Union-Find data structure with rank optimization — the same algorithm graph databases use for connected components. Every duplicate group represents one real person.
+  </p>
+
+  <h2>Step-by-step: merge duplicate contacts</h2>
+  <ol>
+    <li>Install MemeScanr and grant contacts permission.</li>
+    <li>Open <strong>Contacts Cleanup</strong> from the menu.</li>
+    <li>Wait for the fuzzy match scan. It usually takes under 10 seconds for 1,000+ contacts.</li>
+    <li>Each duplicate group opens as a preview card showing fields side by side.</li>
+    <li>Pick which phone numbers, emails, addresses, and birthdays to keep.</li>
+    <li>Tap <strong>Merge</strong>. MemeScanr writes the merged contact back to iOS Contacts in a single transaction and removes the duplicates.</li>
+  </ol>
+
+  <AppStoreCTA
+    heading="Clean your contacts in 5 minutes."
+    body="MemeScanr\'s fuzzy-matching contact cleanup is free. Runs entirely on-device."
+  />
+
+  <FAQ items={faqItems} heading="Merge contacts FAQ" />
+</ArticleLayout>

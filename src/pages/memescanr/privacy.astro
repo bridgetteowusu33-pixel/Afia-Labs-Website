@@ -1,0 +1,138 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr privacy — we literally don\'t have a server | Afia Labs';
+const description =
+  'MemeScanr processes every photo on-device. No server, no cloud AI, no photo uploads, no account, no tracking. Here\'s exactly what we do and don\'t collect.';
+const heading = 'MemeScanr privacy: we literally don\'t have a server';
+const lede =
+  'MemeScanr scans, classifies, and cleans your photos entirely on your iPhone. There is no server. There is no cloud AI. There is no account. There is no way for your photos to leave your device because there is nowhere for them to go.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Privacy' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/privacy/',
+};
+
+const faqItems = [
+  {
+    q: 'Does MemeScanr upload my photos?',
+    a: 'No. MemeScanr never uploads your photos. Every scan, hash, classification, and deletion happens on your iPhone. There is no server to upload to.',
+  },
+  {
+    q: 'Does MemeScanr use AI?',
+    a: 'MemeScanr uses on-device machine learning models from Apple ML Kit for category detection (meme, screenshot, blurry). It does not use cloud AI, third-party inference servers, or any hosted LLM. Your photos are never sent to any AI service.',
+  },
+  {
+    q: 'Does MemeScanr require an account?',
+    a: 'No. MemeScanr has no account, no email sign-up, no phone verification, and no sign-in. You install the app and it works.',
+  },
+  {
+    q: 'What data leaves my phone?',
+    a: 'Only anonymous crash reports, sent to Firebase Crashlytics, and only if a crash happens. Crash reports contain a stack trace, device model, iOS version, and MemeScanr version. They contain zero photo data, zero gallery contents, zero personally identifying information.',
+  },
+  {
+    q: 'Does MemeScanr sell data to advertisers?',
+    a: 'No. MemeScanr shows no ads and sells no data. There is no data to sell because none of your gallery information leaves your device.',
+  },
+  {
+    q: 'Is the Backroom vault synced to iCloud?',
+    a: 'No. Backroom is deliberately local-only. There is no iCloud sync, no cloud backup, and no web access. This is a trade-off: deleting the app deletes the vault, but the flip side is that Backroom has no network attack surface at all.',
+  },
+  {
+    q: 'How does MemeScanr compare to cleaner apps that use "AI"?',
+    a: 'Most cleaner apps that advertise "AI-powered cleanup" run classification in the cloud. That means they upload your photos — including screenshots of bank info, IDs, DMs, and medical records — to a third-party inference server. MemeScanr does not do this. All classification is Apple ML Kit running on-device.',
+  },
+  {
+    q: 'Where can I read the full privacy policy?',
+    a: 'The full legal privacy policy is at afialabs.net/privacy.html. This page is the plain-English summary.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Privacy"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/privacy/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>The one-line summary</strong>
+    MemeScanr processes every photo on your iPhone. It has no server, no cloud AI, no account, no tracking, and no advertising. The only data that ever leaves your device is anonymous crash reports that contain zero photo information.
+  </div>
+
+  <div class="pullquote">
+    "we literally don't have a server."
+    <cite>— MemeScanr's privacy stance, and the single line we want you to remember</cite>
+  </div>
+
+  <h2>What MemeScanr does not collect</h2>
+  <ul>
+    <li><strong>Your photos.</strong> Never uploaded. Never transmitted. Never mirrored to a server. Every photo stays on your device.</li>
+    <li><strong>Photo metadata.</strong> EXIF, location, timestamps — all read locally, never transmitted.</li>
+    <li><strong>Hashes of your photos.</strong> The 64-bit perceptual hashes MemeScanr computes for duplicate detection are stored locally in SQLite, never uploaded.</li>
+    <li><strong>Scan results.</strong> What MemeScanr found, how many duplicates you had, which categories dominated — all local only.</li>
+    <li><strong>Your contacts.</strong> Duplicate contact detection runs on-device via the iOS Contacts framework.</li>
+    <li><strong>Your account.</strong> There is no account. No email, no phone number, no password, no sign-in.</li>
+    <li><strong>Advertising identifiers.</strong> MemeScanr does not read IDFA. It does not show ads.</li>
+    <li><strong>Third-party analytics.</strong> No Mixpanel, no Segment, no Amplitude, no Facebook SDK. Only Firebase Crashlytics for crash reports.</li>
+  </ul>
+
+  <h2>What MemeScanr does collect (and only if you opt into diagnostics)</h2>
+  <p>
+    Apple's App Store privacy nutrition label for MemeScanr declares two data categories, both under "Data Not Linked to You" and both marked "Not Used for Tracking":
+  </p>
+  <ul>
+    <li><strong>Crash Data</strong> — via Firebase Crashlytics. Triggered only by an actual crash. Includes: stack trace, iOS version, device model, MemeScanr version. Contains no photo data, no gallery stats, no location, no personally identifying information. Used solely to fix bugs.</li>
+    <li><strong>Product Interaction</strong> — anonymous event counts (e.g. "scan completed", "Memory Lane opened"). Used for product analytics. Not linked to a user identity. You can disable this entirely in Settings.</li>
+  </ul>
+
+  <h2>On-device scanning: how it actually works</h2>
+  <p>
+    MemeScanr's scan engine runs a six-phase pipeline — Index, Hash, Classify, Group, Refine, Results — and every phase runs on your iPhone's CPU and Neural Engine.
+  </p>
+  <ul>
+    <li><strong>Hashing</strong> — 64-bit perceptual hash (pHash) computed in Swift, stored in local SQLite.</li>
+    <li><strong>Classification</strong> — Apple ML Kit models (memes, screenshots, blurry) run on-device. Apple ML Kit does not send inputs to Google or any server.</li>
+    <li><strong>Grouping</strong> — Hamming distance comparison of local hashes. No network call.</li>
+    <li><strong>Refinement</strong> — local re-check pass.</li>
+    <li><strong>Results</strong> — written to local SQLite. The scan results never leave your device.</li>
+  </ul>
+  <p>
+    The entire pipeline works with Airplane Mode on. You can turn off WiFi and cellular and run a full scan — nothing breaks. That is the simplest proof you will get that no upload is happening.
+  </p>
+
+  <h2>Why this matters: the privacy problem with "AI" photo cleaners</h2>
+  <p>
+    Most cleaner apps that advertise "AI-powered cleanup" or "smart AI" do their classification in the cloud. The user flow looks like this: the app quietly uploads every photo in your library to a third-party inference server, runs classification there, and sends a small JSON response back with "this is a meme / this is blurry / this is a duplicate." The convenience is that the classifier can be bigger and smarter than anything that fits on a phone. The cost is that your entire photo library — including screenshots of your banking app, your ID, your DMs, your medical portal, and anything else you took a picture of — is now on someone else's machine.
+  </p>
+  <p>
+    MemeScanr does not do this. Classification is Apple ML Kit, on-device, offline. The model is smaller than a cloud model, but it runs with zero exposure of your photos to anyone. For a photo cleaner, that trade is correct. A photo cleaner does not need a PhD-level classifier — it needs to reliably group duplicates and flag screenshots. Small on-device models handle that fine.
+  </p>
+
+  <h2>Deleting MemeScanr removes everything</h2>
+  <p>
+    If you uninstall MemeScanr from your iPhone, every bit of local data goes with it: the SQLite database, the hash index, the Backroom vault, the scan history, the Phone Therapist cache. There is no residual server-side copy because there is no server. Reinstalling starts from zero.
+  </p>
+
+  <AppStoreCTA
+    heading="A photo cleaner that respects your photos."
+    body="Download MemeScanr — no server, no cloud, no photo uploads, no account."
+  />
+
+  <FAQ items={faqItems} heading="Privacy FAQ" />
+</ArticleLayout>

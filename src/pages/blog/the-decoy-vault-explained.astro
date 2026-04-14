@@ -1,0 +1,109 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-02-22';
+const title = 'The decoy vault, explained — how Backroom fools snoopers with a fake library';
+const description =
+  'Backroom\'s decoy vault shows a believable fake library when someone enters the wrong PIN. Here\'s how it works, why no other cleaner ships it, and the threat model it addresses.';
+const heading = 'The decoy vault, explained';
+const lede =
+  'Most private photo vaults show an error when someone enters the wrong PIN. That error is itself a signal that a vault exists. Backroom takes a different approach: on wrong PIN, it opens a decoy vault — a fake but believable library with nothing interesting in it. Here\'s how that works and why we built it.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'The decoy vault explained' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs', logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' } },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/the-decoy-vault-explained/',
+  wordCount: 1180,
+  articleSection: 'Security',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Security"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/the-decoy-vault-explained/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published February 22, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 7 min read</span>
+  </div>
+
+  <h2>The threat model most vaults miss</h2>
+  <p>
+    When security people build a vault, they usually design it for the "remote attacker" threat model — someone who doesn\'t have your phone, but wants your data. That model pushes you toward encryption, brute-force lockout, and secure key storage. Backroom does all of that. But the far more common threat for a photo vault is something security teams think about less: the "in-person attacker who already has your unlocked phone in their hand and is now asking you to open the vault."
+  </p>
+  <p>
+    This is the ex who knows you have a private photo folder. The jealous partner going through your phone. The sibling who heard about your "secret album." The border agent at a checkpoint. In every one of these cases, the threat model isn\'t "can the attacker break the cryptography?" It\'s "can the attacker be denied the existence of the vault at all?" That\'s the problem the decoy solves.
+  </p>
+
+  <h2>What happens on wrong PIN</h2>
+  <p>
+    You set up Backroom with a real PIN and a decoy PIN. The real PIN unlocks your real vault. The decoy PIN unlocks a second, fake vault with neutral-looking content you\'ve pre-populated. Both vaults look, from the outside, like a fully functional Backroom.
+  </p>
+  <p>
+    When someone enters a PIN you didn\'t set — three wrong attempts in a row — Backroom doesn\'t show an error. It silently opens the decoy vault. The user sees a vault screen. There\'s a gallery. There\'s a PIN pad history that shows a "successful" unlock. There\'s nothing interesting inside, because the decoy was populated with boring content on purpose — a photo of a grocery list, a few receipts, maybe a dated document.
+  </p>
+  <p>
+    To the person who just forced their way in, the experience is "I figured out your PIN and there\'s nothing here." They don\'t know there\'s a real vault. They have no reason to keep pressing. Every signal they see is consistent with "you got in; this is the whole thing."
+  </p>
+
+  <h2>Why this matters more than it sounds</h2>
+  <p>
+    Most privacy features fail in a specific way: they don\'t protect against the person you already let access your phone. Face ID protects against strangers. Screen locks protect against lost devices. But if someone takes your already-unlocked phone from your hand and demands you open the vault app, none of the crypto matters — you hand them the password or they take it from you. The only defense at that point is to make the vault they successfully open <em>uninteresting</em>.
+  </p>
+  <p>
+    Plausible deniability is the right primitive for this. It\'s the same principle used in disk encryption tools that let you hide one encrypted volume inside another. The property we care about is not "the vault can\'t be opened" — it\'s "the attacker has no way to tell that the thing they opened isn\'t the whole vault."
+  </p>
+
+  <h2>How Backroom implements it</h2>
+  <p>
+    Both vaults are stored in the same encrypted local container, keyed differently. The PIN you enter gets salted and hashed with SHA-256 (1000 iterations) and compared against two stored hashes: one for the real vault, one for the decoy. Whichever matches is the vault that opens. If neither matches, Backroom counts a failed attempt against the brute-force lockout.
+  </p>
+  <p>
+    The crucial property: there is no flag on the decoy vault that says "this is the decoy." Both vaults look structurally identical. Both have a gallery. Both have a favorites section. Both show the full Backroom UI. The only difference is what\'s inside.
+  </p>
+  <p>
+    On wrong PIN, instead of showing an error, Backroom treats the wrong PIN as if it were a third unknown PIN and opens... nothing? No. It opens the decoy. This is the behavior difference that matters: the decoy is the fallback for wrong attempts, not a separate feature the user has to navigate to.
+  </p>
+
+  <h2>How to set it up</h2>
+  <ol>
+    <li>Open Backroom → Settings → enable Decoy Mode.</li>
+    <li>Set a decoy PIN — make it different from your real PIN and from common codes (1234, birthdays).</li>
+    <li>Switch to the decoy vault and populate it with boring but believable content. Suggestions: a photo of a grocery list, a utility bill, a receipt, a screenshot of a to-do list. Aim for 5–15 items. Empty vaults look suspicious.</li>
+    <li>Switch back to the real vault. Your real content stays separate.</li>
+    <li>Test: lock your phone, reopen MemeScanr, enter the wrong PIN 3 times. You should land in the decoy, not see an error. If you don\'t get the decoy, double-check Decoy Mode is enabled and the decoy has items.</li>
+  </ol>
+
+  <h2>Why no other cleaner ships this</h2>
+  <p>
+    Decoy vaults require a specific kind of design thinking — you have to treat the attacker\'s <em>perception</em> as a first-class design constraint, not just their technical capability. Most app teams stop at "the crypto is good." The decoy vault is what happens when you keep going past the crypto and ask, "what does the attacker believe after they fail?" Most competitors don\'t ask this question. We did, and the answer was Backroom\'s signature feature.
+  </p>
+
+  <AppStoreCTA
+    heading="Set up the decoy vault in 60 seconds."
+    body="Backroom is free for the first 5 vault items. Unlimited on MemeScanr Premium."
+  />
+</ArticleLayout>

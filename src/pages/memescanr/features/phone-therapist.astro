@@ -1,0 +1,125 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Phone Therapist — daily gallery diagnoses | MemeScanr';
+const description =
+  'Phone Therapist is MemeScanr\'s daily diagnosis feature for your camera roll. 27 personalized diagnosis templates, 50+ session note jokes, deterministic daily selection. No judgement.';
+const heading = 'Phone Therapist: daily diagnoses for your camera roll';
+const lede =
+  'Phone Therapist is a daily, personality-driven diagnosis card that appears on the MemeScanr home screen. It picks one of 27 templates based on your on-device gallery stats, adds a session note from a pool of 50+ jokes, and changes once per day. No judgement, just vibes.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Phone Therapist' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/phone-therapist/',
+};
+
+const exampleDiagnoses = [
+  '"diagnosis: chronic screenshot hoarder. 847 screenshots. you\'re not reading any of them."',
+  '"diagnosis: selfie perfectionist. 47 versions of the same face from tuesday night. pick one, bestie."',
+  '"diagnosis: meme custodian. your camera roll is 18% memes and i respect the commitment."',
+  '"diagnosis: blurry thumb. 312 photos of indistinguishable gray. photography is a craft."',
+  '"diagnosis: food documentarian. every meal from the last three weeks is preserved. the archaeologists will thank you."',
+  '"diagnosis: burst button enthusiast. 1,400 photos from one concert. the encore was also 40 photos."',
+];
+
+const faqItems = [
+  {
+    q: 'How does Phone Therapist work?',
+    a: 'Phone Therapist runs a lightweight on-device analysis of your gallery once per day. It looks at counts of screenshots, memes, selfies, bursts, blurry photos, and other categories. It then picks one diagnosis template from a pool of 27 based on the dominant pattern and pairs it with a randomly selected session note joke.',
+  },
+  {
+    q: 'Is Phone Therapist a real therapist?',
+    a: 'No. Phone Therapist is a playful gallery analysis feature. It does not provide medical, psychological, or mental health advice. It is not a substitute for professional care. It is jokes about your camera roll.',
+  },
+  {
+    q: 'How often does the diagnosis change?',
+    a: 'Phone Therapist picks a new diagnosis deterministically once per day. The same seed always produces the same diagnosis, so you see one stable diagnosis each day rather than a flickering one. The card refreshes on the first app open after midnight local time.',
+  },
+  {
+    q: 'Does Phone Therapist upload my gallery stats?',
+    a: 'No. Phone Therapist runs entirely on-device. The counts used to select a diagnosis are computed locally from your scan results and never leave your phone.',
+  },
+  {
+    q: 'Can I share a diagnosis?',
+    a: 'Yes. The Phone Therapist card supports screenshot sharing — the typography and layout are designed to look good as a screenshot in group chats. This is deliberate; it is one of the highest-engagement social surfaces in the app.',
+  },
+  {
+    q: 'Is Phone Therapist free?',
+    a: 'Yes. Phone Therapist is available on the MemeScanr free tier. No subscription required.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/phone-therapist/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Phone Therapist in one sentence</strong>
+    Phone Therapist is a daily, on-device gallery diagnosis card inside MemeScanr that picks one of 27 personalized templates based on your camera roll patterns and pairs it with a session note joke from a 50+ pool.
+  </div>
+
+  <MediaPlaceholder caption="Phone Therapist card on the MemeScanr home screen: diagnosis headline, session note line underneath, gradient purple background." />
+
+  <h2>Example diagnoses</h2>
+  <p>
+    The language is intentionally playful. Here are six real diagnosis templates from the pool.
+  </p>
+  {exampleDiagnoses.map((d) => (
+    <div class="pullquote">{d}</div>
+  ))}
+
+  <h2>How Phone Therapist works</h2>
+  <p>
+    Every day, Phone Therapist runs a lightweight analysis over your most recent scan results. It looks at the counts and ratios that define your gallery's dominant character: percentage of screenshots, meme density, selfie runs, burst groups, blurry photos, downloads, and more. It then picks the diagnosis template whose trigger condition best matches your numbers.
+  </p>
+  <p>
+    The selection is <strong>deterministic</strong> — a daily seed (date + gallery hash) is fed into the template picker so you see the same diagnosis for the entire day, not a flickering one. A new seed kicks in at midnight local time on your next app open.
+  </p>
+
+  <h2>The 27 diagnosis templates</h2>
+  <p>
+    The template pool covers the full range of gallery archetypes: the screenshot hoarder, the meme custodian, the selfie perfectionist, the burst button enthusiast, the food documentarian, the concert historian, the pet parent, the travel collector, and so on. Every template has a trigger condition — a minimum count or ratio that must be true in your gallery for the template to be eligible for selection that day.
+  </p>
+  <p>
+    The templates are rewritten and expanded in app updates. The 50+ session note pool gives each diagnosis a rotating second line so the card never feels stale even when the diagnosis repeats.
+  </p>
+
+  <h2>Why Phone Therapist exists</h2>
+  <p>
+    Cleaner apps are typically joyless. The screen tells you how much junk you have, and your job is to feel bad about it until you tap Delete. Phone Therapist is the anti-thesis of that: it names your behavior with humor, not guilt. Users tend to screenshot the funniest diagnoses and share them in group chats, which is how MemeScanr ends up in front of new users without any paid acquisition.
+  </p>
+  <p>
+    Phone Therapist is not a mental health tool. It is jokes about your camera roll. The feature intentionally avoids any language that could be mistaken for actual therapy or diagnosis — and the "no judgement" framing is part of the voice guardrail inside the app.
+  </p>
+
+  <h2>Where to find Phone Therapist</h2>
+  <p>
+    The Phone Therapist card appears on the MemeScanr home tab under the storage orb. It is always present once you've run at least one scan. You can also re-roll the diagnosis during the day if you want to see a different template — re-rolls are rate-limited to prevent churning through the pool.
+  </p>
+
+  <AppStoreCTA
+    heading="Get your daily diagnosis."
+    body="Phone Therapist is free inside MemeScanr. One scan unlocks it for good."
+  />
+
+  <FAQ items={faqItems} heading="Phone Therapist FAQ" />
+</ArticleLayout>

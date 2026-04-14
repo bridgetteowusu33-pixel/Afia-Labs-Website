@@ -1,0 +1,124 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-03-05';
+const title = 'Why your iPhone storage is always full (and what actually fixes it)';
+const description =
+  'Your iPhone storage fills up because iOS does not clean itself — no auto-culling of near-duplicates, no compression of old videos, no limits on screenshot accumulation. Here\'s why and what to do.';
+const heading = 'Why your iPhone storage is always full';
+const lede =
+  'If your iPhone has been "Storage Almost Full" for months no matter how much you delete, the problem isn\'t you. iOS does not clean itself, and most of its built-in tools stop at the easy cases. Here\'s what\'s actually going on and what you can do about it.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Why iPhone storage is always full' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs', logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' } },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/why-your-iphone-storage-is-always-full/',
+  wordCount: 1180,
+  articleSection: 'Explainer',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Explainer"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/why-your-iphone-storage-is-always-full/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published March 5, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 8 min read</span>
+  </div>
+
+  <h2>iPhone storage does not auto-clean</h2>
+  <p>
+    The mental model most people have is that iOS gently manages your library for you. It doesn\'t. The only automatic cleanup iOS performs is (1) moving deleted items to the Recently Deleted album for 30 days, (2) optionally offloading older originals to iCloud if you have "Optimize iPhone Storage" on, and (3) flagging exact pixel-identical duplicates in the built-in Duplicates album. That\'s it. Everything else — near-duplicates, screenshots, memes, blurry photos, old 4K videos — just accumulates.
+  </p>
+
+  <h2>The four things actually eating your storage</h2>
+
+  <h3>1. Old 4K videos never compressed</h3>
+  <p>
+    Videos are the biggest single category on most full iPhones. A minute of 4K ProRes shot on a recent phone can be 400+ MB. iOS records in HEVC (H.265) when Camera is set to "High Efficiency," but anything shot in H.264 at any point — or anything shot before you changed the setting — stays at its original large size forever. iOS does not automatically re-encode legacy videos. That old concert clip from 2022 is sitting on your phone at full 4 GB.
+  </p>
+
+  <h3>2. Duplicates that aren\'t exact duplicates</h3>
+  <p>
+    Apple\'s built-in Duplicates album only catches pixel-matches. Near-duplicates — the same photo taken two seconds apart in burst mode, the two taps of the shutter because you weren\'t sure the first one fired, the eight versions of the same selfie you took while deciding which was best — are invisible to the built-in album. On a 10,000-photo library, near-duplicates often outnumber exact duplicates by 3 or 4 to 1.
+  </p>
+
+  <h3>3. Screenshots you never re-opened</h3>
+  <p>
+    The screenshot gesture is too easy. Side-button + volume-up is a reflex you can do without looking, and you\'ve been doing it reflexively for years. Most users have 500–2,000 screenshots they have literally never re-opened: recipe links from Safari, tweets, DMs you meant to reply to later, bank app pages, event tickets from 2023. The Photos app has a Screenshots album but no cleanup workflow — it\'s a filter, not a tool.
+  </p>
+
+  <h3>4. Memes and downloads from messaging apps</h3>
+  <p>
+    Every meme a friend sent that you saved to camera roll is still there. Every image auto-downloaded by WhatsApp or Telegram is still there. iOS has no concept of a meme category, so these show up in your main feed interleaved with your real photos and contribute to the storage bar without adding any value.
+  </p>
+
+  <h2>Why "delete some photos" doesn\'t work</h2>
+  <p>
+    The instinct is to open Photos, scroll around, and delete whatever you notice. This is the worst possible strategy because:
+  </p>
+  <ul>
+    <li>You can\'t see the categories that are actually full (everything looks equal in a grid)</li>
+    <li>You\'re making decisions one at a time with no context</li>
+    <li>You\'re biased toward deleting what\'s emotionally disposable (blurry shots of strangers) when the real wins are in structural categories (duplicates, screenshots)</li>
+    <li>Deleted photos sit in Recently Deleted for 30 days before actually freeing space — so you don\'t see the progress immediately and give up</li>
+  </ul>
+  <p>
+    Most people who try "I\'ll just delete some photos" free 200 MB and get bored. The underlying junk is still there, just rearranged.
+  </p>
+
+  <h2>What actually fixes it</h2>
+  <p>
+    The right sequence has three phases:
+  </p>
+  <ol>
+    <li><strong>Batch categories first.</strong> Use a cleaner that surfaces duplicates, screenshots, memes, and blurry as distinct categories. Batch-delete the obvious ones. This is where the quick wins live.</li>
+    <li><strong>Compress videos second.</strong> Use on-device HEVC re-encoding to shrink long videos by 50–70% without visible quality loss. This is where the <em>big</em> wins live — 10+ GB on a typical bloated library.</li>
+    <li><strong>Empty Recently Deleted.</strong> This is the step that actually reclaims the space you freed in step 1. Most people forget it.</li>
+  </ol>
+  <p>
+    The entire process takes 10–30 minutes depending on library size. Typical first-pass results on a bloated phone: 15–40 GB freed, no emotionally important photos lost.
+  </p>
+
+  <h2>Why iCloud doesn\'t solve this</h2>
+  <p>
+    The Apple-sanctioned answer to "iPhone storage full" is "buy more iCloud." iCloud rents you more space but doesn\'t clean your library. Your duplicates still exist, just now counted against both your device storage and your iCloud quota. Your screenshot backlog is still there. Every month you pay Apple for a fuller version of the same mess. A one-time 30-minute cleanup pays itself off in avoided iCloud upgrades within the first year for most users.
+  </p>
+  <p>
+    There\'s a good case for iCloud on top of a cleanup, for backup purposes and cross-device access. There\'s a very bad case for iCloud <em>instead of</em> a cleanup.
+  </p>
+
+  <h2>The tools you need</h2>
+  <p>
+    Two things: the built-in Photos app (free, handles exact duplicates) and one on-device cleaner for everything else. MemeScanr is the one we build. Gemini Photos and Cleanup are reasonable alternatives depending on how much feature coverage you want. The key criterion is that the cleaner should run on-device — if it requires an account or doesn\'t work in Airplane Mode, it\'s uploading your photos, which is a trade you probably don\'t want to make.
+  </p>
+
+  <AppStoreCTA
+    heading="Free 15+ GB in 30 minutes. For real."
+    body="MemeScanr handles every category iOS misses — on-device, no server, no cloud."
+  />
+</ArticleLayout>

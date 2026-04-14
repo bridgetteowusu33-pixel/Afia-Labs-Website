@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to delete iPhone screenshots in bulk (fast)';
+const description =
+  'Delete hundreds of iPhone screenshots in bulk, fast. Native iOS Screenshots album steps, plus MemeScanr swipe review for faster bulk cleanup.';
+const heading = 'How to delete iPhone screenshots in bulk';
+const lede =
+  'Most iPhone users have 500–2,000 screenshots they\'ve never re-opened. Here\'s how to delete them in bulk: the built-in Screenshots album method for small batches, and a swipe-review flow for large libraries that turns an hour of manual taps into 5 minutes of swiping.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Delete screenshots' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to delete iPhone screenshots in bulk',
+  description,
+  totalTime: 'PT5M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Open the Screenshots album', text: 'Photos → Albums → scroll to Media Types → tap Screenshots. Every screenshot ever taken appears here.' },
+    { '@type': 'HowToStep', position: 2, name: 'Select and delete', text: 'Tap Select in the top right. Drag your finger across thumbnails to multi-select. Tap the trash icon.' },
+    { '@type': 'HowToStep', position: 3, name: 'Use MemeScanr for large libraries', text: 'For libraries with 500+ screenshots, install MemeScanr, run a scan, open Clean → Screenshots, and swipe through in Memory Lane mode.' },
+    { '@type': 'HowToStep', position: 4, name: 'Empty Recently Deleted', text: 'Photos → Albums → Recently Deleted → Delete All.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Why do I have so many iPhone screenshots?',
+    a: 'Screenshots accumulate because the screenshot gesture is so easy — a side-button plus volume combo you can do without looking. Most users screenshot receipts, DMs, recipes, memes, tickets, tweets, and app content without ever deleting afterward. The Screenshots album often holds 500–2,000 items on a normal phone.',
+  },
+  {
+    q: 'Can I delete all screenshots at once?',
+    a: 'Yes. In Photos → Albums → Media Types → Screenshots, tap Select, drag across all thumbnails (or tap the first then shift-tap the last), and tap the trash icon. For faster review with keep/delete decisions per screenshot, use MemeScanr\'s swipe mode.',
+  },
+  {
+    q: 'Will deleting screenshots break iMessage or Notes?',
+    a: 'No. Screenshots live in the Photos library, which is separate from iMessage attachments and Notes attachments. Deleting a screenshot from the Photos app does not remove any copy that was sent in a message or pinned in a note.',
+  },
+  {
+    q: 'How do I stop accumulating screenshots?',
+    a: 'Turn on iCloud Photos and set Photos to "Optimize iPhone Storage" so old screenshots offload to iCloud. Or enable Screen Recording via Control Center for longer content instead of screenshots. Or install MemeScanr and let the background scan surface new screenshots automatically every four hours.',
+  },
+  {
+    q: 'Does MemeScanr automatically delete screenshots?',
+    a: 'No. MemeScanr never auto-deletes anything. It flags screenshots as a category and you approve each deletion via grid, list, or swipe review. All deletions go through the standard iOS Recently Deleted 30-day recovery window.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/delete-screenshots-iphone-bulk/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    Photos → Albums → Media Types → Screenshots → Select → drag across all → trash. Or use MemeScanr for swipe-based review on libraries with more than 500 screenshots.
+  </div>
+
+  <h2>Native iOS: the Screenshots album</h2>
+  <p>
+    Apple surfaces every screenshot you\'ve ever taken in a dedicated album. Open <strong>Photos → Albums → Media Types → Screenshots</strong>. The album is read-only as a filter — any screenshot deleted here is also deleted from your main library.
+  </p>
+  <p>
+    To bulk-delete, tap <strong>Select</strong> in the top right, then drag your finger across the thumbnails to multi-select in a sweep. Tap the <strong>trash icon</strong> to delete. For large numbers, tap Select, tap the first screenshot, then shift-tap (or drag to) the last to select a range.
+  </p>
+  <p>
+    The limitation of the native flow: you can\'t review one screenshot at a time without tapping into each. If your problem is that you want to keep <em>some</em> screenshots and delete others, the native grid is slow.
+  </p>
+
+  <h2>MemeScanr: swipe review for large libraries</h2>
+  <p>
+    MemeScanr treats Screenshots as a dedicated cleanup category. Install it, run one scan, and open <strong>Clean → Screenshots</strong>. You get three review modes:
+  </p>
+  <ul>
+    <li><strong>Grid</strong> — standard thumbnail grid with multi-select</li>
+    <li><strong>List</strong> — detail view with filename, date, and size</li>
+    <li><strong>Memory Lane swipe</strong> — Tinder-style card stack; swipe left to delete, right to keep, up to vault</li>
+  </ul>
+  <p>
+    For libraries with 500+ screenshots, the swipe mode is dramatically faster because you decide per-photo via gesture rather than selecting boxes. A streak counter and milestone toasts ("50 reviewed — you ate that 🧹") add a small bit of momentum.
+  </p>
+
+  <h2>Empty Recently Deleted afterward</h2>
+  <p>
+    Deleted screenshots sit in <strong>Photos → Albums → Recently Deleted</strong> for 30 days before permanent removal. To reclaim the space immediately, open Recently Deleted → Select → Delete All.
+  </p>
+
+  <AppStoreCTA
+    heading="Swipe through 500 screenshots in 5 minutes."
+    body="MemeScanr\'s Memory Lane makes screenshot cleanup fast. Free to try."
+  />
+
+  <FAQ items={faqItems} heading="Delete screenshots FAQ" />
+</ArticleLayout>

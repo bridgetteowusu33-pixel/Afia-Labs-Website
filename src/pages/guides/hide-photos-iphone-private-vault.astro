@@ -1,0 +1,109 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to hide photos on iPhone with a real private vault';
+const description =
+  'How to hide photos on iPhone in a truly private vault. The built-in Hidden album isn\'t private — here\'s how to use Face ID + PIN protected Backroom with a decoy mode.';
+const heading = 'How to hide photos on iPhone with a real private vault';
+const lede =
+  'The iPhone Photos app has a "Hidden" album, but it\'s not actually private — anyone who opens your phone can turn it back on. Here\'s how to hide photos the right way, with a Face ID + PIN protected vault and a decoy mode that fools snoopers into thinking they got in.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Hide photos private vault' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to hide photos on iPhone with a real private vault',
+  description,
+  totalTime: 'PT5M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Install MemeScanr', text: 'Download MemeScanr from the App Store and grant photo library access.' },
+    { '@type': 'HowToStep', position: 2, name: 'Open Backroom and set up the vault', text: 'Tap the Backroom tab. Set a 6-digit PIN. Face ID unlocks automatically if enabled.' },
+    { '@type': 'HowToStep', position: 3, name: 'Enable the decoy vault', text: 'In Backroom settings, enable Decoy Mode and pick a different PIN for the decoy vault. Populate it with neutral-looking fake content.' },
+    { '@type': 'HowToStep', position: 4, name: 'Move photos into the vault', text: 'From the Photos app or from MemeScanr\'s Clean tab, swipe up in Memory Lane to send photos to Backroom. The photos are removed from the main Photos library.' },
+    { '@type': 'HowToStep', position: 5, name: 'Verify with a test', text: 'Lock your phone, reopen MemeScanr, enter the wrong PIN. You should land in the decoy vault, not see an error.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Is the iPhone Hidden album actually private?',
+    a: 'No. The iPhone Photos app Hidden album can be revealed by anyone who opens Photos → Albums → toggles "Show Hidden Album" in Settings. Since iOS 16 the hidden album is Face ID locked by default, which is better, but it\'s still a known feature any iPhone user can check.',
+  },
+  {
+    q: 'How is Backroom different from the iOS Hidden album?',
+    a: 'Backroom is a separate vault inside MemeScanr. Photos moved to Backroom are removed from the iOS Photos library entirely. Backroom is protected by Face ID plus a salted PIN stored in the iOS Keychain, with brute-force lockout, screen recording blur, and a decoy vault that opens a fake library on wrong PIN entry.',
+  },
+  {
+    q: 'What is the decoy vault?',
+    a: 'When someone enters the wrong PIN three times, Backroom opens a decoy vault that looks like a real, unlocked vault with neutral fake content — a grocery list, a few receipts, a few photos of nothing important. The snooper sees what looks like a successfully-unlocked vault with nothing interesting and never knows the real vault exists.',
+  },
+  {
+    q: 'Can I hide videos and notes too?',
+    a: 'Yes. Backroom stores photos, videos, text notes (with optional self-destruct timers), voice memos, and documents. You can also shoot directly into the vault via Quick Capture so a photo never touches the main Photos app.',
+  },
+  {
+    q: 'What happens to Backroom if I uninstall MemeScanr?',
+    a: 'Deleting the app deletes the vault. Backroom is local-only — no cloud sync, no server — so export important items before uninstalling. This is a tradeoff: the local-only architecture is why there\'s no network attack surface at all.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/hide-photos-iphone-private-vault/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    Don\'t use the iPhone Hidden album — it\'s discoverable. Use MemeScanr\'s Backroom vault, which is Face ID + salted PIN protected, brute-force lockout enforced, and ships a decoy vault that fools snoopers with a fake library on wrong PIN entry.
+  </div>
+
+  <h2>Why the iPhone Hidden album isn\'t private</h2>
+  <p>
+    The Hidden album in the Photos app is a toggle, not a secret. Anyone who opens your unlocked phone can go to Photos → Albums, scroll to Utilities, and see the Hidden album (if Settings → Photos → Show Hidden Album is enabled, which is the default on older iOS versions). Since iOS 16, Apple added Face ID authentication to open the Hidden album — an improvement, but still a visible album that signals "something private lives here." A determined snooper knows exactly where to look.
+  </p>
+
+  <h2>What a real private vault needs</h2>
+  <ul>
+    <li><strong>Actual separation from Photos</strong> — not a filter or toggle, but a separate file store</li>
+    <li><strong>Face ID plus PIN</strong> — so no single authentication failure opens the vault</li>
+    <li><strong>Salted and hashed PIN storage</strong> — in the iOS Keychain, not in plaintext</li>
+    <li><strong>Brute-force lockout</strong> — progressive delay on wrong attempts</li>
+    <li><strong>Screen recording blur</strong> — so nothing leaks to iOS screen capture</li>
+    <li><strong>Plausible deniability</strong> — a decoy vault that fools snoopers into thinking they got in</li>
+  </ul>
+
+  <h2>Set up Backroom in MemeScanr</h2>
+  <ol>
+    <li>Install MemeScanr from the App Store and grant photo library access.</li>
+    <li>Open the <strong>Backroom</strong> tab.</li>
+    <li>Set a 6-digit PIN. Face ID enrolls automatically if you have it enabled on your device.</li>
+    <li>In Backroom Settings, enable <strong>Decoy Mode</strong>. Pick a different PIN for the decoy vault — this is what opens when someone enters the wrong PIN three times on the main vault.</li>
+    <li>Populate the decoy vault with neutral-looking content: a screenshot of a grocery list, some receipts, a photo of a flowerpot. It needs to look like a real (but boring) vault.</li>
+    <li>Move your real private photos into the main Backroom vault. From the Photos app, share → More → MemeScanr Backroom. From inside MemeScanr, open Clean → Memory Lane and swipe up on any photo to send it to Backroom.</li>
+  </ol>
+
+  <h2>Verify the decoy works</h2>
+  <p>
+    Lock your phone, reopen MemeScanr, and enter the wrong PIN three times. You should land in the decoy vault — a believable library with nothing interesting. You should not see an error message, and you should not see any indication that a real vault exists. If you don\'t get the decoy, double-check that Decoy Mode is enabled and that the decoy has its own populated content.
+  </p>
+
+  <AppStoreCTA
+    heading="Set up a real private vault in 60 seconds."
+    body="Backroom is free for the first 5 items. Unlimited vault on Premium."
+  />
+
+  <FAQ items={faqItems} heading="Private vault FAQ" />
+</ArticleLayout>

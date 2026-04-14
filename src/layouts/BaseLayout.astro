@@ -1,0 +1,242 @@
+---
+import '../styles/global.css';
+import { pathnameToOgSlug, ogPages } from '../lib/og-pages';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+}
+
+const ogSlug = pathnameToOgSlug(Astro.url.pathname);
+const hasOgPage = ogPages.some((p) => p.slug === ogSlug);
+const derivedOgImage = hasOgPage
+  ? `https://afialabs.net/og/${ogSlug}.png`
+  : 'https://afialabs.net/og/default.png';
+
+const {
+  title = 'Afia Labs — Building Delightful Apps',
+  description = 'Afia Labs creates smart, fun, and useful mobile experiences — from productivity tools like MemeScanr to educational adventures like Planet Wonders.',
+  canonical = new URL(Astro.url.pathname, Astro.site).href,
+  ogImage = derivedOgImage,
+  ogType = 'website',
+} = Astro.props;
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Afia Labs',
+  url: 'https://afialabs.net',
+  logo: 'https://afialabs.net/memescanr_logo.png',
+  founder: {
+    '@type': 'Person',
+    name: 'Bridgette Owusu',
+  },
+  foundingDate: '2024',
+  sameAs: [
+    'https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@afialabs.net',
+    contactType: 'customer support',
+  },
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Afia Labs',
+  alternateName: 'MemeScanr',
+  url: 'https://afialabs.net',
+  description:
+    'Afia Labs builds MemeScanr, an on-device iPhone photo cleaner. Independent iOS app studio.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://www.google.com/search?q=site%3Aafialabs.net+{search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <link rel="canonical" href={canonical} />
+    <meta name="description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+    <slot name="head" />
+</head>
+<body>
+
+    <a href="#apps" class="skip-link" aria-label="Skip to main content">Skip to content</a>
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo" aria-label="Afia Labs — Home">Afia Labs</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/memescanr/">MemeScanr</a></li>
+                <li><a href="/guides/">Guides</a></li>
+                <li><a href="/compare/">Compare</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/memescanr/" class="nav-cta">Explore MemeScanr</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <slot />
+
+    <footer class="footer" id="contact" role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">Afia Labs</div>
+                    <p>Building smart, fun, and useful mobile experiences for everyone.</p>
+                    <div class="footer-newsletter">
+                        <p>Stay in the loop — get updates on new apps and features.</p>
+                        <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter signup">
+                            <input type="email" placeholder="Your email" required aria-label="Email address" />
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <div class="newsletter-success" id="newsletterSuccess">Thanks for subscribing!</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/memescanr/">MemeScanr</a></li>
+                            <li><a href="/guides/">Guides</a></li>
+                            <li><a href="/compare/">Compare</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/faq/">FAQ</a></li>
+                            <li><a href="/sitemap/">Site map</a></li>
+                            <li><a href="mailto:support@afialabs.net">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Apps</h4>
+                        <ul>
+                            <li><a href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953" target="_blank" rel="noopener noreferrer">MemeScanr</a></li>
+                            <li><a href="/#apps">Planet Wonders</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms.html">Terms of Service</a></li>
+                            <li><a href="/data-deletion.html">Data Deletion</a></li>
+                            <li><a href="/childrens-privacy.html">Children's Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Afia Labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script is:inline>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px',
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const hashIndex = href.indexOf('#');
+                if (hashIndex === -1) return;
+                const id = href.slice(hashIndex);
+                if (id.length <= 1) return;
+                const target = document.querySelector(id);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterSuccess = document.getElementById('newsletterSuccess');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                this.style.display = 'none';
+                newsletterSuccess.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

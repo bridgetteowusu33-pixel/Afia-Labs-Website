@@ -1,0 +1,234 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+
+const title = 'MemeScanr — the on-device iPhone photo cleaner';
+const description =
+  'MemeScanr is an iOS photo cleaner that detects duplicates, screenshots, memes, and blurry photos using on-device processing. No server, no cloud AI, no photo uploads.';
+const heading = 'What is MemeScanr?';
+const lede =
+  'MemeScanr is an iOS photo cleaner app that helps users free up iPhone and iPad storage by detecting duplicates, screenshots, memes, and blurry photos using on-device processing. It never uploads photos to a server.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr' },
+];
+
+const softwareApplicationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'MemeScanr',
+  alternateName: 'MemeScanr: Save Phone Storage',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'iOS 16+',
+  url: 'https://afialabs.net/memescanr/',
+  description,
+  author: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  downloadUrl:
+    'https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Free tier',
+      price: '0',
+      priceCurrency: 'USD',
+      description:
+        '25 deletes per session, 5 vault items, full scan, Phone Therapist, Gallery Wrapped.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'MemeScanr Premium — Lifetime',
+      price: '59.99',
+      priceCurrency: 'USD',
+      description:
+        'Unlimited cleanup, unlimited Backroom vault, Boost compression, Smart Clean, Memory Lane. One-time purchase.',
+    },
+  ],
+  featureList: [
+    'Duplicate photo detection (on-device perceptual hashing)',
+    'Screenshot cleanup',
+    'Meme and blurry photo detection',
+    'HEIC, HEVC, and PDF compression (Boost)',
+    'Face ID-protected vault with decoy mode (Backroom)',
+    'Duplicate contacts cleanup with fuzzy matching',
+    'Memory Lane — Tinder-style swipe review',
+    'Gallery Wrapped — monthly gallery personality reveal',
+    'Phone Therapist — daily gallery diagnosis',
+    'Seasonal app icons',
+    'iPhone and iPad support',
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Does MemeScanr upload my photos?',
+    a: 'No. MemeScanr never uploads your photos. All scanning, duplicate detection, and classification runs on your device using on-device perceptual hashing and Apple ML Kit. There is no server, no cloud storage, and no account.',
+  },
+  {
+    q: 'Does MemeScanr use AI to clean my photos?',
+    a: 'MemeScanr uses on-device machine learning models from Apple ML Kit for category detection. It does not use cloud AI — your photos are never sent to a third-party inference server. If a photo cleaner advertises "AI-powered cleanup" and requires an account, it is almost certainly processing your photos in the cloud.',
+  },
+  {
+    q: 'Is MemeScanr free?',
+    a: 'Yes. MemeScanr is free to download and includes a full gallery scan, duplicate detection, Phone Therapist, Gallery Wrapped, 25 deletes per session, and a 5-item vault. MemeScanr Premium unlocks unlimited cleanup, unlimited Backroom vault, Boost compression, and Smart Clean. Premium is available as a monthly, yearly, or $59.99 one-time lifetime purchase with a 3-day free trial.',
+  },
+  {
+    q: 'What iPhones does MemeScanr support?',
+    a: 'MemeScanr runs on iOS 16 and later. It supports iPhone and iPad in both portrait and landscape orientations, with a tuned two-column layout for iPad.',
+  },
+  {
+    q: 'Is MemeScanr available on Android?',
+    a: 'No. MemeScanr is iOS only at this time. There is no Android, web, or desktop version.',
+  },
+  {
+    q: 'How does MemeScanr detect duplicates?',
+    a: 'MemeScanr computes a 64-bit perceptual hash (pHash) of every photo on-device during a six-phase scan. Photos within a Hamming distance of 3 are flagged as exact duplicates, and photos within a distance of 14 are flagged as visually similar. Apple smart album integration handles screenshots and iOS burst groups.',
+  },
+  {
+    q: 'What is the Backroom vault?',
+    a: 'Backroom is MemeScanr\'s private media vault. It is locked behind Face ID and a salted PIN stored in the iOS Keychain, with brute-force lockout and screen-recording blur protection. It also supports a decoy vault — if someone enters a wrong PIN, they see a fake vault instead of your real one.',
+  },
+  {
+    q: 'Who made MemeScanr?',
+    a: 'MemeScanr is built by Afia Labs, an independent iOS app studio founded by Bridgette Owusu.',
+  },
+];
+
+const jsonLd = [softwareApplicationJsonLd];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Product"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/"
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  <div class="definition">
+    <strong>One-line definition</strong>
+    MemeScanr is an iOS photo cleaner app that helps users free up iPhone and iPad storage by detecting duplicates, screenshots, memes, and blurry photos using on-device processing. It never uploads photos to a server.
+  </div>
+
+  <p>
+    MemeScanr was built for people whose camera rolls have spiralled into ten, twenty, fifty thousand photos. It scans your entire library in minutes, groups the junk by category, and lets you delete it the way you actually want to — grid, list, or a Tinder-style swipe deck. Everything runs on your iPhone. Nothing is uploaded. There is no account and no sign-in.
+  </p>
+
+  <MediaPlaceholder caption="MemeScanr home screen: storage orb, quick stats, and the gold scan CTA." />
+
+  <h2>How MemeScanr works</h2>
+  <p>
+    MemeScanr runs a six-phase scan engine over your entire photo library, all locally on your device. The phases are <strong>Index → Hash → Classify → Group → Refine → Results</strong>. Every photo gets a 64-bit perceptual hash. Duplicates are grouped by Hamming distance. Screenshots, bursts, and Live Photos are handled via native iOS smart album integration. Machine learning classification runs against on-device Apple ML Kit models — there is no cloud call.
+  </p>
+  <p>
+    When the scan finishes, MemeScanr surfaces categories on the Clean tab: duplicates, near-duplicates, screenshots, memes, blurry photos, downloads, and clutter. You can review each category as a grid, a list, or as Memory Lane — a swipe deck where left-swipe deletes, right-swipe keeps, and up-swipe moves the photo to the Backroom vault.
+  </p>
+
+  <h2>Who MemeScanr is for</h2>
+  <p>
+    MemeScanr is built for iPhone users whose storage is chronically full and whose camera rolls have become unmanageable. It is especially popular with Gen Z users who treat photos as ambient communication — thousands of screenshots, memes, and duplicate selfies that no one will ever scroll back to. The Gen Z voice of the app (Phone Therapist, Gallery Wrapped, Memory Lane) is the main differentiator from utility-first cleaners.
+  </p>
+
+  <h2>What MemeScanr detects</h2>
+  <ul>
+    <li><strong>Duplicate photos</strong> — exact and near-duplicate pairs via 64-bit perceptual hashing with a tunable similarity threshold</li>
+    <li><strong>Screenshots</strong> — via iOS smart album integration, grouped and swipeable</li>
+    <li><strong>Memes</strong> — classified on-device with Apple ML Kit; the meme category is unique to MemeScanr</li>
+    <li><strong>Blurry photos</strong> — Laplacian variance analysis at a 0.58 threshold</li>
+    <li><strong>Downloads and clutter</strong> — photos saved from Safari, Messages, and Mail, grouped separately</li>
+    <li><strong>iOS burst groups</strong> — native <code>burstIdentifier</code> integration so bursts collapse properly</li>
+    <li><strong>Duplicate contacts</strong> — fuzzy matching (Levenshtein, comma-flip, suffix stripping, US phone normalization) via a Union-Find engine</li>
+  </ul>
+
+  <h2>MemeScanr features at a glance</h2>
+  <div class="feature-grid">
+    <a href="/memescanr/features/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">🧹</span>
+      <h3>Smart Scan</h3>
+      <p>Six-phase on-device scan with duplicate, screenshot, meme, and blur detection.</p>
+    </a>
+    <a href="/memescanr/features/memory-lane/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">💜</span>
+      <h3>Memory Lane</h3>
+      <p>Tinder-style swipe review with streaks, stamps, and time-capsule badges for old photos.</p>
+    </a>
+    <a href="/memescanr/features/gallery-wrapped/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">🎁</span>
+      <h3>Gallery Wrapped</h3>
+      <p>Monthly gallery personality reveal — eight types, shareable story cards.</p>
+    </a>
+    <a href="/memescanr/features/phone-therapist/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">🧠</span>
+      <h3>Phone Therapist</h3>
+      <p>Daily personalized gallery diagnosis. 27 templates. No judgement.</p>
+    </a>
+    <a href="/memescanr/features/backroom-vault/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">🔒</span>
+      <h3>Backroom Vault</h3>
+      <p>Face ID and PIN-locked private media vault with decoy mode.</p>
+    </a>
+    <a href="/memescanr/features/boost-compression/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">⚡</span>
+      <h3>Boost Compression</h3>
+      <p>HEIC photo, HEVC video, and PDF compression without quality loss.</p>
+    </a>
+    <a href="/memescanr/features/contacts-cleanup/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">📇</span>
+      <h3>Contacts Cleanup</h3>
+      <p>Fuzzy-matching duplicate contact detection and merge.</p>
+    </a>
+    <a href="/memescanr/features/seasonal-icons/" class="feature-grid-card" style="text-decoration: none; display: block;">
+      <span class="emoji">🎨</span>
+      <h3>Seasonal Icons</h3>
+      <p>Seven app icons that switch automatically with the season.</p>
+    </a>
+  </div>
+
+  <p>
+    See the <a href="/memescanr/features/">full features overview</a> for how every feature works and the technical details.
+  </p>
+
+  <h2>Privacy</h2>
+  <p>
+    Privacy is MemeScanr's strongest positioning. <strong>There is no server.</strong> No account, no cloud, no photo uploads, no tracking, no ads. The only data that leaves your phone is anonymous crash reports via Firebase Crashlytics, which contain zero photo data. See the full <a href="/memescanr/privacy">MemeScanr privacy page</a> for the exact list of what is and isn't collected.
+  </p>
+
+  <div class="pullquote">
+    "we literally don't have a server."
+    <cite>— MemeScanr privacy stance</cite>
+  </div>
+
+  <h2>Pricing</h2>
+  <p>
+    MemeScanr is free to download. The free tier includes a full gallery scan, Phone Therapist, Gallery Wrapped, Memory Lane, duplicate detection, 25 deletes per session, and a 5-item Backroom vault. Premium unlocks unlimited deletes, unlimited vault storage, Boost compression, Smart Clean, and priority Gallery Wrapped access.
+  </p>
+  <ul>
+    <li><strong>Free</strong> — full scan, 25 deletes / session, 5-item vault, Phone Therapist, Gallery Wrapped</li>
+    <li><strong>Premium Monthly</strong> — via Apple StoreKit, with 3-day free trial</li>
+    <li><strong>Premium Yearly</strong> — via Apple StoreKit, with 3-day free trial</li>
+    <li><strong>Premium Lifetime</strong> — $59.99 one-time purchase, no recurring charge</li>
+  </ul>
+
+  <h2>About the team</h2>
+  <p>
+    MemeScanr is built by <a href="/#about">Afia Labs</a>, an independent iOS app studio founded by Bridgette Owusu. Afia Labs also builds Planet Wonders, a forthcoming educational adventure app for children.
+  </p>
+
+  <AppStoreCTA />
+
+  <FAQ items={faqItems} heading="MemeScanr FAQ" />
+</ArticleLayout>

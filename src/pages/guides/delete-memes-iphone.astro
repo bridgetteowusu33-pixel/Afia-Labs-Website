@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to delete memes from your iPhone photo library';
+const description =
+  'How to find and delete memes from your iPhone camera roll automatically. MemeScanr classifies memes on-device via Apple ML Kit and lets you swipe to clean up.';
+const heading = 'How to delete memes from your iPhone';
+const lede =
+  'iOS doesn\'t classify memes. Apple\'s Photos app groups by date, location, and People — never by "this is a meme you screenshotted from Instagram." MemeScanr does. Here\'s how to find and delete your meme backlog in one session.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Delete memes' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to delete memes from your iPhone',
+  description,
+  totalTime: 'PT10M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Install MemeScanr', text: 'Get MemeScanr from the App Store and grant photo access.' },
+    { '@type': 'HowToStep', position: 2, name: 'Run a full scan', text: 'Tap the scan button on the home tab and wait 2–4 minutes.' },
+    { '@type': 'HowToStep', position: 3, name: 'Open the Memes category', text: 'Clean tab → Memes. Every photo classified as a meme by the on-device ML model is shown.' },
+    { '@type': 'HowToStep', position: 4, name: 'Review in swipe mode', text: 'Switch to Memory Lane. Swipe left to delete, right to keep, up to vault favorites in Backroom.' },
+    { '@type': 'HowToStep', position: 5, name: 'Save favorites to Backroom', text: 'Memes you want to keep can be swiped up to the Backroom vault to remove them from the main gallery without losing them.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Why do I have so many memes on my iPhone?',
+    a: 'Memes accumulate because the iMessage and Instagram save-to-camera-roll flow is one tap. Every time a friend sends a meme you screenshot or save, it lands in your main photo library. Most users have 500–2,000 memes by the time they notice.',
+  },
+  {
+    q: 'Does iOS have a meme filter?',
+    a: 'No. The Photos app has no meme category, no meme filter, and no way to query for screenshotted image content. The Media Types section goes as deep as Screenshots and Screen Recordings — neither of which distinguishes a meme from a DM screenshot.',
+  },
+  {
+    q: 'How accurate is MemeScanr meme detection?',
+    a: 'MemeScanr uses on-device Apple ML Kit image classification with a model tuned for meme-format images (text overlay, aspect ratio, high contrast typography, reaction image patterns). Accuracy is high for typical meme formats but will flag occasional text-heavy screenshots too — you review before deleting, so false positives never get auto-deleted.',
+  },
+  {
+    q: 'Can I vault my favorite memes instead of deleting them?',
+    a: 'Yes. In Memory Lane swipe mode, swiping up moves a photo to the Backroom vault. Backroom is Face ID + PIN protected and lives separately from the main Photos library, so your favorite memes stay accessible but out of the main gallery clutter.',
+  },
+  {
+    q: 'Does deleting memes from MemeScanr affect iMessage?',
+    a: 'No. MemeScanr deletes from the Photos library, not from iMessage attachments. Any meme that lives in a message thread stays there.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/delete-memes-iphone/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    iOS can\'t find memes for you. Install MemeScanr, run a scan, open Clean → Memes, and swipe through in Memory Lane mode. Keep favorites in Backroom instead of deleting them.
+  </div>
+
+  <h2>Why meme detection matters for storage</h2>
+  <p>
+    Memes are small individually — 200–500 KB each — but they compound. A user with 2,000 memes has roughly 1 GB of text-heavy images sitting in their library. That\'s not the biggest storage problem on most phones, but it\'s one of the most annoying: they clutter the main photo feed, make scrolling harder, and show up in People albums when a friend\'s face appears in a reaction image.
+  </p>
+
+  <h2>How MemeScanr classifies memes</h2>
+  <p>
+    MemeScanr runs an on-device classification pass during the Classify phase of its scan. The model is part of Apple ML Kit, runs on the Neural Engine, and looks for the visual signatures of meme-format images: bold text overlays at the top or bottom of the frame, high-contrast typography on a photo background, 1:1 or 4:5 aspect ratios typical of Instagram shares, reaction image framing, and recognizable viral templates.
+  </p>
+  <p>
+    The result: your Clean tab gets a dedicated Memes category with every photo the classifier flagged. From there, you review like any other cleanup category.
+  </p>
+
+  <h2>Step-by-step: delete memes on iPhone</h2>
+  <ol>
+    <li>Install MemeScanr from the App Store and grant photo library access.</li>
+    <li>Run a full scan from the home tab. It takes 2–4 minutes.</li>
+    <li>Open <strong>Clean → Memes</strong>.</li>
+    <li>Switch to <strong>Memory Lane swipe mode</strong> (it\'s the fastest for this category).</li>
+    <li>Swipe left to delete, right to keep, up to vault favorites.</li>
+    <li>Empty Recently Deleted if you want to reclaim the space right away.</li>
+  </ol>
+
+  <h2>Vault your greatest hits in Backroom</h2>
+  <p>
+    Some memes are worth keeping forever. Swipe up during the Memory Lane review to send a meme to the <strong>Backroom vault</strong>. Backroom is Face ID + PIN locked and lives outside the main Photos library, so your best reaction images are always one unlock away without cluttering your camera roll. Backroom also supports a decoy vault if you want the layer of privacy plausible-deniability.
+  </p>
+
+  <AppStoreCTA
+    heading="Find every meme in your library in 3 minutes."
+    body="MemeScanr is the only cleaner with dedicated meme detection. Free to try."
+  />
+
+  <FAQ items={faqItems} heading="Delete memes FAQ" />
+</ArticleLayout>

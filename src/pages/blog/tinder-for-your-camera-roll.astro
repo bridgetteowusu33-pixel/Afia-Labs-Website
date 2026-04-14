@@ -1,0 +1,114 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-03-18';
+const title = 'Tinder for your camera roll — the Memory Lane origin story';
+const description =
+  'Why we built Memory Lane: a Tinder-style swipe review for your iPhone camera roll, with streaks, stamps, time capsule badges, and an on-this-day feed.';
+const heading = 'Tinder for your camera roll';
+const lede =
+  'The photo cleaner category had a problem. Every cleaner app\'s core workflow was a grid with checkboxes. For anyone with a library over 5,000 photos, the grid was a chore. Memory Lane is the answer — the same mechanic Tinder uses, applied to every photo you\'ve ever taken.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Tinder for your camera roll' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' },
+  },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/tinder-for-your-camera-roll/',
+  wordCount: 1080,
+  articleSection: 'Design story',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Design story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/tinder-for-your-camera-roll/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published March 18, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 7 min read</span>
+  </div>
+
+  <h2>The grid was the problem</h2>
+  <p>
+    When you open any traditional photo cleaner, you see a grid. Rows of thumbnails, a selection counter at the top, a delete button at the bottom. This works fine for 200 photos. It stops working at 5,000 and starts being hostile at 20,000. The cognitive load is wrong: you\'re being asked to make binary keep/delete decisions at a glance, across a field of postage-stamp thumbnails, while tapping into each one to actually see what it is. It\'s the UI equivalent of cleaning out a closet by dumping everything on the floor.
+  </p>
+  <p>
+    The Tinder mechanic solves exactly this problem for dating. One card at a time. Full attention on one thing. A gesture that commits in a single motion. The cognitive load collapses to a single question repeated many times — do I want this, yes or no — and the user\'s attention stays engaged because the card is big, central, and one-thing-at-a-time.
+  </p>
+
+  <h2>Applying the mechanic to photos</h2>
+  <p>
+    Memory Lane loads a three-card fan stack. The top card is the photo you\'re reviewing; the two behind it are the next two, slightly offset and rotated so you can see what\'s coming. You drag horizontally or vertically. Past the threshold, the card commits and animates off-screen.
+  </p>
+  <ul>
+    <li><strong>Left</strong> — delete. The card tints red as you drag. A "bye 👋" stamp glows.</li>
+    <li><strong>Right</strong> — keep. The card tints green. A "keep ✓" stamp glows.</li>
+    <li><strong>Up</strong> — move to the Backroom vault. The card tints purple. A "vault 🔒" stamp glows.</li>
+  </ul>
+  <p>
+    The exact same gesture set as a modern dating app. Users learned this mechanic five years ago. There is nothing to teach.
+  </p>
+
+  <h2>What the grid couldn\'t do</h2>
+  <p>
+    Once we had the swipe mechanic working, features started showing up that would have been awkward in a grid.
+  </p>
+  <p>
+    <strong>Streaks.</strong> Every swipe increments a counter. The counter shows a fire emoji that scales with streak length: one flame at 5, two at 15, three at 30+. Grids don\'t have a natural place to show a streak. Swipes do — right above the card.
+  </p>
+  <p>
+    <strong>Time capsule badges.</strong> Photos older than two years show a small "📦 from 2019" badge in the card corner. It\'s a visual cue that you\'re looking at actual old memories, not last week\'s screenshots. People delete last-week blurry shots without hesitation; they hesitate on blurry shots from nine years ago. The badge is a tiny bit of friction in exactly the right place.
+  </p>
+  <p>
+    <strong>On this day.</strong> Memory Lane surfaces photos from the same calendar day in prior years. A small "on this day" chip appears above the card when you\'re looking at a date that matches today. This is the moment Memory Lane stops being a cleanup tool and starts being a time machine. It\'s also the moment people start screenshot-sharing the feature.
+  </p>
+
+  <h2>Why swipe beats grid for libraries over 5,000 photos</h2>
+  <p>
+    Grid selection is O(N × attention): you need to give each photo a brief moment of attention while selecting from a sea of other thumbnails. Swipe is O(N × gesture): one thumb-flick per photo, full attention on one card. For a 10,000-photo library, the total time difference is roughly 4× in swipe\'s favor. The attention difference is larger — swipes leave you with a cleaner library because you actually saw each photo, not just pattern-matched thumbnail shapes.
+  </p>
+  <p>
+    The tradeoff: swipe is worse for bulk-delete of obvious junk (50 identical screenshots in a row). For that case, MemeScanr still ships grid and list views. Swipe is the default because it\'s the better default for libraries where the user has to actually decide.
+  </p>
+
+  <h2>Category swipe vs Memory Lane</h2>
+  <p>
+    Memory Lane is the unlimited mode — walk your entire library. We also ship a category-specific swipe mode on every cleanup category (duplicates, screenshots, memes, blurry). Category swipe is the focused cleanup counterpart: scoped and finishable, "14 of 47 duplicates," with a Done button to close out a session early. Category swipe converts users on day one because it ends. Memory Lane retains users week after week because it doesn\'t.
+  </p>
+
+  <h2>The moment it clicks</h2>
+  <p>
+    Every new user has a moment in Memory Lane where the mode clicks. Usually it\'s around swipe 20. They hit a photo from three years ago that they\'d forgotten existed. They pause, tap to preview, and either delete it with a small pang or keep it and smile. Then they keep going. That\'s the mode we wanted to build: a thing that is not just a cleanup tool. It\'s a reason to open the camera roll on purpose.
+  </p>
+
+  <AppStoreCTA
+    heading="Try Memory Lane on your iPhone."
+    body="Download MemeScanr free. Tap Clean → Memory Lane. Start swiping."
+  />
+</ArticleLayout>

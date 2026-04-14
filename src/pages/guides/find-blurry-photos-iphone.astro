@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to find and delete blurry photos on iPhone';
+const description =
+  'How to find blurry photos on iPhone automatically with on-device Laplacian variance analysis. Step-by-step for iOS 16+.';
+const heading = 'How to find and delete blurry photos on iPhone';
+const lede =
+  'iOS doesn\'t have a built-in "blurry photos" album. To find and delete blurry photos in bulk, you need a cleaner that runs a real blur metric on your library. Here\'s how, including the math behind why it works.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Find blurry photos' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to find and delete blurry photos on iPhone',
+  description,
+  totalTime: 'PT10M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Install MemeScanr', text: 'Get MemeScanr from the App Store and grant photo library access.' },
+    { '@type': 'HowToStep', position: 2, name: 'Run a full scan', text: 'Tap the gold scan button on the home tab. Scanning takes 2–4 minutes for most libraries.' },
+    { '@type': 'HowToStep', position: 3, name: 'Open the Blurry category', text: 'Clean tab → Blurry. Every blurry photo is grouped for review.' },
+    { '@type': 'HowToStep', position: 4, name: 'Review and delete', text: 'Use grid, list, or Memory Lane swipe mode to approve deletions.' },
+    { '@type': 'HowToStep', position: 5, name: 'Empty Recently Deleted', text: 'Photos → Albums → Recently Deleted → Delete All.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Why does iPhone take blurry photos?',
+    a: 'Usually one of three reasons: low light causes long exposures and motion blur; the autofocus misses and locks on the wrong point; or your hand shakes during the shot. Burst mode can also produce blur variants within a burst that you never delete.',
+  },
+  {
+    q: 'How does MemeScanr detect blurry photos?',
+    a: 'MemeScanr uses Laplacian variance analysis on-device. The Laplacian operator highlights high-frequency edges; blurry photos have low variance because they lack sharp edges. MemeScanr flags anything below a 0.58 variance threshold. The threshold can be tuned in settings.',
+  },
+  {
+    q: 'Will it delete intentionally-soft photos like portraits with bokeh?',
+    a: 'No. Laplacian variance on a portrait still scores high because the subject has sharp edges even if the background is blurred. MemeScanr looks at the overall image, not the background, so intentional bokeh is not flagged as blurry.',
+  },
+  {
+    q: 'Can I review before MemeScanr deletes?',
+    a: 'Yes. MemeScanr never auto-deletes. Every blurry photo is surfaced as a review card and you approve or reject each one. The swipe mode makes this fast: left deletes, right keeps.',
+  },
+  {
+    q: 'Does the Photos app have a blurry filter?',
+    a: 'No. There is no blurry-photos album in the native Photos app. Apple\'s only auto-culling is the Duplicates album, which only catches pixel-identical files.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/find-blurry-photos-iphone/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    iOS doesn\'t have a built-in blurry-photos filter. Install MemeScanr, run one scan, and open Clean → Blurry. The detection uses on-device Laplacian variance analysis at a 0.58 threshold.
+  </div>
+
+  <h2>Why iOS doesn\'t ship blurry detection</h2>
+  <p>
+    Apple\'s only built-in auto-culling is the Duplicates album, which only catches exact pixel-matches. Blurry detection is a more interesting problem: it requires running a real image analysis pass on every photo. Apple ships the Memories feature (slideshow generation), the People feature (face clustering), and the Places feature (geo-grouping) — but not blurry detection. That leaves a gap third-party cleaners fill.
+  </p>
+
+  <h2>How Laplacian variance works</h2>
+  <p>
+    The Laplacian operator is a second-derivative filter that responds to rapid changes in brightness — in other words, edges. Sharp photos have a lot of edge content; blurry photos have less. The variance of the Laplacian output is a well-known blur metric used across computer vision.
+  </p>
+  <p>
+    MemeScanr runs the Laplacian variance calculation on every photo during the Classify phase of its six-phase scan. A variance score below <strong>0.58</strong> flags a photo as blurry. The threshold was chosen empirically to minimize false positives on intentionally-soft shots (portraits with bokeh backgrounds, long exposures, artistic blur) while still catching the accidental blur most users want to delete.
+  </p>
+
+  <h2>Step-by-step: delete blurry photos on iPhone</h2>
+  <ol>
+    <li>Install MemeScanr from the App Store and grant photo library access.</li>
+    <li>Tap the gold scan button on the home tab. Wait 2–4 minutes for the scan to complete.</li>
+    <li>Open the <strong>Clean tab</strong> and scroll to the <strong>Blurry</strong> category card.</li>
+    <li>Tap to open. You can review as a grid, a list, or a Tinder-style swipe deck.</li>
+    <li>Delete in bulk or one-by-one. Everything goes to Recently Deleted for 30-day recovery.</li>
+    <li>Optional: open <strong>Photos → Albums → Recently Deleted → Delete All</strong> to reclaim space immediately.</li>
+  </ol>
+
+  <h2>What not to delete</h2>
+  <p>
+    Blurry doesn\'t always mean useless. Keep anything where the blur is deliberate (bokeh portraits, motion blur as an artistic choice) or where the photo is emotionally irreplaceable (a blurry shot of your grandparent is still worth keeping). The swipe-review workflow is built for exactly this — you decide per-photo, not in bulk.
+  </p>
+
+  <AppStoreCTA
+    heading="Delete blurry photos in 3 minutes."
+    body="MemeScanr finds them automatically on-device. No upload, free scan."
+  />
+
+  <FAQ items={faqItems} heading="Blurry photos FAQ" />
+</ArticleLayout>

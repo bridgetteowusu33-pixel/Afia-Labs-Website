@@ -1,0 +1,117 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to clean up iPhone storage fast (2026 guide)';
+const description =
+  'The fastest way to clean up iPhone storage in 2026. Native iOS steps that free 2–5 GB, plus the one app that can free 10–20 GB in a single session.';
+const heading = 'How to clean up iPhone storage fast';
+const lede =
+  'Your iPhone is full. You want space back now, not after a two-hour manual review. This guide gives you the fastest path: 5 minutes of native iOS steps that free 2–5 GB, then the one app that can free 10–20 GB in a single session if your library is bloated with duplicates and junk.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Clean iPhone storage fast' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to clean up iPhone storage fast',
+  description,
+  totalTime: 'PT15M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Check what is taking up space', text: 'Open Settings → General → iPhone Storage. Wait for the chart to load. The category list at the bottom is ordered by size.' },
+    { '@type': 'HowToStep', position: 2, name: 'Delete the Apple Duplicates album', text: 'Open Photos → Albums → Utilities → Duplicates. Tap Select → Select All → Merge. This only handles exact duplicates.' },
+    { '@type': 'HowToStep', position: 3, name: 'Empty the Recently Deleted album', text: 'Photos → Albums → Recently Deleted → Select → Delete All. Photos stay here for 30 days by default; emptying it immediately frees space.' },
+    { '@type': 'HowToStep', position: 4, name: 'Offload large unused apps', text: 'Settings → General → iPhone Storage. Tap any large app → Offload App. This frees the binary but keeps your app data.' },
+    { '@type': 'HowToStep', position: 5, name: 'Run MemeScanr for a full cleanup', text: 'Install MemeScanr, run one full scan, and review duplicates, screenshots, memes, and blurry photos in the Clean tab. Most users free 10–20 GB on the first pass.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'What is the fastest way to free 10+ GB on iPhone?',
+    a: 'Install MemeScanr, run one scan, and delete everything it flags as duplicates, screenshots, memes, and blurry photos. Most bloated libraries free 10–20 GB in a single session. The scan is fully on-device and takes 2–4 minutes.',
+  },
+  {
+    q: 'Will cleaning up photos affect my iCloud?',
+    a: 'Yes, in a good way. Photos you delete from the device are also removed from iCloud Photos if you have sync enabled, which frees iCloud storage too. You have 30 days to recover anything from the Recently Deleted album before permanent deletion.',
+  },
+  {
+    q: 'Do I need to buy iCloud Storage?',
+    a: 'Not if you clean up aggressively. Most users who run a full MemeScanr scan free enough space to drop a tier on their iCloud plan. The one-time cleanup usually pays for itself in avoided iCloud upgrades within a year.',
+  },
+  {
+    q: 'Is it safe to use a photo cleaner app?',
+    a: 'It depends on the app. Safe cleaners process everything on-device and don\'t upload your photos. MemeScanr is on-device only — no server, no account, no cloud. You can verify this by turning on Airplane Mode before scanning.',
+  },
+  {
+    q: 'How often should I clean up my iPhone?',
+    a: 'Once a month is enough for most people. MemeScanr also runs an incremental background rescan every four hours, so new screenshots and duplicates surface automatically.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/clean-iphone-storage-fast/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The fast answer</strong>
+    Delete the Apple Duplicates album, empty Recently Deleted, offload unused apps, then run MemeScanr to catch everything Apple\'s tools miss — memes, screenshots, near-duplicates, blurry photos, and old videos that can be compressed instead of deleted.
+  </div>
+
+  <h2>Step 1: See what is actually full</h2>
+  <p>
+    Open <strong>Settings → General → iPhone Storage</strong>. Wait for the bar chart and the ordered category list to load — it takes a few seconds the first time. Photos is almost always the largest category; "Other" (system) is often second. Apps come third. Anything at the top of the list is where your cleanup wins are.
+  </p>
+
+  <h2>Step 2: Use Apple's built-in Duplicates album</h2>
+  <p>
+    Since iOS 16, the Photos app has a built-in Duplicates album. Open <strong>Photos → Albums → Utilities → Duplicates</strong>. If the album is empty, iOS hasn't finished indexing yet — wait a few hours and check again. If it has groups, tap <strong>Select → Select All → Merge</strong>. This only catches exact duplicates; near-duplicates from burst mode or multi-tap will not show up here.
+  </p>
+
+  <h2>Step 3: Empty Recently Deleted</h2>
+  <p>
+    <strong>Photos → Albums → Recently Deleted → Select → Delete All</strong>. This is the single fastest way to recover space if you\'ve been casually deleting photos — they sit in this album for 30 days before actually leaving your device. Emptying it now frees that space immediately. You can\'t recover anything after this, so be sure.
+  </p>
+
+  <h2>Step 4: Offload unused apps</h2>
+  <p>
+    Back in <strong>Settings → General → iPhone Storage</strong>. Tap any large app you haven\'t opened in a while. Tap <strong>Offload App</strong>. This removes the app binary but keeps its data and settings, so reinstalling later brings everything back. A few offloaded games can free several GB in a minute.
+  </p>
+
+  <h2>Step 5: Run MemeScanr for the bigger cleanup</h2>
+  <p>
+    Steps 1–4 free 2–5 GB on most phones. If your library is bloated — meaning you have more than 10,000 photos — the real wins are in <strong>near-duplicates, meme hoarding, screenshot backlog, blurry photos, and old videos that can be compressed</strong>. None of those are handled by native iOS tools.
+  </p>
+  <p>
+    Install MemeScanr from the App Store, grant photo access, and run one full scan. The scan takes 2–4 minutes on most libraries and runs entirely on-device. Once it completes, open the <strong>Clean tab</strong>:
+  </p>
+  <ul>
+    <li><strong>Duplicates + Similar</strong> — usually the largest win; review as a grid or swipe deck</li>
+    <li><strong>Screenshots</strong> — most users have 500+ and have read zero of them</li>
+    <li><strong>Memes</strong> — unique to MemeScanr, detected via on-device ML Kit</li>
+    <li><strong>Blurry</strong> — flagged via Laplacian variance at a 0.58 threshold</li>
+    <li><strong>Downloads + clutter</strong> — photos saved from Safari, Messages, and Mail</li>
+  </ul>
+  <p>
+    For old videos, open <strong>Boost</strong> instead of deleting them. Boost re-encodes long videos to HEVC without visible quality loss and usually saves 50–70% per file.
+  </p>
+
+  <AppStoreCTA
+    heading="Free 10+ GB on your iPhone in 5 minutes."
+    body="MemeScanr is free to try with full scan included. No upload, no account, works in Airplane Mode."
+  />
+
+  <FAQ items={faqItems} heading="Cleaning iPhone storage FAQ" />
+</ArticleLayout>

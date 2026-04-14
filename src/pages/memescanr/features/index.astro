@@ -1,0 +1,116 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr features — the full feature list | Afia Labs';
+const description =
+  'Every MemeScanr feature in one place: Smart Scan, Memory Lane, Gallery Wrapped, Phone Therapist, Backroom vault, Boost compression, contacts cleanup, seasonal icons.';
+const heading = 'MemeScanr features';
+const lede =
+  'MemeScanr ships eight major features — plus a dozen smaller touches that are not listed here. Every feature runs on-device, respects your privacy, and works offline. Follow any card for the dedicated feature page with how it works, FAQs, and structured data.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Features' },
+];
+
+const features = [
+  { href: '/memescanr/features/memory-lane/', emoji: '💜', name: 'Memory Lane', blurb: 'Tinder-style swipe review with streaks, stamps, and time capsule badges. Unlimited mode for nostalgia, category mode for focused cleanup.' },
+  { href: '/memescanr/features/gallery-wrapped/', emoji: '🎁', name: 'Gallery Wrapped', blurb: 'Monthly Spotify-Wrapped-style personality reveal for your camera roll. Eight personality types. Shareable story cards. Available the first seven days of every month.' },
+  { href: '/memescanr/features/phone-therapist/', emoji: '🧠', name: 'Phone Therapist', blurb: 'Daily gallery diagnosis card picked from 27 templates. Names your camera roll behavior with humor, not guilt. Changes once per day.' },
+  { href: '/memescanr/features/backroom-vault/', emoji: '🔒', name: 'Backroom Vault', blurb: 'Face ID + salted PIN private photo vault with a decoy mode that fools snoopers with a fake library on wrong PIN entry. Local-only.' },
+  { href: '/memescanr/features/boost-compression/', emoji: '⚡', name: 'Boost Compression', blurb: 'On-device HEIC photo, HEVC video, and PDF compression. Saves 40–70% per file without visible quality loss. No upload.' },
+  { href: '/memescanr/features/contacts-cleanup/', emoji: '📇', name: 'Contacts Cleanup', blurb: 'Fuzzy-matching duplicate contact detection. Levenshtein distance, comma-flip, phone normalization, Union-Find clustering. All on-device.' },
+  { href: '/memescanr/features/seasonal-icons/', emoji: '🎨', name: 'Seasonal App Icons', blurb: 'Seven app icons that auto-switch with the calendar — Halloween, Valentine\'s, Winter, Summer, Spring, Autumn, and a default.' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: features.map((f, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: f.name,
+      url: `https://afialabs.net${f.href}`,
+    })),
+  },
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Features"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/"
+  ogType="website"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>The one-line summary</strong>
+    MemeScanr has eight core features — Memory Lane, Gallery Wrapped, Phone Therapist, Backroom Vault, Boost Compression, Contacts Cleanup, Seasonal App Icons, plus the Smart Scan engine that powers them all — and every one of them runs on-device.
+  </div>
+
+  <div class="feature-grid">
+    {features.map((f) => (
+      <a href={f.href} class="feature-grid-card" style="text-decoration: none; display: block;">
+        <span class="emoji">{f.emoji}</span>
+        <h3>{f.name}</h3>
+        <p>{f.blurb}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2>The Smart Scan engine</h2>
+  <p>
+    Every feature is powered by the same six-phase scan engine: <strong>Index → Hash → Classify → Group → Refine → Results</strong>. Scanning uses a 64-bit perceptual hash for duplicate detection, Apple ML Kit for category classification (memes, screenshots, blurry), and iOS smart album integration for burst groups. The entire pipeline runs on the Neural Engine with no network access.
+  </p>
+  <p>
+    Scan time on a typical iPhone 15 with 10,000 photos: 2–4 minutes. A background incremental scan runs every four hours to keep results fresh, so new screenshots and downloaded memes surface automatically without requiring manual rescans.
+  </p>
+
+  <h2>What runs on-device</h2>
+  <ul>
+    <li><strong>Scanning and hashing</strong> — 64-bit perceptual hashing in Swift against the local Photo Kit library</li>
+    <li><strong>Classification</strong> — Apple ML Kit meme, screenshot, and blurry detectors running on the Neural Engine</li>
+    <li><strong>Duplicate grouping</strong> — Hamming distance comparisons against the local SQLite hash index</li>
+    <li><strong>Boost compression</strong> — Apple AVFoundation HEVC encoding and Image I/O HEIC encoding</li>
+    <li><strong>Backroom vault</strong> — iOS Keychain PIN storage, local encrypted container, Face ID</li>
+    <li><strong>Contacts cleanup</strong> — Levenshtein and Union-Find clustering against the iOS Contacts framework</li>
+  </ul>
+  <p>
+    There is no cloud service anywhere in this stack. No photo metadata is uploaded. No scan results are uploaded. No personality result from Gallery Wrapped leaves your device. You can <a href="/memescanr/privacy/">read the full privacy page</a> or just run the app in Airplane Mode — it works.
+  </p>
+
+  <h2>Smaller features not listed above</h2>
+  <ul>
+    <li>iPhone and iPad support with a tuned two-column layout on iPad</li>
+    <li>Home screen widgets in small, medium, and large sizes</li>
+    <li>Dynamic Island Live Activity for scan progress</li>
+    <li>Three donated Siri Shortcuts for voice triggers</li>
+    <li>Deep links: <code>memescanr://memory-lane</code>, <code>memescanr://wrapped</code>, <code>memescanr://scan</code></li>
+    <li>Referral program: MS-XXXXXX codes grant both users 7 days of Premium free</li>
+    <li>Accessibility: Reduce Motion, Reduce Transparency, Dynamic Type up to 1.35×</li>
+    <li>10 languages</li>
+    <li>Win-back notifications and onboarding drip sequence</li>
+    <li>Light mode warm sunrise aesthetic and a dark mode cosmic palette</li>
+  </ul>
+
+  <AppStoreCTA
+    heading="Try MemeScanr free"
+    body="Full scan, Memory Lane, Gallery Wrapped, Phone Therapist. All free. No account, no server."
+  />
+</ArticleLayout>

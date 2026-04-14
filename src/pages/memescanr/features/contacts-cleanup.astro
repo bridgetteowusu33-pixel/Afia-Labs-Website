@@ -1,0 +1,101 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Duplicate Contacts Cleanup — fuzzy matching for iPhone contacts | MemeScanr';
+const description =
+  'MemeScanr finds and merges duplicate iPhone contacts using fuzzy name matching (Levenshtein, comma-flip, suffix stripping) and phone/email normalization. On-device only.';
+const heading = 'Contacts Cleanup: find and merge duplicate iPhone contacts';
+const lede =
+  'MemeScanr\'s contacts cleanup engine finds duplicate iPhone contacts even when names are typed differently. It uses fuzzy name matching, phone number normalization, and a Union-Find algorithm to group contacts that refer to the same person — entirely on-device.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Contacts Cleanup' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/contacts-cleanup/',
+};
+
+const faqItems = [
+  {
+    q: 'How does MemeScanr detect duplicate contacts?',
+    a: 'MemeScanr runs a multi-signal duplicate detection engine on your contacts: exact phone number match (with country code normalization), exact email match, Levenshtein distance on names (threshold 1–2 edits for typos), comma-flip detection ("Doe, Jane" vs "Jane Doe"), token reorder, whitespace normalization, and suffix stripping (Jr, Sr, III). Matches are then grouped with a Union-Find algorithm with rank optimization so one cluster represents one real person.',
+  },
+  {
+    q: 'Does it upload my contacts?',
+    a: 'No. Contacts cleanup runs entirely on-device via the iOS Contacts framework. Your contact list never leaves your iPhone. MemeScanr requests contacts permission the first time you open the feature and uses it locally.',
+  },
+  {
+    q: 'Can I preview a merge before it happens?',
+    a: 'Yes. Every duplicate group is shown as an expandable card that lets you see all fields from all matched contacts side by side. You pick which fields to keep, and the merge writes back to iOS Contacts in a single transaction.',
+  },
+  {
+    q: 'What about contacts with the same name but different phone numbers?',
+    a: 'If names match and phone/email do not, MemeScanr flags the pair as "possible duplicate" with low confidence rather than auto-grouping them. You decide whether to merge.',
+  },
+  {
+    q: 'Is contacts cleanup free?',
+    a: 'Yes. Contacts cleanup is on the MemeScanr free tier. It does not count against the 25-deletes-per-session photo cap.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/contacts-cleanup/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Contacts cleanup in one sentence</strong>
+    MemeScanr's contacts cleanup engine finds duplicate iPhone contacts with fuzzy name matching, phone normalization, and Union-Find clustering — on-device, with preview-then-merge safety.
+  </div>
+
+  <MediaPlaceholder caption="Contacts cleanup screen: duplicate group cards with cyan accent, side-by-side field comparison, merge button." />
+
+  <h2>Why duplicate contacts happen</h2>
+  <p>
+    Every modern iPhone pulls contacts from multiple sources — iCloud, Google, Exchange, SIM, and whatever shared address books your apps care about. Each source normalizes names differently. iCloud keeps "Doe, Jane," Google keeps "Jane Doe," WhatsApp adds the country code in front of the number, and the result is that one real human ends up with three or four entries you'll eventually mis-text.
+  </p>
+
+  <h2>How the matching engine works</h2>
+  <p>
+    MemeScanr walks your contact list once and computes a signature for every entry: normalized phone number (US country code canonicalized), normalized email, name with punctuation and suffixes stripped, and a reversed "last-first / first-last" variant. The engine then scores pairs across these signatures.
+  </p>
+  <ul>
+    <li><strong>Exact phone match</strong> — strongest signal. Two contacts with the same normalized number are grouped automatically.</li>
+    <li><strong>Exact email match</strong> — strong signal. Same treatment.</li>
+    <li><strong>Levenshtein name distance ≤ 2</strong> — catches typos like "Michael" vs "Micheal."</li>
+    <li><strong>Comma-flip</strong> — "Doe, Jane" matches "Jane Doe."</li>
+    <li><strong>Suffix strip</strong> — "Dr. Jane Doe Jr." collapses to "Jane Doe."</li>
+    <li><strong>Token reorder</strong> — catches middle-name reordering.</li>
+  </ul>
+  <p>
+    Matches are grouped with a <strong>Union-Find</strong> data structure with rank optimization — the same algorithm graph databases use for connected components. Every group represents one real person, so you get one merge review per person, not one per pair.
+  </p>
+
+  <h2>The merge flow</h2>
+  <p>
+    Every duplicate group opens as a preview card showing each contact's fields side by side. You pick which phone numbers, emails, birthdays, and addresses to keep. MemeScanr writes the merged contact back to iOS Contacts in a single transaction and deletes the duplicates. Nothing happens until you confirm. There is no auto-merge.
+  </p>
+
+  <AppStoreCTA
+    heading="Clean up your contacts in five minutes."
+    body="Free on MemeScanr. Runs entirely on-device."
+  />
+
+  <FAQ items={faqItems} heading="Contacts cleanup FAQ" />
+</ArticleLayout>

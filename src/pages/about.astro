@@ -1,0 +1,105 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../components/AppStoreCTA.astro';
+
+const title = 'About Afia Labs — the team behind MemeScanr';
+const description =
+  'Afia Labs is an independent iOS app studio founded by Bridgette Owusu. We build smart, fun, and useful mobile experiences — most notably MemeScanr, an on-device iPhone photo cleaner.';
+const heading = 'About Afia Labs';
+const lede =
+  'Afia Labs is an independent iOS app studio founded by Bridgette Owusu in 2024. We build smart, fun, and useful mobile experiences. Our flagship product is MemeScanr, an on-device iPhone photo cleaner with a point of view.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About' },
+];
+
+const aboutPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/about/',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+    logo: 'https://afialabs.net/memescanr_logo.png',
+    founder: {
+      '@type': 'Person',
+      name: 'Bridgette Owusu',
+    },
+    foundingDate: '2024',
+    description:
+      'Independent iOS app studio building smart, fun, and useful mobile experiences, including MemeScanr.',
+  },
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="About"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/about/"
+  ogType="website"
+  jsonLd={aboutPageJsonLd}
+>
+  <div class="definition">
+    <strong>Afia Labs in one sentence</strong>
+    Afia Labs is an independent iOS app studio founded by Bridgette Owusu that builds smart, fun, and useful mobile apps — most notably MemeScanr, an on-device photo cleaner for iPhone.
+  </div>
+
+  <h2>Who built this</h2>
+  <p>
+    Afia Labs was founded by <strong>Bridgette Owusu</strong>. The studio ships iOS apps with a specific design philosophy: useful tools that also have a personality, built with care, with privacy as a design constraint rather than an afterthought.
+  </p>
+  <p>
+    The name "Afia" comes from the Akan day name for Friday — a nod to Bridgette\'s Ghanaian heritage and the studio\'s weekly release cadence.
+  </p>
+
+  <h2>What we make</h2>
+  <p>
+    <strong><a href="/memescanr/">MemeScanr</a></strong> is the flagship product: an iOS photo cleaner that detects duplicates, screenshots, memes, and blurry photos using on-device processing. It includes Memory Lane (Tinder-style swipe review), Gallery Wrapped (monthly gallery personality reveal), Phone Therapist (daily gallery diagnosis), Backroom (private vault with decoy mode), and Boost (on-device photo and video compression). It runs on iPhone and iPad, iOS 16+.
+  </p>
+  <p>
+    <strong>Planet Wonders</strong> is our second product, currently in development. It\'s an educational adventure app for children ages 5–10 that teaches cultures and countries through stories, coloring, and mini-games. Launch date to be announced.
+  </p>
+
+  <h2>How we ship</h2>
+  <p>
+    Afia Labs is a small, independent studio — not a venture-backed app factory. Every decision is made by the team, not a product committee. We ship on a weekly cadence for MemeScanr (four builds per month), prioritize bug fixes over new features, and read every App Store review.
+  </p>
+  <p>
+    Our engineering stack for MemeScanr: Flutter and Swift native channels, SQLite, Apple ML Kit, Core ML, iOS Keychain, AVFoundation. Firebase only for anonymous crash reports. No cloud service anywhere in the photo processing pipeline.
+  </p>
+
+  <h2>Our design principles</h2>
+  <ol>
+    <li><strong>Build useful tools.</strong> Apps should solve real problems, not manufacture engagement for its own sake.</li>
+    <li><strong>Make technology fun.</strong> Utility doesn\'t have to be joyless. Phone Therapist, Gallery Wrapped, and Memory Lane are all utility features with a point of view.</li>
+    <li><strong>Privacy is a design constraint, not a feature.</strong> MemeScanr has no server. This is non-negotiable and shapes every architectural decision.</li>
+    <li><strong>Ship on a cadence.</strong> Weekly releases keep the product alive and responsive to user feedback.</li>
+    <li><strong>Inspire the next generation.</strong> Planet Wonders exists because good technology can spark curiosity in kids.</li>
+  </ol>
+
+  <h2>Where to find us</h2>
+  <ul>
+    <li><strong>Website:</strong> <a href="https://afialabs.net">afialabs.net</a></li>
+    <li><strong>Email:</strong> <a href="mailto:support@afialabs.net">support@afialabs.net</a></li>
+    <li><strong>MemeScanr on the App Store:</strong> <a href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953">apps.apple.com</a></li>
+  </ul>
+
+  <h2>Press and quotes</h2>
+  <p>
+    For press inquiries, interviews, or to request screenshots and assets, email <a href="mailto:support@afialabs.net">support@afialabs.net</a> with "Press" in the subject line. Our standard boilerplate quote is:
+  </p>
+  <div class="pullquote">
+    Afia Labs is an independent iOS app studio founded by Bridgette Owusu, building smart, fun, and useful mobile experiences. Its flagship product is MemeScanr, an on-device iPhone photo cleaner with a Tinder-style swipe review, a private vault, and a monthly gallery personality reveal.
+    <cite>— Afia Labs standard boilerplate</cite>
+  </div>
+
+  <AppStoreCTA />
+</ArticleLayout>

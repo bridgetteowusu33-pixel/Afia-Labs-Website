@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to compress iPhone videos without losing quality';
+const description =
+  'Compress iPhone videos without visible quality loss using on-device HEVC re-encoding. Free up 5–15 GB from long videos without deleting a single one.';
+const heading = 'How to compress iPhone videos without losing quality';
+const lede =
+  'Videos are almost always the largest category on a full iPhone. You don\'t have to delete them to free space — you can re-encode them to HEVC on-device and save 50–70% per file with no visible quality loss. Here\'s how.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Compress videos' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to compress iPhone videos without losing quality',
+  description,
+  totalTime: 'PT15M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Install MemeScanr', text: 'Download from the App Store and grant photo library access.' },
+    { '@type': 'HowToStep', position: 2, name: 'Open Boost', text: 'Tap the Boost card on the home tab or navigate via the menu.' },
+    { '@type': 'HowToStep', position: 3, name: 'Select videos to compress', text: 'Boost sorts your videos by size so the biggest wins appear first. Tap to select.' },
+    { '@type': 'HowToStep', position: 4, name: 'Start compression', text: 'Tap Compress. The on-device HEVC encoder runs and shows a before/after size comparison as it finishes.' },
+    { '@type': 'HowToStep', position: 5, name: 'Delete originals once verified', text: 'Boost keeps originals in history until you confirm. Review the compressed copy, then delete the original to reclaim space.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Does compressing iPhone videos lose quality?',
+    a: 'Yes technically — re-encoding is not lossless — but the quality loss from modern HEVC perceptual presets is invisible at typical phone viewing distances. Side-by-side comparisons on a phone screen are nearly impossible to tell apart. On a 4K TV you might notice on very complex motion.',
+  },
+  {
+    q: 'Is there a free way to compress iPhone videos?',
+    a: 'MemeScanr\'s Boost feature is a Premium feature with a 3-day free trial. The trial is typically long enough to compress a backlog of long videos and free 5–15 GB. After the trial, Boost is available via monthly, yearly, or $59.99 lifetime Premium.',
+  },
+  {
+    q: 'Where does the compression happen?',
+    a: 'On your iPhone. Boost uses Apple\'s native AVFoundation video toolbox with HEVC (H.265) encoding. No upload, no cloud, no account. You can verify this by enabling Airplane Mode before running compression.',
+  },
+  {
+    q: 'How much space can I save compressing videos?',
+    a: 'Typical savings: 4K videos shrink 50–70 percent; 1080p videos shrink 30–50 percent; Live Photos shrink 30–40 percent. A user with 20 long videos (2 GB each) can often free 10–20 GB from compression alone.',
+  },
+  {
+    q: 'What happens to the original video?',
+    a: 'Boost keeps the original in a local history slot until you confirm deletion. You can revert to the original at any time before that confirmation. After you confirm, the original is moved to Recently Deleted for 30-day recovery via standard iOS.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/compress-videos-iphone-no-quality-loss/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    Install MemeScanr, open Boost, select your longest videos, and compress on-device with HEVC. You\'ll save 50–70% per file with no visible quality loss and no uploads.
+  </div>
+
+  <h2>Why videos are the biggest storage hog</h2>
+  <p>
+    iPhone videos have gotten enormous. A 60-second 4K ProRes clip on a recent iPhone is around 400 MB. A two-hour event shot across a dozen clips can easily be 6–10 GB. Most people never re-watch old videos, but deleting them feels wrong — you might want them later. The right answer isn\'t deletion, it\'s compression.
+  </p>
+
+  <h2>How HEVC compression works</h2>
+  <p>
+    HEVC (H.265) is a modern video codec that achieves roughly 50% better compression than H.264 at the same visual quality. It\'s the codec Apple uses for video recording when you set Camera to "High Efficiency" format. The trick is that iPhones don\'t automatically re-encode older videos shot in H.264 — those sit on your phone at full legacy size forever unless something actively converts them.
+  </p>
+  <p>
+    MemeScanr\'s Boost feature does this conversion on-device. It uses Apple\'s native AVFoundation video toolbox with a perceptual quality preset tuned to preserve motion detail while aggressively compressing static regions. The output is a real HEVC file that plays in every iOS app.
+  </p>
+
+  <h2>Step-by-step: compress videos on iPhone</h2>
+  <ol>
+    <li>Install MemeScanr from the App Store and grant photo library access.</li>
+    <li>Open the <strong>Boost</strong> card on the home tab.</li>
+    <li>Boost sorts your videos by file size. The biggest space wins are at the top.</li>
+    <li>Select individual videos or use "select all large videos over 500 MB."</li>
+    <li>Tap <strong>Compress</strong>. Boost shows a progress bar per file with the before/after size.</li>
+    <li>After each compression finishes, review the result. Tap <strong>Keep compressed</strong> to delete the original, or <strong>Revert</strong> to restore it.</li>
+  </ol>
+
+  <h2>Don\'t compress these</h2>
+  <p>
+    A few cases where you should skip compression: videos you intend to edit later (editors prefer uncompressed sources), videos shot in ProRes specifically for color grading, and Live Photos from irreplaceable moments (the "still" frame in a Live Photo is what shows in the gallery, so compression artifacts are more visible on those than on regular video).
+  </p>
+
+  <AppStoreCTA
+    heading="Free 10+ GB without deleting a single video."
+    body="Boost compresses videos on-device with HEVC. 3-day free trial, then $59.99 lifetime."
+  />
+
+  <FAQ items={faqItems} heading="Compress videos FAQ" />
+</ArticleLayout>

@@ -1,0 +1,160 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-04-02';
+const title = 'The privacy problem with "AI-powered" iPhone photo cleaners';
+const description =
+  'Most iPhone cleaners that advertise "AI-powered" cleanup upload your photos to third-party servers. Here\'s what that actually exposes — and why on-device scanning is the only sensible alternative.';
+const heading = 'The privacy problem with "AI-powered" iPhone photo cleaners';
+const lede =
+  'Your camera roll contains screenshots of banking apps, IDs, DMs, medical portals, and anything else you\'ve ever photographed. When a cleaner app advertises "AI-powered cleanup," there\'s a good chance it\'s uploading all of that to a server you don\'t control. Here\'s what that actually means — and why on-device scanning is the only sensible alternative.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'The privacy problem with AI photo cleaners' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://afialabs.net/memescanr_logo.png',
+    },
+  },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/the-privacy-problem-with-ai-photo-cleaners/',
+  wordCount: 1420,
+  articleSection: 'Privacy',
+  inLanguage: 'en-US',
+};
+
+const faqItems = [
+  {
+    q: 'How can I tell if a cleaner app uploads my photos?',
+    a: 'Four signals: (1) Check the App Store Privacy Nutrition Label. If "Photos" or "User Content" appears under "Data Linked to You," the app transmits photo content. (2) Turn on Airplane Mode and try to run a scan. If the scan fails, the app needs the network to classify. (3) Read the privacy policy for phrases like "processed on our servers" or "transmitted for analysis." (4) If scanning requires account sign-up, assume cloud. No account = almost certainly on-device.',
+  },
+  {
+    q: 'Is there a privacy-safe iPhone photo cleaner?',
+    a: 'Yes. MemeScanr runs every scan, hash, and classification on your iPhone using on-device Apple ML Kit and SQLite. There is no server, no cloud AI, no account, and no photo upload. You can verify this by running a full scan in Airplane Mode — it works offline.',
+  },
+  {
+    q: 'Are on-device models worse than cloud models?',
+    a: 'For photo cleanup, no. Duplicate detection is a hashing problem, not a classification problem — 64-bit perceptual hashing is as accurate on-device as anywhere. Meme and blurry classification uses lightweight on-device Apple ML Kit models that are more than sufficient for the task. Cloud AI is only a potential advantage for tasks like face recognition or complex scene understanding, neither of which is required for photo cleanup.',
+  },
+  {
+    q: 'What does MemeScanr do differently?',
+    a: 'MemeScanr is architected around "no server" as a design constraint. Scanning uses Apple\'s Photo Kit and Image I/O locally. Classification uses Apple ML Kit on the Neural Engine. Duplicate grouping uses local Hamming distance comparisons. The Backroom vault is local-only with no iCloud sync. The only data that ever leaves your phone is anonymous crash reports (Firebase Crashlytics) that contain zero photo data.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Privacy"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/the-privacy-problem-with-ai-photo-cleaners/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published April 2, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 9 min read</span>
+  </div>
+
+  <h2>The trade nobody explains</h2>
+  <p>
+    There are two possible architectures for an iPhone photo cleaner. The first: the app reads your photo library, computes a perceptual hash and runs a classifier on your phone, and throws away the intermediate results when you\'re done. Your photos never leave the device. The second: the app quietly uploads every photo in your library to a remote server, runs a bigger classifier there, and sends back a JSON response telling the app which photos are duplicates, which are memes, and which are blurry.
+  </p>
+  <p>
+    Both architectures work. Both produce similar results for the actual task — finding duplicates, tagging screenshots, flagging blur. The difference is that one of them copies your entire camera roll to a server run by a company you don\'t work for. And the App Store Privacy Nutrition Label is not always precise enough to tell you which is which.
+  </p>
+
+  <h2>What is actually in a typical camera roll</h2>
+  <p>
+    This is the part marketing pages never mention. Every phone has a photo library that was never meant to be public, but that tends to contain exactly the content most people would never knowingly upload to a random company:
+  </p>
+  <ul>
+    <li>Screenshots of bank apps, Venmo history, investment portfolios</li>
+    <li>Photos of driver\'s licenses, passports, and insurance cards (for form uploads, rental cars, notarization)</li>
+    <li>Screenshots of DMs, private conversations, and Signal threads</li>
+    <li>Photos of prescription bottles and medical portal pages</li>
+    <li>Nudes, intimate photos, photos of partners</li>
+    <li>Photos of home interiors, kids, front doors, and license plates</li>
+    <li>Tax documents photographed before filing</li>
+    <li>House keys, alarm codes, Wi-Fi passwords written on paper</li>
+  </ul>
+  <p>
+    The average user doesn\'t think of any of this as "sensitive" because each individual photo is innocuous in isolation. What makes it sensitive is the <em>aggregate</em> — twelve years of every mundane thing that ever required proof on a phone, collated into one library. Uploading that library to an inference server so a classifier can tell you "these 400 photos are blurry" is, when you lay it out plainly, a bad trade.
+  </p>
+
+  <h2>What "AI-powered" usually means in app marketing</h2>
+  <p>
+    Most cleaner apps that lead with "AI-powered" or "smart AI cleanup" in their marketing are telling you something specific, even if they don\'t realize they\'re telling you: the classification runs somewhere other than your phone. On-device Apple ML Kit models are technically AI, but app marketing doesn\'t usually brag about them because they\'re commoditized and small. When an app brags about AI, the model is usually bigger than what fits on a phone, which means it\'s hosted, which means your photos get uploaded to talk to it.
+  </p>
+  <p>
+    There are exceptions — some apps train custom on-device models and genuinely market them as "AI" without uploading. But the tell is almost always account sign-up. If the app requires an account to run a scan, assume the scan runs server-side. If the app scans with no account and no login and works in Airplane Mode, assume it runs on-device.
+  </p>
+
+  <h2>Why on-device is good enough</h2>
+  <p>
+    Defenders of cloud classification argue that server-side models are more accurate. For some computer vision tasks, that\'s true — face recognition at scale, complex scene understanding, multimodal question-answering — cloud models currently beat on-device. None of those are required to clean up a photo library.
+  </p>
+  <p>
+    Photo cleanup needs four things: compute a fingerprint for each photo (perceptual hashing), compare fingerprints to find duplicates (Hamming distance), flag whether a photo is a screenshot / meme / blurry (small image classifiers), and let the user review and delete. Every single one of these runs on-device at acceptable accuracy using tools Apple already ships: Image I/O, ML Kit, Core ML, AVFoundation. There is no part of the pipeline that genuinely needs a remote server.
+  </p>
+
+  <h2>How to verify a cleaner is actually on-device</h2>
+  <ol>
+    <li>Install the app.</li>
+    <li>Turn on Airplane Mode from Control Center.</li>
+    <li>Grant photo library access.</li>
+    <li>Start a full scan.</li>
+    <li>If the scan runs and returns results: on-device. If the scan fails, stalls, or shows a network error: cloud.</li>
+  </ol>
+  <p>
+    This is the simplest behavioral test and it is effectively impossible to fake. A cleaner that requires the network to classify is uploading; a cleaner that doesn\'t, isn\'t.
+  </p>
+
+  <h2>What MemeScanr is doing differently</h2>
+  <p>
+    MemeScanr was built around "no server" as a hard architectural rule, not an afterthought. There is no cloud endpoint. There is no authentication service. There is no analytics pipeline that touches photo data. There is no admin dashboard that can see any user\'s photos — because there\'s nowhere for photo data to exist outside your iPhone.
+  </p>
+  <p>
+    Concretely, the stack looks like this: Photo Kit for library access, Swift code for 64-bit perceptual hashing, SQLite for local hash storage, Apple ML Kit for on-device meme / screenshot / blurry classification, AVFoundation for video compression (Boost), iOS Keychain for the Backroom vault PIN. The only cloud dependency is Firebase Crashlytics — which only fires on a crash, only contains a stack trace, and has been explicitly audited to exclude any photo-related payload.
+  </p>
+  <p>
+    You can verify this in the same way you\'d verify any other cleaner: put your phone in Airplane Mode, run a scan, and check that it completes. It does. Every scan, every classification, every duplicate group, every Backroom unlock, every Boost compression — all offline, all local.
+  </p>
+
+  <h2>Why this matters in 2026</h2>
+  <p>
+    Every company with access to a large camera roll dataset eventually becomes an attractive acquisition target, and every company that gets acquired eventually has its data policy re-written by the acquirer. Keeping photo data on a server is a liability the user inherits whenever the company changes hands. On-device is the only architecture where this is structurally impossible — there\'s no data to inherit because there\'s no data to exfiltrate. The cleaner app can be sold, forked, or abandoned and your photos stay exactly where they always were: on your phone.
+  </p>
+
+  <AppStoreCTA
+    heading="Clean your iPhone without uploading a single photo."
+    body="MemeScanr has no server. Install from the App Store, run a scan in Airplane Mode, verify with your own eyes."
+  />
+
+  <FAQ items={faqItems} heading="Privacy FAQ" />
+</ArticleLayout>

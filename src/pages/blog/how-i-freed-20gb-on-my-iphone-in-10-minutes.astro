@@ -1,0 +1,114 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-03-30';
+const title = 'How I freed 20 GB on my iPhone in 10 minutes';
+const description =
+  'A 10-minute cleanup that freed 20 GB on a full iPhone. The exact sequence, the tools, and why most of it came from compression, not deletion.';
+const heading = 'How I freed 20 GB on my iPhone in 10 minutes';
+const lede =
+  'You don\'t need an hour. You need the right sequence. This is a 10-minute cleanup I ran on a friend\'s iPhone that freed 20 GB without deleting a single emotionally important photo. Here\'s exactly what we did and why it worked.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'How I freed 20 GB in 10 minutes' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs', logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' } },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/how-i-freed-20gb-on-my-iphone-in-10-minutes/',
+  wordCount: 920,
+  articleSection: 'Story',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/how-i-freed-20gb-on-my-iphone-in-10-minutes/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published March 30, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>The setup</h2>
+  <p>
+    My friend\'s phone had been at "Storage Almost Full" for a month. iPhone 14 Pro, 128 GB, Photos app showing 41 GB used. She didn\'t want to delete anything emotionally important — every photo of her niece, every concert clip, every vacation video was non-negotiable. She also didn\'t want to pay for more iCloud. We had 10 minutes before dinner. Here\'s what we did.
+  </p>
+
+  <h2>Minute 0–1: Start Boost on videos</h2>
+  <p>
+    Opened MemeScanr, tapped Boost, sorted by size. The top 25 videos — all 4K clips from her niece\'s birthday party and two concerts — totalled 16.4 GB. Selected all of them. Tapped Compress. Boost runs in the background on the Neural Engine, so we didn\'t have to wait for it — we let it run and moved on.
+  </p>
+
+  <h2>Minute 1–3: Run the full scan</h2>
+  <p>
+    Started a full scan on the home tab. The scan ran in parallel with Boost because both run locally and don\'t compete for network (there is no network). Scan finished in 2 minutes 40 seconds. Results: 1,847 duplicates and near-duplicates, 923 screenshots, 287 memes, 194 blurry photos.
+  </p>
+
+  <h2>Minute 3–6: Duplicates batch mode</h2>
+  <p>
+    Opened Clean → Duplicates. Used the "keep highest quality" batch option, which auto-selects the largest file in each duplicate group and marks the rest for deletion. Spot-checked a few groups — all looked right. Tapped Delete. 1,204 photos moved to Recently Deleted. 2.8 GB freed. No review needed because duplicates are definitionally safe to batch.
+  </p>
+
+  <h2>Minute 6–8: Screenshots sweep</h2>
+  <p>
+    Opened Clean → Screenshots. Switched to grid view. Drag-selected all 923 screenshots with a single sweep. Before deleting, she asked me to pause — she wanted to check if any receipts were in there. We tapped the Filter icon and filtered by "last 30 days" to surface recent screenshots. She kept 8 (upcoming concert tickets and one recipe). The other 915 got deleted. 1.6 GB freed.
+  </p>
+
+  <h2>Minute 8–9: Empty Recently Deleted</h2>
+  <p>
+    Left MemeScanr briefly for this step — it\'s a native iOS operation. <strong>Photos → Albums → Recently Deleted → Select → Delete All</strong>. The photos deleted in the previous 9 minutes were sitting in there for the 30-day recovery window. Emptying the album reclaimed the space immediately. Then back to MemeScanr.
+  </p>
+
+  <h2>Minute 9–10: Check Boost progress</h2>
+  <p>
+    Opened Boost. Out of 25 videos, 19 had finished compressing. The 4K concert clips had shrunk from averaging 620 MB to averaging 215 MB. We confirmed two at random in full playback — no visible quality difference on her iPhone screen — and tapped "Keep compressed, delete originals" on the batch. 9.2 GB freed from the completed videos. The remaining 6 videos were still compressing and would finish in the background over the next 5 minutes while we ate.
+  </p>
+
+  <h2>The total</h2>
+  <ul>
+    <li>Duplicates: 2.8 GB freed</li>
+    <li>Screenshots: 1.6 GB freed</li>
+    <li>Video compression (first batch of 19): 9.2 GB freed</li>
+    <li>Video compression (remaining 6, finishing in background): ~6.4 GB</li>
+  </ul>
+  <p>
+    <strong>Total: roughly 20 GB freed in 10 minutes of active work.</strong>
+  </p>
+  <p>
+    Nothing she cared about was deleted. Every concert clip is still on her phone, just half the file size. Every birthday video still plays. The photos that got deleted were duplicates and screenshots — the categories that are safe to cut from a bloated library.
+  </p>
+
+  <h2>Why this sequence works</h2>
+  <p>
+    The key insight is that compression and scanning run in parallel. Most cleanups are slow because the user reviews everything serially — open app, run scan, review category, run next category, et cetera. MemeScanr\'s Boost runs as a background task, so starting it first makes the entire video-compression phase "free" time-wise. By the time you\'re done with the manual photo review, Boost has been chewing through videos for the whole session.
+  </p>
+  <p>
+    The other insight: batching. Duplicates are safe to batch ("keep largest, delete the rest") because every group is visually near-identical. Screenshots are safe to sweep because most of them are disposable. The categories that need per-photo swipe review are near-duplicates, blurry, and anything emotionally charged — and we skipped those because we had 10 minutes, not an hour.
+  </p>
+
+  <AppStoreCTA
+    heading="Free 20 GB on your iPhone before dinner."
+    body="MemeScanr is free to scan. Boost has a 3-day trial that covers a first cleanup."
+  />
+</ArticleLayout>

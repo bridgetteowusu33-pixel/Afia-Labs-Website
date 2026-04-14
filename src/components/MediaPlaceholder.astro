@@ -1,0 +1,13 @@
+---
+export interface Props {
+  caption: string;
+  icon?: string;
+}
+
+const { caption, icon = '▶' } = Astro.props;
+---
+
+<figure class="media-placeholder" role="img" aria-label={caption}>
+  <div class="media-placeholder-icon">{icon}</div>
+  <div class="media-placeholder-caption">{caption}</div>
+</figure>

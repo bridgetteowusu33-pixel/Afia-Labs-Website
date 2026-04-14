@@ -1,0 +1,60 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'iPhone cleanup guides — step-by-step how-tos | MemeScanr';
+const description =
+  'Step-by-step guides for cleaning up your iPhone: delete duplicates, screenshots, memes, blurry photos, compress videos, hide photos in a private vault, merge duplicate contacts, and more.';
+const heading = 'iPhone cleanup guides';
+const lede =
+  'Every guide here is a direct step-by-step: what the problem is, how to solve it with native iOS tools first, and how to do it faster with MemeScanr when native tools don\'t cover the category. Start with whichever one matches your problem.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides' },
+];
+
+const guides = [
+  { href: '/guides/iphone-storage-full-fix/', title: 'iPhone storage full? The real fix', blurb: 'The 15-minute cleanup that frees 10–40 GB on a typical bloated library. No iCloud upgrade required.', emoji: '📱' },
+  { href: '/guides/clean-iphone-storage-fast/', title: 'How to clean up iPhone storage fast', blurb: 'The fastest path from "storage almost full" to "2–20 GB free." Native iOS steps plus the one app that closes the gap.', emoji: '⚡' },
+  { href: '/guides/delete-duplicate-photos-iphone/', title: 'Delete duplicate photos on iPhone', blurb: 'Exact duplicates via the built-in Duplicates album, plus near-duplicates that iOS misses.', emoji: '📸' },
+  { href: '/guides/delete-screenshots-iphone-bulk/', title: 'Delete iPhone screenshots in bulk', blurb: 'Clear 500+ screenshots in 5 minutes using native iOS Selection or MemeScanr swipe review.', emoji: '📷' },
+  { href: '/guides/delete-memes-iphone/', title: 'Delete memes from your iPhone', blurb: 'iOS can\'t classify memes. MemeScanr does, on-device, via Apple ML Kit.', emoji: '🎭' },
+  { href: '/guides/find-blurry-photos-iphone/', title: 'Find and delete blurry photos', blurb: 'Automatic blurry-photo detection via on-device Laplacian variance analysis.', emoji: '📷' },
+  { href: '/guides/compress-videos-iphone-no-quality-loss/', title: 'Compress iPhone videos without losing quality', blurb: 'On-device HEVC re-encoding that saves 50–70% per file without visible quality loss.', emoji: '🎬' },
+  { href: '/guides/free-up-iphone-storage-without-icloud/', title: 'Free up iPhone storage without iCloud', blurb: 'Every step runs on-device. No cloud, no subscription, no iCloud upgrade.', emoji: '🔒' },
+  { href: '/guides/hide-photos-iphone-private-vault/', title: 'Hide photos on iPhone with a real private vault', blurb: 'The iOS Hidden album isn\'t private. Here\'s how to use Face ID + PIN with a decoy vault.', emoji: '🕵️' },
+  { href: '/guides/merge-duplicate-contacts-iphone/', title: 'Merge duplicate iPhone contacts', blurb: 'Fuzzy matching for contacts where iOS Link Contacts falls short — typos, comma-flip, phone normalization.', emoji: '📇' },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guides"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/"
+  ogType="website"
+>
+  <div class="feature-grid">
+    {guides.map((g) => (
+      <a href={g.href} class="feature-grid-card" style="text-decoration: none; display: block;">
+        <span class="emoji">{g.emoji}</span>
+        <h3>{g.title}</h3>
+        <p>{g.blurb}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2>How to pick the right guide</h2>
+  <p>
+    Start with <a href="/guides/iphone-storage-full-fix/">iPhone storage full fix</a> if your phone is already at capacity and you want the full cleanup sequence. Start with a category-specific guide (duplicates, screenshots, memes, blurry) if you know which category is eating your storage and just want that one cleaned.
+  </p>
+  <p>
+    Every guide leads with native iOS steps, then shows the MemeScanr flow for anything the native tools don\'t handle. You don\'t have to install anything to get value from the native-iOS portion of each guide.
+  </p>
+
+  <AppStoreCTA />
+</ArticleLayout>

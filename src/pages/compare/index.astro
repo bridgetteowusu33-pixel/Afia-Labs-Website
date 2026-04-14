@@ -1,0 +1,86 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr comparisons — vs every major iPhone photo cleaner';
+const description =
+  'Head-to-head comparisons of MemeScanr against every major iPhone photo cleaner in 2026. Features, privacy, pricing, and clear recommendations for each use case.';
+const heading = 'MemeScanr comparisons';
+const lede =
+  'Honest, factual comparisons of MemeScanr against the iPhone photo cleaners you might also be considering. Every comparison includes a feature matrix, a privacy matrix, pricing, and a clear recommendation for who should pick which.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare' },
+];
+
+const comparisons = [
+  {
+    href: '/compare/best-photo-cleaner-apps-2026/',
+    title: 'Best photo cleaner apps for iPhone in 2026',
+    blurb: 'A ranked roundup of every major iPhone photo cleaner, with a clear recommendation for each use case.',
+    tag: 'Ranking',
+  },
+  {
+    href: '/compare/memescanr-vs-photos-app-duplicates/',
+    title: 'MemeScanr vs iPhone Photos Duplicates album',
+    blurb: 'Apple\'s built-in Duplicates album is free — here\'s exactly what it does and doesn\'t catch, and when to install a dedicated cleaner instead.',
+    tag: 'Free alternative',
+  },
+  {
+    href: '/compare/memescanr-vs-gemini-photos/',
+    title: 'MemeScanr vs Gemini Photos',
+    blurb: 'Both run on-device. One is focused on duplicates. The other is a full cleanup suite with a vault, compression, and personality features.',
+    tag: 'Duplicate-focused',
+  },
+  {
+    href: '/compare/memescanr-vs-cleanup-app/',
+    title: 'MemeScanr vs Cleanup: Phone Storage Cleaner',
+    blurb: 'Cleanup popularized swipe-to-delete. MemeScanr ships the same mechanic plus category detection, a private vault, and a $59.99 lifetime option.',
+    tag: 'Swipe-to-delete',
+  },
+  {
+    href: '/compare/memescanr-vs-smart-cleaner/',
+    title: 'MemeScanr vs Smart Cleaner',
+    blurb: 'Traditional grid-based cleaners vs a modern swipe flow with a vault, compression, and personality features.',
+    tag: 'Grid-based',
+  },
+  {
+    href: '/compare/memescanr-vs-magic-cleaner/',
+    title: 'MemeScanr vs Magic Cleaner (and AI cloud cleaners)',
+    blurb: 'The privacy question that should decide this: on-device vs cloud AI classification. Why uploading your photos for "smart cleanup" is a worse trade than it sounds.',
+    tag: 'Privacy-first',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Compare"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/"
+  ogType="website"
+>
+  <div class="feature-grid">
+    {comparisons.map((c) => (
+      <a href={c.href} class="feature-grid-card" style="text-decoration: none; display: block;">
+        <span class="emoji">{c.tag === 'Ranking' ? '🏆' : c.tag === 'Privacy-first' ? '🔒' : c.tag === 'Free alternative' ? '🆓' : '⚖️'}</span>
+        <h3>{c.title}</h3>
+        <p>{c.blurb}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2>Why these comparisons are honest</h2>
+  <p>
+    Every comparison on this site follows the same rules: no hostile framing, no invented features, and an explicit recommendation for when the alternative is the better pick. If a competitor is the right answer for your use case, we\'ll say so. If MemeScanr has feature parity with another app on a row, we mark it as parity, not as a MemeScanr advantage. Tables are generated from the <a href="/memescanr/">MemeScanr entity page</a> features list, which is kept in sync with the current shipping release.
+  </p>
+  <p>
+    Competitor information is based on publicly available product pages and App Store listings as of April 2026. Competitor features and pricing change frequently — always verify current claims on the specific App Store listing before purchase.
+  </p>
+
+  <AppStoreCTA />
+</ArticleLayout>

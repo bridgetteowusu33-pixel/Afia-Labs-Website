@@ -1,0 +1,102 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Boost — compress iPhone photos, videos & PDFs without quality loss | MemeScanr';
+const description =
+  'Boost is MemeScanr\'s on-device compression engine for HEIC photos, HEVC videos, and PDFs. Shrink files 40–70% without visible quality loss. No upload, no cloud.';
+const heading = 'Boost: compress photos, videos & PDFs on-device';
+const lede =
+  'Boost is the compression engine inside MemeScanr. It shrinks HEIC photos, HEVC videos, and PDFs by 40–70% without visible quality loss, entirely on your device. No upload, no cloud, no quality trade-off.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Boost' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/boost-compression/',
+};
+
+const faqItems = [
+  {
+    q: 'How much space does Boost save?',
+    a: 'Typical compression ratios: HEIC photos shrink 40–60%, HEVC videos shrink 50–70% depending on source resolution and bitrate, and PDFs shrink 30–80% depending on embedded images. A user with 2,000 videos can realistically recover 8–20 GB.',
+  },
+  {
+    q: 'Does Boost reduce quality?',
+    a: 'Boost uses native iOS video and image encoders with perceptually optimized presets, so quality loss is not visible in normal viewing. It is not a lossless tool — there is re-encoding — but the difference is indistinguishable from the original at typical phone viewing distances.',
+  },
+  {
+    q: 'Does Boost upload my files?',
+    a: 'No. All compression runs on-device using Apple\'s native video toolbox and image I/O frameworks. Your photos, videos, and PDFs never leave your iPhone.',
+  },
+  {
+    q: 'Can I revert a compression?',
+    a: 'Boost creates a compressed copy and keeps the original in the Boost history until you confirm deletion. You can revert to the original from the history until you free that slot.',
+  },
+  {
+    q: 'What file types does Boost support?',
+    a: 'Boost supports HEIC and JPEG photos, HEVC and H.264 video, and PDF documents. Live Photos are compressed as video+photo pairs. RAW photos are not currently supported.',
+  },
+  {
+    q: 'Is Boost free?',
+    a: 'Boost is a MemeScanr Premium feature. Premium is available as a monthly, yearly, or $59.99 lifetime purchase with a 3-day free trial.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/boost-compression/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Boost in one sentence</strong>
+    Boost is MemeScanr's on-device compression engine for HEIC photos, HEVC video, and PDFs that shrinks files by 40–70% without visible quality loss and without uploading anything.
+  </div>
+
+  <MediaPlaceholder caption="Boost dashboard: compression orb, before/after size comparison, category cards, and history list." />
+
+  <h2>What Boost compresses</h2>
+  <ul>
+    <li><strong>Photos</strong> — HEIC and JPEG via Apple Image I/O with perceptual quality presets</li>
+    <li><strong>Videos</strong> — HEVC (H.265) re-encoding via Apple's AVFoundation video toolbox</li>
+    <li><strong>PDFs</strong> — embedded-image recompression and font subsetting</li>
+    <li><strong>Live Photos</strong> — compressed as a linked still + short clip pair</li>
+  </ul>
+
+  <h2>Why compression is a storage hack most people miss</h2>
+  <p>
+    The largest files on most iPhones aren't photos — they're videos. A 60-second 4K ProRes clip shot on a recent iPhone can easily be 400 MB. A few dozen of those and you're out of storage. Boost re-encodes long videos into HEVC with imperceptible quality loss and can cut their size in half. You keep the videos. You keep the quality. You just free up 8–20 GB on a typical user's library.
+  </p>
+
+  <h2>How Boost works without uploading</h2>
+  <p>
+    Most "pro" compression services upload your file to their server, re-encode it there, and send back a smaller version. That has two problems: your photos and videos are now on someone else's machine, and you're waiting on a network round trip for every file. Boost does it entirely on-device using Apple's native video toolbox and image I/O APIs. No upload, no waiting, no account.
+  </p>
+
+  <h2>The compression dashboard</h2>
+  <p>
+    Boost lives on its own dashboard inside MemeScanr. You can see how much storage you've reclaimed with a compression orb, browse compressed items by category, revert any item to its original from history, and vault compressed items in Backroom.
+  </p>
+
+  <AppStoreCTA
+    heading="Free up 10+ GB without deleting a single video."
+    body="Boost is a MemeScanr Premium feature with a 3-day free trial. Lifetime is a one-time $59.99."
+  />
+
+  <FAQ items={faqItems} heading="Boost FAQ" />
+</ArticleLayout>

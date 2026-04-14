@@ -1,0 +1,117 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-04-01';
+const title = 'Gallery Wrapped 2026 — which gallery personality are you?';
+const description =
+  'Gallery Wrapped is MemeScanr\'s monthly personality reveal for your camera roll. Eight personality types, computed on-device. Here\'s what each one means and how the feature works.';
+const heading = 'Gallery Wrapped 2026 — which gallery personality are you?';
+const lede =
+  'Gallery Wrapped is live for April. Eight gallery personality types, nine swipeable story cards, one monthly reveal. Every calculation runs on your device. Here\'s what each personality means and how the feature works.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Gallery Wrapped 2026' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs', logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' } },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/gallery-wrapped-2026-what-personality-are-you/',
+  wordCount: 1120,
+  articleSection: 'Launch',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Launch post"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/gallery-wrapped-2026-what-personality-are-you/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published April 1, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 7 min read</span>
+  </div>
+
+  <h2>The eight gallery personality types</h2>
+
+  <h3>🌪️ The chaos gremlin</h3>
+  <p>
+    Thousands of screenshots. Zero organization. A camera roll that looks like a jazz improvisation. The chaos gremlin isn\'t negligent — they\'re simply not treating the photo library as something that needs taxonomy. The dominant signal: high screenshot ratio, random bursts of activity, a complete absence of repeated subjects. If this is you, embrace it. Memory Lane was built for you.
+  </p>
+
+  <h3>📸 The documentarian</h3>
+  <p>
+    Every meal. Every sunset. Every parking spot on a vacation. Every receipt. The documentarian treats the camera as a memory prosthetic and the iPhone storage bar as a minor inconvenience. The dominant signal: consistent photo volume across weeks, heavy repeat of location-based subjects, a large archive spanning years without deletion. The archaeologists of the future will thank you.
+  </p>
+
+  <h3>🤳 The self-portraitist</h3>
+  <p>
+    47 versions of the same face. The selfie perfectionist takes a burst of 6 every time the lighting is decent and keeps them all for later review, which never happens. The dominant signal: high selfie ratio, burst clusters tightly packed in time, minimal variety in angle. Memory Lane helps here specifically — the time-capsule badge makes you pause before deleting any selfie from before 2021.
+  </p>
+
+  <h3>🎭 The meme custodian</h3>
+  <p>
+    A reaction pic for every occasion, sorted only by vibes. The meme custodian has spent years quietly building a library that is one-quarter meme by volume. The dominant signal: high screenshot-from-messaging-apps ratio, text-heavy images detected by the on-device meme classifier, frequent same-week meme saves. MemeScanr\'s Backroom is the right answer — vault your favorites and clean the rest.
+  </p>
+
+  <h3>👯 The group chat historian</h3>
+  <p>
+    Receipts for every inside joke from 2019 onward. The group chat historian takes more screenshots than photos — DMs, tweets, replies, reaction threads. The dominant signal: extremely high screenshot ratio (often 60%+), concentrated around specific contacts and platforms, long stretches of no primary-camera use. You are the reason your friend group\'s collective memory has receipts.
+  </p>
+
+  <h3>🌅 The aesthete</h3>
+  <p>
+    Golden hour. Flat lays. Occasional lattes from above. The aesthete treats the camera as a visual practice and the camera roll as a curation surface. The dominant signal: high landscape and still-life ratio, careful composition patterns, lower volume than average but higher keep rate. Your library is the cleanest in this list by default — you probably don\'t need cleanup, just compression.
+  </p>
+
+  <h3>🐾 The pet obsessive</h3>
+  <p>
+    Your pet has a bigger photo archive than most humans. The dominant signal: a disproportionate share of photos containing your pet (detected via on-device people/scene classification), frequent burst runs, emotional attachment to every angle. MemeScanr\'s duplicate detection is particularly useful here because burst mode with a moving animal creates hundreds of near-duplicates.
+  </p>
+
+  <h3>✈️ The collector</h3>
+  <p>
+    Passport stamps, museum cards, concert tickets, event wristbands — all in photo form. The collector uses the camera roll as an archive of physical ephemera. The dominant signal: high ratio of text-heavy close-up shots, clusters tied to specific travel or event windows, low selfie ratio. Memory Lane\'s time capsule badges will surface old ticket stubs you forgot you photographed.
+  </p>
+
+  <h2>How the personality is calculated</h2>
+  <p>
+    Every personality has a trigger condition based on ratios and counts in your gallery. The dominant pattern wins. If two patterns tie, the tiebreaker is the one with the higher month-over-month delta — whichever behavior grew the most recently. This is why personalities shift month to month: what felt like a quiet documentarian phase in March might become a chaos gremlin phase in April after a week of heavy screenshot activity.
+  </p>
+  <p>
+    Every calculation is on-device. No photo data, no personality result, and no monthly snapshot ever leaves your iPhone. Gallery Wrapped is local-only by design — the whole feature can be computed without a network request.
+  </p>
+
+  <h2>The nine card flow</h2>
+  <p>
+    When you open Gallery Wrapped on or after the 1st of the month, you get a card stack you swipe through like Instagram Stories. The order: opening card → total photos → screenshot count → busiest day → most photographed subject → meme count → month-over-month delta → personality reveal → share card. The personality reveal is the penultimate card, not the final one — the share card comes last so the user\'s last interaction is an affordance to share the result.
+  </p>
+
+  <h2>Why April is a good month to check</h2>
+  <p>
+    April is the first "normal" month after Q1 in most workflows — holidays, year-end, tax season are all past. The personality reveal for April is usually the cleanest read of your actual photo habits because it\'s not skewed by holiday events, New Year resolutions, or January screenshot spikes. If you want to see what your real camera roll personality looks like, April is the month.
+  </p>
+
+  <AppStoreCTA
+    heading="Find out which personality you are."
+    body="Gallery Wrapped is free. Run one scan and your April reveal is ready."
+  />
+</ArticleLayout>

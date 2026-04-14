@@ -1,0 +1,115 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'iPhone storage full — the real fix (not upgrading iCloud)';
+const description =
+  'iPhone storage full? The real fix isn\'t buying iCloud. Here\'s a 15-minute cleanup that frees 10–20 GB on a typical bloated library, with exact steps and which tools to use.';
+const heading = 'iPhone storage full? Here\'s the real fix.';
+const lede =
+  'Your iPhone keeps saying storage is almost full. Apple keeps suggesting you pay for iCloud. The actual fix is cleaning up the gallery junk that accumulated over the last three years — duplicates, memes, screenshots, blurry shots, and old videos. This takes 15 minutes and costs nothing to try.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'iPhone storage full fix' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'iPhone storage full fix',
+  description,
+  totalTime: 'PT15M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Confirm what is full', text: 'Settings → General → iPhone Storage. The category list shows what is taking space. Photos is usually largest.' },
+    { '@type': 'HowToStep', position: 2, name: 'Delete the Apple Duplicates album', text: 'Photos → Albums → Utilities → Duplicates → Select → Merge.' },
+    { '@type': 'HowToStep', position: 3, name: 'Run MemeScanr full scan', text: 'Install MemeScanr, run one scan, review all Clean categories.' },
+    { '@type': 'HowToStep', position: 4, name: 'Compress long videos with Boost', text: 'Open Boost, select videos over 500 MB, compress.' },
+    { '@type': 'HowToStep', position: 5, name: 'Empty Recently Deleted', text: 'Photos → Albums → Recently Deleted → Delete All.' },
+    { '@type': 'HowToStep', position: 6, name: 'Offload large unused apps', text: 'Settings → General → iPhone Storage → tap unused app → Offload App.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Why is my iPhone storage always full?',
+    a: 'Three reasons usually: photo library bloat (duplicates, memes, screenshots, blurry), old 4K videos never compressed, and unused app data (offloadable). The first two account for 80% of cleanup wins on most phones.',
+  },
+  {
+    q: 'Will deleting photos actually free space?',
+    a: 'Yes, but only after you empty Recently Deleted. Photos deleted from the main library go to the Recently Deleted album for 30 days before actually leaving your device. To reclaim space immediately, empty that album manually.',
+  },
+  {
+    q: 'Do I need to pay for iCloud to fix a full iPhone?',
+    a: 'No. iCloud is storage rental — it doesn\'t fix the underlying bloat. A one-time cleanup with MemeScanr plus video compression usually frees enough space that the upgrade isn\'t needed.',
+  },
+  {
+    q: 'Is restarting the iPhone helping with storage?',
+    a: 'Restarting clears some temporary system files (the "Other" or "System" category), which can recover a few hundred megabytes. It doesn\'t fix the real problem if your photo library is bloated — you\'ll hit the limit again in a week.',
+  },
+  {
+    q: 'How much can I realistically free on a first cleanup?',
+    a: 'On a typical bloated library (10,000+ photos, 50+ videos, no cleanup history): 10–20 GB from photo deletion, another 5–15 GB from video compression, 2–5 GB from offloaded apps and system cleanup. Total: 15–40 GB on a first full cleanup pass.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/iphone-storage-full-fix/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    Don\'t buy iCloud. Spend 15 minutes: empty the built-in Duplicates album, run MemeScanr to catch memes / screenshots / blurry / near-duplicates, compress long videos with Boost, empty Recently Deleted. Expect 15–40 GB freed on a bloated library.
+  </div>
+
+  <h2>Why this happens</h2>
+  <p>
+    iPhone storage bloat is predictable: your camera roll accumulates faster than it cleans itself, iOS never does automatic culling beyond exact duplicates, and every 4K video you shot three years ago is still sitting there at full legacy size. The "Other" category ("System" on newer iOS) fills with caches and logs that iOS mostly manages, but the photo library is 100% on you.
+  </p>
+  <p>
+    Apple\'s default suggestion is to buy iCloud Storage. That doesn\'t solve the problem; it just moves it. Your duplicates still exist, just now counted twice (on-device and in the cloud), and your meme collection still takes quota. The real fix is a one-time thorough cleanup.
+  </p>
+
+  <h2>The 15-minute fix</h2>
+  <ol>
+    <li>
+      <strong>See what\'s full.</strong> Settings → General → iPhone Storage. Wait for the chart. Photos is almost always the #1 category on a full phone.
+    </li>
+    <li>
+      <strong>Empty the built-in Duplicates album.</strong> Photos → Albums → Utilities → Duplicates → Select → Select All → Merge. This catches exact duplicates only — usually 500 MB to 2 GB on a typical phone.
+    </li>
+    <li>
+      <strong>Run MemeScanr for the real cleanup.</strong> Install MemeScanr, grant photo access, run one scan. The scan takes 2–4 minutes and runs fully on-device. Review every category: Duplicates, Similar, Screenshots, Memes, Blurry, Downloads.
+    </li>
+    <li>
+      <strong>Compress long videos with Boost.</strong> Open Boost, sort by size, select anything over 500 MB, compress. Boost uses on-device HEVC encoding and typically saves 50–70 percent per file. A backlog of 20 long videos can free 10–20 GB without deleting anything.
+    </li>
+    <li>
+      <strong>Empty Recently Deleted.</strong> Photos → Albums → Recently Deleted → Select → Delete All. This is the step most people forget; deleted photos sit there for 30 days before actually leaving the device.
+    </li>
+    <li>
+      <strong>Offload unused apps.</strong> Settings → General → iPhone Storage → tap any large app you haven\'t opened in 6+ months → Offload App. Keeps data, removes the binary, frees several GB instantly.
+    </li>
+  </ol>
+
+  <h2>Realistic expectations</h2>
+  <p>
+    On a typical bloated iPhone (10,000+ photos, 20+ long videos, no prior cleanup), this full pass frees 15–40 GB. On a relatively clean phone (fewer than 5,000 photos, already-HEVC videos), you might only free 2–5 GB — which means iCloud might actually be the better option for you. The cleanup is worth doing either way because it surfaces which category is eating the most space.
+  </p>
+
+  <AppStoreCTA
+    heading="Fix your full iPhone in 15 minutes."
+    body="MemeScanr free scan finds 10+ GB of junk. Boost compresses videos on-device. No cloud."
+  />
+
+  <FAQ items={faqItems} heading="iPhone storage full FAQ" />
+</ArticleLayout>

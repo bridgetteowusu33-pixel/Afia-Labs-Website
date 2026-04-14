@@ -1,0 +1,96 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Seasonal App Icons — a photo cleaner that changes with the seasons | MemeScanr';
+const description =
+  'MemeScanr ships seven seasonal app icons that auto-switch by date — Halloween, Valentine\'s, Summer, Winter, and more. iPhone and iPad ready, no setup.';
+const heading = 'Seasonal App Icons: the photo cleaner that redresses itself';
+const lede =
+  'MemeScanr is the only photo cleaner app that changes its own icon with the seasons. Seven seasonal variants ship in the app bundle and switch automatically by date — no setup, no tap-to-change, just a quiet glow-up on your home screen four times a year.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Seasonal Icons' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/seasonal-icons/',
+};
+
+const seasons = [
+  { emoji: '🎃', name: 'Halloween', window: 'mid-October through November 1' },
+  { emoji: '❄️', name: 'Winter', window: 'December through mid-February' },
+  { emoji: '💘', name: 'Valentine\'s', window: 'mid-February' },
+  { emoji: '🌸', name: 'Spring', window: 'March and April' },
+  { emoji: '🌞', name: 'Summer', window: 'May through August' },
+  { emoji: '🍂', name: 'Autumn', window: 'September and early October' },
+  { emoji: '✨', name: 'Default', window: 'fallback any time' },
+];
+
+const faqItems = [
+  {
+    q: 'How do seasonal icons switch?',
+    a: 'MemeScanr checks the current date on app launch and on a daily background task. If the current date falls inside a seasonal window, MemeScanr asks iOS to switch its icon via the standard UIApplication setAlternateIconName API. iOS shows a one-time confirmation dialog — after that the switch is silent.',
+  },
+  {
+    q: 'Can I pick my own icon instead?',
+    a: 'Yes. Seasonal auto-switching can be disabled in Settings, and you can manually pick any of the seven icons at any time. The app also respects your manual choice for the current season so it won\'t auto-override your pick.',
+  },
+  {
+    q: 'Do seasonal icons work on iPad?',
+    a: 'Yes. Icons ship at both iPhone (@2x / @3x) and iPad (167×167, 152×152) sizes in the app bundle. No separate install is required.',
+  },
+  {
+    q: 'Why did you build this?',
+    a: 'Seasonal icons are a tiny, delightful touch that no competitor bothers with. They\'re a visual signal that MemeScanr is a product the team actually cares about. Apple also features apps with seasonal icons in editorial collections, which means every icon drop is a chance for free App Store visibility.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/seasonal-icons/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Seasonal icons in one sentence</strong>
+    MemeScanr ships seven seasonal app icons that automatically switch with the calendar — Halloween, Winter, Valentine's, Spring, Summer, Autumn, and the default — without any user setup.
+  </div>
+
+  <MediaPlaceholder caption="Grid of all 7 seasonal MemeScanr icons: default, Halloween, Winter, Valentine's, Spring, Summer, Autumn." />
+
+  <h2>The seven seasons</h2>
+  <ul>
+    {seasons.map((s) => (
+      <li><strong>{s.emoji} {s.name}</strong> — {s.window}</li>
+    ))}
+  </ul>
+
+  <h2>Why a photo cleaner ships seasonal icons</h2>
+  <p>
+    Most utility apps ship one icon and call it done. Seasonal icons are a signal that MemeScanr is a <em>product</em>, not just a tool — something with a point of view, something worth keeping on your home screen. They also give the app a recurring editorial moment: every seasonal switch is eligible for inclusion in Apple's "Seasonal" App Store editorial collection, which is free featured visibility four times a year.
+  </p>
+  <p>
+    The switch itself uses Apple's standard <code>setAlternateIconName</code> API. iOS shows a one-time confirmation dialog the first time MemeScanr proposes a switch, after which the transition is silent and automatic.
+  </p>
+
+  <AppStoreCTA
+    heading="Download MemeScanr and see which icon it's wearing today."
+    body="Free to install. The icon switches itself."
+  />
+
+  <FAQ items={faqItems} heading="Seasonal icons FAQ" />
+</ArticleLayout>

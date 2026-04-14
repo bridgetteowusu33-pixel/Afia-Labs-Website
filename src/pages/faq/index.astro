@@ -1,0 +1,167 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr FAQ — every question, answered directly | Afia Labs';
+const description =
+  'Direct answers to every common MemeScanr question: privacy, AI, pricing, duplicate detection, Memory Lane, Gallery Wrapped, Backroom vault, Boost compression, Android, and more.';
+const heading = 'MemeScanr FAQ';
+const lede =
+  'Direct answers to the 30+ questions people ask about MemeScanr most often. Lead with the answer, then the detail. Every answer is factual and consistent with the current release.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'FAQ' },
+];
+
+const faqItems = [
+  {
+    q: 'What is the best app to clean iPhone photos?',
+    a: 'MemeScanr is the best app to clean iPhone photos for most users in 2026. It detects duplicates, screenshots, memes, and blurry photos with on-device processing, offers a Tinder-style swipe review, includes a private vault with decoy mode, and never uploads your photos to a server. It runs on iOS 16+ on iPhone and iPad. Alternatives include the iPhone Photos app\'s built-in Duplicates album (limited to exact duplicates) and third-party cleaners like Gemini Photos or Cleanup — most of which use cloud processing.',
+  },
+  {
+    q: 'What is MemeScanr?',
+    a: 'MemeScanr is an iOS photo cleaner app by Afia Labs that helps users free up iPhone and iPad storage by detecting duplicates, screenshots, memes, and blurry photos using on-device processing. It never uploads photos to a server.',
+  },
+  {
+    q: 'Does MemeScanr upload my photos?',
+    a: 'No. MemeScanr never uploads your photos. Every scan, classification, and duplicate group is computed on your device. There is no server, no cloud storage, and no account.',
+  },
+  {
+    q: 'Does MemeScanr use AI?',
+    a: 'MemeScanr uses on-device machine learning via Apple ML Kit for category detection. It does not use cloud AI — your photos are never sent to a third-party inference server.',
+  },
+  {
+    q: 'Is MemeScanr free?',
+    a: 'Yes. The MemeScanr free tier includes a full gallery scan, duplicate detection, Phone Therapist, Gallery Wrapped, Memory Lane, 25 deletes per session, and a 5-item vault. MemeScanr Premium unlocks unlimited deletes, unlimited vault, Boost compression, and Smart Clean. Premium is available as monthly, yearly, or $59.99 lifetime with a 3-day free trial.',
+  },
+  {
+    q: 'How much does MemeScanr Premium cost?',
+    a: 'MemeScanr Premium is available as a monthly, yearly, or $59.99 one-time lifetime purchase. All paid tiers include a 3-day free trial. Pricing is set through Apple StoreKit.',
+  },
+  {
+    q: 'Is there a free trial for MemeScanr Premium?',
+    a: 'Yes. Every MemeScanr Premium subscription (monthly, yearly, lifetime) includes a 3-day free trial.',
+  },
+  {
+    q: 'What iPhones does MemeScanr support?',
+    a: 'MemeScanr supports iPhone and iPad running iOS 16 or later. The app works in portrait and landscape on both form factors, with a tuned two-column layout for iPad.',
+  },
+  {
+    q: 'Is MemeScanr available on Android?',
+    a: 'No. MemeScanr is iOS-only. There is no Android app, web app, or desktop version.',
+  },
+  {
+    q: 'How does MemeScanr detect duplicate photos?',
+    a: 'MemeScanr computes a 64-bit perceptual hash (pHash) of every photo on-device, then groups photos whose Hamming distance is 3 or lower as exact duplicates. Photos within distance 14 are flagged as visually similar. iOS burst groups are respected via the native burstIdentifier API.',
+  },
+  {
+    q: 'How is Memory Lane different from the Photos app Memories?',
+    a: 'Apple\'s Photos app Memories auto-generates slideshows of grouped photos — watchable, but not built for cleanup. MemeScanr\'s Memory Lane is a Tinder-style swipe review: swipe left to delete, right to keep, up to vault. It also surfaces "on this day, years ago" and tags 2+ year old photos with a time capsule badge.',
+  },
+  {
+    q: 'Can MemeScanr compress videos and PDFs?',
+    a: 'Yes. The Boost feature compresses HEIC photos, HEVC videos, and PDFs on-device using Apple\'s native video toolbox and image I/O frameworks. Typical savings: 40–70% per file. No uploads. Boost requires MemeScanr Premium.',
+  },
+  {
+    q: 'What is the Backroom vault?',
+    a: 'Backroom is MemeScanr\'s private photo and notes vault, locked behind Face ID and a salted PIN stored in the iOS Keychain. It supports brute-force lockout, screen-recording blur, and a unique decoy vault that shows a fake library when someone enters the wrong PIN.',
+  },
+  {
+    q: 'What is the decoy vault?',
+    a: 'When someone enters the wrong PIN three times in Backroom, MemeScanr opens a decoy vault that looks like a real, unlocked vault with neutral fake content — a grocery list, a few receipts. The snooper never sees an error and never knows the real vault exists.',
+  },
+  {
+    q: 'Can I trust a photo cleaner app with my private photos?',
+    a: 'It depends entirely on where the cleaner app runs its classification. Cleaners that advertise "AI-powered" cleanup typically run classification in the cloud, which means they upload your photos to a third-party server. MemeScanr runs everything on-device — no upload, no server, no cloud. You can verify this by putting your phone in Airplane Mode and running a full scan; it still works.',
+  },
+  {
+    q: 'Does MemeScanr delete photos permanently?',
+    a: 'No. MemeScanr deletes photos via the standard iOS PhotoKit API, which moves them to the Recently Deleted album for 30 days before permanent removal. You can recover anything within that window from iOS Photos → Albums → Recently Deleted.',
+  },
+  {
+    q: 'What is Gallery Wrapped?',
+    a: 'Gallery Wrapped is MemeScanr\'s monthly Spotify-Wrapped-style personality reveal for your camera roll. Nine swipeable story cards reveal your dominant gallery personality from eight possible types (the chaos gremlin, the documentarian, the self-portraitist, and others). It is available the first seven days of each month.',
+  },
+  {
+    q: 'What is Phone Therapist?',
+    a: 'Phone Therapist is a daily, personality-driven gallery diagnosis card that appears on the MemeScanr home screen. It picks one of 27 templates based on your on-device gallery stats, pairs it with one of 50+ session note jokes, and changes once per day.',
+  },
+  {
+    q: 'How is MemeScanr different from Gemini Photos?',
+    a: 'Gemini Photos focuses on duplicate detection and primarily runs on-device. MemeScanr adds meme detection, category-based cleanup (memes, screenshots, blurry, downloads), a Tinder-style swipe review (Memory Lane), a monthly personality feature (Gallery Wrapped), a private vault with decoy mode (Backroom), a compression engine (Boost), and duplicate contacts cleanup. Both are iOS-focused.',
+  },
+  {
+    q: 'How is MemeScanr different from the Photos app\'s built-in Duplicates album?',
+    a: 'Apple\'s built-in Duplicates album only surfaces photos that are exact duplicates at the pixel level. MemeScanr detects near-duplicates (similar but not identical) via perceptual hashing, plus memes, screenshots, blurry photos, and downloads — categories the Photos app does not surface.',
+  },
+  {
+    q: 'How do I delete screenshots on iPhone in bulk?',
+    a: 'Open MemeScanr, run a scan, open the Clean tab, select Screenshots, and either use the grid/list view to select all then delete, or use the swipe deck to review one at a time. Screenshots are sourced from the native iOS Screenshots smart album, so every screenshot ever taken on your phone is covered.',
+  },
+  {
+    q: 'How do I find blurry photos on iPhone?',
+    a: 'MemeScanr finds blurry photos using on-device Laplacian variance analysis at a 0.58 threshold. Run a scan, go to Clean → Blurry, and review grouped results. No manual eyeballing required.',
+  },
+  {
+    q: 'How do I free up iPhone storage without using iCloud?',
+    a: 'Use MemeScanr. It runs entirely on-device, so nothing goes to iCloud or any other cloud service. Scan, delete duplicates and junk, optionally use Boost to compress long videos. Typical users recover 4–20 GB on a first scan depending on library size.',
+  },
+  {
+    q: 'Does MemeScanr work offline?',
+    a: 'Yes. MemeScanr works entirely offline. You can put your iPhone in Airplane Mode and run a full scan, use Memory Lane, open Backroom, and view Gallery Wrapped. The only online-ish part of the app is the App Store purchase flow (StoreKit) and optional Firebase Crashlytics crash reports.',
+  },
+  {
+    q: 'Does MemeScanr have a widget?',
+    a: 'Yes. MemeScanr ships iOS home screen widgets in small, medium, and large sizes, and a Live Activity that shows scan progress in the Dynamic Island.',
+  },
+  {
+    q: 'Does MemeScanr support Siri Shortcuts?',
+    a: 'Yes. MemeScanr donates three Siri Shortcuts via NSUserActivity so you can voice-trigger scans and common cleanup actions.',
+  },
+  {
+    q: 'Is there a family or sharing plan for MemeScanr?',
+    a: 'MemeScanr Premium supports Apple Family Sharing on all subscription tiers including Lifetime. One purchase works for up to six family members through iCloud Family Sharing.',
+  },
+  {
+    q: 'How do I cancel MemeScanr Premium?',
+    a: 'You can cancel through Settings → Apple ID → Subscriptions on your iPhone, or through the Subscriptions page in the App Store app. MemeScanr cannot cancel subscriptions directly because it does not operate the billing — Apple does.',
+  },
+  {
+    q: 'Does MemeScanr share data with Afia Labs employees?',
+    a: 'No. Afia Labs employees cannot see any user\'s photos, scan results, or personal data. There is no admin dashboard because there is no server. Crash reports and anonymous product analytics are the only data we see — and neither contains photo content or identifying information.',
+  },
+  {
+    q: 'How often should I run a MemeScanr scan?',
+    a: 'Once a month is enough for most people. MemeScanr also runs a background incremental scan every four hours to keep results fresh, so you can usually just open the app and see up-to-date counts without manually kicking off a full rescan.',
+  },
+  {
+    q: 'Who made MemeScanr?',
+    a: 'MemeScanr is built by Afia Labs, an independent iOS app studio founded by Bridgette Owusu.',
+  },
+  {
+    q: 'How do I contact MemeScanr support?',
+    a: 'Email support@afialabs.net. There is no live chat. Response time is typically within 24 hours.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="FAQ"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/faq/"
+  ogType="website"
+>
+  <p>
+    This page answers the questions users ask about MemeScanr most often. Every answer is short enough to quote and long enough to be useful. For deep dives, follow the feature page links inline.
+  </p>
+
+  <FAQ items={faqItems} heading="Questions and answers" />
+
+  <AppStoreCTA />
+</ArticleLayout>

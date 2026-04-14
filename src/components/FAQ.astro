@@ -1,0 +1,56 @@
+---
+export interface QA {
+  q: string;
+  a: string | string[];
+  anchor?: string;
+}
+
+export interface Props {
+  heading?: string;
+  items: QA[];
+  /** When true, emit FAQPage JSON-LD. Set false if another FAQ on the page already emits it. */
+  emitJsonLd?: boolean;
+}
+
+const { heading = 'Frequently asked questions', items, emitJsonLd = true } = Astro.props;
+
+const slugify = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+
+const toText = (a: string | string[]) => (Array.isArray(a) ? a.join(' ') : a);
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: toText(item.a),
+    },
+  })),
+};
+---
+
+<section class="faq-section">
+  <h2>{heading}</h2>
+  {items.map((item) => {
+    const id = item.anchor ?? slugify(item.q);
+    const paragraphs = Array.isArray(item.a) ? item.a : [item.a];
+    return (
+      <div class="faq-item" id={id}>
+        <h3>{item.q}</h3>
+        {paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    );
+  })}
+</section>
+
+{emitJsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+)}

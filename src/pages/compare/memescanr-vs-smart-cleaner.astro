@@ -1,0 +1,103 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr vs Smart Cleaner — which iPhone cleaner is better in 2026?';
+const description =
+  'Comparison of MemeScanr and Smart Cleaner category iPhone cleaner apps for 2026. Features, privacy, pricing, and a clear recommendation for different user needs.';
+const heading = 'MemeScanr vs Smart Cleaner';
+const lede =
+  '"Smart Cleaner" is a common name for iPhone cleaners that bundle duplicate detection with contact cleanup. MemeScanr overlaps on both features but adds a Tinder-style swipe review, a private vault, compression, and personality features the Smart Cleaner category typically does not ship.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'vs Smart Cleaner' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/memescanr-vs-smart-cleaner/',
+};
+
+const faqItems = [
+  {
+    q: 'Is there one app called "Smart Cleaner" or many?',
+    a: 'There are multiple iPhone apps on the App Store that market themselves as "Smart Cleaner." Most share a similar feature set: duplicate photos, similar photos, screenshots, contact cleanup, and a simple gallery view. This comparison applies to the category broadly; individual apps vary.',
+  },
+  {
+    q: 'Does Smart Cleaner detect memes?',
+    a: 'The Smart Cleaner category typically does not ship meme detection. MemeScanr does, via on-device Apple ML Kit classification.',
+  },
+  {
+    q: 'Which is better for a large photo library?',
+    a: 'Both can handle tens of thousands of photos. MemeScanr\'s swipe mechanic makes bulk review faster because you decide one photo at a time via gesture rather than selecting checkboxes in a grid. For libraries over 20,000 photos, the time savings are significant.',
+  },
+  {
+    q: 'Is MemeScanr\'s privacy stance stronger?',
+    a: 'MemeScanr has no server, no cloud AI, and no account. Most Smart Cleaner category apps also run primarily on-device, but individual apps in the category vary — always check the current App Store Privacy Nutrition Label for the specific app you\'re installing.',
+  },
+  {
+    q: 'Does MemeScanr include contacts cleanup like Smart Cleaner apps do?',
+    a: 'Yes. MemeScanr ships a fuzzy-matching duplicate contacts engine (Levenshtein, comma-flip, phone normalization, Union-Find clustering) that goes beyond most Smart Cleaner implementations.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/memescanr-vs-smart-cleaner/"
+  jsonLd={webPageJsonLd}
+  wide={true}
+>
+  <div class="definition">
+    <strong>Verdict in one sentence</strong>
+    Smart Cleaner category apps handle duplicates and contacts well. MemeScanr handles the same plus memes, a swipe-review flow, a private vault with decoy mode, and compression — in a single app with a lifetime pricing option.
+  </div>
+
+  <h2>Feature comparison</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Feature</th><th>MemeScanr</th><th>Smart Cleaner category</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Duplicate photo detection</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Similar photo detection</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Screenshot cleanup</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Meme detection</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Blurry photo detection</td><td class="yes">✓</td><td class="partial">partial</td></tr>
+      <tr><td>Tinder-style swipe review</td><td class="yes">✓</td><td class="partial">partial</td></tr>
+      <tr><td>Duplicate contacts cleanup with fuzzy matching</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Private Face ID-locked vault</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Decoy vault</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Video + PDF compression</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Monthly personality reveal</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Lifetime one-time purchase</td><td class="yes">$59.99</td><td class="partial">varies</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Which should you pick?</h2>
+  <p>
+    <strong>Pick a Smart Cleaner if</strong> you want a traditional grid-based cleaner focused on duplicates and contacts, you're comfortable with subscription pricing, and you don't need a private vault or compression.
+  </p>
+  <p>
+    <strong>Pick MemeScanr if</strong> you want the full cleanup suite including a swipe-review flow, a Face ID-locked vault with a decoy mode, video compression, and the ability to buy once at $59.99 instead of subscribing.
+  </p>
+
+  <AppStoreCTA />
+
+  <FAQ items={faqItems} heading="FAQ" />
+
+  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 32px;">
+    Comparison applies to the Smart Cleaner category as of April 2026. Individual apps vary; always verify current features and privacy on the specific App Store listing.
+  </p>
+</ArticleLayout>

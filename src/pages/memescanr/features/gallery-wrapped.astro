@@ -1,0 +1,139 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Gallery Wrapped — monthly gallery personality reveal | MemeScanr';
+const description =
+  'Gallery Wrapped is MemeScanr\'s monthly personality reveal for your camera roll. Eight personality types, nine animated cards, shareable story cards. Available the first seven days of each month.';
+const heading = 'Gallery Wrapped: your monthly gallery personality reveal';
+const lede =
+  'Gallery Wrapped is a monthly, Spotify-Wrapped-style story card stack for your camera roll. Nine swipeable cards, eight personality types, a month-over-month comparison, and shareable story images designed for Instagram and TikTok. Available the first seven days of every month.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Gallery Wrapped' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/gallery-wrapped/',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+};
+
+const personalityTypes = [
+  { emoji: '🌪️', name: 'the chaos gremlin', desc: 'thousands of screenshots, zero organization, maximum vibes' },
+  { emoji: '📸', name: 'the documentarian', desc: 'every meal, every sunset, every receipt archived for posterity' },
+  { emoji: '🤳', name: 'the self-portraitist', desc: '47 versions of the same selfie and the confidence to prove it' },
+  { emoji: '🎭', name: 'the meme hoarder', desc: 'a reaction pic for every occasion, sorted only by vibes' },
+  { emoji: '👯', name: 'the group chat historian', desc: 'receipts for every inside joke from 2019 onward' },
+  { emoji: '🌅', name: 'the aesthete', desc: 'golden hour, flat lays, and the occasional latte from above' },
+  { emoji: '🐾', name: 'the pet obsessive', desc: 'your pet has a bigger photo archive than most humans' },
+  { emoji: '✈️', name: 'the collector', desc: 'passport stamps, museum cards, concert tickets in photo form' },
+];
+
+const faqItems = [
+  {
+    q: 'When is Gallery Wrapped available?',
+    a: 'Gallery Wrapped is available during the first seven days of each month. The feature unlocks on the 1st and stays live through the 7th. Outside that window, the banner on the MemeScanr home screen shows a countdown to the next drop.',
+  },
+  {
+    q: 'How many personality types are there?',
+    a: 'There are eight gallery personality types: the chaos gremlin, the documentarian, the self-portraitist, the meme hoarder, the group chat historian, the aesthete, the pet obsessive, and the collector. Your type is computed from your on-device gallery stats — not from anything uploaded to a server.',
+  },
+  {
+    q: 'Can I share my Gallery Wrapped cards?',
+    a: 'Yes. Gallery Wrapped generates shareable story images and square images sized for Instagram, TikTok, and iMessage. Each card includes your personality and stats with the MemeScanr branding.',
+  },
+  {
+    q: 'Does Gallery Wrapped upload my photos?',
+    a: 'No. Gallery Wrapped runs entirely on-device. It counts photos, videos, screenshots, and memes per month locally and computes your personality from those counts. No photos, no metadata, and no stats are ever uploaded or shared with Afia Labs.',
+  },
+  {
+    q: 'Does Gallery Wrapped compare months?',
+    a: 'Yes. Gallery Wrapped does a month-over-month comparison and flags personality shifts ("you were the aesthete last month, the chaos gremlin this month"). These nudges often trigger the strongest share behavior on social.',
+  },
+  {
+    q: 'Is Gallery Wrapped free?',
+    a: 'Yes. Gallery Wrapped is available to all MemeScanr users for free during the monthly availability window. MemeScanr Premium unlocks the history screen so you can revisit every past monthly snapshot year-round.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/gallery-wrapped/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Gallery Wrapped in one sentence</strong>
+    Gallery Wrapped is a monthly, on-device personality reveal for your iPhone camera roll that shows you which of eight gallery types you are, compares it to last month, and generates shareable story cards.
+  </div>
+
+  <MediaPlaceholder caption="Gallery Wrapped card stack: large emoji + personality name ('the chaos gremlin 🌪️') with 8 stacked cards behind it." />
+
+  <h2>How Gallery Wrapped works</h2>
+  <p>
+    On the 1st of every month, MemeScanr generates a snapshot of your gallery: how many photos you took, how many were screenshots, how many were memes, how many came from each app, and what your most photographed days looked like. It turns those numbers into nine swipeable story cards — the same mechanic Spotify Wrapped uses — and reveals your personality on the final card.
+  </p>
+  <p>
+    Every calculation happens on your device. No photo is uploaded. No stat is sent to a server. The whole Wrapped snapshot is written to local storage and can be opened again later from the Settings → Wrapped history screen.
+  </p>
+
+  <h2>The eight gallery personality types</h2>
+  <p>
+    Your personality is determined by the dominant pattern in last month's photo activity. Here are the eight types — the language used inside the app is intentionally playful.
+  </p>
+  <ul>
+    {personalityTypes.map((t) => (
+      <li><strong>{t.emoji} {t.name}</strong> — {t.desc}</li>
+    ))}
+  </ul>
+
+  <h2>The nine Wrapped cards</h2>
+  <p>
+    When you open Gallery Wrapped, you get a card stack you swipe through like Instagram Stories or Spotify Wrapped. The card order is deliberate: it opens light, builds through your stats, and lands the personality reveal as the penultimate card with a share card at the end.
+  </p>
+  <ol>
+    <li>Opening card — "your {'{month}'} wrap is here"</li>
+    <li>Total photos this month</li>
+    <li>Screenshot count ("you screenshotted {'{x}'} times. you read {'{y}'} of them")</li>
+    <li>Busiest day</li>
+    <li>Most photographed person, place, or subject</li>
+    <li>Meme count</li>
+    <li>Month-over-month delta</li>
+    <li>Personality reveal</li>
+    <li>Share card</li>
+  </ol>
+
+  <h2>Why Gallery Wrapped drives shares</h2>
+  <p>
+    The reason Spotify Wrapped drives one of the largest organic moments on social every year is simple: personality reveals are inherently shareable. People want to announce their identity to their followers. Gallery Wrapped borrows that mechanic and applies it to the camera roll — a surface nobody else has been playful with. The shareable story cards are designed to screenshot well, with the MemeScanr brand mark in the corner so the source is obvious.
+  </p>
+
+  <h2>Deep link</h2>
+  <p>
+    Gallery Wrapped has a dedicated URL scheme: <code>memescanr://wrapped</code>. The deep link opens directly to the Wrapped card stack if a snapshot is available. If not, it shows a SnackBar pointing you at the scan button.
+  </p>
+
+  <AppStoreCTA
+    heading="Find out which gallery personality you are."
+    body="Gallery Wrapped is free inside MemeScanr. Download and run one scan — your first wrapped is ready on the 1st."
+  />
+
+  <FAQ items={faqItems} heading="Gallery Wrapped FAQ" />
+</ArticleLayout>

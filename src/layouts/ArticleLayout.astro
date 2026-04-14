@@ -1,0 +1,62 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs, { type Crumb } from '../components/Breadcrumbs.astro';
+import '../styles/content.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  eyebrow?: string;
+  heading: string;
+  lede?: string;
+  breadcrumbs?: Crumb[];
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  wide?: boolean;
+  /** Optional JSON-LD object to inject as <script type="application/ld+json">. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  eyebrow,
+  heading,
+  lede,
+  breadcrumbs,
+  canonical,
+  ogImage,
+  ogType = 'article',
+  wide = false,
+  jsonLd,
+} = Astro.props;
+
+const jsonLdList = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  ogType={ogType}
+>
+  <main>
+    <article class="article">
+      <div class={wide ? 'article-inner article-wide' : 'article-inner'}>
+        {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
+        {eyebrow && <div class="article-eyebrow">{eyebrow}</div>}
+        <h1 class="article-title">{heading}</h1>
+        {lede && <p class="article-lede">{lede}</p>}
+        <div class="article-content">
+          <slot />
+        </div>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+{jsonLdList.map((entry) => (
+  <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+))}

@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr vs Gemini Photos — which is better for iPhone cleanup? (2026)';
+const description =
+  'Head-to-head comparison of MemeScanr and Gemini Photos for iPhone photo cleanup in 2026. Features, privacy, pricing, and a direct recommendation based on use case.';
+const heading = 'MemeScanr vs Gemini Photos (2026)';
+const lede =
+  'Both MemeScanr and Gemini Photos are iOS photo cleaners that run primarily on-device. They overlap on duplicate detection, but MemeScanr goes further on personality features, private vault, and compression. Here\'s the direct comparison with a clear recommendation.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'MemeScanr vs Gemini Photos' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/memescanr-vs-gemini-photos/',
+};
+
+const faqItems = [
+  {
+    q: 'Is MemeScanr or Gemini Photos better for detecting duplicates?',
+    a: 'Both use on-device perceptual hashing and both work well. Gemini Photos has a longer track record for duplicate detection specifically. MemeScanr adds near-duplicate tiers and category-based cleanup (memes, screenshots, blurry) that Gemini does not focus on. If duplicates are your only problem, both are solid. If you want everything in one app, MemeScanr covers more ground.',
+  },
+  {
+    q: 'Does Gemini Photos upload my photos?',
+    a: 'Gemini Photos primarily runs its scanning on-device, like MemeScanr. Always verify the latest privacy policy on the MacPaw / Gemini Photos product page before installing — privacy claims can change between app versions.',
+  },
+  {
+    q: 'Which one has a private photo vault?',
+    a: 'MemeScanr has Backroom, a Face ID and PIN-locked vault with a decoy mode. Gemini Photos does not ship a private vault as a core feature. If vaulting is important to you, MemeScanr is the stronger pick.',
+  },
+  {
+    q: 'Which one is cheaper?',
+    a: 'Both offer free tiers and paid upgrades. MemeScanr Premium offers a $59.99 lifetime option which is often the cheapest long-term path. Gemini Photos offers subscription tiers; check the App Store for current pricing.',
+  },
+  {
+    q: 'Can I use both?',
+    a: 'Yes. There is no conflict. Many users run Gemini Photos first for a targeted duplicate pass, then MemeScanr for the broader cleanup categories.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/memescanr-vs-gemini-photos/"
+  jsonLd={webPageJsonLd}
+  wide={true}
+>
+  <div class="definition">
+    <strong>Verdict in one sentence</strong>
+    Gemini Photos is a solid on-device duplicate finder. MemeScanr is a broader cleanup suite with duplicate detection, category cleanup, a private vault, compression, and personality features — and a $59.99 lifetime option.
+  </div>
+
+  <h2>Feature comparison</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Feature</th><th>MemeScanr</th><th>Gemini Photos</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Exact duplicate detection</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Near-duplicate detection (similar photos)</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Screenshot cleanup</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Meme detection</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Blurry photo detection</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Tinder-style swipe review</td><td class="yes">✓</td><td class="partial">partial</td></tr>
+      <tr><td>Monthly personality reveal (Wrapped)</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Daily gallery diagnosis (Phone Therapist)</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Private Face ID-locked vault</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Decoy vault</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Photo / video / PDF compression</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Duplicate contacts cleanup</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Seasonal app icons</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>iPad support</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Privacy comparison</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Privacy</th><th>MemeScanr</th><th>Gemini Photos</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>On-device scanning</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>No account required</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>No cloud AI</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Works in Airplane Mode</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>No photo uploads</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+    </tbody>
+  </table>
+  <p>
+    Both apps are strong on privacy. Gemini Photos has historically been marketed as on-device. MemeScanr is also fully on-device. Always verify the current App Privacy card on the App Store listing for either app before installing.
+  </p>
+
+  <h2>Pricing comparison</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Pricing</th><th>MemeScanr</th><th>Gemini Photos</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Free tier</td><td class="yes">Full scan, 25 deletes/session, 5-item vault</td><td class="yes">Limited free scan</td></tr>
+      <tr><td>Monthly subscription</td><td class="yes">Available</td><td class="yes">Available</td></tr>
+      <tr><td>Yearly subscription</td><td class="yes">Available</td><td class="yes">Available</td></tr>
+      <tr><td>Lifetime one-time</td><td class="yes">$59.99</td><td class="no">Not offered</td></tr>
+      <tr><td>Free trial</td><td class="yes">3 days</td><td class="yes">Varies</td></tr>
+    </tbody>
+  </table>
+  <p>
+    MemeScanr is the cheaper long-term option if you don't want a recurring subscription. The $59.99 lifetime payment pays itself off in roughly one year compared to most monthly plans.
+  </p>
+
+  <h2>Which should you pick?</h2>
+  <p>
+    <strong>Pick Gemini Photos if</strong> you only want duplicate detection, you're happy with a subscription, and you don't need meme cleanup, compression, or a private vault. Gemini Photos is a focused, well-executed tool for one job.
+  </p>
+  <p>
+    <strong>Pick MemeScanr if</strong> you want everything in one app: duplicates, memes, screenshots, blurry photos, a private vault with decoy mode, video compression, contacts cleanup, and personality features like Memory Lane and Gallery Wrapped. And if you'd rather buy once at $59.99 than subscribe.
+  </p>
+
+  <AppStoreCTA
+    heading="Try MemeScanr free"
+    body="Full scan and Memory Lane on the free tier. No upload, no account, no cloud."
+  />
+
+  <FAQ items={faqItems} heading="MemeScanr vs Gemini Photos FAQ" />
+
+  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 32px;">
+    Comparison based on publicly available information as of April 2026. Competitor features and pricing change frequently — verify current claims on the Gemini Photos App Store page or MacPaw website before purchase.
+  </p>
+</ArticleLayout>

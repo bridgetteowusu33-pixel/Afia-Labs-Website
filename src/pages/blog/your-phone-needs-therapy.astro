@@ -1,0 +1,115 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-03-10';
+const title = 'Your phone needs therapy — the Phone Therapist origin story';
+const description =
+  'Why we built Phone Therapist: a daily gallery diagnosis feature that names your camera roll behavior with humor instead of guilt. 27 templates, 50+ session notes, on-device.';
+const heading = 'Your phone needs therapy';
+const lede =
+  'Cleaner apps are joyless by default. They tell you how much junk you have, and your job is to feel bad about it until you tap Delete. Phone Therapist is the opposite: it names your camera roll behavior with humor, not judgement. Here\'s why we built it and how it works.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Your phone needs therapy' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' },
+  },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/your-phone-needs-therapy/',
+  wordCount: 920,
+  articleSection: 'Design story',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Design story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/your-phone-needs-therapy/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published March 10, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>Why cleaner apps feel bad to use</h2>
+  <p>
+    Every cleaner app has the same opening screen energy: you\'ve let your phone get out of control, now repent. The numbers are accusatory. The storage bar is angry red. The copy is clinical and vaguely ashamed on your behalf. The problem isn\'t the facts — your gallery probably <em>is</em> chaos — it\'s that there\'s nothing to enjoy about interacting with it. Cleanup apps are designed like tax prep software: functional, joyless, something you do once and then avoid.
+  </p>
+  <p>
+    We wanted Gen Z users to open MemeScanr for fun, not just when their phone is full. That required giving them something to do in the app that wasn\'t scolding them. That\'s where Phone Therapist came from.
+  </p>
+
+  <h2>The core idea: name the behavior, don\'t judge it</h2>
+  <p>
+    Phone Therapist is a card that appears on the MemeScanr home screen. Every day it picks one "diagnosis" from a pool of 27 templates and pairs it with a session note joke from a pool of 50+. The templates are all variations on a single idea: name a camera roll pattern you actually have, with affection, as if the phone itself were the patient.
+  </p>
+  <div class="pullquote">
+    "diagnosis: chronic screenshot hoarder. 847 screenshots. you\'re not reading any of them."
+  </div>
+  <div class="pullquote">
+    "diagnosis: selfie perfectionist. 47 versions of the same face from tuesday night. pick one, bestie."
+  </div>
+  <div class="pullquote">
+    "diagnosis: meme custodian. your camera roll is 18% memes and i respect the commitment."
+  </div>
+  <p>
+    The voice is playful and borderline affectionate — the opposite of tax prep. There\'s no "you should delete these." There\'s no storage-bar shame. There\'s a joke about your phone\'s personality, and then a session note joke underneath it for variety. The whole card is one pointed sentence and one casual aside.
+  </p>
+
+  <h2>How the diagnosis selection works</h2>
+  <p>
+    Phone Therapist runs a lightweight analysis over your most recent scan results every day. It counts screenshots, memes, selfie runs, burst groups, blurry photos, and downloads. Each diagnosis template has a trigger condition — for example, "screenshot hoarder" requires at least 200 screenshots and a screenshot ratio above 12% of the library. The pool of templates whose triggers match your gallery\'s current state is the eligible set for today.
+  </p>
+  <p>
+    The actual pick from the eligible set is <strong>deterministic</strong>. A daily seed (date plus a stable hash of your gallery) goes into the picker, which means you see one stable diagnosis per day. If we picked randomly, the card would flicker every time you opened the app and feel cheap. Determinism was a design decision — the diagnosis is supposed to feel like a one-a-day thing, like a horoscope.
+  </p>
+
+  <h2>Why it\'s called "therapist" and not, like, "reader"</h2>
+  <p>
+    The name is a joke, not a medical claim, and the UI is very careful about this. There\'s no language anywhere in the app that implies actual therapy, diagnosis, or mental health advice. The voice is self-aware about being a joke ("no judgement. just vibes.") and the pullquotes are deliberately absurd so nobody reading one mistakes it for actual guidance. Phone Therapist is a gag with a consistent character, not a health tool.
+  </p>
+  <p>
+    That said, we kept the name because it\'s the funniest way to describe what the feature does: it sits your phone down and has a short, warm conversation about its habits. "Gallery reader" is what the feature <em>is</em>; "Phone Therapist" is what it <em>feels</em> like. The name does the work of teaching the user to expect humor rather than hostility.
+  </p>
+
+  <h2>The sharing moment</h2>
+  <p>
+    Here\'s the thing we didn\'t expect: users screenshot the diagnosis card and share it in group chats. A lot. The card\'s typography is sized deliberately to look good as a 9:16 iMessage screenshot, with the MemeScanr brand mark in the corner so the source is obvious. Every share is free acquisition — a new user who downloaded MemeScanr because their friend\'s "chronic screenshot hoarder" diagnosis made them laugh.
+  </p>
+  <p>
+    Sharing was not the original goal of the feature. We built it as a daily home-screen moment and the sharing behavior emerged because the content was inherently shareable. The takeaway — cleaner apps should be fun to open, not just useful, and fun is what turns users into marketers.
+  </p>
+
+  <h2>The 27 templates will keep growing</h2>
+  <p>
+    Every release expands the template pool. The aim is a library big enough that regular users see a fresh diagnosis most days even after months of use, with the 50+ session notes giving each template a rotating second line. Over time the pool will specialize — templates for concert photographers, pet parents, travel archivists, food documentarians. Each template needs to meet two bars: it has to name a real pattern, and it has to be funny enough to quote in a group chat.
+  </p>
+
+  <AppStoreCTA
+    heading="Get your daily gallery diagnosis."
+    body="Phone Therapist is free in MemeScanr. One scan unlocks it for good."
+  />
+</ArticleLayout>

@@ -1,0 +1,146 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const pubDate = '2026-03-25';
+const title = 'I had 10,000 photos — here\'s how I cleaned my iPhone';
+const description =
+  'A real cleanup session of a 10,000-photo iPhone library. What the scan found, what I actually deleted, and how much storage I got back in under an hour.';
+const heading = 'I had 10,000 photos — here\'s how I cleaned my iPhone';
+const lede =
+  'This is a real cleanup walkthrough. I had roughly 10,000 photos on my iPhone, accumulated over four years with zero deletion. Here\'s what MemeScanr found, what I actually kept, and how much space I got back — broken down category by category.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'I had 10,000 photos' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs', logo: { '@type': 'ImageObject', url: 'https://afialabs.net/memescanr_logo.png' } },
+  image: 'https://afialabs.net/og-image.png',
+  mainEntityOfPage: 'https://afialabs.net/blog/i-had-10000-photos-heres-how-i-cleaned-my-iphone/',
+  wordCount: 1140,
+  articleSection: 'Story',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/i-had-10000-photos-heres-how-i-cleaned-my-iphone/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published March 25, 2026</span>
+    <span>· Afia Labs</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>The starting state</h2>
+  <p>
+    I had 9,847 photos and 412 videos on my iPhone. Total library size: 38.4 GB, out of 128 GB of device storage. iOS was showing "Storage Almost Full" for the third week in a row. I hadn\'t taken a full cleanup pass since buying the phone in 2022. Like most people, my review workflow had been "delete one photo occasionally when the Camera Roll scrolled past something ugly."
+  </p>
+  <p>
+    I ran a full MemeScanr scan on a Tuesday evening. The scan took 3 minutes 11 seconds to complete on an iPhone 15 Pro. Here\'s what it found.
+  </p>
+
+  <h2>Scan results</h2>
+  <ul>
+    <li><strong>Duplicates</strong> — 1,204 photos in 392 groups. Roughly 2.1 GB.</li>
+    <li><strong>Near-duplicates (similar)</strong> — 1,861 photos in 507 groups. Roughly 3.4 GB.</li>
+    <li><strong>Screenshots</strong> — 1,743 photos. Roughly 1.8 GB.</li>
+    <li><strong>Memes</strong> — 612 photos. Roughly 280 MB.</li>
+    <li><strong>Blurry</strong> — 441 photos. Roughly 900 MB.</li>
+    <li><strong>Downloads and clutter</strong> — 318 photos. Roughly 650 MB.</li>
+  </ul>
+  <p>
+    Total flagged: roughly 6,179 photos, or 9.1 GB. Which means more than half my library was flagged as some kind of junk by the scan. That was higher than I expected but not shocking.
+  </p>
+
+  <h2>What I actually deleted</h2>
+  <p>
+    I didn\'t delete everything the scan flagged. I went through each category in swipe mode and made per-photo decisions. Here\'s what I ended up with.
+  </p>
+
+  <h3>Duplicates — kept the largest in each group (392 groups → 392 photos)</h3>
+  <p>
+    Used the "keep highest quality" batch option. MemeScanr auto-kept the largest file in each group and marked the rest for deletion. I spot-checked about 30 groups and only overrode the default twice (both times to keep a slightly smaller version with better framing). Freed: 1.7 GB.
+  </p>
+
+  <h3>Near-duplicates — swiped through manually (deleted 1,340 of 1,861)</h3>
+  <p>
+    This was the biggest time investment. About 20 minutes of Memory Lane swiping. Most near-duplicates were burst mode runs from concerts and kid events — I kept one or two per burst and deleted the rest. Freed: 2.5 GB.
+  </p>
+
+  <h3>Screenshots — deleted 1,614 of 1,743</h3>
+  <p>
+    I kept 129 screenshots. Everything kept fell into three categories: receipts I hadn\'t processed yet, tickets for upcoming events, and a handful of actually-funny DM screenshots worth saving. The other 1,614 were recipe links I never cooked, random tweets from 2023, and a lot of bank-app screenshots from "I\'ll look at this later" moments that I never looked at. Freed: 1.7 GB.
+  </p>
+
+  <h3>Memes — deleted 488, vaulted 124</h3>
+  <p>
+    I wanted to keep my best reaction pics but didn\'t want them in the main gallery anymore. Swiping up in Memory Lane sends a photo to the Backroom vault, so I used that for the 124 memes I wanted to keep. The other 488 got deleted. Freed: 220 MB.
+  </p>
+
+  <h3>Blurry — deleted 389 of 441</h3>
+  <p>
+    I kept 52 blurry shots. The keepers were all emotionally irreplaceable — old photos of my grandparents, one-of-a-kind moments with kids, the blurry photo of my dad laughing that I actually love. Everything else went. Freed: 800 MB.
+  </p>
+
+  <h3>Downloads and clutter — deleted 310 of 318</h3>
+  <p>
+    Photos saved from Safari and Messages. Almost all of them were references I\'d saved once and never used again. Freed: 640 MB.
+  </p>
+
+  <h2>Then I ran Boost on videos</h2>
+  <p>
+    After the photo cleanup, I opened Boost and sorted my 412 videos by size. The top 30 videos (all 4K clips from concerts, birthdays, and vacations) totalled 18 GB. I ran Boost on them overnight. The compressed versions were 5.8 GB total. Freed: 12.2 GB.
+  </p>
+  <p>
+    I watched a handful of the compressed clips side-by-side with the originals the next morning before deleting the originals. I couldn\'t see a difference. Deleted the originals.
+  </p>
+
+  <h2>Totals</h2>
+  <p>
+    <strong>Time spent:</strong> approximately 55 minutes of active work (40 minutes of photo swiping, 15 minutes of video Boost setup and review).
+  </p>
+  <p>
+    <strong>Photos remaining:</strong> 4,709 (down from 9,847)
+  </p>
+  <p>
+    <strong>Storage freed:</strong> roughly 19.8 GB
+  </p>
+  <p>
+    <strong>Library size after:</strong> 18.6 GB (down from 38.4 GB)
+  </p>
+  <p>
+    The "Storage Almost Full" warning stopped appearing. I haven\'t seen it since. I now run a MemeScanr scan once a month on a reminder, which takes about 10 minutes and frees another 1–2 GB each pass (mostly new screenshots).
+  </p>
+
+  <h2>What I\'d do differently</h2>
+  <p>
+    I\'d do the video Boost pass before the photo pass next time. Boost runs in the background while I\'m asleep, so starting it earlier lets the photo cleanup and video compression finish in parallel. I spent 15 minutes of active photo work that could have been 5 minutes if I\'d started Boost first.
+  </p>
+  <p>
+    I\'d also use the Memory Lane <em>category swipe</em> mode for duplicates instead of grid review. It\'s faster for libraries this size because it\'s scoped and finishable ("14 of 47") rather than an unbounded session.
+  </p>
+
+  <AppStoreCTA
+    heading="Try this on your iPhone."
+    body="MemeScanr is free to scan. Most users free 10–20 GB on their first pass."
+  />
+</ArticleLayout>

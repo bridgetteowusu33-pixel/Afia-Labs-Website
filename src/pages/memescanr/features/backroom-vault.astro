@@ -1,0 +1,121 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Backroom Vault — Face ID private photo vault with decoy mode | MemeScanr';
+const description =
+  'Backroom is MemeScanr\'s private photo vault. Face ID plus a salted PIN in the iOS Keychain, brute force lockout, screen recording blur, and a decoy vault that fools snoopers with a fake library on wrong PIN entry.';
+const heading = 'Backroom: the vault that fools everyone';
+const lede =
+  'Backroom is MemeScanr\'s private media vault. It\'s protected by Face ID and a salted PIN stored in the iOS Keychain, with brute-force lockout and screen-recording blur. Its signature feature: a decoy vault that shows a fake, believable library when someone enters the wrong PIN.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Backroom Vault' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/backroom-vault/',
+};
+
+const faqItems = [
+  {
+    q: 'How is Backroom different from hiding photos in the iPhone Photos app?',
+    a: 'The iOS Photos app hidden album can be revealed by anyone who opens Photos → Albums and enables "Show Hidden Album." Backroom is a separate, encrypted vault inside MemeScanr protected by Face ID and a salted PIN stored in the iOS Keychain. Photos moved to Backroom are removed from the Photos app entirely.',
+  },
+  {
+    q: 'What is the decoy vault?',
+    a: 'The decoy vault is a second, fake vault that opens when someone enters the wrong PIN three times. Instead of showing an error, Backroom shows a believable but empty vault with neutral content — a grocery list, some receipts. The person trying to snoop sees what looks like a successfully-opened vault with nothing interesting in it, and never knows a real vault exists.',
+  },
+  {
+    q: 'How is the PIN stored?',
+    a: 'The PIN is salted and hashed with SHA-256 using 1000 iterations, then stored in the iOS Keychain — the same secure enclave Apple uses for passwords and passkeys. The raw PIN is never stored anywhere.',
+  },
+  {
+    q: 'What happens if someone tries to brute force the PIN?',
+    a: 'Backroom enforces a progressive lockout policy: 3 wrong attempts triggers a 30-second lockout, 5 wrong attempts triggers a 5-minute lockout, and 10 wrong attempts triggers a 30-minute lockout. The lockout state is stored in the Keychain so closing and reopening the app does not reset it.',
+  },
+  {
+    q: 'Does Backroom protect against screen recording and screenshots?',
+    a: 'Yes. Backroom uses iOS screen capture detection to blur its contents if a screen recording starts while you have the vault open. It also shows a toast warning if a screenshot is taken while Backroom is unlocked.',
+  },
+  {
+    q: 'What can I put in Backroom?',
+    a: 'Photos, videos, notes, voice memos, and documents. Backroom also supports a quick-capture camera so you can shoot directly into the vault without the file ever touching the Photos app. Notes support self-destructing expiry timers.',
+  },
+  {
+    q: 'Is Backroom free?',
+    a: 'The free tier includes 5 Backroom items. Unlimited vault storage requires MemeScanr Premium.',
+  },
+  {
+    q: 'What happens to Backroom if I delete MemeScanr?',
+    a: 'Deleting the app deletes the vault and everything in it. Backroom is local-only — there is no cloud backup, because there is no server. Back up important vault items before uninstalling.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/backroom-vault/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Backroom in one sentence</strong>
+    Backroom is MemeScanr's private photo and notes vault, protected by Face ID and a salted PIN in the iOS Keychain, with a decoy vault that shows a fake library when someone enters the wrong PIN.
+  </div>
+
+  <MediaPlaceholder caption="Backroom PIN pad side by side with the decoy vault: one shows the real contents (dark), the other shows a decoy vault with a fake grocery list." />
+
+  <h2>The decoy vault: Backroom's unique angle</h2>
+  <p>
+    Most photo vault apps show an error when someone enters the wrong PIN. That error is itself a signal — the snooper now knows a vault exists and will try again, or they'll ask you to enter it. Backroom takes a different approach: instead of showing an error, it opens a <strong>decoy vault</strong> that looks like a real, working vault. It has a PIN pad that accepted an entry, a gallery view, and some neutral content (a grocery list, a few receipts). The snooper sees what looks like a successfully-unlocked vault with nothing interesting in it.
+  </p>
+  <p>
+    The real vault never opens. The snooper never knows it exists. This is the angle no competitor has, and it is MemeScanr's strongest privacy proof point beyond the on-device scanning claim.
+  </p>
+
+  <h2>How Backroom is locked</h2>
+  <ul>
+    <li><strong>Face ID</strong> — primary unlock on devices that support it. Falls back to PIN on failure.</li>
+    <li><strong>Salted PIN</strong> — SHA-256 hashed with 1000 iterations, stored in the iOS Keychain. The raw PIN is never written anywhere.</li>
+    <li><strong>Progressive lockout</strong> — 3 wrong attempts → 30 seconds, 5 → 5 minutes, 10 → 30 minutes. Lockout state lives in Keychain, so closing the app doesn't reset it.</li>
+    <li><strong>Screen recording blur</strong> — if you start recording the screen while Backroom is open, the vault contents blur automatically.</li>
+    <li><strong>Screenshot detection toast</strong> — if a screenshot fires while Backroom is unlocked, Backroom shows a warning toast so you know it happened.</li>
+  </ul>
+
+  <h2>What you can put in Backroom</h2>
+  <p>
+    Backroom is not just a photo vault. It stores:
+  </p>
+  <ul>
+    <li>Photos and videos — moved from the Photos app and removed from the native library</li>
+    <li>Voice notes — recorded directly in-app</li>
+    <li>Text notes — with optional self-destruct timers</li>
+    <li>Quick-capture camera shots — shot directly into the vault, never touching Photos</li>
+    <li>Favorites collection — pin your most-used vault items to the top</li>
+  </ul>
+
+  <h2>Why the architecture matters</h2>
+  <p>
+    Backroom is fully local. There is no cloud backup, no iCloud sync, no web access. That is intentional. Any cloud-synced vault is only as secure as the weakest account in your chain — your Apple ID, your email recovery, your SMS 2FA. Keeping Backroom offline removes every one of those attack surfaces. The tradeoff is that deleting MemeScanr deletes the vault, so users who care about long-term archival should back up their vault contents externally first.
+  </p>
+
+  <AppStoreCTA
+    heading="Set up your Backroom vault in under a minute."
+    body="5 items free. Unlimited vault on Premium. No server, no cloud, no leak path."
+  />
+
+  <FAQ items={faqItems} heading="Backroom Vault FAQ" />
+</ArticleLayout>

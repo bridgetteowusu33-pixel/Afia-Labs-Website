@@ -1,0 +1,99 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'How to delete duplicate photos on iPhone (exact + near-duplicates)';
+const description =
+  'How to delete duplicate photos on iPhone, including both exact duplicates (built-in Photos app) and near-duplicates (dedicated cleaner). Step-by-step for iOS 16+.';
+const heading = 'How to delete duplicate photos on iPhone';
+const lede =
+  'There are two kinds of duplicate photos on your iPhone: exact duplicates, which iOS 16+ catches with its built-in Duplicates album, and near-duplicates, which it misses entirely. Here\'s how to clean up both in under 10 minutes.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Delete duplicate photos' },
+];
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to delete duplicate photos on iPhone',
+  description,
+  totalTime: 'PT10M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Open the Photos app Duplicates album', text: 'Open Photos → Albums tab → scroll to Utilities → tap Duplicates. Requires iOS 16 or later.' },
+    { '@type': 'HowToStep', position: 2, name: 'Merge exact duplicates', text: 'Tap Select → Select All → Merge. iOS keeps the highest-quality version and discards the rest.' },
+    { '@type': 'HowToStep', position: 3, name: 'Run MemeScanr for near-duplicates', text: 'Install MemeScanr, run a full scan. Open Clean → Duplicates. Swipe or select to delete near-duplicates that iOS missed.' },
+    { '@type': 'HowToStep', position: 4, name: 'Empty Recently Deleted', text: 'Photos → Albums → Recently Deleted → Select → Delete All. Frees the space immediately.' },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Why does iPhone have so many duplicate photos?',
+    a: 'Duplicates accumulate from multiple sources: saving the same photo from Messages, downloading the same image twice from different apps, burst mode runs, multi-tap while shooting, iCloud sync edge cases, and WhatsApp / Telegram auto-save. Most users have hundreds of duplicates they never realized were there.',
+  },
+  {
+    q: 'What\'s the difference between exact and near-duplicates?',
+    a: 'Exact duplicates are pixel-identical — the same photo file saved twice. iOS detects these with the built-in Duplicates album. Near-duplicates are photos of the same scene taken a second or two apart, like burst mode results. iOS does not detect these; MemeScanr does, via perceptual hashing.',
+  },
+  {
+    q: 'Will deleting duplicates affect iCloud?',
+    a: 'Yes. Deletions sync to iCloud, which also frees your iCloud storage quota. Photos enter the Recently Deleted album for 30 days before permanent removal.',
+  },
+  {
+    q: 'Can I recover deleted duplicates?',
+    a: 'Yes, within 30 days. Open Photos → Albums → Recently Deleted. Any deletion can be undone in that window. After 30 days, the photo is permanently gone unless you have a separate backup.',
+  },
+  {
+    q: 'Does MemeScanr delete the original or the duplicate?',
+    a: 'Neither — it shows you both versions side by side and you pick which to keep. You can also use the "keep highest quality" batch option to automatically retain the largest file in each group.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Guide"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/delete-duplicate-photos-iphone/"
+  jsonLd={howToJsonLd}
+>
+  <div class="definition">
+    <strong>The short answer</strong>
+    For exact duplicates, use Photos → Albums → Utilities → Duplicates (free, built-in, iOS 16+). For near-duplicates that iOS misses, use MemeScanr to scan your library with perceptual hashing and review as a swipe deck.
+  </div>
+
+  <h2>Step 1: Delete exact duplicates (built-in, free)</h2>
+  <p>
+    iOS 16 and later ships a Duplicates album that handles exact pixel-matches automatically. Open <strong>Photos → Albums → Utilities → Duplicates</strong>. If the album doesn\'t appear, iOS either hasn\'t finished indexing or hasn\'t detected any duplicates yet — wait a few hours and check again.
+  </p>
+  <p>
+    Once the album loads, you can review groups one at a time or hit <strong>Select → Select All → Merge</strong>. iOS keeps the highest-quality version of each duplicate group and discards the rest. Merges sync to iCloud automatically if you have it on.
+  </p>
+
+  <h2>Step 2: Delete near-duplicates (MemeScanr)</h2>
+  <p>
+    Apple\'s built-in album only catches exact duplicates. It does not catch near-duplicates — photos from burst mode, multi-tap shooting, or screenshots you took twice a few seconds apart. MemeScanr catches these using perceptual hashing.
+  </p>
+  <p>
+    Install MemeScanr from the App Store, grant photo access, and run one scan. It takes 2–4 minutes on most libraries. When it finishes, open <strong>Clean → Duplicates</strong>. Every duplicate group is shown as a card: you can tap to expand, swipe through the variants, and pick which to keep. For large libraries, use the <strong>Memory Lane swipe deck</strong> — left to delete, right to keep, up to vault.
+  </p>
+
+  <h2>Step 3: Empty Recently Deleted</h2>
+  <p>
+    Photos you delete go to the Recently Deleted album for 30 days before actually leaving your device. To reclaim the space immediately, open <strong>Photos → Albums → Recently Deleted → Select → Delete All</strong>. This is permanent — anything not backed up will be gone.
+  </p>
+
+  <AppStoreCTA
+    heading="Catch the duplicates Apple misses."
+    body="MemeScanr uses on-device perceptual hashing to find near-duplicates the Photos app can\'t see. Free to try."
+  />
+
+  <FAQ items={faqItems} heading="Delete duplicates FAQ" />
+</ArticleLayout>

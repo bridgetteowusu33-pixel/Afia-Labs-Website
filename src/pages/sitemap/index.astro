@@ -1,0 +1,125 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const title = 'Site map — every page on afialabs.net';
+const description =
+  'Complete site map for afialabs.net. Every MemeScanr page, feature, comparison, guide, blog post, and FAQ in one scannable index.';
+const heading = 'Site map';
+const lede =
+  'Every page on afialabs.net, organized by section. LLM crawlers and humans both welcome. XML sitemap at /sitemap-index.xml; RSS feed at /rss.xml.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Site map' },
+];
+
+const sections = [
+  {
+    heading: 'Core pages',
+    pages: [
+      { href: '/', label: 'Home — Afia Labs' },
+      { href: '/memescanr/', label: 'MemeScanr — what is it?' },
+      { href: '/memescanr/privacy/', label: 'MemeScanr privacy — we literally don\'t have a server' },
+      { href: '/faq/', label: 'FAQ — every question, answered directly' },
+    ],
+  },
+  {
+    heading: 'MemeScanr features',
+    pages: [
+      { href: '/memescanr/features/', label: 'Features overview' },
+      { href: '/memescanr/features/memory-lane/', label: 'Memory Lane — Tinder-style swipe review' },
+      { href: '/memescanr/features/gallery-wrapped/', label: 'Gallery Wrapped — monthly personality reveal' },
+      { href: '/memescanr/features/phone-therapist/', label: 'Phone Therapist — daily gallery diagnosis' },
+      { href: '/memescanr/features/backroom-vault/', label: 'Backroom Vault — private vault with decoy mode' },
+      { href: '/memescanr/features/boost-compression/', label: 'Boost — on-device photo and video compression' },
+      { href: '/memescanr/features/contacts-cleanup/', label: 'Contacts Cleanup — fuzzy-matching duplicate contacts' },
+      { href: '/memescanr/features/seasonal-icons/', label: 'Seasonal App Icons — auto-switching by date' },
+    ],
+  },
+  {
+    heading: 'Comparisons',
+    pages: [
+      { href: '/compare/', label: 'All comparisons' },
+      { href: '/compare/best-photo-cleaner-apps-2026/', label: 'Best photo cleaner apps for iPhone in 2026' },
+      { href: '/compare/memescanr-vs-photos-app-duplicates/', label: 'MemeScanr vs iPhone Photos Duplicates album' },
+      { href: '/compare/memescanr-vs-gemini-photos/', label: 'MemeScanr vs Gemini Photos' },
+      { href: '/compare/memescanr-vs-cleanup-app/', label: 'MemeScanr vs Cleanup: Phone Storage Cleaner' },
+      { href: '/compare/memescanr-vs-smart-cleaner/', label: 'MemeScanr vs Smart Cleaner' },
+      { href: '/compare/memescanr-vs-magic-cleaner/', label: 'MemeScanr vs Magic Cleaner (and cloud AI cleaners)' },
+    ],
+  },
+  {
+    heading: 'Guides',
+    pages: [
+      { href: '/guides/', label: 'All guides' },
+      { href: '/guides/iphone-storage-full-fix/', label: 'iPhone storage full — the real fix' },
+      { href: '/guides/clean-iphone-storage-fast/', label: 'Clean iPhone storage fast' },
+      { href: '/guides/delete-duplicate-photos-iphone/', label: 'Delete duplicate photos on iPhone' },
+      { href: '/guides/delete-screenshots-iphone-bulk/', label: 'Delete iPhone screenshots in bulk' },
+      { href: '/guides/delete-memes-iphone/', label: 'Delete memes from your iPhone' },
+      { href: '/guides/find-blurry-photos-iphone/', label: 'Find and delete blurry photos' },
+      { href: '/guides/compress-videos-iphone-no-quality-loss/', label: 'Compress iPhone videos without losing quality' },
+      { href: '/guides/free-up-iphone-storage-without-icloud/', label: 'Free up iPhone storage without iCloud' },
+      { href: '/guides/hide-photos-iphone-private-vault/', label: 'Hide photos on iPhone with a private vault' },
+      { href: '/guides/merge-duplicate-contacts-iphone/', label: 'Merge duplicate contacts on iPhone' },
+    ],
+  },
+  {
+    heading: 'Blog',
+    pages: [
+      { href: '/blog/', label: 'All posts' },
+      { href: '/blog/the-privacy-problem-with-ai-photo-cleaners/', label: 'The privacy problem with "AI-powered" iPhone photo cleaners' },
+      { href: '/blog/gallery-wrapped-2026-what-personality-are-you/', label: 'Gallery Wrapped 2026 — which personality are you?' },
+      { href: '/blog/how-i-freed-20gb-on-my-iphone-in-10-minutes/', label: 'How I freed 20 GB on my iPhone in 10 minutes' },
+      { href: '/blog/i-had-10000-photos-heres-how-i-cleaned-my-iphone/', label: 'I had 10,000 photos — here\'s how I cleaned my iPhone' },
+      { href: '/blog/tinder-for-your-camera-roll/', label: 'Tinder for your camera roll — the Memory Lane origin story' },
+      { href: '/blog/your-phone-needs-therapy/', label: 'Your phone needs therapy — the Phone Therapist origin story' },
+      { href: '/blog/why-your-iphone-storage-is-always-full/', label: 'Why your iPhone storage is always full' },
+      { href: '/blog/seasonal-icons-why-we-built-them/', label: 'Why MemeScanr ships seasonal app icons' },
+      { href: '/blog/the-decoy-vault-explained/', label: 'The decoy vault, explained' },
+    ],
+  },
+  {
+    heading: 'Legal',
+    pages: [
+      { href: '/privacy.html', label: 'Privacy Policy' },
+      { href: '/terms.html', label: 'Terms of Service' },
+      { href: '/data-deletion.html', label: 'Data Deletion' },
+      { href: '/childrens-privacy.html', label: 'Children\'s Privacy' },
+    ],
+  },
+  {
+    heading: 'Machine-readable',
+    pages: [
+      { href: '/sitemap-index.xml', label: 'XML sitemap (for search engines)' },
+      { href: '/rss.xml', label: 'Blog RSS feed' },
+      { href: '/robots.txt', label: 'robots.txt (AI crawler allow list)' },
+      { href: '/llms.txt', label: 'llms.txt (LLM site index)' },
+    ],
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Site map"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/sitemap/"
+  ogType="website"
+>
+  {sections.map((section) => (
+    <section style="margin-top: 40px;">
+      <h2>{section.heading}</h2>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        {section.pages.map((page) => (
+          <li style="padding: 6px 0;">
+            <a href={page.href}>{page.label}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</ArticleLayout>

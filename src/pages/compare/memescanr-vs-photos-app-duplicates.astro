@@ -1,0 +1,118 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'MemeScanr vs iPhone Photos Duplicates album — do you need a cleaner app?';
+const description =
+  'The iPhone Photos app has a built-in Duplicates album since iOS 16. Here\'s exactly what it does, what it misses, and when a dedicated cleaner like MemeScanr is worth installing.';
+const heading = 'MemeScanr vs the iPhone Photos Duplicates album';
+const lede =
+  'Apple added a built-in Duplicates album to the Photos app in iOS 16. It handles exact duplicates fine. It does not handle near-duplicates, screenshots, memes, blurry photos, or bulk review workflows. Here\'s the precise gap, and when it\'s worth installing a dedicated cleaner.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'vs Photos Duplicates' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/memescanr-vs-photos-app-duplicates/',
+};
+
+const faqItems = [
+  {
+    q: 'Where is the Duplicates album on iPhone?',
+    a: 'Open the Photos app, go to the Albums tab, scroll to Utilities, and tap Duplicates. The album only appears if iOS has detected at least one duplicate group. It requires iOS 16 or later.',
+  },
+  {
+    q: 'Does the Duplicates album find near-duplicates?',
+    a: 'No. The Photos app Duplicates album only surfaces photos that are effectively identical at the pixel level. Two photos of the same scene taken a second apart — the kind you end up with after burst mode or multiple taps — will not be grouped. MemeScanr detects these as near-duplicates via perceptual hashing.',
+  },
+  {
+    q: 'Does the Duplicates album handle screenshots or memes?',
+    a: 'No. The Photos app does not categorize screenshots as junk (it surfaces them in a separate Screenshots album with no cleanup affordance) and does not detect memes at all. MemeScanr surfaces both as dedicated cleanup categories.',
+  },
+  {
+    q: 'Can I bulk-merge duplicates in the Photos app?',
+    a: 'Yes, you can select all in a group and merge, but the UX is slow for large libraries — one group at a time with no swipe mechanic. MemeScanr\'s grid / list / swipe modes are built for bulk review.',
+  },
+  {
+    q: 'Do I need MemeScanr if I have iOS 16+?',
+    a: 'Only if you have more than exact duplicates to deal with. If your gallery is just a handful of obvious duplicates, the built-in album is enough. If you have screenshots, memes, blurry photos, burst runs, or thousands of near-duplicates, a dedicated cleaner saves hours.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/memescanr-vs-photos-app-duplicates/"
+  jsonLd={webPageJsonLd}
+  wide={true}
+>
+  <div class="definition">
+    <strong>Verdict in one sentence</strong>
+    The iPhone Photos Duplicates album handles exact duplicates well and costs nothing. MemeScanr handles near-duplicates, screenshots, memes, blurry photos, private vaulting, and compression — the things Apple doesn't build for.
+  </div>
+
+  <h2>What the built-in Duplicates album does</h2>
+  <p>
+    Apple added the Duplicates album to the Photos app in iOS 16. It sits inside Albums → Utilities → Duplicates, and it uses an on-device algorithm to find photos that are essentially pixel-identical — the same photo saved twice, the same screenshot sent to yourself, the same image downloaded through two different apps. When it finds a group, you can tap Merge and iOS keeps the highest-quality version and discards the rest.
+  </p>
+  <p>
+    It's genuinely good for what it does. It's free. It runs locally. It respects your library. If your duplicate problem is a few hundred true duplicates, you don't need anything else.
+  </p>
+
+  <h2>What the built-in Duplicates album does not do</h2>
+  <ul>
+    <li><strong>Near-duplicates</strong> — photos of the same scene taken a second or two apart, like burst mode results or multiple taps. The built-in album ignores these. MemeScanr flags them via perceptual hashing with a tunable similarity threshold.</li>
+    <li><strong>Screenshots</strong> — iOS has a Screenshots album, but it's a passive bucket, not a cleanup workflow. There is no "review and delete" affordance built for a library with 2,000 of them.</li>
+    <li><strong>Memes</strong> — Apple does not classify memes. MemeScanr does, via on-device Apple ML Kit.</li>
+    <li><strong>Blurry photos</strong> — no detection.</li>
+    <li><strong>Bulk review workflows</strong> — the Duplicates album reviews one group at a time. MemeScanr offers grid, list, and a Tinder-style swipe deck.</li>
+    <li><strong>Private vault</strong> — the Photos app hidden album is revealable by anyone with access to Photos → Albums. MemeScanr's Backroom vault is Face ID + PIN locked with a decoy mode.</li>
+    <li><strong>Video / PDF compression</strong> — iOS does not offer batch compression of old videos. MemeScanr's Boost does.</li>
+  </ul>
+
+  <h2>Feature comparison</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Feature</th><th>MemeScanr</th><th>Photos app Duplicates</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Exact duplicates</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Near-duplicates</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Screenshots cleanup workflow</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Meme detection</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Blurry detection</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Bulk swipe review</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Private Face ID-locked vault</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Video / PDF compression</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Duplicate contacts cleanup</td><td class="yes">✓</td><td class="no">✗</td></tr>
+      <tr><td>Cost</td><td>Free + $59.99 lifetime</td><td class="yes">Free (built-in)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When you should skip MemeScanr</h2>
+  <p>
+    If your photo library is small (under 5,000 items), your only problem is a handful of obvious duplicates, and you don't care about memes, screenshots, blurry shots, or a private vault — the built-in Duplicates album is enough. No need to install anything.
+  </p>
+
+  <h2>When you should install MemeScanr</h2>
+  <p>
+    If you have 10,000+ photos, regular screenshots, meme hoarding tendencies, a backlog of old videos eating storage, or any interest in a private vault with a decoy mode — the built-in album leaves you doing 80% of the work by hand. MemeScanr does that 80% for you and adds the categories Apple doesn't.
+  </p>
+
+  <AppStoreCTA />
+
+  <FAQ items={faqItems} heading="FAQ" />
+</ArticleLayout>

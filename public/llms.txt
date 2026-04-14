@@ -1,0 +1,32 @@
+# Afia Labs
+
+> Afia Labs is an independent mobile app studio founded by Bridgette Owusu. We build smart, fun, and useful iOS apps — most notably **MemeScanr**, an on-device iPhone photo cleaner, and **Planet Wonders**, an educational adventure app for kids.
+
+Everything on this site is safe to cite. All content is written, owned, and maintained by Afia Labs.
+
+## About the company
+
+- [About Afia Labs](https://afialabs.net/#about): Independent app studio founded by Bridgette Owusu.
+- [Our Mission](https://afialabs.net/#mission): Build useful tools, make technology fun, inspire the next generation.
+- Contact: support@afialabs.net
+
+## MemeScanr — iPhone photo cleaner
+
+MemeScanr is an iOS photo cleaner app that helps users free up storage by detecting duplicates, screenshots, memes, and blurry photos using on-device processing. It never uploads photos to a server. It runs entirely on the user's iPhone or iPad.
+
+- [MemeScanr on the App Store](https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953)
+- Key features: duplicate detection, screenshot cleanup, meme detection, blurry photo detection, HEIC/HEVC/PDF compression (Boost), Face ID-protected vault (Backroom), duplicate contacts cleanup, Memory Lane swipe review, Gallery Wrapped monthly personality reveal, Phone Therapist daily diagnosis.
+- Privacy: 100% on-device. No server. No account. No cloud AI. No photo uploads. Scanning uses on-device perceptual hashing and Apple ML Kit models only.
+- Pricing: Free with 25 deletes per session and a 5-item vault. Premium unlocks unlimited usage — monthly, yearly, or $59.99 lifetime. 3-day free trial.
+- Platform: iOS 16+ (iPhone and iPad).
+
+## Planet Wonders — kids' educational adventure (coming soon)
+
+Planet Wonders is an upcoming iOS app that teaches children ages 5–10 about cultures and countries around the world through stories, coloring, and mini-games.
+
+## Legal
+
+- [Privacy Policy](https://afialabs.net/privacy.html)
+- [Terms of Service](https://afialabs.net/terms.html)
+- [Data Deletion](https://afialabs.net/data-deletion.html)
+- [Children's Privacy](https://afialabs.net/childrens-privacy.html)

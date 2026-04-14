@@ -1,0 +1,126 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AppStoreCTA from '../../../components/AppStoreCTA.astro';
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+const title = 'Memory Lane — swipe through your forgotten photos | MemeScanr';
+const description =
+  'Memory Lane is MemeScanr\'s Tinder-style swipe review for your camera roll. Left deletes, right keeps, up vaults. On this day, streaks, time capsule badges.';
+const heading = 'Memory Lane: swipe through your forgotten photos';
+const lede =
+  'Memory Lane is a Tinder-style photo review inside MemeScanr. Swipe left to delete, right to keep, up to move to the Backroom vault. Nostalgia mode: unlimited, with "on this day" highlights and time capsule badges for photos over two years old.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'MemeScanr', href: '/memescanr/' },
+  { label: 'Memory Lane' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/memescanr/features/memory-lane/',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  about: {
+    '@type': 'SoftwareApplication',
+    name: 'MemeScanr',
+    operatingSystem: 'iOS 16+',
+  },
+};
+
+const faqItems = [
+  {
+    q: 'How is Memory Lane different from the iPhone Photos app Memories?',
+    a: 'The iPhone Photos app Memories auto-generates slideshows of grouped photos — you can watch them, but you can\'t clean up your library from them. Memory Lane in MemeScanr is built for cleanup: you swipe through your entire photo history one photo at a time, left to delete, right to keep, up to move to a private vault. It also surfaces "on this day, years ago" photos and tags photos over two years old with a time capsule badge.',
+  },
+  {
+    q: 'What do the swipe directions do in Memory Lane?',
+    a: 'Swipe left to delete a photo. Swipe right to keep it. Swipe up to move it to the Backroom vault. Each direction shows a colored tint and a glowing stamp on the card — red "bye", green "keep", purple "vault".',
+  },
+  {
+    q: 'Can I undo a swipe?',
+    a: 'Yes. An undo toast with a photo thumbnail appears after every swipe. Tap it to restore the last action. Photos sent to the iOS trash also respect Apple\'s standard 30-day recovery window.',
+  },
+  {
+    q: 'Does Memory Lane include videos?',
+    a: 'Yes. Memory Lane includes videos alongside photos. Video cards support inline playback so you can review a clip before deciding to keep, delete, or vault it.',
+  },
+  {
+    q: 'What is the streak counter?',
+    a: 'Memory Lane tracks how many photos you have reviewed in a row. The streak counter scales with milestones: 🔥 at 5, 🔥🔥 at 15, 🔥🔥🔥 at 30+. Streaks are a gentle motivator — they don\'t reset your library, they just acknowledge momentum.',
+  },
+  {
+    q: 'Is Memory Lane free?',
+    a: 'Memory Lane works on the MemeScanr free tier. The free tier caps you at 25 deletes per session. Unlimited swipe sessions require MemeScanr Premium.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/memescanr/features/memory-lane/"
+  jsonLd={webPageJsonLd}
+>
+  <div class="definition">
+    <strong>Memory Lane in one sentence</strong>
+    Memory Lane is a Tinder-style photo review inside MemeScanr that lets you swipe through your camera roll one photo at a time — left to delete, right to keep, up to move to a private vault — with streaks, stamps, and time capsule badges for older memories.
+  </div>
+
+  <MediaPlaceholder caption="Memory Lane card stack mid-swipe: red 'bye' stamp glowing, streak counter at 🔥🔥 15, time capsule badge '📦 from 2019'." />
+
+  <h2>How Memory Lane works</h2>
+  <p>
+    Memory Lane opens from the Clean tab. It loads a three-card fan stack, with each card slightly offset and rotated so you can see what's coming. Drag a card horizontally and it tints red or green; drag vertically and it tints purple. Release past the threshold to commit the action.
+  </p>
+  <ul>
+    <li><strong>Swipe left</strong> — deletes the photo. A red "bye 👋" stamp glows on the card.</li>
+    <li><strong>Swipe right</strong> — keeps the photo. A green "keep ✓" stamp glows on the card.</li>
+    <li><strong>Swipe up</strong> — moves the photo to the Backroom vault. A purple "vault 🔒" stamp glows.</li>
+    <li><strong>Tap</strong> — opens a full-screen preview.</li>
+    <li><strong>Undo toast</strong> — a small toast with a thumbnail of the last photo lets you undo instantly.</li>
+  </ul>
+
+  <h2>On this day, years ago</h2>
+  <p>
+    Memory Lane surfaces photos from the same calendar day in previous years. A subtle "on this day" header chip appears above the stack when you're viewing photos from a matching date. This is how most people rediscover photos they forgot they had — the emotional hook that makes swiping feel like time travel instead of a chore.
+  </p>
+
+  <h2>Time capsule badges</h2>
+  <p>
+    Any photo older than two years shows a purple "📦 from 2019" time capsule badge in the card corner. The badge is a visual cue that you're looking at genuinely old memories, not last week's screenshots. This helps you make more deliberate decisions — most people are willing to delete a blurry photo from last month, but want to keep a blurry photo from a decade ago.
+  </p>
+
+  <h2>Streak counter and milestones</h2>
+  <p>
+    Every swipe increments a session streak counter. The counter shows a fire emoji that scales with streak length: one flame at 5, two at 15, three at 30. Milestone toasts pop up at round numbers ("50 reviewed — you ate that 🧹"). The streak is purely motivational. It doesn't punish you for stopping, and it doesn't reset your library.
+  </p>
+
+  <h2>Memory Lane vs category swipe</h2>
+  <p>
+    MemeScanr also ships a category-specific swipe mode on every cleanup category (duplicates, screenshots, memes, blurry). Category swipe is the focused cleanup counterpart to Memory Lane. Category swipe is scoped and finishable — "14 of 47 duplicates" — and is the mode most users convert on during their first session. Memory Lane is the unlimited library walk, meant for weekly nostalgia sessions rather than one-shot cleanup.
+  </p>
+
+  <h2>Deep link</h2>
+  <p>
+    Memory Lane has a dedicated URL scheme: <code>memescanr://memory-lane</code>. The deep link opens the MemeScanr app directly into the Memory Lane screen from anywhere iOS can open a URL — Safari, Shortcuts, Siri, or an App Store In-App Event. If MemeScanr isn't installed, the link falls through to the App Store listing.
+  </p>
+
+  <AppStoreCTA
+    heading="Try Memory Lane on your iPhone."
+    body="Memory Lane is free to try inside MemeScanr. Download on the App Store and tap Clean → Memory Lane."
+  />
+
+  <FAQ items={faqItems} heading="Memory Lane FAQ" />
+</ArticleLayout>
