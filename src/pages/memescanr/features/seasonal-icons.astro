@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Seasonal App Icons — a photo cleaner that changes with the seasons | MemeScanr';
 const description =
@@ -70,7 +70,11 @@ const faqItems = [
     MemeScanr ships seven seasonal app icons that automatically switch with the calendar — Halloween, Winter, Valentine's, Spring, Summer, Autumn, and the default — without any user setup.
   </div>
 
-  <MediaPlaceholder caption="Grid of all 7 seasonal MemeScanr icons: default, Halloween, Winter, Valentine's, Spring, Summer, Autumn." />
+  <Media
+    src="/images/memescanr/seasonal-icons-grid.png"
+    alt="Grid of all 7 seasonal MemeScanr app icons"
+    caption="All 7 seasonal MemeScanr icons: default, Halloween, Winter, Valentine's, Spring, Summer, Autumn."
+  />
 
   <h2>The seven seasons</h2>
   <ul>

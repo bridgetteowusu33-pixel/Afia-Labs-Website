@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Duplicate Contacts Cleanup — fuzzy matching for iPhone contacts | MemeScanr';
 const description =
@@ -64,7 +64,11 @@ const faqItems = [
     MemeScanr's contacts cleanup engine finds duplicate iPhone contacts with fuzzy name matching, phone normalization, and Union-Find clustering — on-device, with preview-then-merge safety.
   </div>
 
-  <MediaPlaceholder caption="Contacts cleanup screen: duplicate group cards with cyan accent, side-by-side field comparison, merge button." />
+  <Media
+    src="/images/memescanr/contacts-cleanup.png"
+    alt="MemeScanr contacts cleanup screen showing duplicate group cards"
+    caption="Contacts cleanup screen: duplicate group cards with cyan accent, side-by-side field comparison, merge button."
+  />
 
   <h2>Why duplicate contacts happen</h2>
   <p>

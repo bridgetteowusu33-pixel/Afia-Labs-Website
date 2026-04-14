@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Phone Therapist — daily gallery diagnoses | MemeScanr';
 const description =
@@ -77,7 +77,11 @@ const faqItems = [
     Phone Therapist is a daily, on-device gallery diagnosis card inside MemeScanr that picks one of 27 personalized templates based on your camera roll patterns and pairs it with a session note joke from a 50+ pool.
   </div>
 
-  <MediaPlaceholder caption="Phone Therapist card on the MemeScanr home screen: diagnosis headline, session note line underneath, gradient purple background." />
+  <Media
+    src="/images/memescanr/phone-therapist-card2.png"
+    alt="Phone Therapist diagnosis card on the MemeScanr home screen"
+    caption="Phone Therapist card on the MemeScanr home screen: diagnosis headline, session note line underneath, gradient purple background."
+  />
 
   <h2>Example diagnoses</h2>
   <p>

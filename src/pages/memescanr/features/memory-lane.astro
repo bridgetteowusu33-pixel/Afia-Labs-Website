@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Memory Lane — swipe through your forgotten photos | MemeScanr';
 const description =
@@ -78,7 +78,11 @@ const faqItems = [
     Memory Lane is a Tinder-style photo review inside MemeScanr that lets you swipe through your camera roll one photo at a time — left to delete, right to keep, up to move to a private vault — with streaks, stamps, and time capsule badges for older memories.
   </div>
 
-  <MediaPlaceholder caption="Memory Lane card stack mid-swipe: red 'bye' stamp glowing, streak counter at 🔥🔥 15, time capsule badge '📦 from 2019'." />
+  <Media
+    src="/images/memescanr/memory-lane-swipe-hero.mp4"
+    alt="Memory Lane card stack mid-swipe demo"
+    caption="Memory Lane card stack mid-swipe: red 'bye' stamp glowing, streak counter at 🔥🔥 15, time capsule badge '📦 from 2019'. Tap to play."
+  />
 
   <h2>How Memory Lane works</h2>
   <p>

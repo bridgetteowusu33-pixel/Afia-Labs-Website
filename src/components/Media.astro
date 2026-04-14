@@ -1,0 +1,64 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  /** Auto-detected from extension if omitted */
+  type?: 'image' | 'video';
+}
+
+const { src, alt, caption, type } = Astro.props;
+const resolvedType: 'image' | 'video' =
+  type ?? (src.match(/\.(mp4|webm|mov)$/i) ? 'video' : 'image');
+---
+
+<figure class="media-figure">
+  {resolvedType === 'video' ? (
+    <video
+      src={src}
+      controls
+      muted
+      playsinline
+      loop
+      preload="metadata"
+      aria-label={alt}
+      class="media-asset"
+    />
+  ) : (
+    <img src={src} alt={alt} loading="lazy" decoding="async" class="media-asset" />
+  )}
+  {caption && <figcaption class="media-caption">{caption}</figcaption>}
+</figure>
+
+<style>
+  .media-figure {
+    margin: 40px 0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(26, 10, 46, 0.12);
+    background: linear-gradient(135deg, #1a0a2e, #2d1b69);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .media-asset {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .media-caption {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    max-width: 560px;
+    margin: 0;
+  }
+</style>

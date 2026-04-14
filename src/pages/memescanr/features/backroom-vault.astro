@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Backroom Vault — Face ID private photo vault with decoy mode | MemeScanr';
 const description =
@@ -76,7 +76,11 @@ const faqItems = [
     Backroom is MemeScanr's private photo and notes vault, protected by Face ID and a salted PIN in the iOS Keychain, with a decoy vault that shows a fake library when someone enters the wrong PIN.
   </div>
 
-  <MediaPlaceholder caption="Backroom PIN pad side by side with the decoy vault: one shows the real contents (dark), the other shows a decoy vault with a fake grocery list." />
+  <Media
+    src="/images/memescanr/backroom-decoy-comparison1.png"
+    alt="Backroom vault shown side-by-side with the decoy vault on wrong PIN entry"
+    caption="Backroom PIN pad side by side with the decoy vault: the real vault and the decoy vault that opens on wrong PIN."
+  />
 
   <h2>The decoy vault: Backroom's unique angle</h2>
   <p>

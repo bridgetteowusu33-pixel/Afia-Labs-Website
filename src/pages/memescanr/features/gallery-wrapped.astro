@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Gallery Wrapped — monthly gallery personality reveal | MemeScanr';
 const description =
@@ -84,7 +84,11 @@ const faqItems = [
     Gallery Wrapped is a monthly, on-device personality reveal for your iPhone camera roll that shows you which of eight gallery types you are, compares it to last month, and generates shareable story cards.
   </div>
 
-  <MediaPlaceholder caption="Gallery Wrapped card stack: large emoji + personality name ('the chaos gremlin 🌪️') with 8 stacked cards behind it." />
+  <Media
+    src="/images/memescanr/gallery-wrapped-card-stack.mp4"
+    alt="Gallery Wrapped card stack animation revealing personality"
+    caption="Gallery Wrapped card stack: large emoji + personality name with the eight personality cards stacked behind. Tap to play."
+  />
 
   <h2>How Gallery Wrapped works</h2>
   <p>

@@ -2,7 +2,7 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import AppStoreCTA from '../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../components/MediaPlaceholder.astro';
+import Media from '../../components/Media.astro';
 
 const title = 'MemeScanr — the on-device iPhone photo cleaner';
 const description =
@@ -128,7 +128,11 @@ const jsonLd = [softwareApplicationJsonLd];
     MemeScanr was built for people whose camera rolls have spiralled into ten, twenty, fifty thousand photos. It scans your entire library in minutes, groups the junk by category, and lets you delete it the way you actually want to — grid, list, or a Tinder-style swipe deck. Everything runs on your iPhone. Nothing is uploaded. There is no account and no sign-in.
   </p>
 
-  <MediaPlaceholder caption="MemeScanr home screen: storage orb, quick stats, and the gold scan CTA." />
+  <Media
+    src="/images/memescanr/home-screen-hero.png"
+    alt="MemeScanr home screen showing the storage orb, quick stats grid, and gold scan CTA button"
+    caption="MemeScanr home screen: storage orb, quick stats, and the gold scan CTA."
+  />
 
   <h2>How MemeScanr works</h2>
   <p>

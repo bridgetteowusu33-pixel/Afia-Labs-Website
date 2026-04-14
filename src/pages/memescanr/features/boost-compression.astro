@@ -2,7 +2,7 @@
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AppStoreCTA from '../../../components/AppStoreCTA.astro';
-import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+import Media from '../../../components/Media.astro';
 
 const title = 'Boost — compress iPhone photos, videos & PDFs without quality loss | MemeScanr';
 const description =
@@ -68,7 +68,11 @@ const faqItems = [
     Boost is MemeScanr's on-device compression engine for HEIC photos, HEVC video, and PDFs that shrinks files by 40–70% without visible quality loss and without uploading anything.
   </div>
 
-  <MediaPlaceholder caption="Boost dashboard: compression orb, before/after size comparison, category cards, and history list." />
+  <Media
+    src="/images/memescanr/boost-dashboard1.png"
+    alt="Boost compression dashboard inside MemeScanr"
+    caption="Boost dashboard: compression orb, before/after size comparison, category cards, and history list."
+  />
 
   <h2>What Boost compresses</h2>
   <ul>
