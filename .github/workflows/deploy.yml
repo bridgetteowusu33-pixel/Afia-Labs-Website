@@ -28,7 +28,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # Using `npm install` rather than `npm ci` to sidestep the well-known
+        # rollup/esbuild optional-dependency bug where a macOS-generated
+        # package-lock.json fails to resolve the Linux native binaries in CI.
+        run: npm install --no-audit --no-fund
 
       - name: Build Astro site
         run: npm run build
