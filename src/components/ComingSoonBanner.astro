@@ -1,0 +1,211 @@
+---
+// ComingSoonBanner.astro — Reusable announcement banner for the Afia Labs homepage.
+// Used to teaser upcoming products (the book, future workbook, future course, etc.)
+// without disrupting the existing apps section.
+
+export interface Props {
+  eyebrow?: string;
+  headline: string;
+  subheadline: string;
+  ctaText: string;
+  ctaHref: string;
+  ctaTarget?: string;
+}
+
+const {
+  eyebrow = 'Coming Soon from Afia Labs',
+  headline,
+  subheadline,
+  ctaText,
+  ctaHref,
+  ctaTarget = '_self',
+} = Astro.props;
+---
+
+<section class="coming-soon-banner" aria-label="Coming Soon">
+  <div class="container">
+    <div class="banner-card fade-in">
+      <div class="banner-content">
+        <div class="banner-eyebrow">
+          <span class="banner-eyebrow-dot" aria-hidden="true"></span>
+          {eyebrow}
+        </div>
+        <h2 class="banner-headline">{headline}</h2>
+        <p class="banner-subheadline">{subheadline}</p>
+        <a
+          href={ctaHref}
+          target={ctaTarget}
+          rel={ctaTarget === '_blank' ? 'noopener noreferrer' : undefined}
+          class="banner-cta"
+        >
+          {ctaText}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="banner-decoration" aria-hidden="true">
+        <div class="banner-glyph">📖</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coming-soon-banner {
+    padding: 48px 0 24px;
+    background: var(--bg-light);
+  }
+
+  .banner-card {
+    position: relative;
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 100%);
+    border-radius: var(--radius-lg);
+    padding: 48px 56px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .banner-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(251, 146, 60, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .banner-card::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .banner-content {
+    position: relative;
+    flex: 1;
+    max-width: 640px;
+  }
+
+  .banner-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(251, 146, 60, 0.16);
+    color: #fdba74;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 20px;
+  }
+
+  .banner-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fb923c;
+    box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.24);
+  }
+
+  .banner-headline {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fffbf7;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+
+  .banner-subheadline {
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255, 251, 247, 0.78);
+    margin: 0 0 28px;
+    max-width: 560px;
+  }
+
+  .banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #fb923c;
+    color: #1a0a2e;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 8px 20px rgba(251, 146, 60, 0.32);
+  }
+
+  .banner-cta:hover {
+    transform: translateY(-2px);
+    background: #fdba74;
+    box-shadow: 0 12px 28px rgba(251, 146, 60, 0.42);
+  }
+
+  .banner-decoration {
+    position: relative;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+  }
+
+  .banner-glyph {
+    font-size: 92px;
+    line-height: 1;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+    transform: rotate(-8deg);
+  }
+
+  @media (max-width: 860px) {
+    .coming-soon-banner {
+      padding: 36px 0 16px;
+    }
+
+    .banner-card {
+      flex-direction: column;
+      padding: 36px 28px;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .banner-content {
+      max-width: 100%;
+    }
+
+    .banner-subheadline {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .banner-decoration {
+      width: 120px;
+      height: 120px;
+      order: -1;
+    }
+
+    .banner-glyph {
+      font-size: 64px;
+    }
+  }
+</style>

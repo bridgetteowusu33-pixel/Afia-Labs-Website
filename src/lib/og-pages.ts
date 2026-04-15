@@ -8,6 +8,7 @@ export interface OgPage {
 export const ogPages: OgPage[] = [
   { slug: 'default', title: 'Afia Labs — Building Delightful Apps', eyebrow: 'Independent App Studio', subtitle: 'Smart, fun, and useful mobile experiences. Makers of MemeScanr.' },
   { slug: 'about', title: 'About Afia Labs', eyebrow: 'About', subtitle: 'Independent iOS app studio founded by Bridgette Owusu. Makers of MemeScanr.' },
+  { slug: 'book', title: 'From Idea to Income with AI Apps', eyebrow: 'Coming Soon', subtitle: 'The book + workbook + course system for solo builders. By Bridgette Owusu. Join the waitlist.' },
   { slug: 'sitemap', title: 'Site map — afialabs.net', eyebrow: 'Site map' },
   { slug: 'faq', title: 'MemeScanr FAQ — every question, answered', eyebrow: 'FAQ', subtitle: 'Direct answers to 30+ MemeScanr questions — privacy, AI, pricing, features.' },
 

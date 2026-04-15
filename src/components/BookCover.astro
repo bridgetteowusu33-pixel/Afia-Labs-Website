@@ -1,0 +1,146 @@
+---
+// BookCover.astro — Field Notes concept book cover, rendered in pure CSS.
+// Reusable. Pass props for title, subtitle, byline, and accent color.
+// Used on /book until we have a real designer-rendered cover.
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  byline?: string;
+  width?: string;
+}
+
+const {
+  title = 'From Idea to Income with AI Apps',
+  subtitle = 'The honest field guide to shipping a real consumer app as a solo builder.',
+  byline = 'Bridgette Owusu · Afia Labs',
+  width = '320px',
+} = Astro.props;
+---
+
+<div class="book-cover-wrapper" style={`--cover-width: ${width};`}>
+  <div class="book-cover" aria-label={`Book cover: ${title}`}>
+    <div class="book-cover-top">
+      <div class="book-cover-eyebrow">Coming Soon</div>
+      <h3 class="book-cover-title">{title}</h3>
+    </div>
+    <div class="book-cover-rule" aria-hidden="true"></div>
+    <div class="book-cover-bottom">
+      <p class="book-cover-subtitle">{subtitle}</p>
+      <p class="book-cover-byline">{byline}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .book-cover-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+  }
+
+  .book-cover {
+    width: var(--cover-width);
+    aspect-ratio: 6 / 9;
+    background: #fffbf7;
+    border-radius: 4px 12px 12px 4px;
+    box-shadow:
+      0 1px 3px rgba(26, 10, 46, 0.08),
+      0 8px 24px rgba(26, 10, 46, 0.12),
+      0 24px 60px rgba(26, 10, 46, 0.18),
+      inset 6px 0 0 rgba(26, 10, 46, 0.06),
+      inset 7px 0 0 rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transform: rotateY(-3deg);
+    transition: transform 0.4s ease;
+  }
+
+  .book-cover:hover {
+    transform: rotateY(0deg) translateY(-4px);
+  }
+
+  .book-cover-top {
+    flex: 0 0 60%;
+    padding: 32px 28px 16px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #fffbf7;
+  }
+
+  .book-cover-eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: #fb923c;
+    margin-bottom: 16px;
+  }
+
+  .book-cover-title {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #1a0a2e;
+    margin: 0;
+    text-align: left;
+  }
+
+  .book-cover-rule {
+    height: 3px;
+    background: #fb923c;
+    margin: 0;
+  }
+
+  .book-cover-bottom {
+    flex: 1;
+    padding: 24px 28px 28px 36px;
+    background: #1a0a2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fffbf7;
+  }
+
+  .book-cover-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: rgba(255, 251, 247, 0.85);
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .book-cover-byline {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 251, 247, 0.6);
+    margin: 16px 0 0;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .book-cover-wrapper {
+      --cover-width: 240px !important;
+    }
+
+    .book-cover-top {
+      padding: 24px 20px 12px 26px;
+    }
+
+    .book-cover-title {
+      font-size: 22px;
+    }
+
+    .book-cover-bottom {
+      padding: 20px 20px 22px 26px;
+    }
+  }
+</style>
