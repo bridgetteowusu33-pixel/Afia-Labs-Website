@@ -1,0 +1,261 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import AppStoreCTA from '../../components/AppStoreCTA.astro';
+
+const title = 'Subscribe to the MemeScanr blog — RSS feed';
+const description =
+  'Subscribe to the MemeScanr blog by Afia Labs. Weekly long-form posts on iPhone cleanup, privacy, and design stories delivered to your RSS reader.';
+const heading = 'Subscribe to the blog';
+const lede =
+  'New posts every week about iPhone cleanup, the design decisions behind MemeScanr, and honest takes on the photo cleaner category. Pick your reader below, or copy the feed URL into whatever RSS app you already use.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Subscribe' },
+];
+
+const feedUrl = 'https://afialabs.net/rss.xml';
+// The "feed://" protocol triggers the default RSS reader on macOS/iOS when
+// clicked, similar to how "mailto:" opens the mail client.
+const feedProtocolUrl = 'feed://afialabs.net/rss.xml';
+
+// Deep links for the most popular modern readers. These URLs are public
+// subscription endpoints each service documents for "Subscribe to X" buttons.
+const readers = [
+  {
+    name: 'Feedly',
+    emoji: '\u{1F4D7}',
+    blurb: 'Most popular web reader. One-click subscribe.',
+    url: `https://feedly.com/i/subscription/feed/${encodeURIComponent(feedUrl)}`,
+  },
+  {
+    name: 'Inoreader',
+    emoji: '\u{1F4F0}',
+    blurb: 'Powerful web reader with filters and tags.',
+    url: `https://www.inoreader.com/?add_feed=${encodeURIComponent(feedUrl)}`,
+  },
+  {
+    name: 'NetNewsWire',
+    emoji: '\u{1F34E}',
+    blurb: 'Free, open-source, beautiful on Mac and iPhone.',
+    url: feedProtocolUrl,
+  },
+  {
+    name: 'Reeder',
+    emoji: '\u{1F4F1}',
+    blurb: 'Premium iOS + Mac reader. Gorgeous reading mode.',
+    url: feedProtocolUrl,
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Blog"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/subscribe/"
+  ogType="website"
+>
+  <!-- Copy feed URL card -->
+  <div class="subscribe-copy-card">
+    <p class="subscribe-copy-label">RSS feed URL</p>
+    <div class="subscribe-copy-row">
+      <code id="feed-url" class="subscribe-code">{feedUrl}</code>
+      <button
+        id="copy-btn"
+        type="button"
+        class="subscribe-copy-btn"
+        data-feed={feedUrl}
+        aria-label="Copy feed URL to clipboard"
+      >
+        <span class="btn-default">Copy URL</span>
+        <span class="btn-success" hidden>Copied ✓</span>
+      </button>
+    </div>
+    <p class="subscribe-hint">
+      Paste this into any RSS reader. Or pick one below for a one-click subscribe.
+    </p>
+  </div>
+
+  <h2>Pick your reader</h2>
+
+  <div class="reader-grid">
+    {readers.map((r) => (
+      <a href={r.url} class="reader-card" target="_blank" rel="noopener">
+        <div class="reader-emoji">{r.emoji}</div>
+        <div class="reader-body">
+          <h3>{r.name}</h3>
+          <p>{r.blurb}</p>
+        </div>
+        <span class="reader-arrow">→</span>
+      </a>
+    ))}
+  </div>
+
+  <h2>What is RSS?</h2>
+  <p>
+    RSS is a simple web standard that lets you follow any blog without
+    signing up, creating an account, or handing over your email. You pick
+    a reader app (we've linked four good ones above), paste in the feed URL,
+    and new posts show up automatically — no algorithm, no tracking, no ads.
+  </p>
+  <p>
+    It's the same tech that powers podcasts. If you've ever subscribed to a
+    podcast, you already know how it works.
+  </p>
+
+  <h2>Prefer the raw feed file?</h2>
+  <p>
+    If you just want the XML endpoint for your reader or for testing,
+    it's at <a href="/rss.xml"><code>afialabs.net/rss.xml</code></a>.
+    That's the actual feed file — the page you're looking at now is just
+    a friendly wrapper so first-time visitors don't land on raw XML.
+  </p>
+
+  <AppStoreCTA />
+</ArticleLayout>
+
+<style>
+  .subscribe-copy-card {
+    margin: 28px 0 40px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #F3EBFF 0%, #EDE0FF 100%);
+    border: 1px solid #D6BCFF;
+    border-radius: 18px;
+    box-shadow: 0 10px 32px rgba(139, 92, 246, 0.08);
+  }
+  .subscribe-copy-label {
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6B21A8;
+  }
+  .subscribe-copy-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .subscribe-code {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(139, 92, 246, 0.22);
+    border-radius: 12px;
+    font-family: 'SF Mono', Menlo, Monaco, 'Courier New', monospace;
+    font-size: 0.92rem;
+    color: #2D1B69;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  .subscribe-copy-btn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .subscribe-copy-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.45);
+  }
+  .subscribe-copy-btn[data-copied='true'] .btn-default { display: none; }
+  .subscribe-copy-btn[data-copied='true'] .btn-success { display: inline; }
+  .subscribe-copy-btn[data-copied='true'] {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  }
+  .subscribe-hint {
+    margin: 12px 0 0;
+    font-size: 0.85rem;
+    color: #6B7280;
+  }
+
+  .reader-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0 36px;
+  }
+  .reader-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 22px;
+    background: #fff;
+    border: 1px solid var(--border-light, #E5E7EB);
+    border-radius: 16px;
+    text-decoration: none !important;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .reader-card:hover {
+    transform: translateY(-2px);
+    border-color: #C4B5FD;
+    box-shadow: 0 12px 28px rgba(139, 92, 246, 0.12);
+  }
+  .reader-emoji {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .reader-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .reader-body h3 {
+    margin: 0 0 4px !important;
+    font-size: 1.05rem !important;
+    font-weight: 800;
+    color: var(--purple-deep, #2D1B69);
+  }
+  .reader-body p {
+    margin: 0 !important;
+    font-size: 0.85rem;
+    color: var(--text-muted, #6B7280);
+    line-height: 1.45;
+  }
+  .reader-arrow {
+    font-size: 1.2rem;
+    color: #8B5CF6;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('copy-btn') as HTMLButtonElement | null;
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      const feedUrl = btn.dataset.feed ?? '';
+      try {
+        await navigator.clipboard.writeText(feedUrl);
+      } catch {
+        // Fallback: select the code block so the user can Cmd+C manually.
+        const code = document.getElementById('feed-url');
+        if (code) {
+          const range = document.createRange();
+          range.selectNodeContents(code);
+          const sel = window.getSelection();
+          sel?.removeAllRanges();
+          sel?.addRange(range);
+        }
+      }
+      btn.dataset.copied = 'true';
+      window.setTimeout(() => {
+        btn.removeAttribute('data-copied');
+      }, 2200);
+    });
+  }
+</script>
