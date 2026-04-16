@@ -42,7 +42,7 @@ It also makes you more durable.
 
 If your app underperforms, you do not collapse as easily because you understand the system well enough to improve it. If a tool changes, you do not feel completely trapped because your ownership is distributed across the right layers. If you need to hand the work off later, you can do that with more confidence because you actually know what you built.
 
-That is the long-term payoff. Ownership does not just help you feel proud. It helps you stay steady. And steadiness matters, because a lot of people can generate something flashy. Far fewer can maintain it, refine it, and grow it into something stable.
+That is the long-term payoff. Ownership does not just help you feel proud. It helps you stay steady. And steadiness matters because a lot of people can generate something flashy. Far fewer can maintain it, refine it, and grow it into something stable.
 
 It also changes how risk feels.
 
