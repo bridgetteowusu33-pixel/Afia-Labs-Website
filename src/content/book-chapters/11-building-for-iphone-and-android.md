@@ -8,7 +8,7 @@ part: "Act III — Execution"
 ---
 **Cross-platform is a tax you pay every day in exchange for an option you might never exercise.**
 
-That sounds harsh. I mean it. And I'd still probably make the same choice.
+That sounds harsh. I mean it. And I'd still probably make the same call.
 
 ### The Night I Opened Android Studio
 
@@ -47,7 +47,7 @@ Here's what cross-platform actually costs a solo builder, beyond the obvious "te
 
 **Keyboards are different.** iOS keyboards have a predictable height and dismiss behavior. Android keyboards vary by manufacturer, can have custom toolbars, and sometimes don't report their height correctly to Flutter. Every screen with a text input needs to be tested on both, separately.
 
-**Store submission is different.** Apple's review process is strict, human-reviewed, and takes 1-3 days. Google Play's review process is automated, faster, but has different rules about what triggers a flag. Your metadata strategy, your screenshot dimensions, your privacy declarations: all different formats, different requirements, different approval timelines.
+**Store submission is different.** Apple's review process is stricter, slower, and human-reviewed. Google Play is faster and more automated, but it flags different things. Your metadata, screenshot requirements, and privacy declarations all work differently.
 
 **Notifications are different.** iOS requires explicit permission. Android (before Android 13) did not. Your notification prompt flow, your engagement strategy, your re-permission recovery: different code paths, different UX patterns.
 
