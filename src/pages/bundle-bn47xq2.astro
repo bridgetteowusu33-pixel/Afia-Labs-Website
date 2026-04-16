@@ -4,20 +4,20 @@ import PreLaunchHero from '../components/PreLaunchHero.astro';
 import '../styles/pre-launch.css';
 
 const waitlistUrl = 'https://form.jotform.com/261045381980054';
-const accent = '#f59e0b'; // base accent (gold) — the trio showcase uses all three
+const accent = '#d9a3ff'; // soft lilac bridges gold + pink + violet
 
-const title = 'From Idea to Income — The Full Bundle — Afia Labs';
+const title = 'The Full Bundle — Afia Labs';
 const description =
-  'A complete ownership-first learning bundle. Book. Workbook. Course. All three. By Bridgette Owusu.';
+  'Book. Workbook. Course. The complete ownership-first learning system for building AI apps. By Bridgette Owusu.';
 ---
 
 <BaseLayout title={title} description={description} noindex={true}>
-  <main class="pre-main" style={`--accent: ${accent};`}>
+  <main class="pre-main pre-main-bundle" style={`--accent: ${accent};`}>
     <PreLaunchHero
       eyebrow="4 of 4 · The Full Bundle"
       accentColor={accent}
-      headline="From Idea to Income with AI Apps."
-      subhead="A complete ownership-first learning bundle. Book. Workbook. Course. All three, built to be used together."
+      headline="Book. Workbook. Course. All three."
+      subhead="The complete Afia Labs system for building AI apps with ownership. Belief, clarity, and execution in one bundle."
       primaryCtaText="Join the Waitlist"
       primaryCtaHref={waitlistUrl}
       secondaryCtaText="See What's Inside →"
