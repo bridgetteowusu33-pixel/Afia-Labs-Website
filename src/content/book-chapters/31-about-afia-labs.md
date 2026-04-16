@@ -30,7 +30,7 @@ In the meantime: start building. The workbook helps. The course helps. Nothing h
 
 If you ship something after reading this book, I would really love to know about it. Not because I want to sell you anything. Because every builder who ships is a small victory for the world, and I want to know every time it happens.
 
-Email me at hello@afialabs.com and tell me about your app. I read every message personally. It might take me a bit to respond, because I am also still building my own thing, but I will respond.
+Email me at support@afialabs.net and tell me about your app. I read every message personally. It might take me a bit to respond, because I am also still building my own thing, but I will respond.
 
 Good luck out there. I'm rooting for you.
 

@@ -30,7 +30,7 @@ All rights reserved.
 
 Published by Afia Labs
 [afialabs.net](https://afialabs.net)
-hello@afialabs.net
+support@afialabs.net
 
 Version 1.0
 
@@ -1827,7 +1827,7 @@ The course, when it arrives, will be the execution-builder. It'll walk you throu
 
 ## Stay in Touch
 
-hello@afialabs.net — I read every message.
+support@afialabs.net — I read every message.
 
 [afialabs.net](https://afialabs.net)
 [memescanr.com](https://memescanr.com)
