@@ -22,7 +22,7 @@ I spent about two hours trying to figure out what the AI had broken. The refacto
 
 Here's the part that made me feel sick: **I had not committed before the refactor.** My last commit was from the day before, and it included a bunch of other changes I'd made that morning. I couldn't cleanly roll back to the pre-refactor state without also losing everything else I'd done that day.
 
-I spent the rest of the evening manually undoing the AI's changes line by line, comparing what I remembered against what the files now contained. I got the scan working again around midnight. I lost about six hours of productive time to a problem that would have been a thirty-second `git reset` if I'd committed first.
+I spent the rest of the evening manually undoing the AI's changes line by line, comparing what I remembered to what the files now contained. I got the scan working again around midnight. I lost about six hours of productive time to a problem that would have been a thirty-second `git reset` if I'd committed first.
 
 That night, I made a rule: **commit before you prompt the AI, not after.** I have not broken this rule since.
 
@@ -57,7 +57,7 @@ Let me say the rule again, because it's the single most important Git habit for 
 
 **Commit the current state of your work before you ask the AI for anything.**
 
-The pattern most builders fall into: they're working on a feature, they hit a problem, they prompt the AI, the AI writes a fix, they merge the fix, they test it, it works, they commit. This is the "commit after" pattern. It's fine when things go well. It's a disaster when things go badly, because you have no clean state to return to.
+Most builders commit after the AI fix works. That's fine when things go well. It's a disaster when they don't, because you have no clean state to return to.
 
 The better pattern: commit first, then prompt. If the AI's suggestion works, commit again. If it doesn't, `git reset --hard` back to the checkpoint. No cleanup. No line-by-line undo at midnight. No lost work.
 
