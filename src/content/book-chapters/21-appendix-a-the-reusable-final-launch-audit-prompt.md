@@ -4,11 +4,20 @@ slug: "21-appendix-a-the-reusable-final-launch-audit-prompt"
 order: 21
 type: "appendix"
 part: "Appendices"
----This is the prompt I run before every launch of MemeScanr. Copy it. Paste it into Claude, ChatGPT, or any capable AI chat. Fill in the "App context" section with your app's specifics. Send it.
+---
+This is the prompt I run before every serious MemeScanr launch.
 
-The output is a serious, structured pre-launch audit that forces the AI to evaluate your product the way a real reviewer, QA lead, or launch strategist would. It's longer than a casual "is this good?" prompt, but the length is the point. The structure is what makes it useful.
+Copy it. Paste it into Claude, ChatGPT, or any strong AI chat. Fill in the App context section with your app's real details. Then send it.
 
-Use this as the anchor tool for every launch-audit discipline in Chapter 15.
+What comes back is not a casual opinion. It is a structured pre-launch audit that forces the AI to look at your product the way a reviewer, QA lead, launch strategist, UX critic, and monetization reviewer would.
+
+It is longer than a lazy "is this good?" prompt on purpose.
+
+The length is the point.
+The structure is the point.
+That is what makes it useful.
+
+Use this as the anchor tool for the launch-audit discipline from Chapter 15.
 
 ---
 
@@ -270,4 +279,12 @@ Important instructions:
 
 ---
 
-Run this prompt before every serious launch. Keep a copy of the output in your git repo or your notes. Over time, the prompt outputs become your growing record of how the product has matured.
+Run this prompt before every serious launch.
+
+Keep the output in your notes, your docs, or your repo. Over time, those launch audits become a record of how your product matured, what kept coming up, what you kept missing, and how your standards got sharper.
+
+That is useful on its own.
+
+It also makes you harder to fool.
+
+Because once you have audited enough launches this way, you start seeing the weak spots before the reviewer does.
