@@ -32,21 +32,21 @@ And because I finally shipped.
 
 ## How to Read This Book
 
-This book is not a textbook. There's no quiz at the end. You won't get a certificate.
+This book is not a textbook. There is no quiz at the end. You will not get a certificate.
 
-What you'll get is the honest story of how I shipped a real iOS app using AI tools, what it actually felt like, what broke, what I learned, and what I'd do differently. Every chapter ends with a single question you should answer before you move on. If you can't answer it, the chapter isn't done with you yet.
+What you will get is the honest story of how I shipped a real iOS app using AI tools, what it actually felt like, what broke, what I learned, and what I would do differently. Every chapter ends with a single question you should answer before you move on. If you cannot answer it, the chapter is not done with you yet.
 
 The book has three parts:
 
-- **Act I — Belief.** Why you should build now, what AI actually is, what kind of builder you're choosing to be. This is the foundation. Skip it and the rest won't stick.
-- **Act II — Reality.** What shipping actually looks like. Idea to MVP, stack decisions, building, testing, launching, pricing. Every chapter anchors in a story from my app, MemeScanr.
-- **Act III — Ownership.** What happens after you ship. The emotional arc, the brand, the long game, the money. Closes with a letter to the builder you're becoming.
+- **Act I — Belief.** Why you should build now, what AI actually is, and what kind of builder you are choosing to be.
+- **Act II — Reality.** What shipping actually looks like, from idea to launch. Every chapter anchors in a story from my app, MemeScanr.
+- **Act III — Ownership.** What happens after you ship. The emotional arc, the brand, the long game, the money.
 
-Then there are three appendices at the back: a reusable final launch audit prompt, reusable prompts and checklists, and the builder's worksheets. They're the tools I wish I'd had when I started. Steal them. Modify them. Make them yours.
+Then there are three appendices at the back: a reusable launch audit prompt, reusable prompts and checklists, and the builder's worksheets. They are the tools I wish I had when I started. Steal them. Modify them. Make them yours.
 
-You don't have to read this book in order. But I promise it works best that way.
+You do not have to read this book in order. But I promise it works best that way.
 
-One last thing: I kept the Gen Z energy on purpose. Direct sentences. Short paragraphs. Honest receipts. If a chapter sounds like I'm talking to a friend across a kitchen table, that's because I am.
+The voice is direct, honest, and occasionally Gen Z. That is on purpose.
 
 ---
 
