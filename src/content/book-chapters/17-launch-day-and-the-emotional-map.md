@@ -9,7 +9,7 @@ part: "Act IV — Becoming"
 
 I had built it up in my head for fourteen months. Launch day was going to be the moment. The culmination. The thing I'd been working toward since the Tuesday my camera roll broke me. I imagined the emotion: relief, pride, elation, maybe tears. I imagined the external reaction: downloads, DMs from friends, a TikTok going viral, a Reddit thread lighting up, a review from a tech blogger I followed.
 
-On actual launch day, I pressed the "Release" button in App Store Connect, sat at my desk, and felt... almost nothing.
+On actual launch day, I sat at my desk and felt... almost nothing.
 
 For about six hours, nothing happened. The app was live in the store. I was refreshing App Store Connect every five minutes. The downloads counter said 3. Then 4. Then 4. Then 4. Then 7. I opened Twitter to tell people about the launch and couldn't think of what to say. I opened TikTok to post a launch video and felt self-conscious. I closed both apps. I made a coffee. I came back to my desk. The downloads counter said 8.
 
