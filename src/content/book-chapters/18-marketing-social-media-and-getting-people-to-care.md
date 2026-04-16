@@ -67,7 +67,7 @@ The App Store listing converts the visit into an install. But the visit comes fr
 My MemeScanr distribution portfolio looks roughly like this:
 
 - **memescanr.com** (SEO-optimized, handles long-tail searches about "best photo cleaner app for iPhone")
-- **afialabs.com** (the parent brand, builds trust for future products)
+- **afialabs.net** (the parent brand, builds trust for future products)
 - **TikTok** (short videos about specific features, voice-driven, low production value)
 - **Reddit** (occasional posts in relevant subreddits, honest and useful, not promotional)
 - **App Store optimization** (keyword-optimized metadata, screenshots, In-App Events)
@@ -102,7 +102,7 @@ MemeScanr's build-in-public story is messy. I share the wins. I share the losses
 
 Here's a thing I didn't understand at first: **your App Store page is a product page, not a brand page.** It's optimized for conversion in a specific moment (the decision to download). It's not designed to build a brand over time. For that, you need a website.
 
-memescanr.com and afialabs.com exist because the App Store is not enough. The App Store shows you MemeScanr at a specific moment: when a user is browsing for cleanup apps. Outside that moment, the App Store doesn't do any work for you. The App Store doesn't send emails. The App Store doesn't run blog posts. The App Store doesn't show up in Google searches for questions your target user has.
+memescanr.com and afialabs.net exist because the App Store is not enough. The App Store shows you MemeScanr at a specific moment: when a user is browsing for cleanup apps. Outside that moment, the App Store doesn't do any work for you. The App Store doesn't send emails. The App Store doesn't run blog posts. The App Store doesn't show up in Google searches for questions your target user has.
 
 A website does all of those things. And more importantly, a website lets you build a relationship with users across time, not just in one moment.
 
