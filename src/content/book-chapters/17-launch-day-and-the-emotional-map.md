@@ -76,7 +76,7 @@ Before you launch, build yourself a runbook. Here's mine. Modify it for your pro
 
 **The day before launch:**
 
-- Final build uploaded to App Store Connect and in "ready for sale" state
+- Final build uploaded to App Store Connect and submitted for review
 - Support email is set up and checked
 - Crash reporting is installed and tested
 - Analytics is installed and tested
@@ -87,7 +87,7 @@ Before you launch, build yourself a runbook. Here's mine. Modify it for your pro
 
 **Launch day, morning:**
 
-- Release the app
+- App approved and released
 - Verify the app appears in the store
 - Send the ten personal DMs to friends
 - Publish the website announcement
