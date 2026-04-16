@@ -27,7 +27,7 @@ When you find yourself thinking *"I wish this existed"* about the same thing mor
 
 Here's the clearest sign of an itch vs an idea: when you describe an idea to a friend, the friend nods politely. When you describe an itch to a friend, the friend says *"oh my god, yes, me too"* and tells you about their version of the same thing. Itches are shared. They're invisible until someone names them, and then everyone in the room recognizes them.
 
-My MemeScanr test run was this: I told my roommate the idea at dinner. She rolled her eyes and said "my camera roll is a landfill, please build it." That was the day I knew.
+The first person I said it out loud to was my daughter, Ava. She was seven, and she looked at me like the problem was obvious. "Yeah," she said. "There's too much stuff on phones." That simple reaction stayed with me.
 
 ### The Feeling Filter
 
