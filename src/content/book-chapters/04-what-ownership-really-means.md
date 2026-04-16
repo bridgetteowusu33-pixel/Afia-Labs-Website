@@ -108,7 +108,7 @@ That experience taught me something simple but lasting:
 
 **Ownership is easiest to ignore when everything is working. It becomes obvious when you try to grow.**
 
-That is why these layers matter. Not because they make you look serious. Because they reduce unnecessary friction when the work starts becoming real.
+That is why these layers matter. Not because they make you look serious, but because they reduce unnecessary friction when the work starts becoming real.
 
 ### Ownership Gives You Peace
 
@@ -158,4 +158,4 @@ It does not remove problems. It changes your ability to survive them.
 
 ### > Think Before You Move On
 
-Which of the five ownership layers, creative, technical, brand, business, and learning, do you currently own the most? Which do you own the least? What is one small thing you can do this week to strengthen the weakest one?
+Which of the five ownership layers — creative, technical, brand, business, and learning — do you currently own the most? Which do you own the least? What is one small thing you can do this week to strengthen the weakest one?
