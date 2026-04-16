@@ -28,7 +28,12 @@ At the practical level, the setup is straightforward: install Android Studio, co
 
 The same goes for prompting AI. When you ask for cross-platform code, say it explicitly. Do not assume the model will remember platform differences on its own. A good prompt sounds like this:
 
-> I am building a Flutter app that must support both iOS and Android. Generate this feature in a way that works well on both platforms. Avoid iOS-only assumptions or Android-only assumptions. If platform-specific logic is needed, clearly separate it and explain why.
+```
+I am building a Flutter app that must support both iOS and Android.
+Generate this feature in a way that works well on both platforms.
+Avoid iOS-only assumptions or Android-only assumptions. If
+platform-specific logic is needed, clearly separate it and explain why.
+```
 
 That one sentence can save you real pain later. Without it, the AI will give you something that technically works on one platform and quietly misbehaves on the other. You have to prompt for cross-platform awareness on purpose.
 
@@ -48,7 +53,7 @@ Here's what cross-platform actually costs a solo builder, beyond the obvious "te
 
 None of these differences are documented in one place. You discover them one at a time, usually when something breaks or feels wrong and you have to spend a day figuring out why.
 
-**Every one of these differences is a day.** Not a line of code. A day. A day of researching the platform behavior, a day of writing the platform-specific code, a day of testing it, a day of making sure you didn't break the other platform while fixing this one. Multiply that by the number of platform differences you'll encounter in a year of building, and you start to understand the tax.
+**Every one of these differences is a day.** Not a line of code. A day. A day of researching the platform behavior, a day of writing the platform-specific code, a day of testing it, a day of making sure you didn't break the other platform while fixing this one.
 
 ### Why I Chose iOS-Only Despite Having Flutter
 
