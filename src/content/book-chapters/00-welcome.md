@@ -78,7 +78,7 @@ One last thing: I kept the Gen Z energy on purpose. Direct sentences. Short para
 16. Pricing Like You Mean It
 17. Launch Day and the Emotional Map
 18. Marketing, Social Media, and Getting People to Care
-19. Brand Is a Container (and a Letter to the Builder You're Becoming)
+19. Brand Is a Container
 
 **Appendices**
 

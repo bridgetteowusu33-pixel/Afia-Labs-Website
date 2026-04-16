@@ -1,5 +1,5 @@
 ---
-title: "Brand Is a Container (and a Letter to the Builder You're Becoming)"
+title: "Brand Is a Container"
 slug: "19-brand-is-a-container-and-a-letter-to-the-builder-y"
 order: 19
 type: "chapter"
