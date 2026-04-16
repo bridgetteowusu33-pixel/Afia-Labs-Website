@@ -1,0 +1,73 @@
+---
+import { getCollection, render } from 'astro:content';
+import ReadingLayout from '../../../layouts/ReadingLayout.astro';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('bookChapters');
+  const sorted = chapters.sort((a, b) => a.data.order - b.data.order);
+  return sorted.map((chapter) => ({
+    params: { slug: chapter.data.slug },
+    props: { chapter, sorted },
+  }));
+}
+
+const { chapter, sorted } = Astro.props;
+const { Content } = await render(chapter);
+
+const idx = sorted.findIndex((c) => c.id === chapter.id);
+const prev = idx > 0 ? sorted[idx - 1] : null;
+const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
+
+const chapterLabel =
+  chapter.data.type === 'chapter'
+    ? chapter.data.number
+    : chapter.data.type === 'letter'
+      ? 'A Letter'
+      : chapter.data.type === 'appendix'
+        ? chapter.data.title.split('—')[0].trim()
+        : chapter.data.type === 'front'
+          ? 'Welcome'
+          : undefined;
+---
+
+<ReadingLayout
+  title={chapter.data.title}
+  part={chapter.data.part ?? undefined}
+  chapterNumber={chapter.data.type === 'chapter' ? chapter.data.number : undefined}
+  eyebrow={
+    chapter.data.type !== 'chapter'
+      ? chapter.data.type === 'letter'
+        ? 'A letter'
+        : chapter.data.type === 'appendix'
+          ? 'Appendix'
+          : chapter.data.type === 'front'
+            ? 'Welcome'
+            : 'Back matter'
+      : undefined
+  }
+>
+  <Content />
+
+  <Fragment slot="footer">
+    <nav class="read-nav">
+      {prev ? (
+        <a href={`/read-room-r7k92x/book/${prev.data.slug}/`} class="read-nav-link">
+          <span class="read-nav-link-label">← Previous</span>
+          <span class="read-nav-link-title">
+            {prev.data.type === 'chapter' ? `Chapter ${prev.data.number}: ` : ''}{prev.data.title}
+          </span>
+        </a>
+      ) : <div />}
+      {next ? (
+        <a href={`/read-room-r7k92x/book/${next.data.slug}/`} class="read-nav-link read-nav-next">
+          <span class="read-nav-link-label">Next →</span>
+          <span class="read-nav-link-title">
+            {next.data.type === 'chapter' ? `Chapter ${next.data.number}: ` : ''}{next.data.title}
+          </span>
+        </a>
+      ) : <div />}
+    </nav>
+
+    <a href="/read-room-r7k92x/" class="read-back-link">← Back to the reading room</a>
+  </Fragment>
+</ReadingLayout>

@@ -1,0 +1,20 @@
+---
+import { getEntry, render } from 'astro:content';
+import ReadingLayout from '../../layouts/ReadingLayout.astro';
+
+const entry = await getEntry('docs', 'workbook');
+if (!entry) throw new Error('Workbook doc not found');
+const { Content } = await render(entry);
+---
+
+<ReadingLayout
+  title="The AI App Builder Workbook"
+  eyebrow="The Workbook"
+  part="Companion to the book"
+>
+  <Content />
+
+  <Fragment slot="footer">
+    <a href="/read-room-r7k92x/" class="read-back-link">← Back to the reading room</a>
+  </Fragment>
+</ReadingLayout>

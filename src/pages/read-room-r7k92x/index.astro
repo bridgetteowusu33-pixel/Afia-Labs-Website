@@ -1,0 +1,560 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const waitlistUrl = 'https://form.jotform.com/261045381980054';
+
+const chapters = await getCollection('bookChapters');
+const sorted = chapters.sort((a, b) => a.data.order - b.data.order);
+
+// Group by part for the TOC
+const groups: Record<string, typeof sorted> = {};
+for (const c of sorted) {
+  const key = c.data.part ?? 'Other';
+  if (!groups[key]) groups[key] = [];
+  groups[key].push(c);
+}
+const groupOrder = [
+  'Act I — Belief',
+  'Act II — Clarity',
+  'Act III — Execution',
+  'Act IV — Becoming',
+  'Appendices',
+  'Back Matter',
+  'Other',
+];
+---
+
+<BaseLayout
+  title="The Reading Room — Afia Labs"
+  description="Private reading room for trusted early readers."
+  noindex={true}
+>
+  <Fragment slot="head">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <main class="rr-main">
+    <div class="rr-hero-glow rr-hero-glow-1" aria-hidden="true"></div>
+    <div class="rr-hero-glow rr-hero-glow-2" aria-hidden="true"></div>
+
+    <section class="rr-hero">
+      <div class="container">
+        <div class="rr-eyebrow">
+          <span class="rr-eyebrow-dot"></span>
+          Private · Trusted readers only
+        </div>
+        <h1 class="rr-headline">The Reading Room.</h1>
+        <p class="rr-subhead">
+          An early, unlisted copy of the full Afia Labs system. The book, the workbook, and the course syllabus — open for feedback before anything goes on sale.
+        </p>
+        <div class="rr-ctas">
+          <a href="#book" class="rr-btn rr-btn-primary">Start Reading →</a>
+          <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" class="rr-btn rr-btn-secondary">Join the Waitlist</a>
+        </div>
+        <p class="rr-meta">You're reading this because I trust you. Notes, nitpicks, gut reactions — all welcome.</p>
+      </div>
+    </section>
+
+    <section class="rr-note">
+      <div class="container">
+        <div class="rr-note-card">
+          <div class="rr-note-label">A quick note before you start</div>
+          <p>
+            This is a working draft. Some sentences are still sharp. Some still aren't. I'm sharing it now because early readers catch things I can't. If something lands, tell me. If something reads wrong, tell me twice. The only wrong feedback is no feedback.
+          </p>
+          <p class="rr-note-sign">— Bridgette</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="rr-section">
+      <div class="container">
+        <div class="rr-section-label">01 · The Book</div>
+        <h2 class="rr-section-title">From Idea to Income with AI Apps.</h2>
+        <p class="rr-section-sub">Nineteen chapters. A letter. Three appendices. The honest field guide to building with AI while staying in the driver's seat.</p>
+
+        <div class="rr-toc">
+          {groupOrder.map((group) => groups[group] && (
+            <div class="rr-toc-group">
+              <div class="rr-toc-part">{group}</div>
+              <ul>
+                {groups[group].map((c) => (
+                  <li>
+                    <a href={`/read-room-r7k92x/book/${c.data.slug}/`}>
+                      <span class="rr-toc-num">
+                        {c.data.type === 'chapter' ? String(c.data.number).padStart(2, '0') : c.data.type === 'front' ? '—' : c.data.type === 'letter' ? '✺' : c.data.type === 'appendix' ? c.data.title.split('—')[0].trim().replace('Appendix ', '') : '·'}
+                      </span>
+                      <span class="rr-toc-title">
+                        {c.data.type === 'appendix' ? c.data.title.split('—').slice(1).join('—').trim() : c.data.title}
+                      </span>
+                      <span class="rr-toc-arrow">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="rr-section rr-section-alt">
+      <div class="container">
+        <div class="rr-section-label">02 · The Workbook</div>
+        <h2 class="rr-section-title">The AI App Builder Workbook.</h2>
+        <p class="rr-section-sub">Eighty-eight pages. Eleven sections. Where thinking becomes doing. Paired to every chapter of the book.</p>
+
+        <a href="/read-room-r7k92x/workbook/" class="rr-big-link">
+          <div class="rr-big-link-content">
+            <div class="rr-big-link-label">Open the workbook</div>
+            <div class="rr-big-link-title">88 pages, all in one place</div>
+          </div>
+          <div class="rr-big-link-arrow">→</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="rr-section">
+      <div class="container">
+        <div class="rr-section-label">03 · The Course</div>
+        <h2 class="rr-section-title">From Idea to Income: The Course.</h2>
+        <p class="rr-section-sub">Eleven modules. The execution layer. Videos are still being recorded — here's the full syllabus so you can see what's coming.</p>
+
+        <a href="/read-room-r7k92x/course/" class="rr-big-link">
+          <div class="rr-big-link-content">
+            <div class="rr-big-link-label">View the syllabus</div>
+            <div class="rr-big-link-title">Modules, outcomes, and structure</div>
+          </div>
+          <div class="rr-big-link-arrow">→</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="rr-cta-section">
+      <div class="container">
+        <div class="rr-cta-card">
+          <h2>When it's ready to sell, you'll be first to know.</h2>
+          <p>Join the same waitlist the public will eventually see. Waitlist subscribers get early access pricing on the bundle.</p>
+          <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" class="rr-btn rr-btn-primary rr-btn-large">
+            Join the Waitlist
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="rr-footer-note">
+      <div class="container">
+        <p>Afia Labs · Built with AI. Stayed in control. Owned the outcome.</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .rr-main {
+    background: linear-gradient(180deg, #0a0612 0%, #12091f 50%, #0f0818 100%);
+    color: #fffbf7;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rr-hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+  .rr-hero-glow-1 {
+    top: -160px;
+    left: -120px;
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+  }
+  .rr-hero-glow-2 {
+    top: 40%;
+    right: -160px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.22), transparent 70%);
+  }
+
+  .rr-hero {
+    position: relative;
+    padding: 180px 0 100px;
+  }
+
+  .rr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.28);
+    color: #f59e0b;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 36px;
+  }
+  .rr-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.22);
+  }
+
+  .rr-headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(52px, 8vw, 108px);
+    font-weight: 700;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+    color: #fffbf7;
+    margin: 0 0 32px;
+    max-width: 14ch;
+    font-variation-settings: 'opsz' 144;
+    text-wrap: balance;
+  }
+
+  .rr-subhead {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 500;
+    line-height: 1.55;
+    color: rgba(255, 251, 247, 0.72);
+    margin: 0 0 44px;
+    max-width: 56ch;
+    letter-spacing: -0.005em;
+  }
+
+  .rr-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .rr-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 34px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .rr-btn-primary {
+    background: #f59e0b;
+    color: #0a0612;
+    box-shadow: 0 12px 28px rgba(245, 158, 11, 0.4), 0 2px 0 rgba(255, 255, 255, 0.14) inset;
+  }
+  .rr-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(245, 158, 11, 0.5), 0 2px 0 rgba(255, 255, 255, 0.18) inset;
+  }
+
+  .rr-btn-large {
+    padding: 22px 44px;
+    font-size: 16px;
+  }
+
+  .rr-btn-secondary {
+    background: transparent;
+    color: #fffbf7;
+    border: 1.5px solid rgba(255, 251, 247, 0.22);
+  }
+  .rr-btn-secondary:hover {
+    border-color: rgba(255, 251, 247, 0.42);
+    background: rgba(255, 251, 247, 0.05);
+  }
+
+  .rr-meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(255, 251, 247, 0.5);
+    margin: 32px 0 0;
+  }
+
+  .rr-note {
+    position: relative;
+    padding: 40px 0 80px;
+  }
+
+  .rr-note-card {
+    max-width: 680px;
+    padding: 40px 44px;
+    background: rgba(255, 251, 247, 0.03);
+    border: 1px solid rgba(255, 251, 247, 0.1);
+    border-left: 3px solid #f59e0b;
+    border-radius: 4px;
+  }
+
+  .rr-note-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: #f59e0b;
+    margin-bottom: 16px;
+  }
+
+  .rr-note-card p {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255, 251, 247, 0.82);
+    margin: 0 0 16px;
+  }
+
+  .rr-note-sign {
+    font-style: italic;
+    color: rgba(255, 251, 247, 0.55) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rr-section {
+    position: relative;
+    padding: 100px 0;
+  }
+
+  .rr-section-alt {
+    background: rgba(255, 251, 247, 0.02);
+  }
+
+  .rr-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f59e0b;
+    margin-bottom: 20px;
+  }
+
+  .rr-section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #fffbf7;
+    margin: 0 0 20px;
+    max-width: 20ch;
+    font-variation-settings: 'opsz' 96;
+  }
+
+  .rr-section-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 251, 247, 0.65);
+    margin: 0 0 56px;
+    max-width: 56ch;
+  }
+
+  .rr-toc {
+    display: grid;
+    gap: 56px;
+  }
+
+  .rr-toc-part {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    color: rgba(245, 158, 11, 0.75);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 251, 247, 0.08);
+  }
+
+  .rr-toc-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 4px;
+  }
+
+  .rr-toc-group a {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 18px 24px;
+    background: rgba(255, 251, 247, 0.02);
+    border: 1px solid rgba(255, 251, 247, 0.06);
+    border-radius: 10px;
+    color: #fffbf7;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .rr-toc-group a:hover {
+    background: rgba(255, 251, 247, 0.05);
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateX(4px);
+  }
+
+  .rr-toc-num {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f59e0b;
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .rr-toc-title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgba(255, 251, 247, 0.92);
+    line-height: 1.3;
+  }
+
+  .rr-toc-arrow {
+    font-size: 18px;
+    color: rgba(255, 251, 247, 0.3);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .rr-toc-group a:hover .rr-toc-arrow {
+    color: #f59e0b;
+    transform: translateX(4px);
+  }
+
+  .rr-big-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 680px;
+    padding: 36px 44px;
+    background: rgba(255, 251, 247, 0.03);
+    border: 1px solid rgba(255, 251, 247, 0.1);
+    border-radius: 16px;
+    color: #fffbf7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .rr-big-link:hover {
+    background: rgba(255, 251, 247, 0.06);
+    border-color: rgba(245, 158, 11, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .rr-big-link-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #f59e0b;
+    margin-bottom: 8px;
+  }
+
+  .rr-big-link-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fffbf7;
+    line-height: 1.3;
+  }
+
+  .rr-big-link-arrow {
+    font-size: 28px;
+    color: #f59e0b;
+  }
+
+  .rr-cta-section {
+    padding: 120px 0;
+  }
+
+  .rr-cta-card {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 72px 48px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(236, 72, 153, 0.06), rgba(167, 139, 250, 0.08));
+    border: 1px solid rgba(245, 158, 11, 0.24);
+    border-radius: 28px;
+  }
+
+  .rr-cta-card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fffbf7;
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+    font-variation-settings: 'opsz' 96;
+  }
+
+  .rr-cta-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 251, 247, 0.72);
+    margin: 0 auto 36px;
+    max-width: 44ch;
+  }
+
+  .rr-footer-note {
+    padding: 48px 0 64px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 251, 247, 0.06);
+  }
+
+  .rr-footer-note p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 251, 247, 0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0;
+  }
+
+  @media (max-width: 720px) {
+    .rr-hero {
+      padding: 140px 0 80px;
+    }
+    .rr-section {
+      padding: 80px 0;
+    }
+    .rr-note-card {
+      padding: 32px 28px;
+    }
+    .rr-toc-group a {
+      grid-template-columns: 40px 1fr auto;
+      gap: 14px;
+      padding: 16px 18px;
+    }
+    .rr-toc-title {
+      font-size: 16px;
+    }
+    .rr-big-link {
+      padding: 28px 28px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .rr-cta-card {
+      padding: 56px 28px;
+    }
+  }
+</style>

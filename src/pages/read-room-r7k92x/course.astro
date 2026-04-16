@@ -1,0 +1,221 @@
+---
+import ReadingLayout from '../../layouts/ReadingLayout.astro';
+
+const modules = [
+  {
+    n: 1,
+    title: 'Welcome to the New Builder Era',
+    lessons: [
+      'The restaurant analogy',
+      'The passenger, the fighter, and the master driver',
+      'What this course is really about',
+      'How to use AI without losing yourself',
+    ],
+  },
+  {
+    n: 2,
+    title: 'Finding an App Idea Worth Building',
+    lessons: [
+      'How to find real problems',
+      'Filtering ideas',
+      'Choosing an audience',
+      'Narrowing the concept',
+    ],
+  },
+  {
+    n: 3,
+    title: 'Using AI Wisely',
+    lessons: [
+      'How to work with AI as an assistant',
+      'How to brainstorm first and polish second',
+      'How to create better prompts',
+      'How to avoid dependence',
+    ],
+  },
+  {
+    n: 4,
+    title: 'Building in VS Code',
+    lessons: [
+      'Why VS Code is your home base',
+      'Using Codex, Claude Code, or Copilot',
+      'Turning messy thoughts into useful prompts',
+      'Generating and reviewing code',
+    ],
+  },
+  {
+    n: 5,
+    title: 'Creating the MVP',
+    lessons: [
+      'Choosing the right first version',
+      'Mapping the user journey',
+      'Avoiding feature overload',
+      'Building the core loop',
+    ],
+  },
+  {
+    n: 6,
+    title: 'Cross-Platform Thinking',
+    lessons: [
+      'Building for iOS and Android',
+      'Using Android Studio and simulators',
+      'Testing on real devices',
+      'Platform-aware prompts',
+    ],
+  },
+  {
+    n: 7,
+    title: 'Testing, Trust, and Launch Readiness',
+    lessons: [
+      'Testing rhythm',
+      'TestFlight',
+      'Final launch audit',
+      'Trust and safety review',
+      'Polish before launch',
+    ],
+  },
+  {
+    n: 8,
+    title: 'App Uploads and Store Readiness',
+    lessons: [
+      'Apple Developer setup',
+      'Google Play Console setup',
+      'Screenshots and messaging',
+      'App listing basics',
+    ],
+  },
+  {
+    n: 9,
+    title: 'Business Setup After the Build',
+    lessons: [
+      'LLC basics',
+      'Domain and naming checks',
+      'Websites',
+      'Email and payments',
+      'Support and operations',
+    ],
+  },
+  {
+    n: 10,
+    title: 'Marketing and Monetization',
+    lessons: [
+      'Building visibility',
+      'Social media content',
+      'Positioning',
+      'Pricing',
+      'Turning product value into income',
+    ],
+  },
+  {
+    n: 11,
+    title: 'Building Under Your Brand',
+    lessons: [
+      'Why Afia Labs thinking matters',
+      'One app vs ecosystem',
+      'Long-term ownership',
+      'Planning the next product',
+    ],
+  },
+];
+
+const bonuses = [
+  'AI App Builder Prompt Pack',
+  'Final Launch Audit Prompt',
+  'Naming + Domain Checklist',
+  'Launch Week Content Prompts',
+  'App Store Asset Planner',
+  'Monetization Decision Sheet',
+];
+---
+
+<ReadingLayout
+  title="From Idea to Income. The Course."
+  eyebrow="The Course"
+  part="Syllabus — videos in production"
+>
+  <p><em>By the end of this course, you will have a validated app idea, a practical AI-assisted build workflow, a launch plan, and a stronger sense of ownership over your product and business.</em></p>
+
+  <p>The course is the execution layer of the Afia Labs system. It turns the ideas in the book into a guided transformation. You read the book, fill the workbook, and walk through the course with me beside you. Eleven modules. Real screen shares. Real prompts. Real rejections. The stuff nobody shows you on LinkedIn.</p>
+
+  <p>Videos are still being recorded. This page is the living syllabus — the module list is final, the lesson breakdowns are final, the bonus pack is final. What's missing is the footage. If a lesson title reads off or seems thin, tell me.</p>
+
+  <h2>Format</h2>
+  <ul>
+    <li>Pre-recorded video lessons you can watch at your own pace</li>
+    <li>Workbook companion — every module maps to pages in the workbook</li>
+    <li>Templates and prompt pack</li>
+    <li>Launch checklist</li>
+    <li>Optional private community (later)</li>
+    <li>Optional live office hours (later)</li>
+  </ul>
+
+  <h2>Modules</h2>
+
+  <div class="course-modules">
+    {modules.map((m) => (
+      <section class="course-module">
+        <div class="course-module-num">Module {String(m.n).padStart(2, '0')}</div>
+        <h3>{m.title}</h3>
+        <ul>
+          {m.lessons.map((l) => <li>{l}</li>)}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <h2>Bonus Pack</h2>
+  <ul>
+    {bonuses.map((b) => <li>{b}</li>)}
+  </ul>
+
+  <h2>Who It's For</h2>
+  <p>The course is for the builder who wants the hand-holding. The one who wants to see the screen, hear the voice, and walk the path with someone who has already walked it. If you want the framework and the action system only, the book and workbook will get you there. If you want the full guided transformation, this is where it lives.</p>
+
+  <Fragment slot="footer">
+    <a href="/read-room-r7k92x/" class="read-back-link">← Back to the reading room</a>
+  </Fragment>
+</ReadingLayout>
+
+<style is:global>
+  .course-modules {
+    display: grid;
+    gap: 28px;
+    margin: 40px 0 56px;
+  }
+
+  .course-module {
+    padding: 32px 36px;
+    background: rgba(26, 15, 31, 0.03);
+    border: 1px solid rgba(26, 15, 31, 0.08);
+    border-left: 3px solid #d97706;
+    border-radius: 4px;
+  }
+
+  .course-module-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #8b5a1f;
+    margin-bottom: 12px;
+  }
+
+  .course-module h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    margin: 0 0 16px !important;
+    color: #1a0f1f;
+  }
+
+  .course-module ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+  }
+
+  .course-module li {
+    font-size: 17px;
+    margin-bottom: 6px !important;
+  }
+</style>

@@ -1,0 +1,374 @@
+---
+// ReadingLayout.astro — a book-like reading surface for the private reading room.
+// Serif body type, narrow measure, deep margins, noindex by default.
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  chapterNumber?: number | string;
+  part?: string;
+}
+
+const { title, description, eyebrow, chapterNumber, part } = Astro.props;
+const fullTitle = `${title} — Reading Room — Afia Labs`;
+---
+
+<BaseLayout
+  title={fullTitle}
+  description={description ?? 'Private reading room. Trusted readers only.'}
+  noindex={true}
+>
+  <Fragment slot="head">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <main class="read-main">
+    <article class="read-article">
+      <header class="read-header">
+        {part && <div class="read-part">{part}</div>}
+        {chapterNumber !== undefined && chapterNumber !== null && (
+          <div class="read-chapter-num">Chapter {chapterNumber}</div>
+        )}
+        {eyebrow && chapterNumber === undefined && <div class="read-eyebrow">{eyebrow}</div>}
+        <h1 class="read-title">{title}</h1>
+      </header>
+
+      <div class="read-body">
+        <slot />
+      </div>
+
+      <footer class="read-footer">
+        <slot name="footer" />
+      </footer>
+    </article>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .read-main {
+    background: #fbf7f0;
+    color: #1a0f1f;
+    min-height: 100vh;
+    padding: 120px 0 100px;
+    position: relative;
+  }
+
+  .read-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(168, 85, 247, 0.04), transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(245, 158, 11, 0.04), transparent 50%);
+    pointer-events: none;
+  }
+
+  .read-article {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .read-header {
+    margin-bottom: 72px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(26, 15, 31, 0.1);
+  }
+
+  .read-part {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    color: #8b5a1f;
+    margin-bottom: 20px;
+  }
+
+  .read-chapter-num,
+  .read-eyebrow {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    color: rgba(26, 15, 31, 0.55);
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+
+  .read-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #1a0f1f;
+    margin: 0;
+    text-wrap: balance;
+    font-variation-settings: 'opsz' 96;
+  }
+
+  .read-body {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #2a1a31;
+    font-variation-settings: 'opsz' 14;
+  }
+
+  .read-body > *:first-child {
+    margin-top: 0;
+  }
+
+  .read-body h1,
+  .read-body h2,
+  .read-body h3,
+  .read-body h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: #1a0f1f;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-variation-settings: 'opsz' 48;
+  }
+
+  .read-body h1 { display: none; } /* title handled by layout header */
+
+  .read-body h2 {
+    font-size: 32px;
+    margin: 72px 0 20px;
+  }
+
+  .read-body h3 {
+    font-size: 24px;
+    margin: 56px 0 16px;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .read-body h4 {
+    font-size: 19px;
+    margin: 40px 0 12px;
+  }
+
+  .read-body p {
+    margin: 0 0 24px;
+  }
+
+  .read-body p > em:first-child {
+    color: rgba(26, 15, 31, 0.75);
+  }
+
+  .read-body strong {
+    font-weight: 700;
+    color: #1a0f1f;
+  }
+
+  .read-body em {
+    font-style: italic;
+  }
+
+  .read-body blockquote {
+    margin: 40px 0;
+    padding: 24px 32px;
+    border-left: 3px solid #d97706;
+    background: rgba(217, 119, 6, 0.05);
+    font-style: italic;
+    color: rgba(26, 15, 31, 0.82);
+    border-radius: 4px;
+  }
+
+  .read-body blockquote p {
+    margin: 0 0 12px;
+  }
+
+  .read-body blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  .read-body ul,
+  .read-body ol {
+    margin: 0 0 28px;
+    padding-left: 28px;
+  }
+
+  .read-body li {
+    margin-bottom: 10px;
+  }
+
+  .read-body li > p {
+    margin-bottom: 10px;
+  }
+
+  .read-body hr {
+    border: none;
+    text-align: center;
+    margin: 56px 0;
+  }
+
+  .read-body hr::before {
+    content: '· · ·';
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    letter-spacing: 1em;
+    color: rgba(26, 15, 31, 0.3);
+  }
+
+  .read-body code {
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 0.88em;
+    padding: 2px 6px;
+    background: rgba(26, 15, 31, 0.07);
+    border-radius: 4px;
+  }
+
+  .read-body pre {
+    background: #1a0f1f;
+    color: #fbf7f0;
+    padding: 24px 28px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 32px 0;
+  }
+
+  .read-body pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .read-body a {
+    color: #8b5a1f;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .read-body a:hover {
+    color: #d97706;
+  }
+
+  /* First letter drop cap on the first paragraph */
+  .read-body > p:first-of-type::first-letter {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 64px;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 10px 0 0;
+    color: #8b5a1f;
+    font-variation-settings: 'opsz' 144;
+  }
+
+  .read-footer {
+    margin-top: 96px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(26, 15, 31, 0.1);
+  }
+
+  /* Prev/next nav */
+  .read-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .read-nav-link {
+    padding: 24px 28px;
+    background: rgba(26, 15, 31, 0.03);
+    border: 1px solid rgba(26, 15, 31, 0.08);
+    border-radius: 12px;
+    color: #1a0f1f;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .read-nav-link:hover {
+    background: rgba(26, 15, 31, 0.05);
+    border-color: rgba(26, 15, 31, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .read-nav-link-label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: rgba(26, 15, 31, 0.5);
+    margin-bottom: 8px;
+  }
+
+  .read-nav-link-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .read-nav-next {
+    text-align: right;
+  }
+
+  .read-nav-prev-only {
+    grid-column: 1 / 2;
+  }
+
+  .read-nav-next-only {
+    grid-column: 2 / 3;
+  }
+
+  .read-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(26, 15, 31, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+  }
+
+  .read-back-link:hover {
+    color: #1a0f1f;
+  }
+
+  @media (max-width: 720px) {
+    .read-main {
+      padding: 80px 0 72px;
+    }
+    .read-article {
+      padding: 0 24px;
+    }
+    .read-header {
+      margin-bottom: 48px;
+      padding-bottom: 36px;
+    }
+    .read-body {
+      font-size: 18px;
+    }
+    .read-body h2 {
+      font-size: 26px;
+      margin: 56px 0 16px;
+    }
+    .read-body h3 {
+      font-size: 21px;
+    }
+    .read-body > p:first-of-type::first-letter {
+      font-size: 52px;
+    }
+    .read-nav {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
