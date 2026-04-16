@@ -80,17 +80,17 @@ That's the tax. Not the code that breaks. The code that works perfectly and neve
 
 **The lesson: before you build the cross-platform version of anything, ask yourself honestly: am I going to ship this platform in the next six months? If the answer is no, build for the platform you're actually shipping and save the abstraction for later.** The abstraction will be better when you build it later anyway, because you'll know more about what both platforms actually need.
 
-### When Cross-Platform Is Worth It
+### The Three Cases Where I'd Still Say Yes
 
-I don't want to scare you away from cross-platform entirely. There are real cases where it's the right call from day one.
+After everything I just told you, I don't want to leave you thinking cross-platform is always wrong. It's not. Here are the three cases where I'd still choose it from day one.
 
-**Your audience is genuinely split.** If your target user is equally likely to be on iPhone or Android, and you'd lose half your market by picking one, cross-platform from day one makes sense. This is common for utility apps, B2B tools, and products targeting demographics with high Android adoption.
+**Your audience is genuinely split.** If your target user is equally likely to be on iPhone or Android, and picking one means losing half the people you're building for, cross-platform earns its tax. This is common for utility apps, B2B tools, and products targeting demographics with high Android adoption. MemeScanr's audience skews heavily iPhone. Yours might not.
 
-**Your product is simple enough.** If your app has three screens, no native integrations, and no platform-specific features, the cross-platform tax is small. The simpler the product, the smaller the gap between "works on both" and "belongs on both."
+**Your product is simple enough that the tax is small.** Three screens, no native integrations, no platform-specific features. The simpler the product, the smaller the gap between "works on both" and "belongs on both." If your app is a calculator with personality, the cross-platform cost is negligible. If your app has a Face ID vault, it's not.
 
-**You have the bandwidth.** If you're not solo. If you have a partner who owns Android while you own iOS. If you have enough time and energy to maintain two platform experiences at a high standard. Then cross-platform is a genuine multiplier instead of a tax.
+**You're not alone.** If you have a partner who owns Android while you own iOS, or if you have enough bandwidth to maintain two platform experiences at a high standard without cutting corners on either, cross-platform becomes a genuine multiplier instead of a tax. The key word is *maintain*. Not launch. Maintain. For two years.
 
-For everyone else, my honest advice: pick one platform, ship it, prove the product works, and then expand. The second platform is a launch you get to have later. And as I told you in Chapter 8, the launch you save for later is worth more than the launch you spend today.
+If none of those three apply, my honest advice is the same thing I told you in Chapter 8: pick one platform, ship it, prove the product works, and expand later. The second platform is a launch you get to have. And the launch you save for later is worth more than the launch you spend today.
 
 ### > Think Before You Move On
 
