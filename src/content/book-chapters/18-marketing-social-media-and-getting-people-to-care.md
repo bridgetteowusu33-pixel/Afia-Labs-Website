@@ -4,7 +4,7 @@ slug: "18-marketing-social-media-and-getting-people-to-care"
 order: 18
 type: "chapter"
 number: 18
-part: "Act IV — Becoming"
+part: "Act III — Ownership"
 ---
 I thought launching MemeScanr into the App Store meant I had distributed it.
 

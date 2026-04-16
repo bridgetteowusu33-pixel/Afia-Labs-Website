@@ -4,7 +4,7 @@ slug: "16-pricing-like-you-mean-it"
 order: 16
 type: "chapter"
 number: 16
-part: "Act III — Execution"
+part: "Act III — Ownership"
 ---
 Pricing is not a math problem. Pricing is a **positioning** problem.
 

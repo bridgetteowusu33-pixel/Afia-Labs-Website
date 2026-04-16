@@ -4,7 +4,7 @@ slug: "12-testing-on-simulators-real-devices-and-testflight"
 order: 12
 type: "chapter"
 number: 12
-part: "Act III — Execution"
+part: "Act II — Reality"
 ---
 Apple rejected MemeScanr for a permission flow that never crashed once.
 

@@ -3,7 +3,7 @@ title: "A Letter to the Builder You're Becoming"
 slug: "20-letter-to-the-builder"
 order: 20
 type: "letter"
-part: "Act IV — Becoming"
+part: "Act III — Ownership"
 ---
 If you have read this far, I want to write you a letter.
 

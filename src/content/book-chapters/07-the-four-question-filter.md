@@ -4,9 +4,9 @@ slug: "07-the-four-question-filter"
 order: 7
 type: "chapter"
 number: 7
-part: "Act II — Clarity"
+part: "Act II — Reality"
 ---
-Once you've found the itch and met your person, you need to figure out whether this idea can survive contact with reality before you hand it months of your life.
+Once you have found the itch and met your person, you need to figure out whether this idea can survive contact with reality before you hand it months of your life.
 
 I have a filter I use. Four questions.
 
@@ -70,7 +70,7 @@ That does not mean the idea is dead. It means the path is still blurry.
 
 Some problems are real, but not painful enough to motivate payment.
 
-These are the problems where the user says, "yeah, that's annoying," and then goes back to their life.
+These are the problems where the user says, "yeah, that is annoying," and then goes back to their life.
 
 The easiest test is this:
 
@@ -179,7 +179,7 @@ The category had a blind spot, and that blind spot was exactly the thing I cared
 
 From that point on, MemeScanr had a much clearer wedge:
 
-*photo cleanup that doesn't judge you*
+*photo cleanup that does not judge you*
 
 Everything started flowing from there. The voice. The Phone Therapist. The celebration screens. The Memory Lane swipe deck. Even the screenshot language.
 

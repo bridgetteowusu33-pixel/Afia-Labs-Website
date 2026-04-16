@@ -4,7 +4,7 @@ slug: "04-what-ownership-really-means"
 order: 4
 type: "chapter"
 number: 4
-part: "Act II — Clarity"
+part: "Act I — Belief"
 ---
 Ownership is bigger than code.
 

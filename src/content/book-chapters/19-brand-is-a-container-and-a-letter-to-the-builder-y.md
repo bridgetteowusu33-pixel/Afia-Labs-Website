@@ -4,7 +4,7 @@ slug: "19-brand-is-a-container-and-a-letter-to-the-builder-y"
 order: 19
 type: "chapter"
 number: 19
-part: "Act IV — Becoming"
+part: "Act III — Ownership"
 ---
 
 MemeScanr is a product.

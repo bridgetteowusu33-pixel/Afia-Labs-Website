@@ -4,7 +4,7 @@ slug: "15-the-pre-submission-audit"
 order: 15
 type: "chapter"
 number: 15
-part: "Act III — Execution"
+part: "Act III — Ownership"
 ---
 I want to save you from the rejection letters I got.
 

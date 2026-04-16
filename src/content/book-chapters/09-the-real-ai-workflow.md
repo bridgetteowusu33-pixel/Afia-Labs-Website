@@ -4,7 +4,7 @@ slug: "09-the-real-ai-workflow"
 order: 9
 type: "chapter"
 number: 9
-part: "Act II — Clarity"
+part: "Act II — Reality"
 ---
 AI inside VS Code can be incredibly powerful when you use it the right way.
 

@@ -4,7 +4,7 @@ slug: "11-building-for-iphone-and-android"
 order: 11
 type: "chapter"
 number: 11
-part: "Act III — Execution"
+part: "Act II — Reality"
 ---
 **Cross-platform is a tax you pay every day in exchange for an option you might never exercise.**
 

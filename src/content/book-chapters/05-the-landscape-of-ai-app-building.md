@@ -4,7 +4,7 @@ slug: "05-the-landscape-of-ai-app-building"
 order: 5
 type: "chapter"
 number: 5
-part: "Act II — Clarity"
+part: "Act I — Belief"
 ---
 The danger is not speed.
 

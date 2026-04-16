@@ -4,7 +4,7 @@ slug: "10-your-kitchen-stack-and-setup"
 order: 10
 type: "chapter"
 number: 10
-part: "Act III — Execution"
+part: "Act II — Reality"
 ---
 I picked Flutter for three reasons, and two of them turned out to be wrong.
 

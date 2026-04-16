@@ -4,7 +4,7 @@ slug: "17-launch-day-and-the-emotional-map"
 order: 17
 type: "chapter"
 number: 17
-part: "Act IV — Becoming"
+part: "Act III — Ownership"
 ---
 Nobody told me that launching an app would feel like this.
 

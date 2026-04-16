@@ -4,7 +4,7 @@ slug: "14-building-messy-is-building-right"
 order: 14
 type: "chapter"
 number: 14
-part: "Act III — Execution"
+part: "Act II — Reality"
 ---
 I want to give you permission for something most building books will not give you permission for.
 

@@ -4,7 +4,7 @@ slug: "08-the-smallest-useful-version"
 order: 8
 type: "chapter"
 number: 8
-part: "Act II — Clarity"
+part: "Act II — Reality"
 ---
 The hardest lesson of my first year building MemeScanr was not technical.
 
@@ -80,10 +80,10 @@ Because sometimes the reason is not user demand. Sometimes the reason is fear. O
 
 Here is a simplified version of what my MemeScanr temptation log looked like early on:
 
-| Feature | Why It's Tempting | Conditions to Add |
+| Feature | Why It Is Tempting | Conditions to Add |
 |---|---|---|
-| Android version | I'm afraid I'm missing half the market | After iOS hits $1k/mo |
-| Video deduplication | It's a cool technical problem | After photo cleanup is rock solid and users ask for it repeatedly |
+| Android version | I am afraid I am missing half the market | After iOS hits $1k/mo |
+| Video deduplication | It is a cool technical problem | After photo cleanup is rock solid and users ask for it repeatedly |
 | Social sharing of Wrapped cards | A competitor did it and it looked cool | After Wrapped itself proves people care |
 | Auto-cleanup with no review | It would feel magical | Never |
 | AI album suggestions | It sounds smart | After I understand what users actually want |
@@ -91,7 +91,7 @@ Here is a simplified version of what my MemeScanr temptation log looked like ear
 
 A few things matter here.
 
-First, every tempting feature has a reason, and some of those reasons are bad reasons. "I'm afraid I'm missing half the market" is fear, not signal. "It sounds smart" is comparison anxiety, not evidence.
+First, every tempting feature has a reason, and some of those reasons are bad reasons. "I am afraid I am missing half the market" is fear, not signal. "It sounds smart" is comparison anxiety, not evidence.
 
 Second, every feature has a gate. Not "later." Not "maybe." A real condition. That matters because vague gates turn into feature creep. Specific gates turn into a roadmap.
 
@@ -229,13 +229,13 @@ You build it. Then you integrate it. Then you test it. Then you fix the weird ed
 
 That hidden second day is where scope creep lives.
 
-You tell yourself, "I'll just add this one thing." Then that one thing touches four other things. Then those four things create six new decisions.
+You tell yourself, "I will just add this one thing." Then that one thing touches four other things. Then those four things create six new decisions.
 
 That is how solo builders lose months without noticing.
 
 At some point, you need **scope lock**.
 
-A real date. A hard line. After that line, no new v1 features get added. Not "I'll try." Not "unless it is small." A real lock.
+A real date. A hard line. After that line, no new v1 features get added. Not "I will try." Not "unless it is small." A real lock.
 
 Anything new goes into the temptation log.
 

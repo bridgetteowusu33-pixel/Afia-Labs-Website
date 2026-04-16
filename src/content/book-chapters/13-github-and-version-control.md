@@ -4,7 +4,7 @@ slug: "13-github-and-version-control"
 order: 13
 type: "chapter"
 number: 13
-part: "Act III — Execution"
+part: "Act II — Reality"
 ---
 The fastest way to lose a week as a solo builder is to let AI make a large edit in a codebase that has no clean rollback point.
 
