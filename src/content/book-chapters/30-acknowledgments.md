@@ -5,10 +5,10 @@ order: 30
 type: "back"
 part: "Back Matter"
 ---
-Thank you to every early user of MemeScanr who DM'd me feedback, found bugs, left reviews, and told their friends. You made the product real.
+Thank you to every early user of MemeScanr who sent feedback, reported bugs, left reviews, and told their friends. You helped turn an idea into a real product.
 
-Thank you to the small handful of solo builders online whose honest threads about shipping taught me it was possible. You know who you are. Pay it forward.
+Thank you to the solo builders online whose honest words about shipping gave me the courage to believe I could do it too. You know who you are. I hope this book pays that forward.
 
-Thank you to every AI tool I used to build this. You were useful collaborators and occasionally confidently wrong in ways that taught me to be a better driver. Credit where it's due.
+Thank you to the AI tools that helped me build along the way. You were helpful collaborators and, at times, confidently wrong in ways that forced me to become a better builder. Credit where it's due.
 
-Thank you to my daughter, Ava, who let me talk about my camera roll for three weeks before I started building, and who was my first user, first beta tester, and first bug reporter. You saw MemeScanr before MemeScanr existed. This book is partly for you. You are my inspiration.
+And most of all, thank you to my daughter, Ava. You listened to me talk about my camera roll long before there was a product. You became my first user, first beta tester, and first bug reporter before MemeScanr was even real. This book is partly for you. You are my inspiration.
