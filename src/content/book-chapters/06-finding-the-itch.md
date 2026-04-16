@@ -25,9 +25,9 @@ That last thought is where an idea becomes an itch. It's the moment the phrase *
 
 When you find yourself thinking *"I wish this existed"* about the same thing more than three times, pay attention. That's your body telling you where to dig.
 
-Here's the clearest sign of an itch vs an idea: when you describe an idea to a friend, the friend nods politely. When you describe an itch to a friend, the friend says *"oh my god, yes, me too"* and tells you about their version of the same thing. Itches are shared. They're invisible until someone names them, and then everyone in the room recognizes them.
+Here's the clearest sign of an itch vs an idea: when you describe an idea to a friend, the friend nods politely. When you describe an itch to someone, they recognize it immediately and tell you about their version of it. Itches are shared. They're invisible until someone names them, and then everyone in the room recognizes them.
 
-The first person I said it out loud to was my daughter, Ava. She was seven, and she looked at me like the problem was obvious. "Yeah," she said. "There's too much stuff on phones." That simple reaction stayed with me.
+The first person I said it out loud to was my daughter, Ava. She was seven, and she looked at me like the problem was obvious. "Yeah," she said. "There's too much stuff on phones." That simple reaction stayed with me. It reminded me that the problem didn't need a complicated explanation. It was real enough that even a child could feel it.
 
 ### The Feeling Filter
 
