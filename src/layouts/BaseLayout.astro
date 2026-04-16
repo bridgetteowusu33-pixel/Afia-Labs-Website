@@ -8,6 +8,7 @@ export interface Props {
   canonical?: string;
   ogImage?: string;
   ogType?: string;
+  noindex?: boolean;
 }
 
 const ogSlug = pathnameToOgSlug(Astro.url.pathname);
@@ -22,6 +23,7 @@ const {
   canonical = new URL(Astro.url.pathname, Astro.site).href,
   ogImage = derivedOgImage,
   ogType = 'website',
+  noindex = false,
 } = Astro.props;
 
 const organizationJsonLd = {
@@ -77,6 +79,7 @@ const websiteJsonLd = {
 
     <link rel="canonical" href={canonical} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 

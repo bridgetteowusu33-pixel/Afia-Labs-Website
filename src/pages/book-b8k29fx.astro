@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PreLaunchHero from '../components/PreLaunchHero.astro';
+import '../styles/pre-launch.css';
+
+const waitlistUrl = 'https://form.jotform.com/261045381980054';
+const accent = '#f59e0b'; // warm gold — "belief"
+
+const title = 'From Idea to Income with AI Apps — Afia Labs';
+const description =
+  'The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it. By Bridgette Owusu.';
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <main class="pre-main" style={`--accent: ${accent};`}>
+    <PreLaunchHero
+      eyebrow="1 of 4 · The Book"
+      accentColor={accent}
+      headline="From Idea to Income with AI Apps."
+      subhead="The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it."
+      primaryCtaText="Join the Waitlist"
+      primaryCtaHref={waitlistUrl}
+      secondaryCtaText="See What's Inside →"
+      secondaryCtaHref="#inside"
+    />
+
+    <!-- ========== THE PITCH ========== -->
+    <section class="pre-section pre-section-pitch">
+      <div class="container">
+        <div class="pre-eyebrow">The Pitch</div>
+        <div class="pre-pitch-body">
+          <p class="pre-pitch-lead">
+            It was a Tuesday. I was trying to send a screenshot to a friend — just a dumb meme I'd saved three months earlier — and I couldn't find it. I scrolled past forty-seven variations of the same selfie. My phone said 14,823 photos. I closed the Photos app and opened Instagram instead.
+          </p>
+          <p>
+            That's the moment I had the idea for MemeScanr. Fourteen months later, it's in the App Store. I built it as a solo founder, using AI tools, while staying in the driver's seat the entire time.
+          </p>
+          <p>
+            This book is everything I wish someone had handed me on the Tuesday it all started. Not theory. Not success porn. The real field guide — with the scars, the receipts, and the launches I earned by cutting features I loved.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHO IT'S FOR ========== -->
+    <section class="pre-section pre-section-audience">
+      <div class="container">
+        <div class="pre-eyebrow">Who It's For</div>
+        <h2 class="pre-section-title">For the builder who keeps almost starting.</h2>
+        <div class="pre-audience-grid">
+          <div class="pre-audience-card">
+            <div class="pre-audience-icon">01</div>
+            <h3>The Builder Who Keeps Almost Starting</h3>
+            <p>The one with a notes app full of ideas and zero shipped products.</p>
+          </div>
+          <div class="pre-audience-card">
+            <div class="pre-audience-icon">02</div>
+            <h3>The First-Time Solo Founder</h3>
+            <p>Building under her own name, no cofounder, no VC, no permission.</p>
+          </div>
+          <div class="pre-audience-card">
+            <div class="pre-audience-icon">03</div>
+            <h3>The Master Driver in Training</h3>
+            <p>Who wants to use AI without becoming a passenger to it.</p>
+          </div>
+          <div class="pre-audience-card">
+            <div class="pre-audience-icon">04</div>
+            <h3>The Honest Builder</h3>
+            <p>Who wants the real story, the scars, and the receipts — not the highlight reel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== INSIDE THE BOOK ========== -->
+    <section id="inside" class="pre-section pre-section-inside">
+      <div class="container">
+        <div class="pre-eyebrow">Inside the Book</div>
+        <h2 class="pre-section-title">Nineteen chapters. Three acts. Every story real.</h2>
+        <p class="pre-section-sub">Every chapter anchors in a moment from building MemeScanr. No theory. No success porn. Just the work.</p>
+
+        <div class="pre-inside-grid">
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">01</div>
+            <h3>The Master Driver</h3>
+            <p>Why the relationship you have with AI matters more than the tool you pick.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">02</div>
+            <h3>How Not to Let AI Take Control of You</h3>
+            <p>The three kinds of AI wrongness and the rules of engagement for staying sharp.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">03</div>
+            <h3>What Ownership Really Means</h3>
+            <p>Creative, technical, brand, business, learning. Five layers, one question.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">04</div>
+            <h3>The Landscape of AI App Building</h3>
+            <p>Lovable, Bolt, v0 — what they're great at and where they trap you.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">05</div>
+            <h3>The Smallest Useful Version</h3>
+            <p>Why MemeScanr v1.0 shipped with one feature. The Feature Temptation Log.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">06</div>
+            <h3>The Real AI Workflow</h3>
+            <p>The prompt template, the question stack, and the session log I use every day.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">07</div>
+            <h3>Building Messy Is Building Right</h3>
+            <p>The silent vault story. The premature decoy. Why refactoring is not failure.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">08</div>
+            <h3>The Pre-Submission Audit</h3>
+            <p>The 25-item checklist. The real Apple rejections. Guideline 5.1.1(iv) in the wild.</p>
+          </div>
+          <div class="pre-inside-card">
+            <div class="pre-inside-num">09</div>
+            <h3>Launch Day and the Emotional Map</h3>
+            <p>Week 1 elation. Week 3 doubt. Week 8 you forget you doubted. The map nobody warns you about.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PULL QUOTE ========== -->
+    <section class="pre-section pre-section-quote">
+      <div class="container">
+        <div class="pre-quote-mark" aria-hidden="true">"</div>
+        <blockquote class="pre-quote-text">
+          You don't have to be the version of yourself who isn't afraid. You just have to be the version who ships anyway.
+        </blockquote>
+        <div class="pre-quote-cite">— From the closing letter</div>
+      </div>
+    </section>
+
+    <!-- ========== WHAT'S IN IT ========== -->
+    <section class="pre-section pre-section-specs">
+      <div class="container">
+        <div class="pre-eyebrow">What's In It</div>
+        <div class="pre-specs-grid">
+          <div class="pre-spec">
+            <div class="pre-spec-num">19</div>
+            <div class="pre-spec-label">Chapters</div>
+          </div>
+          <div class="pre-spec">
+            <div class="pre-spec-num">3</div>
+            <div class="pre-spec-label">Appendices</div>
+          </div>
+          <div class="pre-spec">
+            <div class="pre-spec-num">50k+</div>
+            <div class="pre-spec-label">Words</div>
+          </div>
+          <div class="pre-spec">
+            <div class="pre-spec-num">12</div>
+            <div class="pre-spec-label">MemeScanr case studies</div>
+          </div>
+          <div class="pre-spec">
+            <div class="pre-spec-num">15</div>
+            <div class="pre-spec-label">Reusable AI prompts</div>
+          </div>
+          <div class="pre-spec">
+            <div class="pre-spec-num">25</div>
+            <div class="pre-spec-label">Pre-submission audit items</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WAITLIST CTA ========== -->
+    <section class="pre-section pre-section-cta">
+      <div class="container">
+        <div class="pre-cta-card">
+          <h2>Be first in line when it ships.</h2>
+          <p>Join the waitlist and I'll email you the moment it's ready. No spam. No pre-launch nonsense. Just one email when there's something real to announce.</p>
+          <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" class="pre-cta-button">
+            Join the Waitlist
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="pre-cta-meta">Built with AI. Stayed in control. Owned the outcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPLORE THE SYSTEM ========== -->
+    <section class="pre-section pre-section-explore">
+      <div class="container">
+        <div class="pre-eyebrow">Explore the Full System</div>
+        <h2 class="pre-section-title">The book is one of three.</h2>
+        <div class="pre-explore-grid">
+          <a href="/workbook-wk93a2n/" class="pre-explore-card" style="--explore-accent: #ec4899;">
+            <div class="pre-explore-num">02</div>
+            <h3>The Workbook</h3>
+            <p>Where thinking becomes doing. 88 pages of prompts, worksheets, and decision tools.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+          <a href="/course-cr48jp7/" class="pre-explore-card" style="--explore-accent: #a78bfa;">
+            <div class="pre-explore-num">03</div>
+            <h3>The Course</h3>
+            <p>The execution layer. Eleven modules that walk you through the whole thing.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+          <a href="/bundle-bn47xq2/" class="pre-explore-card pre-explore-card-flagship">
+            <div class="pre-explore-num">★</div>
+            <h3>The Full Bundle</h3>
+            <p>Book + Workbook + Course. The complete ownership-first learning system.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER NOTE ========== -->
+    <section class="pre-section-footer">
+      <div class="container">
+        <p>Afia Labs · Built with AI. Stayed in control. Owned the outcome.</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

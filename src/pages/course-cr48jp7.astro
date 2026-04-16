@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PreLaunchHero from '../components/PreLaunchHero.astro';
+import '../styles/pre-launch.css';
+
+const waitlistUrl = 'https://form.jotform.com/261045381980054';
+const accent = '#a78bfa'; // violet — "execution"
+
+const title = 'From Idea to Income: The Course — Afia Labs';
+const description =
+  'A step-by-step Afia Labs system for building with AI and staying in control. Eleven modules. One shipped app. By Bridgette Owusu.';
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <main class="pre-main" style={`--accent: ${accent};`}>
+    <PreLaunchHero
+      eyebrow="3 of 4 · The Course"
+      accentColor={accent}
+      headline="From Idea to Income. The Course."
+      subhead="A step-by-step Afia Labs system for building with AI and staying in control of the outcome."
+      primaryCtaText="Join the Waitlist"
+      primaryCtaHref={waitlistUrl}
+      secondaryCtaText="See the Modules →"
+      secondaryCtaHref="#modules"
+    />
+
+    <!-- ========== THE PITCH ========== -->
+    <section class="pre-section pre-section-pitch">
+      <div class="container">
+        <div class="pre-eyebrow">The Pitch</div>
+        <div class="pre-pitch-body">
+          <p class="pre-pitch-lead">
+            The book builds belief. The workbook builds clarity. The course builds execution. This is the part where you stop planning and start shipping — with someone walking the path beside you.
+          </p>
+          <p>
+            Eleven modules. Video lessons recorded like the founder sessions I wish existed when I was starting MemeScanr. Real screen shares. Real prompts. Real rejection emails. The stuff nobody shows you on LinkedIn.
+          </p>
+          <p>
+            By the end, you'll have a validated idea, a working AI build workflow, a launch plan, and a stronger sense of ownership over the entire thing. Not a passenger. A driver.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COURSE PROMISE ========== -->
+    <section class="pre-section pre-section-quote">
+      <div class="container">
+        <div class="pre-quote-mark" aria-hidden="true">"</div>
+        <blockquote class="pre-quote-text">
+          The book builds belief. The workbook builds clarity. The course builds execution.
+        </blockquote>
+        <div class="pre-quote-cite">— The three-part Afia Labs system</div>
+      </div>
+    </section>
+
+    <!-- ========== 11 MODULES ========== -->
+    <section id="modules" class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">The Modules</div>
+        <h2 class="pre-section-title">Eleven modules. One shipped app.</h2>
+        <p class="pre-section-sub">Each module is a standalone video lesson with exercises pulled straight from the workbook.</p>
+        <div class="pre-inside-grid">
+          <div class="pre-inside-card"><div class="pre-inside-num">01</div><h3>The Master Driver Mindset</h3><p>Why the relationship you have with AI decides everything that comes next.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">02</div><h3>Find Your Real Idea</h3><p>The itch, the user, and the test for whether it deserves your next 12 months.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">03</div><h3>Own the Five Layers</h3><p>Creative. Technical. Brand. Business. Learning. What to keep, what to delegate.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">04</div><h3>Choose Your AI Stack</h3><p>Lovable, Bolt, Cursor, Claude — what each is good at and where each breaks.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">05</div><h3>Define the Core Loop</h3><p>The smallest useful version of your app. Ship one thing that works.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">06</div><h3>The Daily Build Rhythm</h3><p>Prompt templates, question stacks, session logs. The real workflow.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">07</div><h3>Build Messy, Refactor Smart</h3><p>Why your first draft is supposed to be ugly. And when to clean it up.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">08</div><h3>The Pre-Submission Audit</h3><p>The 25-item checklist. Apple rejections decoded. The launch audit prompt.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">09</div><h3>Launch Day and After</h3><p>Week 1 euphoria. Week 3 doubt. Week 8 numbness. The map nobody hands you.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">10</div><h3>Your First 100 Users</h3><p>The honest marketing playbook. No growth hacks. No follower farming.</p></div>
+          <div class="pre-inside-card"><div class="pre-inside-num">11</div><h3>Turn Into Income</h3><p>Monetization that respects your users. Pricing, offers, and the long game.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHO TEACHES IT ========== -->
+    <section class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">Who Teaches It</div>
+        <h2 class="pre-section-title">Built by a solo founder who actually shipped.</h2>
+        <div class="pre-founder">
+          <div class="pre-founder-avatar">B</div>
+          <div class="pre-founder-body">
+            <h3>Bridgette Owusu</h3>
+            <p>Founder of Afia Labs. Built MemeScanr solo, from the camera-roll moment to the App Store, using AI tools without letting them take the wheel. Masters in Information Systems. This course is the playbook behind that build.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHAT YOU GET ========== -->
+    <section class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">What You Get</div>
+        <h2 class="pre-section-title">Everything you need to ship.</h2>
+        <ul class="pre-list">
+          <li><div class="pre-list-num">01</div><div class="pre-list-body"><strong>Pre-recorded video lessons</strong><span>Eleven modules you can watch at your own pace, in any order.</span></div></li>
+          <li><div class="pre-list-num">02</div><div class="pre-list-body"><strong>Workbook companion</strong><span>Every module maps to pages in the workbook so you can read, watch, and do.</span></div></li>
+          <li><div class="pre-list-num">03</div><div class="pre-list-body"><strong>Templates and prompt pack</strong><span>The exact prompts, session logs, and question stacks I use daily.</span></div></li>
+          <li><div class="pre-list-num">04</div><div class="pre-list-body"><strong>Launch checklist</strong><span>The 25-item audit that gets your app past reviewer number one.</span></div></li>
+          <li><div class="pre-list-num">05</div><div class="pre-list-body"><strong>Launch audit prompt</strong><span>One prompt that reads your whole app as if it were submitting for you.</span></div></li>
+          <li><div class="pre-list-num">06</div><div class="pre-list-body"><strong>Private community</strong><span>Coming later — a small room for builders who shipped using this system.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== WAITLIST CTA ========== -->
+    <section class="pre-section pre-section-cta">
+      <div class="container">
+        <div class="pre-cta-card">
+          <h2>Be first in line when it ships.</h2>
+          <p>Join the waitlist and I'll email you the moment it's ready. No spam. No pre-launch nonsense. Just one email when there's something real to announce.</p>
+          <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" class="pre-cta-button">
+            Join the Waitlist
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="pre-cta-meta">Built with AI. Stayed in control. Owned the outcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPLORE ========== -->
+    <section class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">Explore the Full System</div>
+        <h2 class="pre-section-title">The course is one of three.</h2>
+        <div class="pre-explore-grid">
+          <a href="/book-b8k29fx/" class="pre-explore-card" style="--explore-accent: #f59e0b;">
+            <div class="pre-explore-num">01</div>
+            <h3>The Book</h3>
+            <p>The honest field guide. Nineteen chapters. The story behind every framework.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+          <a href="/workbook-wk93a2n/" class="pre-explore-card" style="--explore-accent: #ec4899;">
+            <div class="pre-explore-num">02</div>
+            <h3>The Workbook</h3>
+            <p>Where thinking becomes doing. 88 pages of prompts and decision tools.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+          <a href="/bundle-bn47xq2/" class="pre-explore-card pre-explore-card-flagship">
+            <div class="pre-explore-num">★</div>
+            <h3>The Full Bundle</h3>
+            <p>Book + Workbook + Course. The complete ownership-first learning system.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <section class="pre-section-footer">
+      <div class="container">
+        <p>Afia Labs · Built with AI. Stayed in control. Owned the outcome.</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

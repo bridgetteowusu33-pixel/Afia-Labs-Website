@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PreLaunchHero from '../components/PreLaunchHero.astro';
+import '../styles/pre-launch.css';
+
+const waitlistUrl = 'https://form.jotform.com/261045381980054';
+const accent = '#ec4899'; // rose/pink — "clarity"
+
+const title = 'The AI App Builder Workbook — Afia Labs';
+const description =
+  'Your Afia Labs action guide from idea to launch. 88 pages of prompts, worksheets, and decision tools. By Bridgette Owusu.';
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <main class="pre-main" style={`--accent: ${accent};`}>
+    <PreLaunchHero
+      eyebrow="2 of 4 · The Workbook"
+      accentColor={accent}
+      headline="The AI App Builder Workbook."
+      subhead="Your Afia Labs action guide from idea to launch. Where thinking becomes doing."
+      primaryCtaText="Join the Waitlist"
+      primaryCtaHref={waitlistUrl}
+      secondaryCtaText="How It Works →"
+      secondaryCtaHref="#how"
+    />
+
+    <!-- ========== THE PITCH ========== -->
+    <section class="pre-section pre-section-pitch">
+      <div class="container">
+        <div class="pre-eyebrow">The Pitch</div>
+        <div class="pre-pitch-body">
+          <p class="pre-pitch-lead">
+            The book builds belief. The workbook builds clarity. This is where the ideas in your head become answers on a page, commitments you can keep, and decisions you can stand behind.
+          </p>
+          <p>
+            Eighty-eight pages. Eleven sections. Every page paired to a chapter in the book. Every prompt designed to stop you from hiding behind vague thinking. You don't get to scroll past your own indecision when you're holding a pen.
+          </p>
+          <p>
+            Messy answers beat perfect answers. This is not a test. Nobody is grading you. The only person this workbook has to make sense to is the one building the app.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section id="how" class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">How It Works</div>
+        <h2 class="pre-section-title">Three steps. One outcome: a shipped app.</h2>
+        <div class="pre-how-grid">
+          <div class="pre-how-step">
+            <div class="pre-how-num">1</div>
+            <h3>Read the Book</h3>
+            <p>Get the belief. The frameworks. The stories behind why each tool exists.</p>
+          </div>
+          <div class="pre-how-step">
+            <div class="pre-how-num">2</div>
+            <h3>Fill the Workbook</h3>
+            <p>Turn ideas into answers. One page at a time. One decision at a time.</p>
+          </div>
+          <div class="pre-how-step">
+            <div class="pre-how-num">3</div>
+            <h3>Execute the Plan</h3>
+            <p>Walk out with a real app, a real audit, and a real reason to ship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 11 SECTIONS ========== -->
+    <section class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">What's Inside</div>
+        <h2 class="pre-section-title">Eleven sections. Every one paired to a chapter.</h2>
+        <p class="pre-section-sub">Each section mirrors the book so you can read, reflect, and act without losing momentum.</p>
+        <ul class="pre-list">
+          <li><div class="pre-list-num">01</div><div class="pre-list-body"><strong>Builder Identity</strong><span>Who you are as a builder and why that matters more than your stack.</span></div></li>
+          <li><div class="pre-list-num">02</div><div class="pre-list-body"><strong>Idea Clarity</strong><span>The itch, the user, the moment. Get specific before you get started.</span></div></li>
+          <li><div class="pre-list-num">03</div><div class="pre-list-body"><strong>Ownership Map</strong><span>Creative, technical, brand, business, learning. Know what you own.</span></div></li>
+          <li><div class="pre-list-num">04</div><div class="pre-list-body"><strong>Tool Selection</strong><span>Pick the AI stack that fits your product, not the hype cycle.</span></div></li>
+          <li><div class="pre-list-num">05</div><div class="pre-list-body"><strong>The Core Loop</strong><span>Define the one thing your app does before you build anything else.</span></div></li>
+          <li><div class="pre-list-num">06</div><div class="pre-list-body"><strong>Build Workflow</strong><span>The prompt, the question stack, the session log. Your daily rhythm.</span></div></li>
+          <li><div class="pre-list-num">07</div><div class="pre-list-body"><strong>Scope Discipline</strong><span>The Feature Temptation Log and the art of cutting what you love.</span></div></li>
+          <li><div class="pre-list-num">08</div><div class="pre-list-body"><strong>Pre-Submission Audit</strong><span>The 25-item checklist that gets you past the first reviewer.</span></div></li>
+          <li><div class="pre-list-num">09</div><div class="pre-list-body"><strong>Launch Plan</strong><span>The emotional map and the marketing scaffolding you'll actually use.</span></div></li>
+          <li><div class="pre-list-num">10</div><div class="pre-list-body"><strong>Post-Launch Reality</strong><span>Week 1. Week 3. Week 8. What to do and what not to say.</span></div></li>
+          <li><div class="pre-list-num">11</div><div class="pre-list-body"><strong>Builder Promise</strong><span>The commitments you make to yourself before you ship.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PULL QUOTE ========== -->
+    <section class="pre-section pre-section-quote">
+      <div class="container">
+        <div class="pre-quote-mark" aria-hidden="true">"</div>
+        <blockquote class="pre-quote-text">
+          Messy answers beat perfect answers. This is not a test. Nobody is grading you.
+        </blockquote>
+        <div class="pre-quote-cite">— From the Workbook's opening pages</div>
+      </div>
+    </section>
+
+    <!-- ========== SPECS ========== -->
+    <section class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">What's In It</div>
+        <div class="pre-specs-grid">
+          <div class="pre-spec"><div class="pre-spec-num">11</div><div class="pre-spec-label">Sections</div></div>
+          <div class="pre-spec"><div class="pre-spec-num">88</div><div class="pre-spec-label">Pages</div></div>
+          <div class="pre-spec"><div class="pre-spec-num">5</div><div class="pre-spec-label">Worksheets</div></div>
+          <div class="pre-spec"><div class="pre-spec-num">15</div><div class="pre-spec-label">Reusable AI prompts</div></div>
+          <div class="pre-spec"><div class="pre-spec-num">1:1</div><div class="pre-spec-label">Paired to every chapter</div></div>
+          <div class="pre-spec"><div class="pre-spec-num">0</div><div class="pre-spec-label">Grading, pressure, or judgment</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WAITLIST CTA ========== -->
+    <section class="pre-section pre-section-cta">
+      <div class="container">
+        <div class="pre-cta-card">
+          <h2>Be first in line when it ships.</h2>
+          <p>Join the waitlist and I'll email you the moment it's ready. No spam. No pre-launch nonsense. Just one email when there's something real to announce.</p>
+          <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" class="pre-cta-button">
+            Join the Waitlist
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="pre-cta-meta">Built with AI. Stayed in control. Owned the outcome.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPLORE ========== -->
+    <section class="pre-section">
+      <div class="container">
+        <div class="pre-eyebrow">Explore the Full System</div>
+        <h2 class="pre-section-title">The workbook is one of three.</h2>
+        <div class="pre-explore-grid">
+          <a href="/book-b8k29fx/" class="pre-explore-card" style="--explore-accent: #f59e0b;">
+            <div class="pre-explore-num">01</div>
+            <h3>The Book</h3>
+            <p>The honest field guide. Nineteen chapters. The story behind every framework.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+          <a href="/course-cr48jp7/" class="pre-explore-card" style="--explore-accent: #a78bfa;">
+            <div class="pre-explore-num">03</div>
+            <h3>The Course</h3>
+            <p>The execution layer. Eleven modules that walk you through the whole thing.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+          <a href="/bundle-bn47xq2/" class="pre-explore-card pre-explore-card-flagship">
+            <div class="pre-explore-num">★</div>
+            <h3>The Full Bundle</h3>
+            <p>Book + Workbook + Course. The complete ownership-first learning system.</p>
+            <div class="pre-explore-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <section class="pre-section-footer">
+      <div class="container">
+        <p>Afia Labs · Built with AI. Stayed in control. Owned the outcome.</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
