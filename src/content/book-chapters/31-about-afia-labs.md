@@ -60,7 +60,7 @@ I read every message personally. It may take me a little time to respond, becaus
 
 Good luck out there. I'm rooting for you.
 
-— Bridgette Owusu
+— Bridgette Owusu\
 Afia Labs
 
 Built with AI. Stayed in control. Owned the outcome.
