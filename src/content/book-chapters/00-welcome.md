@@ -13,6 +13,14 @@ by Bridgette Owusu · Afia Labs
 
 ---
 
+Your feed is full of people selling you AI shortcuts they don't actually use themselves. This is different. This is the book I wrote after shipping a real app, under my own name, with my own money on the line — built with AI, but owned completely by me.
+
+You can do the same thing. Not by watching someone else's highlight reel. By building your own, with a real process, real ownership, and full command of every tool you touch.
+
+That's what this book is for.
+
+---
+
 ## Dedication
 
 For the builder who keeps almost starting.
