@@ -5,89 +5,85 @@ order: 13
 type: "chapter"
 number: 13
 part: "Act III — Execution"
----GitHub is not just where you "put your code." It is part of ownership.
+---
+The fastest way to lose a week as a solo builder is to let AI make a large edit in a codebase that has no clean rollback point.
 
-GitHub gives you a place to save your code, track changes, create branches, collaborate later if needed, and build a real record of what you have built. It turns your project from a fragile pile of files into something structured and recoverable.
+I know because I did exactly that.
 
-At minimum, create a repository for each serious project, connect your local code to it, commit often, and push regularly.
+It was month six of building MemeScanr. I had been working on the scan orchestrator, the piece of the app that coordinates everything that happens when a user taps "Scan My Gallery." The orchestrator touched about eight files and handled photo access, hash computation, duplicate grouping, progress UI, and result storage. It was messy. It had grown organically over months. I knew it needed a refactor.
 
-Use meaningful commit messages. Not "stuff." Not "update." Not "new changes." Say what you actually did:
+So I asked Claude to refactor it. I gave it the files, described the structure I wanted, and hit enter. The AI rewrote about four hundred lines across three files. I skimmed the output. It looked cleaner. I merged it.
 
-- Add onboarding flow.
-- Fix Android keyboard overlap on login.
-- Connect reminders screen to local storage.
-- Prepare beta build for TestFlight.
+Then I ran the app.
 
-That history becomes your memory.
+The scan started. The progress bar filled to about 40%. Then the app froze. Not a crash. A freeze. The UI was alive but the scan had stopped processing. I tapped around. Some screens worked. Others didn't. The results screen showed zero duplicates on a gallery that had eight hundred.
 
-### GitHub Is More Than Storage
+I spent about two hours trying to figure out what the AI had broken. The refactor had changed the order of two async calls, which meant the hash computation was now racing the duplicate grouping, which meant results were being written before the scan was actually done. The code was cleaner than before. It was also wrong.
 
-GitHub is useful beyond storage. Branches let you try risky changes without wrecking your main build. README files document what the project is. Issues can track bugs and feature ideas. Releases help mark milestones. Public repos can even become portfolio assets.
+Here's the part that made me feel sick: **I had not committed before the refactor.** My last commit was from the day before, and it included a bunch of other changes I'd made that morning. I couldn't cleanly roll back to the pre-refactor state without also losing everything else I'd done that day.
 
-Think of GitHub as part backup, part timeline, part proof, and part infrastructure.
+I spent the rest of the evening manually undoing the AI's changes line by line, comparing what I remembered against what the files now contained. I got the scan working again around midnight. I lost about six hours of productive time to a problem that would have been a thirty-second `git reset` if I'd committed first.
 
-A simple rhythm could be:
+That night, I made a rule: **commit before you prompt the AI, not after.** I have not broken this rule since.
 
-- Set up the repo on day one.
-- First commit: project setup.
-- Second commit: onboarding flow.
-- Third commit: auth working.
-- Fourth commit: dashboard feature done.
-- Fifth commit: bug fixes before TestFlight build.
+### Why Git Is Part of Ownership
 
-That rhythm turns chaos into a build history. And that build history makes you calmer, because you know your work is not floating in the void. It lives somewhere. It is tracked. It can be recovered. It can be improved.
+GitHub is not where you "put your code." It is where your code becomes an asset instead of a fragile pile of files.
 
-That is ownership.
+A repository gives you history, recovery, and proof. It turns every decision you've made into something you can revisit, compare, and learn from. It lets you experiment without fear, because every experiment has a rollback point. It gives you a timeline of your own growth as a builder, which is something you'll value more than you expect.
 
-### Version Control Reduces Fear
+At minimum: create a repository for each serious project, connect your local code to it, commit often, and push regularly. Use meaningful commit messages. Not "stuff." Not "update." Say what you actually did:
 
-There is also a practical emotional benefit to version control that people rarely say out loud. It reduces fear.
+- Add onboarding flow
+- Fix Android keyboard overlap on login
+- Connect reminders screen to local storage
+- Prepare beta build for TestFlight
 
-When your code has no history, every change feels dangerous. You become timid. You delay refactors. You hesitate to experiment. You avoid cleaning things up because you are scared of breaking what currently works.
+That history becomes your memory. Six months from now, when you can't remember why a file looks the way it does, `git log` will tell you. That matters more than it sounds.
 
-GitHub and version control change that emotional landscape.
+### The Emotional Case for Version Control
 
-They let you try things with a safety net. They let you create branches for risky experiments. They let you roll back when needed. They let you see what changed between "working" and "broken." They let you return to a known-good state instead of spiraling.
+There's a benefit to version control that people rarely say out loud: it changes how brave you are.
 
-That freedom creates better builders.
+When your code has no history, every change feels dangerous. You become timid. You delay refactors. You hesitate to experiment. You avoid cleaning things up because you're scared of breaking what currently works. The codebase gets worse because you're afraid to touch it, and the fear is rational, because you have no safety net.
 
-It also helps when AI is involved. AI can make large edits quickly, and while that speed is useful, it also increases the need for a strong version history. The faster the editing gets, the more valuable your recovery path becomes.
+Git changes that. Branches let you try risky things without wrecking your main build. Diffs let you see exactly what changed between "working" and "broken." Resets let you return to a known-good state instead of spiraling. The safety net makes you braver, and braver builders ship better products.
 
-### The Git-First Workflow
+This matters even more when AI is involved. AI can rewrite four hundred lines in eight seconds. That speed is powerful and also terrifying if you have no way to undo it. The faster the editing gets, the more valuable your recovery path becomes.
 
-Here's a workflow habit that's saved me from disasters more than once: **commit before you prompt the AI, not after.**
+### Commit Before You Prompt
 
-The pattern most builders fall into is: they're working on a feature, they hit a problem, they prompt the AI, the AI writes a fix, they merge the fix, they test it, it works, they commit the result. This is the "commit after" pattern. It's fine when things go well. It's a disaster when things go badly.
+Let me say the rule again, because it's the single most important Git habit for builders who use AI:
 
-The better pattern: **commit the current state of your work before you ask the AI for anything.** This gives you a clean checkpoint to roll back to if the AI's suggestion turns out to be wrong. Then prompt the AI, apply the suggestion, test it, and *only* commit if the test passes. If the test fails, you can `git reset --hard` back to the checkpoint and try a different approach, with no cleanup required.
+**Commit the current state of your work before you ask the AI for anything.**
 
-This workflow turns every AI interaction into a low-risk experiment. You're never one merge away from a broken codebase. You're always one reset away from a clean slate.
+The pattern most builders fall into: they're working on a feature, they hit a problem, they prompt the AI, the AI writes a fix, they merge the fix, they test it, it works, they commit. This is the "commit after" pattern. It's fine when things go well. It's a disaster when things go badly, because you have no clean state to return to.
+
+The better pattern: commit first, then prompt. If the AI's suggestion works, commit again. If it doesn't, `git reset --hard` back to the checkpoint. No cleanup. No line-by-line undo at midnight. No lost work.
+
+Every AI interaction becomes a low-risk experiment. You're never one merge away from a broken codebase. You're always one reset away from a clean slate.
+
+### Case Study — The Refactor That Almost Ate My Sunday
+
+About two months after the scan orchestrator disaster, I needed to refactor the Backroom vault's state machine. The trial logic had grown tangled. I had three different places checking whether the user was in the trial period, the grace period, or the locked state, and they were starting to disagree with each other.
+
+This time I committed first. Clean commit. Clear message: "pre-refactor checkpoint: vault state machine."
+
+Then I asked Claude to consolidate the three check points into a single state machine class. The AI produced something elegant. I merged it. I ran the app. The vault opened fine. The trial countdown worked. The grace period transitioned correctly.
+
+Then I tested the edge case where a user's trial expires while the app is backgrounded. The vault showed the locked state for one frame, then flickered back to the trial state. A visual glitch, but a trust-breaking one. Users would see their vault lock and unlock in a split second, which is exactly the kind of thing that makes people think an app is broken.
+
+I could have spent an hour debugging. Instead I ran `git diff` against my checkpoint, found the one line where the AI had changed the order of a state check, fixed that single line, and committed. Total time: twelve minutes.
+
+The difference between the scan orchestrator disaster (six hours, no checkpoint) and the vault refactor (twelve minutes, clean checkpoint) is the entire argument for Git discipline. Same builder. Same AI. Same kind of problem. Completely different outcome, because one had a safety net and the other didn't.
 
 ### Professionalism Is Quiet Infrastructure
 
-So treat GitHub like part of the product, not an optional extra.
-
 If your app matters, your repository matters. If your repository matters, your Git habits matter.
 
-That is not overkill. That is professionalism.
+An owner doesn't only celebrate the shiny parts of the product. An owner protects the boring infrastructure that keeps the whole thing stable. Repos, branches, commit history, backup rhythm, release notes. None of that is exciting. All of it is what makes growth possible.
 
-It is also one of the clearest examples of what it means to build with ownership. An owner does not only celebrate the shiny parts of the product. An owner protects the boring but critical infrastructure that keeps the whole thing stable. Backups, repos, branches, commit history, environment organization, release notes, documentation: all of that may feel less exciting than UI or launch content, but those quiet systems are what make growth possible.
-
-If you ignore them, you usually pay later. If you respect them early, they quietly pay you back again and again.
-
-That is what strong infrastructure often feels like. Invisible when everything is going well, priceless when something goes wrong.
-
-### Case Study — The Branch That Saved the Week
-
-A builder lets AI refactor a large chunk of her app. At first it looks fine. Then state starts behaving strangely, a screen breaks, and two unrelated flows start failing. Without version control, that moment would feel like chaos.
-
-But she had made a clean commit before the experiment and done the refactor in a branch.
-
-She compares the changes, spots the weak pattern, rolls back the risky part, and keeps the useful pieces.
-
-The build is saved, but more importantly, so is her confidence.
-
-That is what good Git habits do. They do not only protect the code. They protect your ability to stay calm.
+Invisible when everything is going well. Priceless when something goes wrong. That's what strong infrastructure feels like.
 
 ### > Think Before You Move On
 
