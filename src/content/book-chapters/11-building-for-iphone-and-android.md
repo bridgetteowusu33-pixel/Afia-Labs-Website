@@ -8,7 +8,7 @@ part: "Act III — Execution"
 ---
 **Cross-platform is a tax you pay every day in exchange for an option you might never exercise.**
 
-I know that sounds harsh. Let me explain why I believe it, and why I'd still make the same choice.
+That sounds harsh. I mean it. And I'd still probably make the same choice.
 
 ### The Night I Opened Android Studio
 
