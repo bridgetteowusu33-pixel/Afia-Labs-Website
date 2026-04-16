@@ -6,7 +6,9 @@ type: "chapter"
 number: 2
 part: "Act I — Belief"
 ---
-Most people think the AI era rewards the fastest builder. I think it rewards the steadiest driver.
+Most people think the AI era rewards the fastest builder.
+
+I think it rewards the steadiest driver.
 
 Most people using AI to build apps fall into one of two traps.
 
@@ -31,14 +33,13 @@ I am going to say something that will annoy a lot of people selling courses righ
 
 **The specific AI tool you use matters way less than the relationship you have with it.**
 
-Cursor vs Windsurf vs VS Code with Copilot vs Claude Code vs ChatGPT in a browser: the differences are real, but they are small compared to the difference between a passenger user and a master driver user.
+Cursor, Windsurf, Copilot, Claude Code, ChatGPT in a browser: the differences between them are real, but they are small compared to the difference between a passenger user and a master driver user.
 
 I have watched passengers use some of the most powerful AI coding tools on earth to produce software that is a legal liability.
 
 I have watched master drivers ship excellent products using tools that were obsolete a year later.
 
-The tool is the car.
-The posture is the driving.
+**The tool is the car. The posture is the driving.**
 
 The passenger posture sounds like this when it talks to AI:
 
