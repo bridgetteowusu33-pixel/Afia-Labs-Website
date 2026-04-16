@@ -42,7 +42,7 @@ MemeScanr.com cost me $11 on the day I had the idea for the app. AfiaLabs.com co
 
 ### Case Study — The Developer Name That Won't Change
 
-I want to share the mistake I'm most instructive from MemeScanr, because I think it's the one most first-time builders could easily make without realizing.
+I want to share the most instructive mistake I made with MemeScanr, because I think it's the one most first-time builders could easily make without realizing.
 
 When I signed up for the Apple Developer program, I registered as an **individual**, using my personal name: Bridgette Owusu. This was before I had an LLC. It was before I had a brand. It was when I was "working on an app" and didn't yet believe I was a company.
 
