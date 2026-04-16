@@ -66,9 +66,9 @@ The test is simple:
 
 The magic of this test is that "Afia Labs" is not just the company as it exists today. It is also a placeholder for the version of me I am trying to become. The version that has already built trust with thousands of users. The version that has a reputation for being honest. The version that has standards I have to keep growing into.
 
-So when I ask, *Would Afia Labs ship this?* what I am really asking is:
+So when I ask, *"Would Afia Labs ship this?"* what I am really asking is:
 
-*Would the future version of me be proud of this decision?*
+*"Would the future version of me be proud of this decision?"*
 
 That question cuts through noise fast.
 
@@ -84,7 +84,7 @@ Every one of these decisions becomes easier when I make it on behalf of the buil
 
 You can do this with your own name if you want. It does not have to be a company name.
 
-*Would future-me be proud of this?*
+*"Would future-me be proud of this?"*
 
 That is the same question.
 
