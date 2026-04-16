@@ -24,7 +24,7 @@ That was the night I realized something important: **"works on both platforms" a
 
 ### Getting Set Up
 
-At the practical level, the setup is straightforward: install Android Studio, make sure the SDK is configured, run your project in an emulator or on a real device, and start watching for Android-specific behavior early. The point is not the ceremony of setup. The point is to give yourself a real place to catch problems before users do.
+At the practical level, the setup is straightforward: install Android Studio, configure the SDK, run your app in an emulator or on a real device, and start catching Android-specific behavior early. The point is not the ceremony of setup. The point is to find problems before users do.
 
 The same goes for prompting AI. When you ask for cross-platform code, say it explicitly. Do not assume the model will remember platform differences on its own. A good prompt sounds like this:
 
