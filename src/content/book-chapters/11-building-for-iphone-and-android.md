@@ -22,6 +22,16 @@ None of this was broken in the way that crashes are broken. It all ran. It all t
 
 That was the night I realized something important: **"works on both platforms" and "belongs on both platforms" are completely different standards.** The first one is a compiler check. The second one is a design commitment. And the second one costs real time, every single week, for as long as the product exists.
 
+### Getting Set Up
+
+At the practical level, the setup is straightforward: install Android Studio, make sure the SDK is configured, run your project in an emulator or on a real device, and start watching for Android-specific behavior early. The point is not the ceremony of setup. The point is to give yourself a real place to catch problems before users do.
+
+The same goes for prompting AI. When you ask for cross-platform code, say it explicitly. Do not assume the model will remember platform differences on its own. A good prompt sounds like this:
+
+> I am building a Flutter app that must support both iOS and Android. Generate this feature in a way that works well on both platforms. Avoid iOS-only assumptions or Android-only assumptions. If platform-specific logic is needed, clearly separate it and explain why.
+
+That one sentence can save you real pain later. Without it, the AI will give you something that technically works on one platform and quietly misbehaves on the other. You have to prompt for cross-platform awareness on purpose.
+
 ### The Hidden Costs Nobody Warns You About
 
 Here's what cross-platform actually costs a solo builder, beyond the obvious "test on both" advice everyone gives:
