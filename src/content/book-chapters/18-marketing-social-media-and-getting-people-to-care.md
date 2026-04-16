@@ -18,6 +18,8 @@ The product hadn't changed. The App Store listing hadn't changed. The only thing
 
 That's the night I understood: **good products do not market themselves. Builders have to create paths to discovery.** Everything in this chapter comes from that realization.
 
+I want to say this directly, because it's one of the biggest blocks for solo builders: **marketing is not betrayal.** If your product genuinely helps people, then helping the right people discover it is part of the job, not an annoying extra. Visibility is not vanity when it serves value. The best marketing still sounds human. Do not let fear of "cringe" keep you invisible.
+
 ### The App Store Is Not a Distribution Strategy
 
 This is the most important idea in this chapter, so I want to say it plainly: **the App Store is not a distribution strategy. The App Store is a *result* of a distribution strategy.**
@@ -74,7 +76,7 @@ If you hate marketing, make it easier on yourself. Here's what still counts:
 
 All of that is marketing. It works better than glossy ads for a solo builder, because it's honest and specific and it shows the human behind the product.
 
-You don't need to go viral. You need to be visible long enough to be rememberable. **Virality is luck. Memorability is discipline.**
+You don't need to go viral. You need to be visible long enough to be memorable. **Virality is luck. Memorability is discipline.**
 
 ### Build in Public (Without Performing)
 
@@ -100,7 +102,7 @@ memescanr.com and afialabs.net exist because the App Store is not enough. The Ap
 
 A website does all of those things.
 
-Every serious solo builder should have a website for their app, even if it's simple. What matters is that it exists, is on a domain you own, and contains: the founder story, the core pitch with screenshots, a privacy policy, a way to contact you, and ideally a newsletter signup. memescanr.com started at about 6 pages. It's now 14. It was free to set up. It sends me organic traffic every single day, which is more than the App Store does when my app isn't featured.
+Every serious solo builder should have a website for their app, even if it's simple. What matters is that it exists, is on a domain you own, and contains: the founder story, the core pitch with screenshots, a privacy policy, a way to contact you, and ideally a newsletter signup. memescanr.com started at about 6 pages. It's now 14. It cost me almost nothing to set up. It sends me organic traffic every single day, which is more than the App Store does when my app isn't featured.
 
 ### Why Your Website Matters for AI-Driven Discovery
 
