@@ -68,7 +68,9 @@ I have a master's in information systems, but I had never shipped a production i
 
 What I had was an itch, a laptop, a background in systems thinking, and a willingness to use AI tools like a master driver instead of a passenger.
 
-Fourteen months later, MemeScanr is in the App Store. It has duplicate detection, Memory Lane, Gallery Wrapped, Phone Therapist, a Face ID private vault called Backroom, Boost compression, seasonal app icons, and a voice that reads like your favorite group chat. All of it runs on-device. No server. No uploads.
+Four months later, MemeScanr is in the App Store. It has duplicate detection, Memory Lane, Gallery Wrapped, Phone Therapist, a Face ID private vault called Backroom, Boost compression, seasonal app icons, and a voice that reads like your favorite group chat. All of it runs on-device. No server. No uploads.
+
+It could have been faster. But this was my first app, and I was learning from scratch. Every week had a lesson I did not know I needed. The four months were not slow. They were honest.
 
 I did not build it alone. I built it with AI.
 

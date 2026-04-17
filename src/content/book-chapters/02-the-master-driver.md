@@ -113,7 +113,7 @@ When I first started building MemeScanr, I refused to use AI for anything that f
 
 But when it came to actual architecture decisions, state management, the scan orchestrator, or the permission flow, I insisted on doing it "the real way." I watched YouTube tutorials. I read Flutter docs line by line. I copied from Stack Overflow. I felt very virtuous about it.
 
-And I shipped exactly nothing for four months.
+And I shipped exactly nothing for three months.
 
 The turning point was a bug in my duplicate detection algorithm. I had been working on it for three days. My perceptual hash was wrong somewhere and I could not figure out where. I was about to give up for the night when I thought, *fine, let me just paste the whole file into Claude and see what it says.*
 

@@ -8,7 +8,7 @@ part: "Act III — Ownership"
 ---
 Nobody told me that launching an app would feel like this.
 
-I had built it up in my head for fourteen months. Launch day was going to be the moment. The culmination. The thing I had been working toward since the Tuesday my camera roll broke me. I imagined the emotion: relief, pride, elation, maybe tears. I imagined the external reaction too: downloads, DMs from friends, a TikTok going viral, a Reddit thread lighting up, maybe even a review from a tech blogger I followed.
+I had built it up in my head for four months. Launch day was going to be the moment. The culmination. The thing I had been working toward since the Tuesday my camera roll broke me. I imagined the emotion: relief, pride, elation, maybe tears. I imagined the external reaction too: downloads, DMs from friends, a TikTok going viral, a Reddit thread lighting up, maybe even a review from a tech blogger I followed.
 
 On actual launch day, I sat at my desk and felt almost nothing.
 
