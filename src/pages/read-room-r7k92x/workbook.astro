@@ -18,3 +18,303 @@ const { Content } = await render(entry);
     <a href="/read-room-r7k92x/" class="read-back-link">← Back to the reading room</a>
   </Fragment>
 </ReadingLayout>
+
+<style is:global>
+  /* ====================================================
+     WORKBOOK DESIGN SYSTEM
+     Layered on top of ReadingLayout's .read-body styles.
+     Targets markdown-rendered patterns specific to the workbook.
+     ==================================================== */
+
+  /* ── Section Headers (# Section N) ── */
+  .read-body h1 {
+    display: block !important;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    color: #1a0f1f;
+    margin: 96px 0 12px;
+    padding-top: 48px;
+    border-top: 2px solid rgba(217, 119, 6, 0.25);
+    letter-spacing: -0.02em;
+    font-variation-settings: 'opsz' 96;
+  }
+
+  .read-body h1:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  /* ── Section companion lines (italic after h1) ── */
+  .read-body h1 + p > em:only-child {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    color: #8b5a1f;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  /* ── Page Headings (## Page N) ── */
+  .read-body h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a0f1f;
+    margin: 64px 0 16px;
+    padding: 20px 0 12px;
+    border-top: 1px solid rgba(26, 15, 31, 0.08);
+    font-variation-settings: 'opsz' 48;
+  }
+
+  /* ── Milestone pages ── */
+  .read-body h2[id*="milestone"] {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: #8b5a1f;
+    margin: 80px 0 20px;
+    padding: 32px 0 16px;
+    border-top: 2px solid rgba(217, 119, 6, 0.3);
+    letter-spacing: -0.01em;
+  }
+
+  .read-body h2[id*="milestone"] + p,
+  .read-body h2[id*="milestone"] + p + p,
+  .read-body h2[id*="milestone"] + p + ul,
+  .read-body h2[id*="milestone"] + p + p + p {
+    text-align: center;
+  }
+
+  .read-body h2[id*="milestone"] + p + ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    max-width: 480px;
+    margin: 16px auto 24px;
+  }
+
+  .read-body h2[id*="milestone"] + p + ul li::before {
+    content: '✓ ';
+    color: #d97706;
+    font-weight: 700;
+  }
+
+  /* ── Progress cues (italic line after bold section name) ── */
+  .read-body p > em:only-child:has(+ br),
+  .read-body p:has(> em:only-child) + p > em:only-child {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(26, 15, 31, 0.5);
+  }
+
+  /* Progress cue styling — targets "Section N of 11" italic lines */
+  .read-body p > em:first-child:last-child {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(26, 15, 31, 0.55);
+  }
+
+  /* ── Bridgette Note Callouts (blockquotes) ── */
+  .read-body blockquote {
+    margin: 32px 0;
+    padding: 20px 28px;
+    border-left: 3px solid #d97706;
+    background: rgba(217, 119, 6, 0.06);
+    border-radius: 6px;
+    font-style: normal;
+  }
+
+  .read-body blockquote strong {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #8b5a1f;
+  }
+
+  .read-body blockquote em {
+    font-style: italic;
+    color: rgba(26, 15, 31, 0.78);
+  }
+
+  /* ── Sample / Example Boxes ── */
+  /* Italic paragraphs that start with "My sample answers:" or "MemeScanr's" */
+  .read-body p > em:first-child:last-child {
+    display: block;
+    padding: 16px 24px;
+    margin: -8px 0 24px;
+    background: rgba(26, 15, 31, 0.03);
+    border-left: 2px solid rgba(217, 119, 6, 0.35);
+    border-radius: 4px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(26, 15, 31, 0.72);
+  }
+
+  /* Group consecutive sample lines */
+  .read-body p > em:first-child:last-child + p > em:first-child:last-child {
+    margin-top: -20px;
+  }
+
+  /* ── Soft starters (italic before prompts) ── */
+  /* These are the "If you are stuck..." lines — already covered by em styling above */
+
+  /* ── Fill-in Lines ── */
+  /* Underscore lines rendered as text */
+  .read-body p:has(> :only-child) {
+    /* Let them render naturally */
+  }
+
+  /* ── Tables (Framework Pages) ── */
+  .read-body table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(26, 15, 31, 0.1);
+  }
+
+  .read-body thead {
+    background: rgba(26, 15, 31, 0.04);
+  }
+
+  .read-body th {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b5a1f;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(26, 15, 31, 0.1);
+  }
+
+  .read-body td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(26, 15, 31, 0.06);
+    color: #2a1a31;
+  }
+
+  .read-body tr:last-child td {
+    border-bottom: none;
+  }
+
+  .read-body tr:nth-child(even) {
+    background: rgba(26, 15, 31, 0.015);
+  }
+
+  /* ── Checklists ── */
+  .read-body ul:has(li > input[type="checkbox"]),
+  .read-body ul li {
+    /* Default list styling from ReadingLayout is fine */
+  }
+
+  /* Style checkbox-like brackets [ ] in text */
+  .read-body li {
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+
+  /* ── Bold Section Names within divider pages ── */
+  .read-body p > strong:first-child:last-child {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a0f1f;
+    letter-spacing: -0.01em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── Horizontal Rules as Page Breaks ── */
+  .read-body hr {
+    border: none;
+    margin: 56px 0;
+    text-align: center;
+  }
+
+  .read-body hr::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: rgba(217, 119, 6, 0.4);
+    margin: 0 auto;
+  }
+
+  /* ── Code blocks (prompt templates) ── */
+  .read-body pre {
+    background: #1a0f1f;
+    color: #fbf7f0;
+    padding: 28px 32px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 28px 0;
+    border: 1px solid rgba(217, 119, 6, 0.15);
+  }
+
+  .read-body pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  /* ── Pull quotes (standalone bold paragraphs) ── */
+  /* These are lines like **"Ready is a mirage."** */
+
+  /* ── Writing spaces (underscore lines) ── */
+  /* Make them feel like form fields, not raw text */
+
+  /* ── Back Matter ── */
+  .read-body h1:last-of-type {
+    font-size: 24px;
+    margin-top: 72px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 720px) {
+    .read-body h1 {
+      font-size: 26px;
+      margin: 72px 0 8px;
+      padding-top: 32px;
+    }
+
+    .read-body h2 {
+      font-size: 21px;
+      margin: 48px 0 12px;
+    }
+
+    .read-body table {
+      font-size: 12px;
+    }
+
+    .read-body th,
+    .read-body td {
+      padding: 10px 12px;
+    }
+
+    .read-body blockquote {
+      padding: 16px 20px;
+    }
+
+    .read-body p > em:first-child:last-child {
+      padding: 12px 18px;
+      font-size: 16px;
+    }
+  }
+</style>
