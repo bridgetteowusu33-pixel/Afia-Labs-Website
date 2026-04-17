@@ -2,6 +2,7 @@
 title: "The AI App Builder Workbook"
 ---
 
+# The AI App Builder Workbook
 
 *Your Afia Labs action guide from idea to launch*
 
@@ -45,11 +46,11 @@ No part of this workbook may be reproduced or distributed without written permis
 
 ## Page 3 — Welcome
 
-Hey. I'm Bridgette. I run Afia Labs, and I built a consumer iOS app called MemeScanr using AI tools as a solo builder. This workbook is where I put everything I wish someone had handed me on day one.
+I am Bridgette. I run Afia Labs, and I built a consumer iOS app called MemeScanr using AI tools as a solo builder. This workbook is where I put everything I wish someone had handed me on day one.
 
 This workbook is for the builder who keeps almost starting. The one who has a notes app full of app ideas and has shipped zero of them. I was you for a long time. I finally shipped. And now I want to pay it forward.
 
-Here's my one promise to you:
+Here is my one promise to you:
 
 **This is a space where messy answers are okay.** You do not have to know the right thing before you write it down. You do not have to be fluent in anything yet. You do not have to feel ready. The whole point of a workbook is that it meets you where you are and takes you one step forward.
 
@@ -65,35 +66,35 @@ This is your space. Build something real.
 
 A few rules, if you want them:
 
-**1. You don't have to do the pages in order.** The sections build on each other, but you can jump around. If a page isn't landing, skip it and come back later. Your answers will be better the second time.
+**1. You do not have to do the pages in order.** The sections build on each other, but you can jump around. If a page is not landing, skip it and come back later. Your answers will be better the second time.
 
-**2. Messy answers beat perfect answers.** Write what you actually think, not what sounds smart. This is not a test. Nobody is grading you. The messy first draft is the most useful thing you'll ever write about your own product.
+**2. Messy answers beat perfect answers.** Write what you actually think, not what sounds smart. This is not a test. Nobody is grading you. The messy first draft is the most useful thing you will ever write about your own product.
 
-**3. Revisit. Revisit. Revisit.** Your answers will change as you build. That's not a failure of your earlier answers — it's evidence that you're learning. Come back to the workbook every few weeks and update the pages that are no longer true.
+**3. Revisit. Revisit. Revisit.** Your answers will change as you build. That is not a failure of your earlier answers — it is evidence that you are learning. Come back to the workbook every few weeks and update the pages that are no longer true.
 
 **4. Keep it with you.** This workbook is supposed to be dog-eared. Write in the margins. Highlight. Cross things out. Fold corners. It should look used.
 
-**5. If you get stuck, read the companion book.** Every section of this workbook maps to one or more chapters in *From Idea to Income with AI Apps*. If a prompt isn't clicking, the book explains the thinking behind it in more depth.
+**5. If you get stuck, read the companion book.** Every section of this workbook maps to one or more chapters in *From Idea to Income with AI Apps*. If a prompt is not clicking, the book explains the thinking behind it in more depth.
 
-That's it. Start writing. See you on the other side.
+That is it. Start writing.
 
 ---
 
 ## Page 5 — Workbook Roadmap
 
-Here's the path you'll walk through this workbook. Eleven sections, roughly 80 pages, from "I have an itch" to "I shipped something real."
+Here is the path you will walk through this workbook. Eleven sections, roughly 80 pages, from "I have an itch" to "I shipped something real."
 
 1. **Builder Identity** — who are you as a builder, and what kind of builder do you want to become? *(Companion to Book Chapters 1-5)*
-2. **Idea Clarity** — what's the itch you can't stop noticing? *(Companion to Book Chapter 6)*
+2. **Idea Clarity** — what is the itch you cannot stop noticing? *(Companion to Book Chapter 6)*
 3. **Idea Validation** — does the world actually need this, or just you? *(Companion to Book Chapter 7)*
-4. **MVP Planning** — what's the smallest thing you can ship? *(Companion to Book Chapter 8)*
+4. **MVP Planning** — what is the smallest thing you can ship? *(Companion to Book Chapter 8)*
 5. **AI Workflow & Prompts** — how will you use AI without becoming a passenger? *(Companion to Book Chapter 9)*
 6. **Stack & Setup** — which tools and why? *(Companion to Book Chapters 10-11)*
-7. **Build, Test, and Polish** — how do you know when it's actually done? *(Companion to Book Chapters 12-14)*
+7. **Build, Test, and Polish** — how do you know when it is actually done? *(Companion to Book Chapters 12-14)*
 8. **Launch Prep** — the App Store reality check *(Companion to Book Chapters 15-16)*
 9. **Business Setup** — the boring stuff that keeps the business alive *(Companion to Book Chapter 19)*
 10. **Marketing & Monetization** — how do you get users and how do you get paid? *(Companion to Book Chapters 17-18)*
-11. **Reflection & Next Steps** — what did you learn, and what's next? *(Companion to Book Chapter 19)*
+11. **Reflection & Next Steps** — what did you learn, and what is next? *(Companion to Book Chapter 19)*
 
 You can do this in a weekend (sprinting) or spread it across months (gradually). Either works. The point is that you *do* it.
 
@@ -101,9 +102,9 @@ You can do this in a weekend (sprinting) or spread it across months (gradually).
 
 ## Page 6 — Your Builder Promise
 
-Before we start the real work, I want you to write a promise to yourself. This page is not decorative. It's how you set the intention that everything else in the workbook builds on.
+Before we start the real work, I want you to write a promise to yourself. This page is not decorative. It is how you set the intention that everything else in the workbook builds on.
 
-Fill in each blank. Don't overthink it. Write what's true right now, even if it feels small.
+Fill in each blank. Write what is true right now, even if it feels small.
 
 **I am building because** _______________________________________
 _______________________________________
@@ -120,7 +121,7 @@ _______________________________________
 **When AI and I disagree, I will** _______________________________________
 _______________________________________
 
-*My sample answers (just to show you the voice isn't serious, it's honest):*
+*My sample answers (just to show you the voice is not serious, it is honest):*
 
 *I am building because I refuse to wait for someone else to fix the problem I keep noticing in my own life.*
 
@@ -132,7 +133,7 @@ _______________________________________
 
 *When AI and I disagree, I will ask why, listen carefully, and change my mind only when the AI's reasoning is better than mine.*
 
-Sign and date this page. It's the start line.
+Sign and date this page. It is the start line.
 
 ---
 
@@ -145,6 +146,7 @@ Sign and date this page. It's the start line.
 ## Page 7 — Section Divider
 
 **Section 1: Builder Identity**
+*Section 1 of 11 — Outcome: a clear sense of who you are as a builder and what you stand for. [ ] Done [ ] Revisit*
 
 Before we get into ideas and validation, we need to talk about you. Not your credentials. Not your resume. You — the person who is about to spend a significant chunk of her life making something from nothing. Who are you? What kind of builder do you want to become? What do you stand for?
 
@@ -160,10 +162,10 @@ In Chapter 2 of the book, I describe three kinds of builders: the passenger, the
 
 **Honestly — which have you been up until now?**
 
-[ ] Passenger (I've accepted AI output without fully understanding it)
-[ ] Fighter (I've refused to use AI out of principle, purity, or pride)
-[ ] Master driver (I've used AI while keeping full ownership of my product)
-[ ] Some mix of all three (most builders, if they're honest)
+[ ] Passenger (I have accepted AI output without fully understanding it)
+[ ] Fighter (I have refused to use AI out of principle, purity, or pride)
+[ ] Master driver (I have used AI while keeping full ownership of my product)
+[ ] Some mix of all three (most builders, if they are honest)
 
 **Where have you been acting like a passenger?** _______________________________________
 _______________________________________
@@ -171,7 +173,7 @@ _______________________________________
 **Where have you been acting like a fighter?** _______________________________________
 _______________________________________
 
-**What would it look like to act like a master driver tomorrow?** (Be specific — one concrete behavior you'd change)
+**What would it look like to act like a master driver tomorrow?** (Be specific — one concrete behavior you would change)
 _______________________________________
 _______________________________________
 
@@ -181,7 +183,7 @@ _______________________________________
 
 Tell the truth about where you are right now. Not where you want to be. Not where you pretend to be. Where you are.
 
-**What do I already know?** (Technical skills, domain knowledge, tools you've used)
+**What do I already know?** (Technical skills, domain knowledge, tools you have used)
 _______________________________________
 _______________________________________
 _______________________________________
@@ -198,7 +200,7 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-The point of this page is not to make you feel either inadequate or impressive. It's to give you a baseline so that six months from now you can come back, read this page, and see how far you've moved.
+The point of this page is to give you a baseline. Six months from now, you will read this page and see how far you have moved.
 
 ---
 
@@ -227,34 +229,36 @@ The last one is the most important. Regret is the most reliable motivator there 
 
 ## Page 11 — AI Boundaries
 
-AI is a tool. Like every tool, it becomes a weakness if you lean on it too hard. Chapter 3 of the book goes deep on this. Here's your place to make it personal.
+AI is a tool. Like every tool, it becomes a weakness if you lean on it too hard. Chapter 3 of the book goes deep on this. Here is your place to make it personal.
 
 **How do I want to use AI wisely?**
 _______________________________________
 _______________________________________
 
-**What are the three red flags that would tell me I'm becoming AI-dependent?**
+**What are the three red flags that would tell me I am becoming AI-dependent?**
 1. _______________________________________
 2. _______________________________________
 3. _______________________________________
 
 *My red flags for reference:*
-- *I'm copying code I haven't read*
-- *I can't explain my own code to a friend*
-- *I'd be blocked if my AI tool disappeared for a week*
+- *I am copying code I have not read*
+- *I cannot explain my own code to a friend*
+- *I would be blocked if my AI tool disappeared for a week*
 
 **What rules do I want for myself when working with AI?** (At least 3, specific and testable)
 1. _______________________________________
 2. _______________________________________
 3. _______________________________________
 
-Pin this page somewhere you'll see it. When you feel yourself drifting, come back.
+Pin this page somewhere you will see it.
 
 ---
 
 ## Page 12 — Builder Identity Declaration
 
-You wrote a builder promise on page 6. This page is the next step — a fuller declaration that goes deeper. Write it in your own voice. Don't worry about how it sounds. The point is that *you* wrote it.
+You wrote a builder promise on page 6. This page is the next step — a fuller declaration that goes deeper. Write it in your own voice. Do not worry about how it sounds. The point is that *you* wrote it.
+
+*If you are stuck, start by listing three things you did this week that felt like building. That is your identity showing up.*
 
 **I am becoming the kind of builder who** _______________________________________
 _______________________________________
@@ -273,7 +277,17 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-Sign and date. You're going to need to read this page again in three months.
+*My sample answers:*
+
+*I am becoming the kind of builder who ships imperfect things and improves them in public.*
+
+*I am not the kind of builder who waits for permission or hides behind "not ready yet."*
+
+*My three non-negotiables are: I read every line before I merge. I test the denial path. I own the domain.*
+
+*When things get hard, I will remember: the version of me who finishes this is already in here. She just needs me to keep showing up.*
+
+Sign and date. You are going to need to read this page again in three months.
 
 ---
 
@@ -286,20 +300,21 @@ Sign and date. You're going to need to read this page again in three months.
 ## Page 13 — Section Divider
 
 **Section 2: Idea Clarity**
+*Section 2 of 11 — Outcome: one itch you cannot stop noticing, described in one sentence. [ ] Done [ ] Revisit*
 
-This section is not about generating 100 ideas. It's about finding your *itch* — the one specific thing you can't stop noticing. The one that lives in your body, not your notes app.
+This section is not about generating 100 ideas. It is about finding your *itch* — the one specific thing you cannot stop noticing.
 
-The book describes the difference between an idea (which you can forget) and an itch (which you can't). This section is for discovering which category your project is in. If it's an itch, we build. If it's just an idea, we keep looking until we find something that won't let you go.
+The book describes the difference between an idea (which you can forget) and an itch (which you cannot). If it is an itch, we build. If it is just an idea, we keep looking.
 
-Seven pages of honest digging. Take your time.
+Seven pages of honest digging.
 
 ---
 
 ## Page 14 — Brain Dump
 
-Before we filter, we dump. Write down every app idea that has lived in your head in the last six months. Not just the "good" ones. Every single one. The dumb ones. The ones you've already dismissed. The ones that only make sense in your shower.
+Before we filter, we dump. Write down every app idea that has lived in your head in the last six months. Not just the "good" ones. Every single one. The dumb ones. The ones you have already dismissed. The ones that only make sense in your shower.
 
-Don't edit. Don't judge. Just list.
+Do not edit. Do not judge. Just list.
 
 1. _______________________________________
 2. _______________________________________
@@ -314,7 +329,7 @@ Don't edit. Don't judge. Just list.
 
 (Add more lines if you need them. Use the margin.)
 
-Now circle the three that tug at you the most. Not the "smartest" three. The three you can't stop thinking about.
+Now circle the three that tug at you the most. Not the "smartest" three. The three you cannot stop thinking about.
 
 ---
 
@@ -349,7 +364,7 @@ Which one is the itch?
 
 ## Page 16 — User Clarity
 
-Pick your itch from the previous page. Now we get specific about who you're solving it for.
+Pick your itch from the previous page. Now we get specific about who you are solving it for.
 
 **The itch:** _______________________________________
 
@@ -371,13 +386,13 @@ _______________________________________
 **What outcome do they want?**
 _______________________________________
 
-*My MemeScanr user, for reference: she's 24, has 180GB of photos on her iPhone, takes 40 new photos a day, feels guilty about her camera roll like some people feel guilty about their closets, and wants to feel like her phone is hers again.*
+*My MemeScanr user, for reference: she is 24, has 180GB of photos on her iPhone, takes 40 new photos a day, feels guilty about her camera roll like some people feel guilty about their closets, and wants to feel like her phone is hers again.*
 
 ---
 
 ## Page 17 — App Idea Snapshot
 
-A single-page summary of your idea. If you can fill this in clearly, your idea is ready for the next step. If you can't, go back a page and keep digging.
+A single-page summary of your idea. If you can fill this in clearly, your idea is ready for the next step. If you cannot, go back a page and keep digging.
 
 **My app helps** _______________________________________
 
@@ -394,7 +409,7 @@ A single-page summary of your idea. If you can fill this in clearly, your idea i
 - *The core problem is 15,000 photos nobody has time to review manually.*
 - *The emotional outcome is relief — the weight of the camera roll lifting.*
 
-If your fill-ins feel vague, narrow. If they feel specific, you're ready for page 18.
+If your fill-ins feel vague, narrow. If they feel specific, you are ready for page 18.
 
 ---
 
@@ -402,11 +417,11 @@ If your fill-ins feel vague, narrow. If they feel specific, you're ready for pag
 
 Every first-draft idea is too big. Part of your job is cutting it down until it fits in a single breath.
 
-**What is the main promise of the app?** (One sentence. If it has "and" in it, you haven't cut enough.)
+**What is the main promise of the app?** (One sentence. If it has "and" in it, you have not cut enough.)
 _______________________________________
 _______________________________________
 
-**What is NOT the main promise?** (Features you're tempted to include that don't serve the main promise)
+**What is NOT the main promise?** (Features you are tempted to include that do not serve the main promise)
 _______________________________________
 _______________________________________
 _______________________________________
@@ -416,18 +431,20 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-**The Personality Test:** in three words, what feeling does your app give a user that they couldn't get anywhere else?
+**The Personality Test:** in three words, what feeling does your app give a user that they could not get anywhere else?
 1. _______________________________________
 2. _______________________________________
 3. _______________________________________
 
 *MemeScanr's three words: seen, playful, relieved.*
 
-If your three words feel like categories ("productive", "organized", "clean"), you haven't gotten to a feeling yet. Try again.
+If your three words feel like categories ("productive", "organized", "clean"), you have not gotten to a feeling yet. Try again.
 
 ---
 
 ## Page 19 — Why This Idea, Why Now?
+
+*If you are stuck, start with the simplest version: "Because this problem did not exist five years ago" or "Because nobody is solving it the way I would."*
 
 **Why is this worth building now?** (What has changed recently that makes this possible or necessary?)
 _______________________________________
@@ -443,7 +460,13 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-The last question is the one that actually matters. When you're in month 5, exhausted, wondering if this was all a mistake, the answer to this question is what keeps you in the chair. Write it well.
+*My sample answers:*
+
+*Why now: AI tools make it possible for one person to build what used to require a team. The window is open.*
+
+*Why I care: I use my own phone 90 times a day and the camera roll problem has not gone away. It is personal.*
+
+The last question is the one that actually matters. When you are in month 5, exhausted, wondering if this was all a mistake, the answer to this question is what keeps you in the chair. Write it well.
 
 ---
 
@@ -456,10 +479,11 @@ The last question is the one that actually matters. When you're in month 5, exha
 ## Page 20 — Section Divider
 
 **Section 3: Idea Validation**
+*Section 3 of 11 — Outcome: a go, refine, or drop decision backed by real research. [ ] Done [ ] Revisit*
 
-The book has a one-week validation sprint (Chapter 7). This section is the workbook version of that sprint. If you do the work in these pages honestly, you'll know by the end of the week whether to build, refine, or walk away.
+The book has a one-week validation sprint (Chapter 7). This section is the workbook version of that sprint. If you do the work in these pages honestly, you will know by the end of the week whether to build, refine, or walk away.
 
-The hardest part of validation is not the research. It's being willing to walk away from an idea you're already attached to, if the research tells you to. Keep that possibility open as you fill these in.
+The hardest part of validation is not the research. It is being willing to walk away from an idea you are already attached to, if the research tells you to. Keep that possibility open as you fill these in.
 
 ---
 
@@ -487,10 +511,10 @@ Is there real money changing hands in this category? [ ] Yes [ ] No
 
 **Q4: Can I maintain this for two years without giving up?**
 - Is the problem interesting enough that I can think about it for 2 years? [ ] Yes [ ] No
-- Does the product require me to become someone I'm not? [ ] Yes [ ] No
+- Does the product require me to become someone I am not? [ ] Yes [ ] No
 - Would my version of "success" actually satisfy me? [ ] Yes [ ] No
 
-**Count your no's.** Zero is ideal. One is workable. Two or more is a warning. Three or more means this idea isn't ready.
+**Count your no's.** Zero is ideal. One is workable. Two or more is a warning. Three or more means this idea is not ready.
 
 ---
 
@@ -506,7 +530,7 @@ Pick the top 5 competitors in your category. Fill in this table.
 | 4 | | | | | |
 | 5 | | | | | |
 
-**What do they all do well?** (This is table stakes — things you'll need to match)
+**What do they all do well?** (This is table stakes — things you will need to match)
 _______________________________________
 _______________________________________
 
@@ -524,7 +548,9 @@ _______________________________________
 
 This is the single highest-value page in this section. Take it seriously.
 
-Go to the App Store and read at least 25 one-star and two-star reviews for each of your top 5 competitors. That's 125+ reviews total. This will take you 1-2 hours.
+> **Bridgette's note:** *This is the page that changed MemeScanr. I almost skipped it because reading bad reviews felt depressing. Do not skip it. The complaints are the roadmap.*
+
+Go to the App Store and read at least 25 one-star and two-star reviews for each of your top 5 competitors. That is 125+ reviews total. This will take you 1-2 hours.
 
 As you read, write down every complaint that appears more than once. The patterns are your roadmap.
 
@@ -575,26 +601,42 @@ _______________________________________
 
 ## Page 25 — Go / Refine / Drop
 
-This is the decision page. Don't skip it. Don't half-answer it. Pick one.
+This is the decision page. Do not skip it. Do not half-answer it. Pick one.
 
 Based on everything in this section, the honest answer is:
 
-[ ] **Go** — all four questions are solid yes, the validation data looks clean, my itch matches a real market gap. I'm building.
+[ ] **Go** — all four questions are solid yes, the validation data looks clean, my itch matches a real market gap. I am building.
 
-[ ] **Refine** — three questions are yes, one is weak. I know what needs to be sharpened. I'll fix that weakness before starting, then build.
+[ ] **Refine** — three questions are yes, one is weak. I know what needs to be sharpened. I will fix that weakness before starting, then build.
 
-[ ] **Drop** — two or more questions are weak, the validation data doesn't support the idea, or my itch doesn't match what the market wants. This is a gift — I'm saving myself months of wrong work. I'll go back to Section 2 and find a different idea.
+[ ] **Drop** — two or more questions are weak, the validation data does not support the idea, or my itch does not match what the market wants. This is a gift — I am saving myself months of wrong work. I will go back to Section 2 and find a different idea.
 
 **If refine: what specifically needs to change?**
 _______________________________________
 _______________________________________
 _______________________________________
 
-**If drop: what did this idea teach me that I'll use on the next one?**
+**If drop: what did this idea teach me that I will use on the next one?**
 _______________________________________
 _______________________________________
 
 Write the date. Move on.
+
+---
+
+## Milestone — Idea Validated
+
+If you made it here with a "Go" on page 25, you have done what most aspiring builders never do: you tested your idea against reality before building it.
+
+**What you should know now:**
+- Whether your idea is an itch or just an idea
+- Who your specific user is
+- Whether real people are already paying in this space
+- Whether you can reach your target user without ads
+
+**The decision you should have made:** Go, Refine, or Drop.
+
+**What happens next:** You scope the MVP. Section 4 will feel faster because of the clarity you built here.
 
 ---
 
@@ -607,16 +649,17 @@ Write the date. Move on.
 ## Page 26 — Section Divider
 
 **Section 4: MVP Planning**
+*Section 4 of 11 — Outcome: a scoped v1 you can build in weeks, not months. [ ] Done [ ] Revisit*
 
-Your MVP will be smaller than you want it to be. That's not a failure — that's the point. Every feature you cut now is a future launch you get to have later.
+Your MVP will be smaller than you want it to be. That is not a failure — that is the point.
 
-The eight pages in this section are designed to force you to cut. Be ruthless. You can always add features later. You can't unship a launch that went out too bloated.
+These pages are designed to force you to cut. Be ruthless. Every feature you cut now is a future launch you get to have later.
 
 ---
 
 ## Page 27 — My Minimum Viable Product
 
-**What is the smallest useful version of this app?** (One sentence. If it has more than one main feature, you haven't cut enough.)
+**What is the smallest useful version of this app?** (One sentence. If it has more than one main feature, you have not cut enough.)
 _______________________________________
 _______________________________________
 
@@ -625,9 +668,9 @@ _______________________________________
 2. _______________________________________
 3. _______________________________________
 
-*MemeScanr's v1.0 was just duplicate detection + swipe review + delete. That's it. No Memory Lane. No Backroom. No Gallery Wrapped. One feature. And it was enough to launch.*
+*MemeScanr's v1.0 was just duplicate detection + swipe review + delete. That is it. No Memory Lane. No Backroom. No Gallery Wrapped. One feature. And it was enough to launch.*
 
-**If I'm scared to ship this small version, what am I actually scared of?** (Be honest — is it that the product isn't good enough, or that you're afraid of judgment?)
+**If I am scared to ship this small version, what am I actually scared of?** (Is it that the product is not good enough, or that you are afraid of judgment?)
 _______________________________________
 _______________________________________
 
@@ -640,14 +683,14 @@ _______________________________________
 2. _______________________________________
 3. _______________________________________
 
-**Nice-to-have features I'm tempted to include but will cut:**
+**Nice-to-have features I am tempted to include but will cut:**
 1. _______________________________________
 2. _______________________________________
 3. _______________________________________
 4. _______________________________________
 5. _______________________________________
 
-**Which of the nice-to-haves is hardest to cut?** (This is the one you're most attached to — which is exactly why it needs to be cut first)
+**Which of the nice-to-haves is hardest to cut?** (This is the one you are most attached to — which is exactly why it needs to be cut first)
 _______________________________________
 
 ---
@@ -668,7 +711,7 @@ Draw a line down the middle. On the left, everything that ships in v1.0. On the 
 | | |
 | | |
 
-**Rule:** your v2 column should feel *bigger* than your v1 column. If v2 feels thin, you're cramming too much into v1.
+**Rule:** your v2 column should feel *bigger* than your v1 column. If v2 feels thin, you are cramming too much into v1.
 
 ---
 
@@ -684,7 +727,7 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-**Step 3 — First action:** What's the first thing they tap or do?
+**Step 3 — First action:** What is the first thing they tap or do?
 _______________________________________
 _______________________________________
 
@@ -714,7 +757,7 @@ List every screen in v1.0. For each, write the purpose in one sentence.
 | | |
 | | |
 
-If you have more than 8 screens in v1.0, you're overbuilding. Cut.
+If you have more than 8 screens in v1.0, you are overbuilding. Cut.
 
 ---
 
@@ -726,21 +769,23 @@ _______________________________________
 
 **Walk through the core loop out loud:** user opens the app, then _______________________________________, then _______________________________________, then _______________________________________, then _______________________________________.
 
-*MemeScanr's core loop: user opens app → taps scan → sees duplicates → swipes through them → deletes the ones they don't want.*
+*MemeScanr's core loop: user opens app → taps scan → sees duplicates → swipes through them → deletes the ones they do not want.*
 
-If the core loop has more than 5 steps, it's too complex. Simplify.
+If the core loop has more than 5 steps, it is too complex. Simplify.
 
 ---
 
 ## Page 33 — MVP Clarity Check + Cut One More Thing
 
-**Is my MVP still too big?** Look at pages 28 and 29 again. Be honest.
+> **Bridgette's note:** *I wish someone had made me do this exercise before I spent four months building features that should have been v2. Cut one more thing. You will thank yourself later.*
 
-[ ] Yes, it's too big
+**Is my MVP still too big?** Look at pages 28 and 29 again.
+
+[ ] Yes, it is too big
 [ ] No, it feels right
-[ ] I can't tell
+[ ] I cannot tell
 
-**If yes or can't tell, do the Cut-One-More-Thing ritual right now:**
+**If yes or cannot tell, do the Cut-One-More-Thing ritual right now:**
 
 1. Pick the feature you are most attached to that is NOT strictly required for the core loop.
 2. Write its name here: _______________________________________
@@ -755,6 +800,43 @@ Write the date down. Honor it.
 
 ---
 
+## Page 33b — Feature Complexity Filter
+
+Before adding any new feature, score it on both dimensions. This matches Worksheet 4 from Appendix C of the book.
+
+**Feature name:** _______________________________________
+
+**User value (1-5):**
+- 1 = nobody asked for this
+- 3 = a few users have asked, or I think it matters
+- 5 = users are actively frustrated without it
+
+Score: _______
+
+**Complexity cost (1-5):**
+- 1 = one file, no dependencies, easy to maintain
+- 3 = touches 2-3 files, adds moderate surface area
+- 5 = touches many files, adds significant maintenance burden
+
+Score: _______
+
+**Dependency depth:** How many existing features does this interact with? _______
+
+**Test burden:** How many new test cases will this require? _______
+
+**Reversibility:** If this ships and users hate it, can you remove it cleanly? [ ] Yes [ ] No
+
+**Score:** user value minus complexity cost = _______
+
+**Decision rule:**
+- Score 2 or higher: ship
+- Score 0 or 1: park it in the feature temptation log
+- Negative score: kill it before it eats your time
+
+Not every good idea deserves to become a feature. Some good ideas are just expensive distractions with good branding.
+
+---
+
 # Section 5 — AI Workflow & Prompts
 
 *Companion to Book Chapter 9 (The Real AI Workflow)*
@@ -764,6 +846,7 @@ Write the date down. Honor it.
 ## Page 34 — Section Divider
 
 **Section 5: AI Workflow & Prompts**
+*Section 5 of 11 — Outcome: reusable prompts and a weekly reflection habit. [ ] Done [ ] Revisit*
 
 This section is where you build the habits that will determine whether you are a master driver or a passenger. Chapters 3 and 9 of the book are the philosophical and tactical foundations. These pages are for making the habits personal.
 
@@ -773,7 +856,7 @@ Eight pages of practice. Do them badly the first time. Do them better the second
 
 ## Page 35 — Messy Thought Dump
 
-Pour your heart out. Write what you want to build as if you were explaining it to a friend who has never heard about it. Don't worry about structure. Don't worry about prompts. Just write.
+Pour your heart out. Write what you want to build as if you were explaining it to a friend who has never heard about it. Do not worry about structure. Do not worry about prompts. Just write.
 
 _______________________________________
 _______________________________________
@@ -796,7 +879,7 @@ Now underline the three most important sentences. Those are the seeds of your re
 
 Take the underlined sentences from the previous page. Use them to fill in a real prompt.
 
-**Context:** I'm building _______________________________________ in _______________________________________.
+**Context:** I am building _______________________________________ in _______________________________________.
 
 **Current behavior:** _______________________________________
 _______________________________________
@@ -822,7 +905,7 @@ This is your starting prompt. Save it. Reuse it. Modify it for every real task.
 A complete template you can keep next to your editor. Fill in the blanks now, then copy it to your snippets file.
 
 ```
-Context: I'm building [feature] in [stack].
+Context: I am building [feature] in [stack].
 Target user: [who]
 Problem solved: [what]
 Core features: [list]
@@ -845,7 +928,7 @@ _______________________________________
 
 ## Page 38 — Debug Prompt Builder
 
-When something breaks, don't panic-prompt. Walk through these fields first.
+When something breaks, do not panic-prompt. Walk through these fields first.
 
 **What is happening?**
 _______________________________________
@@ -867,13 +950,13 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-Only after you've filled these in, prompt the AI. You'll get a better answer every time.
+Only after you have filled these in, prompt the AI. You will get a better answer every time.
 
 ---
 
 ## Page 39 — UI Polish Prompt Builder
 
-When the product works but doesn't feel right, the problem is usually polish, not logic.
+When the product works but does not feel right, the problem is usually polish, not logic.
 
 **What feels weak visually?** _______________________________________
 
@@ -893,7 +976,7 @@ Now prompt the AI with these fields. Watch the quality of the suggestions improv
 
 ## Page 40 — Cross-Platform Prompt Builder
 
-*(Skip this page if you're building for one platform only)*
+*(Skip this page if you are building for one platform only)*
 
 **What must work on both iOS and Android?**
 _______________________________________
@@ -909,19 +992,25 @@ _______________________________________
 
 ---
 
-## Page 41 — AI Reflection
+## Page 41 — Weekly Reflection
 
-This page is the one you should come back to every Sunday. It's the habit that separates master drivers from passengers.
+Come back to this page every Sunday. It is the habit that separates master drivers from passengers.
+
+**Week of:** _______________________________________
+
+**What did I ship this week?**
+_______________________________________
+_______________________________________
+
+**What is blocking me?**
+_______________________________________
+_______________________________________
 
 **Did AI help me think this week, or replace my thinking?**
 _______________________________________
 _______________________________________
 
-**Where do I still need understanding?** (Code I accepted but don't fully grasp)
-_______________________________________
-_______________________________________
-
-**What should I review more carefully?**
+**Where do I still need understanding?** (Code I accepted but do not fully grasp)
 _______________________________________
 _______________________________________
 
@@ -933,7 +1022,7 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-Do this every Sunday. Ten minutes. It keeps you calibrated.
+Ten minutes. Every Sunday. It keeps you calibrated and moving.
 
 ---
 
@@ -946,6 +1035,7 @@ Do this every Sunday. Ten minutes. It keeps you calibrated.
 ## Page 42 — Section Divider
 
 **Section 6: Stack & Setup**
+*Section 6 of 11 — Outcome: a committed stack and a working project folder. [ ] Done [ ] Revisit*
 
 The stack you pick is a 2-year commitment. The six pages in this section are for making that commitment consciously, not by default.
 
@@ -968,7 +1058,7 @@ Chapter 10 of the book goes deep on the trade-offs. Chapter 11 covers cross-plat
 | Analytics (if any) | | |
 | Crash reporting | | |
 
-Every row should have a specific answer *and* a reason. "Because it's popular" is not a reason. "Because I can be fluent in it in 6 months and it supports the native features I need" is a reason.
+Every row should have a specific answer *and* a reason. "Because it is popular" is not a reason. "Because I can be fluent in it in 6 months and it supports the native features I need" is a reason.
 
 ---
 
@@ -1028,7 +1118,7 @@ _______________________________________
 
 ## Page 47 — Android + iOS Support Notes
 
-*(Skip if you're only building for one platform. See Book Chapter 11 for the cross-platform deep dive.)*
+*(Skip if you are only building for one platform. See Book Chapter 11 for the cross-platform deep dive.)*
 
 **Will this app be iOS only, Android only, or cross-platform?**
 [ ] iOS only
@@ -1058,16 +1148,17 @@ _______________________________________
 ## Page 48 — Section Divider
 
 **Section 7: Build, Test, and Polish**
+*Section 7 of 11 — Outcome: a tested, trustworthy build ready for submission. [ ] Done [ ] Revisit*
 
-This is the longest section in the workbook because it's the longest part of the real work. The 8 pages here are the ones you'll come back to most often — as you build, as you test, as you polish, as you refactor.
+This is the longest section because it is the longest part of the real work. These are the pages you will come back to most often.
 
-Chapters 12, 13, and 14 of the book are your companions for this section. Re-read Chapter 14 (Building Messy Is Building Right) when you feel like quitting.
+Chapters 12, 13, and 14 of the book are your companions here. Re-read Chapter 14 (Building Messy Is Building Right) when you feel like quitting.
 
 ---
 
 ## Page 49 — Build Progress Tracker
 
-Update this page weekly. It's your morale tool.
+Update this page weekly. It is your morale tool.
 
 **What is already built and working?**
 _______________________________________
@@ -1108,7 +1199,7 @@ Run this before every significant release.
 - [ ] Interrupted use (backgrounding, killing) is handled gracefully
 - [ ] Restore Purchases works (if you have IAP)
 - [ ] Destructive actions (delete, move) are reversible or clearly confirmed
-- [ ] Offline mode (airplane mode) doesn't crash the app
+- [ ] Offline mode (airplane mode) does not crash the app
 
 ---
 
@@ -1122,7 +1213,7 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-Remember: the simulator lies about performance, about haptics, about permission flows, about notifications. You can't ship without testing on real devices.
+Remember: the simulator lies about performance, about haptics, about permission flows, about notifications. You cannot ship without testing on real devices.
 
 ---
 
@@ -1170,25 +1261,32 @@ _______________________________________
 
 ## Page 54 — Trust & Safety Review
 
-For every feature that touches user data, money, or privacy (see the Trustworthiness Checklist in Book Chapter 14):
+> **Bridgette's note:** *The Silent Vault bug from Chapter 14 happened because I skipped this checklist. Free users could put photos into a vault they could not open. I caught it in TestFlight, not production. Run this checklist. Every time.*
+
+For every feature that touches user data, money, or privacy, run this checklist. It matches the Trustworthiness Checklist from Book Chapter 14.
 
 **Feature name:** _______________________________________
 
-**Does the user understand what is happening?** [ ] Yes [ ] No
+**1. Does the user understand what just happened?** If you moved a photo, deleted a file, or changed a setting, did the user clearly see the result?
+[ ] Yes [ ] No
 
-**Does the app feel safe?** [ ] Yes [ ] No
+**2. Can the user undo it, or at least reverse it without contacting support?** If not, that is a red flag. Destructive actions without undo need extra consent and extra clarity.
+[ ] Yes [ ] No [ ] Not applicable
 
-**What might feel confusing or risky to a user?**
-_______________________________________
-_______________________________________
+**3. Does the user see the cost before they pay it?** If a feature requires a subscription, does the paywall appear before the action or after? After is almost always a bug, even if it technically works.
+[ ] Yes [ ] No [ ] Not applicable
 
-**Are destructive actions reversible or clearly confirmed?** [ ] Yes [ ] No
+**4. If this feature fails silently, would the user even know?** If the answer is no, that is a trust surface. Errors need to be visible.
+[ ] Yes, they would know [ ] No, it fails silently
 
-**Does the user have a way to see and delete their data?** [ ] Yes [ ] No
+**5. If the user had to explain what just happened to a friend, could they?** If the user's mental model is different from what the code actually did, you do not just have a code bug. You have a design bug.
+[ ] Yes [ ] No [ ] Not sure
 
 **Are permissions requested contextually (not at launch)?** [ ] Yes [ ] No
 
-If any "no", fix before shipping.
+**Does the user have a way to see and delete their data?** [ ] Yes [ ] No
+
+If any answer is "no" or "not sure," fix it before shipping. The user's trust is not a debt you get to repay later.
 
 ---
 
@@ -1206,6 +1304,22 @@ _______________________________________
 
 ---
 
+## Milestone — Build Complete
+
+If you made it here, you have a tested, trustworthy product. Not perfect. Trustworthy. That is the standard that matters.
+
+**What you should know now:**
+- Your core loop works end to end
+- You have tested on a real device, not just the simulator
+- Your trust and safety checklist has no open "no" answers
+- Your code is in Git with a clean recent commit
+
+**The decision you should have made:** Is this build ready to submit, or does it need one more pass?
+
+**What happens next:** You prepare for the store. Section 8 is the final audit before you press submit.
+
+---
+
 # Section 8 — Launch Prep
 
 *Companion to Book Chapters 15-16 (The Pre-Submission Audit, Pricing Like You Mean It)*
@@ -1215,10 +1329,11 @@ _______________________________________
 ## Page 56 — Section Divider
 
 **Section 8: Launch Prep**
+*Section 8 of 11 — Outcome: a store-ready submission with pricing, screenshots, and metadata. [ ] Done [ ] Revisit*
 
 Chapters 15 and 16 of the book are the full playbook. These pages are the action items. Run them before you press submit.
 
-Chapter 15 covers the Pre-Submission Audit and the 25-item checklist. Chapter 16 covers pricing, the anchoring staircase, and the two-trial strategy. You'll use both for this section.
+Chapter 15 covers the Pre-Submission Audit and the 25-item checklist. Chapter 16 covers pricing, the anchoring staircase, and the two-trial strategy. You will use both for this section.
 
 ---
 
@@ -1263,7 +1378,7 @@ _______________________________________
 
 ## Page 59 — Screenshot Planning
 
-For each of your 10 slots, plan the intent. Don't design yet — plan.
+For each of your 10 slots, plan the intent. Do not design yet — plan.
 
 | Slot | Headline | Subline | Visual | Feeling |
 |---|---|---|---|---|
@@ -1284,7 +1399,7 @@ For each of your 10 slots, plan the intent. Don't design yet — plan.
 
 ## Page 60 — Final Launch Audit Notes
 
-Do the red-team exercise (Book Chapter 15). Pretend you're an Apple reviewer trying to reject your submission. Then run the full 13-step Launch Audit Prompt from Appendix A of the book. Write down everything you find.
+Do the red-team exercise (Book Chapter 15). Pretend you are an Apple reviewer trying to reject your submission. Then run the full 13-step Launch Audit Prompt from Appendix A of the book. Write down everything you find.
 
 **Biggest strengths:**
 _______________________________________
@@ -1306,6 +1421,8 @@ _______________________________________
 
 ## Page 61 — Launch Confidence Checklist
 
+> **Bridgette's note:** *I almost did not launch MemeScanr because I did not feel ready. Ready is a mirage. If the build works, the trust checklist is clean, and the store listing is honest, you are ready. Press the button.*
+
 - [ ] What am I proud of? _______________________________________
 - [ ] What still needs work? _______________________________________
 - [ ] Am I ready to launch? [ ] Yes [ ] Not yet
@@ -1314,21 +1431,22 @@ If not yet, what is the *one specific thing* blocking launch?
 _______________________________________
 _______________________________________
 
-If that one thing is "I don't feel ready," the answer is still yes. Ready is a mirage. Ship the imperfect version.
+If that one thing is "I do not feel ready," the answer is still yes. Ready is a mirage. Ship the imperfect version.
 
 ---
 
 # Section 9 — Business Setup
 
-*Companion to Book Chapter 19 (Brand Is a Container)*
+*Companion to Book Chapters 4 and 19 (What Ownership Really Means; Brand Is a Container)*
 
 ---
 
 ## Page 62 — Section Divider
 
 **Section 9: Business Setup**
+*Section 9 of 11 — Outcome: domain, accounts, and ownership layers in your name. [ ] Done [ ] Revisit*
 
-The boring stuff that keeps the business alive. Chapter 19 of the book covers the brand side and the Individual vs Organization decision that will save you years of regret. These pages are for making the actual decisions.
+The boring stuff that keeps the business alive. Chapter 4 of the book covers the five ownership layers. Chapter 19 covers the brand side and the Individual vs Organization decision that will save you years of regret. These pages are for making the actual decisions.
 
 ---
 
@@ -1355,6 +1473,8 @@ The boring stuff that keeps the business alive. Chapter 19 of the book covers th
 **Product name registered as a domain:** [ ] Yes (date: __________) [ ] No
 
 **Register the domains today.** This is the smallest irreversible commitment you can make.
+
+**The future-regret test:** Imagine your product succeeds. A journalist asks who owns the domain. A lawyer asks who controls the developer account. A partner asks where the money goes. If any of those answers make you uncomfortable, fix it today. These decisions are cheap now and expensive later.
 
 ---
 
@@ -1385,14 +1505,22 @@ _______________________________________
 - [ ] Business bank account opened
 - [ ] Business credit card (or dedicated personal card) set aside
 - [ ] Bookkeeping system started (even a spreadsheet)
-- [ ] Apple Developer account registered as **ORGANIZATION** (not Individual — see Book Chapter 19, the developer-name-that-won't-change case study)
+- [ ] Apple Developer account registered as **ORGANIZATION** (not Individual — see Book Chapter 19, the developer-name-that-will-not-change case study)
 - [ ] DUNS number obtained (if registering as Organization)
 
 ---
 
 ## Page 66 — Website Planning
 
-**One parent website or separate product site?** [ ] Parent [ ] Separate [ ] Both
+**Parent brand vs product brand:**
+
+If you are building one product and do not plan to build more, a product website is enough (e.g., memescanr.com).
+
+If you think you might build more than one product under the same name, start with a parent brand website (e.g., afialabs.net) and link the product from it.
+
+If you are not sure, register both domains now and decide later. The cost is trivial. The regret of not owning the name is not.
+
+**My decision:** [ ] Product site only [ ] Parent brand site only [ ] Both
 
 **What pages are required for v1?**
 1. Home
@@ -1429,7 +1557,7 @@ _______________________________________
 - [ ] Apple Developer account in my name (or my LLC)
 - [ ] All third-party SDK credentials documented
 
-The rule: if you got hit by a bus tomorrow, a competent person could take over your business with the documentation you have. If not, you don't own the business — you just operate it.
+The rule: if you got hit by a bus tomorrow, a competent person could take over your business with the documentation you have. If not, you do not own the business — you just operate it.
 
 ---
 
@@ -1442,6 +1570,7 @@ The rule: if you got hit by a bus tomorrow, a competent person could take over y
 ## Page 69 — Section Divider
 
 **Section 10: Marketing & Monetization**
+*Section 10 of 11 — Outcome: a launch plan, a pricing staircase, and a posting rhythm. [ ] Done [ ] Revisit*
 
 Chapters 16, 17, and 18 of the book cover this territory. Chapter 16 is pricing. Chapter 17 is launch day and the post-launch emotional arc. Chapter 18 is marketing, social media, and distribution as a portfolio. These pages are for making the actual plans.
 
@@ -1462,6 +1591,14 @@ _______________________________________
 **What language resonates with them?** (The words they use, the tone they respond to)
 _______________________________________
 _______________________________________
+
+*My sample answers:*
+
+*Who: she is 24, has 180GB of photos, takes 40 new ones a day, follows cleanup accounts on TikTok, and says "ugh, my phone is so full" at least twice a day.*
+
+*Where: TikTok (phone/aesthetic), specific subreddits about iPhone storage, and Google searches for "best photo cleaner app."*
+
+*Language: casual, slightly self-deprecating, meme-literate, allergic to corporate tone.*
 
 ---
 
@@ -1520,11 +1657,21 @@ Using the book's 7-day template (Chapter 17), draft your launch week.
 _______________________________________
 _______________________________________
 
+*My sample answers:*
+
+*Model: subscription staircase (monthly / yearly / lifetime).*
+
+*Staircase: $6.99 / $24.99 / $59.99.*
+
+*Trial: 3-day Premium trial (StoreKit) + 7-day Backroom trial (app-managed, emotional attachment).*
+
+*Value: the app saves 2-3 hours of manual cleanup per month and removes the guilt of a chaotic camera roll. That is worth more than $6.99.*
+
 ---
 
 ## Page 74 — Monetization Clarity
 
-**Why would someone pay?** (One sentence. If you can't answer this in one sentence, you're not ready to launch premium.)
+**Why would someone pay?** (One sentence. If you cannot answer this in one sentence, your Premium tier is not ready yet.)
 _______________________________________
 _______________________________________
 
@@ -1540,10 +1687,28 @@ _______________________________________
 _______________________________________
 _______________________________________
 
-**The enforcement audit:** list every pricing rule you advertise. For each, confirm: is there a specific line of code that enforces this rule? (See the Free Tier That Wasn't Gated case study in Book Chapter 16.)
+**Premium feature audit:**
 
-| Advertised rule | Code file:line that enforces | Verified? |
+| Feature | Emotional value (what does it feel like?) | Rational value (what does it save or enable?) | Worth paying for? |
+|---|---|---|---|
+| | | | Y/N |
+| | | | Y/N |
+| | | | Y/N |
+| | | | Y/N |
+
+**Trial design:**
+
+- Length: _______ days
+- Trigger: [ ] StoreKit-managed [ ] App-managed (feature-level)
+- What emotional state does the trial end in? (urgency? attachment? satisfaction? relief? fear of losing value?)
+_______________________________________
+
+**The enforcement audit:** list every pricing rule you advertise. For each, confirm: is there a specific line of code that enforces it? If not, the pricing rule is not a rule. It is a suggestion. (See the Free Tier That Was Not Gated case study in Book Chapter 16.)
+
+| Advertised rule | Code file:line that enforces it | Verified? |
 |---|---|---|
+| | | |
+| | | |
 | | | |
 | | | |
 
@@ -1571,17 +1736,18 @@ Pick your 5 metrics. Update weekly.
 
 # Section 11 — Reflection & Next Steps
 
-*Companion to Book Chapter 19 (Brand Is a Container, and the Letter to the Builder You're Becoming)*
+*Companion to Book Chapter 19 (Brand Is a Container) and A Letter to the Builder You Are Becoming*
 
 ---
 
 ## Page 76 — Section Divider
 
 **Section 11: Reflection & Next Steps**
+*Section 11 of 11 — Outcome: lessons captured and a plan for what comes next. [ ] Done [ ] Revisit*
 
-You've shipped (or you're about to). Now what? These final pages are for looking back honestly and looking forward deliberately. Don't rush through them — this section is what turns a shipped product into a foundation for the next one.
+You have shipped (or you are about to). Now what? These final pages are for looking back honestly and looking forward deliberately. Do not rush through them — this section is what turns a shipped product into a foundation for the next one.
 
-Read the closing Letter to the Builder You're Becoming in Book Chapter 19 before you start this section. It sets the tone.
+Read the closing Letter to the Builder You Are Becoming before you start this section. It follows Chapter 19 in the book.
 
 ---
 
@@ -1613,7 +1779,7 @@ _______________________________________
 2. _______________________________________
 3. _______________________________________
 
-**What did users reveal that I didn't know before launch?**
+**What did users reveal that I did not know before launch?**
 _______________________________________
 _______________________________________
 
@@ -1624,6 +1790,8 @@ _______________________________________
 ---
 
 ## Page 79 — Bigger Brand Thinking
+
+*If you are stuck, imagine your product succeeded wildly. What would you build next that could borrow trust from the first thing?*
 
 **How could this app fit into a larger brand?**
 _______________________________________
@@ -1648,7 +1816,7 @@ _______________________________________
 [ ] Take a break before deciding
 [ ] Other: _______________________________________
 
-**If another product, what's the itch?** (See Section 2)
+**If another product, what is the itch?** (See Section 2)
 _______________________________________
 _______________________________________
 
@@ -1677,12 +1845,27 @@ Sign and date. You will read this again someday. It will matter.
 
 You do not need to wait for permission to become a builder. You are already becoming one.
 
-Every page you filled in is evidence. Every decision you made is muscle. Every night you showed up instead of quitting is compound interest on a skill you didn't have when you started.
+Every page you filled in is evidence. Every decision you made is muscle. Every night you showed up instead of quitting is compound interest on a skill you did not have when you started.
 
-I'm proud of you. Keep going.
+I am proud of you. Keep going.
 
 — Bridgette
 *Afia Labs*
+
+---
+
+## Milestone — Builder
+
+You shipped. Or you are about to. Either way, you are no longer someone who almost started.
+
+**What you should know now:**
+- What you built and why it matters
+- What you learned that you did not know before
+- What you would do differently next time
+
+**The decision you should have made:** What comes next — improve, market, or build again.
+
+You are a builder now. The workbook is evidence. The product is proof.
 
 ---
 
@@ -1690,31 +1873,29 @@ I'm proud of you. Keep going.
 
 ---
 
-## Page 83 — Weekly Builder Check-In
+## Page 83 — The Afia Labs Test (Personal Version)
 
-Copy this page and use it every week.
+From Book Chapter 4. Use this page when you are stuck on a decision.
 
-**Week of:** _______________________________________
-
-**What's the one most important thing this week?**
+**The decision I am facing:**
 _______________________________________
 _______________________________________
 
-**What's blocking me?**
+**If my brand were already the company I want it to become, would this decision be on-brand?**
+[ ] Yes [ ] No [ ] Not sure
+
+**Would future-me be proud of this decision?**
+[ ] Yes [ ] No [ ] Not sure
+
+**What would the version of me who has already shipped say about this?**
 _______________________________________
 _______________________________________
 
-**What did I ship?**
+**What am I avoiding by not deciding?**
 _______________________________________
 _______________________________________
 
-**What did I learn?**
-_______________________________________
-_______________________________________
-
-**What am I grateful for?**
-_______________________________________
-_______________________________________
+Copy this page. Use it every time a decision feels heavy. The answer usually becomes obvious once you write it down.
 
 ---
 
@@ -1722,12 +1903,12 @@ _______________________________________
 
 Once a month, brainstorm without AI. Just you, a blank page, and your own thoughts. This is how you stay sharp.
 
-**What's bothering me about my product right now?**
+**What is bothering me about my product right now?**
 _______________________________________
 _______________________________________
 _______________________________________
 
-**What would I build if AI didn't exist?** (This question reveals your core taste)
+**What would I build if AI did not exist?** (This question reveals your core taste)
 _______________________________________
 _______________________________________
 _______________________________________
@@ -1765,11 +1946,11 @@ Fill in 30 days after launch.
 _______________________________________
 _______________________________________
 
-**Best piece of feedback I've received:**
+**Best piece of feedback I have received:**
 _______________________________________
 _______________________________________
 
-**Worst piece of feedback I've received:**
+**Worst piece of feedback I have received:**
 _______________________________________
 _______________________________________
 
@@ -1795,7 +1976,7 @@ The pattern is always the same: **context before question, not question before c
 
 ## Page 88 — Notes
 
-Space for anything that doesn't fit elsewhere. Use it however you want.
+Space for anything that does not fit elsewhere. Use it however you want.
 
 _______________________________________
 _______________________________________
@@ -1826,7 +2007,7 @@ If you filled in every page of this workbook, you have already done the work mos
 
 If you want deeper context on any section, the companion book *From Idea to Income with AI Apps* goes deeper on every chapter that maps to a section in this workbook. The book is the belief-builder. This workbook is the clarity-builder. Together they get you from "I have an itch" to "I shipped something."
 
-The course, when it arrives, will be the execution-builder. It'll walk you through the whole thing with video, live Q&A, and a community of other builders going through the same process. Watch [afialabs.net](https://afialabs.net) for updates.
+The course, when it arrives, will be the execution-builder. It will walk you through the whole thing with video, live Q&A, and a community of other builders going through the same process. Watch [afialabs.net](https://afialabs.net) for updates.
 
 ## Stay in Touch
 
@@ -1835,7 +2016,7 @@ support@afialabs.net — I read every message.
 [afialabs.net](https://afialabs.net)
 [memescanr.com](https://memescanr.com)
 
-If you ship something after using this workbook, I want to hear about it. That's the whole point.
+If you ship something after using this workbook, I want to hear about it. That is the whole point.
 
 — Bridgette Owusu
 *Afia Labs*
