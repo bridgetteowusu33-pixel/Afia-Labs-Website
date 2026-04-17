@@ -8,7 +8,7 @@ part: "Appendices"
 
 These are five worksheets you can copy into a notebook, a notes app, a doc, or wherever you think best on paper.
 
-None of them are complicated. That is the point.
+None of them are complicated. That is what matters.
 
 Each one should take about 15 to 20 minutes. They are meant to help you get unstuck, make cleaner decisions, and catch avoidable mistakes before they get expensive.
 

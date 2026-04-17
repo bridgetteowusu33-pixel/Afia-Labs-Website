@@ -74,11 +74,11 @@ That difference matters.
 
 The Backroom trial performs much better than the Premium trial, because users who have stored actual private photos in the vault now have an emotional reason to upgrade. The cost of losing access to something personal feels bigger than the subscription price.
 
-That is the whole point.
+That is the real leverage.
 
 **Trials are not just pricing mechanics. They are design tools.** Do not just ship "a three-day free trial" as if that is the whole decision. Think about what the trial is supposed to do and what emotional state it is supposed to create.
 
-### Case Study — The Free Tier That Wasn't Gated
+### Case Study — The Free Tier That Was Not Gated
 
 This is the pricing story that taught me the most important thing I know about monetization:
 

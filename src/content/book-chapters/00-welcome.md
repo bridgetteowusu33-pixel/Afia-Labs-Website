@@ -13,11 +13,11 @@ by Bridgette Owusu · Afia Labs
 
 ---
 
-Your feed is full of people selling you AI shortcuts they don't actually use themselves. This is different. This is the book I wrote after shipping a real app, under my own name, with my own money on the line — built with AI, but owned completely by me.
+Your feed is full of people selling you AI shortcuts they do not actually use themselves. This is different. This is the book I wrote after shipping a real app, under my own name, with my own money on the line — built with AI, but owned completely by me.
 
 You can do the same thing. Not by watching someone else's highlight reel. By building your own, with a real process, real ownership, and full command of every tool you touch.
 
-That's what this book is for.
+That is what this book is for.
 
 ---
 
@@ -90,4 +90,4 @@ C. The Builder's Worksheets
 
 # Act I — Belief
 
-*You can't ship what you don't believe you can ship.*
+*You cannot ship what you do not believe you can ship.*

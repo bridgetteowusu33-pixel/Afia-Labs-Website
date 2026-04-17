@@ -8,7 +8,7 @@ part: "Act II — Reality"
 ---
 **Cross-platform is a tax you pay every day in exchange for an option you might never exercise.**
 
-That sounds harsh. I mean it. And I'd still probably make the same call.
+That sounds harsh. I mean it. And I would still probably make the same call.
 
 ### The Night I Opened Android Studio
 
@@ -16,7 +16,7 @@ About five months into building MemeScanr, I finally opened Android Studio for t
 
 Then I booted a Pixel 7 emulator, ran the same code, and stared at the screen for about thirty seconds trying to figure out what I was looking at.
 
-The bottom navigation bar was fighting with Android's system navigation gestures. The status bar text was invisible because it was white on a light background that only appeared on Android's default theme. The photo permission dialog had different wording than iOS, and my recovery flow assumed the iOS phrasing. The keyboard pushed my scan button off the bottom of the screen on smaller displays. A swipe gesture I'd built for Memory Lane was conflicting with Android's back gesture.
+The bottom navigation bar was fighting with Android's system navigation gestures. The status bar text was invisible because it was white on a light background that only appeared on Android's default theme. The photo permission dialog had different wording than iOS, and my recovery flow assumed the iOS phrasing. The keyboard pushed my scan button off the bottom of the screen on smaller displays. A swipe gesture I had built for Memory Lane was conflicting with Android's back gesture.
 
 None of this was broken in the way that crashes are broken. It all ran. It all technically worked. But it felt like wearing someone else's clothes. The product that felt so right on iPhone felt like a rough translation on Android. Not bad. Just not *mine*.
 
@@ -39,13 +39,13 @@ That one sentence can save you real pain later. Without it, the AI will give you
 
 ### The Hidden Costs Nobody Warns You About
 
-Here's what cross-platform actually costs a solo builder, beyond the obvious "test on both" advice everyone gives:
+Here is what cross-platform actually costs a solo builder, beyond the obvious "test on both" advice everyone gives:
 
 **Permissions are different.** iOS has a single photos permission prompt. Android has granular media permissions that changed significantly in Android 13 and again in Android 14. Your permission flow, your recovery flow, your denial handling, your "limited access" states: all different. Not slightly different. Architecturally different.
 
-**Navigation is different.** iOS users expect swipe-to-go-back from the left edge. Android users expect a system back button or gesture. If you build a custom navigation pattern that overrides either, you'll confuse users on one platform while delighting users on the other.
+**Navigation is different.** iOS users expect swipe-to-go-back from the left edge. Android users expect a system back button or gesture. If you build a custom navigation pattern that overrides either, you will confuse users on one platform while delighting users on the other.
 
-**Keyboards are different.** iOS keyboards have a predictable height and dismiss behavior. Android keyboards vary by manufacturer, can have custom toolbars, and sometimes don't report their height correctly to Flutter. Every screen with a text input needs to be tested on both, separately.
+**Keyboards are different.** iOS keyboards have a predictable height and dismiss behavior. Android keyboards vary by manufacturer, can have custom toolbars, and sometimes do not report their height correctly to Flutter. Every screen with a text input needs to be tested on both, separately.
 
 **Store submission is different.** Apple's review process is stricter, slower, and human-reviewed. Google Play is faster and more automated, but it flags different things. Your metadata, screenshot requirements, and privacy declarations all work differently.
 
@@ -53,25 +53,25 @@ Here's what cross-platform actually costs a solo builder, beyond the obvious "te
 
 None of these differences are documented in one place. You discover them one at a time, usually when something breaks or feels wrong and you have to spend a day figuring out why.
 
-**Every one of these differences is a day.** Not a line of code. A day. A day of researching the platform behavior, a day of writing the platform-specific code, a day of testing it, a day of making sure you didn't break the other platform while fixing this one.
+**Every one of these differences is a day.** Not a line of code. A day. A day of researching the platform behavior, a day of writing the platform-specific code, a day of testing it, a day of making sure you did not break the other platform while fixing this one.
 
 ### Why I Chose iOS-Only Despite Having Flutter
 
 I built MemeScanr in Flutter specifically because I wanted the option to ship Android. And I never shipped Android. Not in year one. Probably not in year two either.
 
-The reason wasn't laziness. It was bandwidth. Shipping iOS alone was already more work than one person could do well. The App Store submission cycle. The TestFlight flow. The Apple Developer account setup. The privacy nutrition labels. The App Store Connect metadata. The review responses. The seasonal app icon system. The Live Activity integration. The home screen widgets. The Siri Shortcuts. The in-app events. Every one of these is an iOS-only surface that took real time to build and maintain.
+The reason was not laziness. It was bandwidth. Shipping iOS alone was already more work than one person could do well. The App Store submission cycle. The TestFlight flow. The Apple Developer account setup. The privacy nutrition labels. The App Store Connect metadata. The review responses. The seasonal app icon system. The Live Activity integration. The home screen widgets. The Siri Shortcuts. The in-app events. Every one of these is an iOS-only surface that took real time to build and maintain.
 
 Adding Android on top of that would have meant doing both platforms badly instead of iOS well.
 
-The lesson I took away: **if you're a solo builder, pick the platform your target user is on and commit to that platform until the product has proven itself.** Cross-platform is a good option to have. It's a bad option to execute on both sides at once.
+The lesson I took away: **if you are a solo builder, pick the platform your target user is on and commit to that platform until the product has proven itself.** Cross-platform is a good option to have. It is a bad option to execute on both sides at once.
 
-If you're going to pick cross-platform anyway, know that you will probably ship to one platform first and the other later. That's fine. Just know it going in, and don't pretend you're going to ship simultaneously. You're not.
+If you are going to pick cross-platform anyway, know that you will probably ship to one platform first and the other later. That is fine. Just know it going in, and do not pretend you are going to ship simultaneously. You are not.
 
 ### The Compromise That Taught Me the Most
 
-There's one specific cross-platform compromise in MemeScanr that I think about more than any other, because it taught me what "thoughtful translation" actually means in practice.
+There is one specific cross-platform compromise in MemeScanr that I think about more than any other, because it taught me what "thoughtful translation" actually means in practice.
 
-MemeScanr's Backroom vault uses Face ID on iPhone. Face ID is a specific Apple technology with specific behaviors: the prompt appears as a system dialog, the animation is distinctive, and users trust it because they use it fifty times a day to unlock their phone. When I first thought about Android, I assumed I'd just swap Face ID for Android's BiometricPrompt API and everything would feel the same.
+MemeScanr's Backroom vault uses Face ID on iPhone. Face ID is a specific Apple technology with specific behaviors: the prompt appears as a system dialog, the animation is distinctive, and users trust it because they use it fifty times a day to unlock their phone. When I first thought about Android, I assumed I would just swap Face ID for Android's BiometricPrompt API and everything would feel the same.
 
 It does not feel the same.
 
@@ -81,22 +81,22 @@ I had two choices. I could build a unified abstraction that treated both platfor
 
 I chose the second path. And then I never shipped Android. So the platform-specific Android vault code sits in my codebase, tested on emulators, never touched by a real user. It represents about two weeks of work that has produced zero value so far.
 
-That's the tax. Not the code that breaks. The code that works perfectly and never ships.
+That is the tax. Not the code that breaks. The code that works perfectly and never ships.
 
-**The lesson: before you build the cross-platform version of anything, ask yourself honestly: am I going to ship this platform in the next six months? If the answer is no, build for the platform you're actually shipping and save the abstraction for later.** The abstraction will be better when you build it later anyway, because you'll know more about what both platforms actually need.
+**The lesson: before you build the cross-platform version of anything, ask yourself honestly: am I going to ship this platform in the next six months? If the answer is no, build for the platform you are actually shipping and save the abstraction for later.** The abstraction will be better when you build it later anyway, because you will know more about what both platforms actually need.
 
-### The Three Cases Where I'd Still Say Yes
+### The Three Cases Where I Would Still Say Yes
 
-After everything I just told you, I don't want to leave you thinking cross-platform is always wrong. It's not. Here are the three cases where I'd still choose it from day one.
+After everything I just told you, I do not want to leave you thinking cross-platform is always wrong. It is not. Here are the three cases where I would still choose it from day one.
 
-**Your audience is genuinely split.** If your target user is equally likely to be on iPhone or Android, and picking one means losing half the people you're building for, cross-platform earns its tax. This is common for utility apps, B2B tools, and products targeting demographics with high Android adoption. MemeScanr's audience skews heavily iPhone. Yours might not.
+**Your audience is genuinely split.** If your target user is equally likely to be on iPhone or Android, and picking one means losing half the people you are building for, cross-platform earns its tax. This is common for utility apps, B2B tools, and products targeting demographics with high Android adoption. MemeScanr's audience skews heavily iPhone. Yours might not.
 
-**Your product is simple enough that the tax is small.** Three screens, no native integrations, no platform-specific features. The simpler the product, the smaller the gap between "works on both" and "belongs on both." If your app is a calculator with personality, the cross-platform cost is negligible. If your app has a Face ID vault, it's not.
+**Your product is simple enough that the tax is small.** Three screens, no native integrations, no platform-specific features. The simpler the product, the smaller the gap between "works on both" and "belongs on both." If your app is a calculator with personality, the cross-platform cost is negligible. If your app has a Face ID vault, it is not.
 
-**You're not alone.** If you have a partner who owns Android while you own iOS, or if you have enough bandwidth to maintain two platform experiences at a high standard without cutting corners on either, cross-platform becomes a genuine multiplier instead of a tax. The key word is *maintain*. Not launch. Maintain. For two years.
+**You are not alone.** If you have a partner who owns Android while you own iOS, or if you have enough bandwidth to maintain two platform experiences at a high standard without cutting corners on either, cross-platform becomes a genuine multiplier instead of a tax. The key word is *maintain*. Not launch. Maintain. For two years.
 
 If none of those three apply, my honest advice is the same thing I told you in Chapter 8: pick one platform, ship it, prove the product works, and expand later. The second platform is a launch you get to have. And the launch you save for later is worth more than the launch you spend today.
 
 ### > Think Before You Move On
 
-If you're building cross-platform, which platform is your actual primary? Not the one you wish were primary. The one where your real target user lives. Be honest.
+If you are building cross-platform, which platform is your actual primary? Not the one you wish were primary. The one where your real target user lives. Be honest.

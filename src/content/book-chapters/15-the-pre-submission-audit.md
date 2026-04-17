@@ -58,7 +58,7 @@ A surprising amount of launch risk lives in metadata, not code.
 
 **4. Guideline 3.1.1 — Missing Restore Purchases.**
 
-If your app has subscriptions or non-consumable purchases, you need a visible Restore Purchases button. Not buried somewhere weird. Not half-working. Not "we'll add it later."
+If your app has subscriptions or non-consumable purchases, you need a visible Restore Purchases button. Not buried somewhere weird. Not half-working. Not "we will add it later."
 
 It has to exist, and it has to work.
 
@@ -74,7 +74,7 @@ The fix is usually one of two things: add more meaningful functionality, or posi
 
 Thin products can still work. But they cannot feel disposable.
 
-### Case Study — The Framework That Shouldn't Have Shipped
+### Case Study — The Framework That Should Not Have Shipped
 
 Let me tell you how I lost a day to a framework I did not even know was in my app.
 
