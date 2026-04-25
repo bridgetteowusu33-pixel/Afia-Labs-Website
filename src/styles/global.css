@@ -734,6 +734,33 @@
             transform: translateY(-1px);
         }
 
+        /* TripSquad — group travel app, lime accent on dark canvas */
+        .app-card.tripsquad::before {
+            background: linear-gradient(90deg, #ccff45, #9b6dff);
+        }
+
+        .tripsquad .app-icon {
+            background: #08080e;
+            color: #ccff45;
+            box-shadow: 0 4px 16px rgba(204, 255, 69, 0.18);
+        }
+
+        .tripsquad .check {
+            background: rgba(204, 255, 69, 0.12);
+            color: #6b8e1a;
+        }
+
+        .tripsquad .btn-app {
+            background: linear-gradient(135deg, #08080e, #1a1530);
+            color: #ccff45;
+            box-shadow: 0 4px 16px rgba(8, 8, 14, 0.25);
+        }
+
+        .tripsquad .btn-app:hover {
+            box-shadow: 0 6px 24px rgba(204, 255, 69, 0.3);
+            transform: translateY(-1px);
+        }
+
         .coming-soon-tag {
             display: inline-block;
             margin-left: 12px;
