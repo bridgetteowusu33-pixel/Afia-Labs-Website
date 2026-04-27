@@ -150,7 +150,7 @@ const { width = '360px' } = Astro.props;
     </div>
 
     <!-- ============ PAGE 6 — BACK COVER ============ -->
-    <div class="page" data-index="5">
+    <div class="page page--last" data-index="5">
       <div class="page__face page__face--front cover-back">
         <div class="cream-block-top-back">
           <div class="back-top-bar">
@@ -265,8 +265,22 @@ const { width = '360px' } = Astro.props;
     background: var(--paper);
   }
 
+  .page__face--front {
+    /* Force compositing layer so backface-visibility works in Safari */
+    transform: translateZ(0.5px);
+    transition: opacity 200ms linear;
+  }
+
+  /* When the page is mid-flip past 90°, hide the front face explicitly.
+     This is a fallback for browsers where backface-visibility leaks
+     content through the rotated page. */
+  .page.is-flipped .page__face--front {
+    opacity: 0;
+    transition: opacity 200ms linear 350ms;
+  }
+
   .page__face--back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(0.5px);
     background:
       linear-gradient(
         to right,
@@ -277,6 +291,20 @@ const { width = '360px' } = Astro.props;
       ),
       var(--paper-back);
     border-radius: 12px 4px 4px 12px;
+  }
+
+  /* When the book is showing the back cover (last page), the flipped
+     pages should fade away so the book reads as "closed, showing back",
+     not "open with back cover sticking out on the right." */
+  .book.is-closed-back .page:not(.page--last) {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 500ms ease 350ms;
+  }
+
+  .book.is-closed-back .page--last {
+    /* Subtle "settle into closed" lift */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1) 400ms;
   }
 
   /* ============ FRONT COVER ============ */
@@ -919,6 +947,15 @@ const { width = '360px' } = Astro.props;
       if (currentEl) currentEl.textContent = pad(current + 1);
       if (prevBtn) prevBtn.disabled = current === 0;
       if (nextBtn) nextBtn.disabled = current === total - 1;
+      book.dataset.current = String(current);
+
+      // When on the back cover, mark the book as "closed back"
+      // so the flipped pages fade away and only the back cover is visible.
+      if (current === total - 1) {
+        book.classList.add('is-closed-back');
+      } else {
+        book.classList.remove('is-closed-back');
+      }
     }
 
     function goTo(index: number) {
