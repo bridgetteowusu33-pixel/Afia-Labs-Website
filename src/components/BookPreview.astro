@@ -1,0 +1,1007 @@
+---
+// BookPreview.astro — Interactive page-flip preview of the book.
+// Six spreads: front cover, dedication, Chapter 1 opener, Silent Vault beat,
+// Think Before You Move On, back cover. CSS-only 3D flip, no libraries.
+//
+// Drops into the book.astro hero in place of the static <BookCover />.
+
+export interface Props {
+  width?: string;
+}
+
+const { width = '360px' } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="preview" style={`--cover-width: ${width};`}>
+  <div class="book" id="bookPreview" data-current="0">
+    <!-- ============ PAGE 1 — FRONT COVER ============ -->
+    <div class="page" data-index="0">
+      <div class="page__face page__face--front cover-front">
+        <div class="cream-block">
+          <span class="ampersand" aria-hidden="true">&amp;</span>
+          <div class="cover-top-bar">
+            <span>Afia Labs · Field Guide № 1</span>
+            <span class="brand-mark"></span>
+          </div>
+          <div class="practitioner">A practitioner&rsquo;s playbook</div>
+          <h3 class="cover-title">
+            From Idea<br />to <span class="income">Income</span>
+          </h3>
+          <div class="with-ai"><em>with AI Apps</em></div>
+          <div class="build-line">Build with AI. Own the outcome.</div>
+        </div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="navy-block">
+          <div class="pitch">
+            The honest playbook for shipping a real consumer app as a solo builder.
+          </div>
+          <div class="field-index" aria-hidden="true">
+            <span class="field-index-label">Inside the field guide</span>
+            <div class="ticks">
+              <div class="tick"><span class="roman">I</span><span class="act-name">Belief</span></div>
+              <div class="tick"><span class="roman">II</span><span class="act-name">Reality</span></div>
+              <div class="tick"><span class="roman">III</span><span class="act-name">Ownership</span></div>
+              <div class="tick"><span class="roman">A</span><span class="act-name">Appendices</span></div>
+            </div>
+          </div>
+          <div class="credit-row">
+            <div class="by-block">
+              <div class="by-label">Written by</div>
+              <div class="by-name">Bridgette Owusu</div>
+            </div>
+            <div class="imprint">
+              <div class="imprint-name">Afia Labs</div>
+              <div class="imprint-url">afialabs.net</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__face page__face--back interior-back" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ PAGE 2 — DEDICATION ============ -->
+    <div class="page" data-index="1">
+      <div class="page__face page__face--front interior dedication">
+        <div class="page-header">Dedication</div>
+        <div class="dedication-body">
+          <p>For the builder who keeps almost starting.</p>
+          <p>The one who has fourteen ideas in her notes app and has shipped zero of them.</p>
+          <p>I wrote this for you because I was you.</p>
+          <p class="dedication-close">And because I finally shipped.</p>
+        </div>
+        <div class="page-footer">v</div>
+      </div>
+      <div class="page__face page__face--back interior-back" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ PAGE 3 — CHAPTER 1 OPENER ============ -->
+    <div class="page" data-index="2">
+      <div class="page__face page__face--front interior chapter-opener">
+        <div class="page-header">Act I — Belief · Chapter 1</div>
+        <h2 class="chapter-title">The Tuesday My<br />Camera Roll Broke Me</h2>
+        <div class="body-text">
+          <p>
+            It was a Tuesday. I was trying to send a screenshot to a friend, just a dumb meme I had saved three months earlier, and I could not find it. I scrolled past forty-seven variations of the same selfie. I scrolled past a screenshot of a parking meter I did not remember paying. I scrolled past a video of a sunset that was probably beautiful but now just felt like a stranger.
+          </p>
+          <p>
+            I kept scrolling. My thumb started to ache. My phone said <strong>14,823 photos</strong>. I closed the Photos app and opened Instagram instead.
+          </p>
+          <p class="italic-aside">
+            That was the moment I had the idea for MemeScanr&hellip;
+          </p>
+        </div>
+        <div class="page-footer">3</div>
+      </div>
+      <div class="page__face page__face--back interior-back" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ PAGE 4 — SILENT VAULT BEAT ============ -->
+    <div class="page" data-index="3">
+      <div class="page__face page__face--front interior chapter-beat">
+        <div class="page-header">Act II — Reality · Chapter 14</div>
+        <div class="body-text">
+          <p>
+            <strong>Free users could put things into a container they could not open.</strong>
+          </p>
+          <p>
+            The code passed tests. The app did not crash. The code did exactly what I told it to do. And the user experience was still a betrayal.
+          </p>
+        </div>
+        <div class="callout">
+          <div class="callout-line">Working is not the same</div>
+          <div class="callout-line callout-emphasis">as <em>trustworthy</em>.</div>
+        </div>
+        <div class="body-text">
+          <p>
+            Your code can pass every test and still fail the user. &ldquo;The code does what I told it to do&rdquo; is not a defense when the user feels tricked.
+          </p>
+        </div>
+        <div class="page-footer">187</div>
+      </div>
+      <div class="page__face page__face--back interior-back" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ PAGE 5 — THINK BEFORE YOU MOVE ON ============ -->
+    <div class="page" data-index="4">
+      <div class="page__face page__face--front interior think-page">
+        <div class="page-header">Act I · Chapter 1</div>
+        <div class="think-marker">&rsaquo;</div>
+        <div class="think-eyebrow">Think before you move on</div>
+        <div class="think-question">
+          What itch have you been scrolling past?
+        </div>
+        <div class="think-followup">
+          Not the one you think you should build. The one you cannot stop noticing.
+        </div>
+        <div class="think-rule"></div>
+        <div class="think-meta">
+          Every chapter ends with one of these. If you cannot answer it, the chapter is not done with you yet.
+        </div>
+        <div class="page-footer">23</div>
+      </div>
+      <div class="page__face page__face--back interior-back" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ PAGE 6 — BACK COVER ============ -->
+    <div class="page" data-index="5">
+      <div class="page__face page__face--front cover-back">
+        <div class="cream-block-top-back">
+          <div class="back-top-bar">
+            <span class="brand-mark"></span>
+            <span>Afia Labs · Field Guide № 1</span>
+          </div>
+          <div class="pull-quote">
+            &ldquo;Working is not the same as <em>trustworthy</em>.&rdquo;
+          </div>
+          <div class="pull-source">— from Chapter 14</div>
+        </div>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="navy-body-back">
+          <p class="back-blurb">
+            Bridgette Owusu shipped MemeScanr to the App Store as a <strong>solo builder</strong>, using AI tools the entire way, and stayed in the driver&rsquo;s seat the whole time.
+          </p>
+          <ul class="inside-list">
+            <li class="inside-head">Inside</li>
+            <li>Find the itch worth building</li>
+            <li>The four-question filter</li>
+            <li>What Apple actually rejects</li>
+            <li>Pricing the code enforces</li>
+            <li>The post-launch emotional map</li>
+          </ul>
+          <p class="back-closer">
+            A <span class="accent">practitioner&rsquo;s playbook</span>. Not a hype-cycle book.
+          </p>
+        </div>
+      </div>
+      <div class="page__face page__face--back interior-back" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- ============ CONTROLS ============ -->
+  <div class="controls">
+    <button class="ctrl ctrl-prev" data-action="prev" aria-label="Previous page" disabled>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+    <div class="counter">
+      <span class="counter-current">01</span>
+      <span class="counter-sep">·</span>
+      <span class="counter-total">06</span>
+    </div>
+    <button class="ctrl ctrl-next" data-action="next" aria-label="Next page">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 6l6 6-6 6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="hint">
+    <span>Tap to flip</span>
+  </div>
+</div>
+
+<style>
+  .preview {
+    --paper: #FFFBF7;
+    --paper-edge: #F1E9DC;
+    --paper-back: #F5EDDF;
+    --navy: #0B1020;
+    --rust: #C66A2D;
+    --rust-bright: #FF9500;
+    --ink: #1A1B2E;
+    --ink-soft: #2C2E45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    perspective: 1800px;
+  }
+
+  /* ============ BOOK STAGE ============ */
+  .book {
+    position: relative;
+    width: var(--cover-width);
+    aspect-ratio: 6 / 9;
+    transform-style: preserve-3d;
+    container-type: inline-size;
+    container-name: page;
+  }
+
+  .page {
+    position: absolute;
+    inset: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 700ms cubic-bezier(0.42, 0.06, 0.32, 1);
+    cursor: pointer;
+    will-change: transform;
+  }
+
+  .page.is-flipped {
+    transform: rotateY(-180deg);
+  }
+
+  .page__face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 4px 12px 12px 4px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 3px rgba(11, 16, 32, 0.10),
+      0 8px 24px rgba(11, 16, 32, 0.14),
+      0 24px 60px rgba(11, 16, 32, 0.18),
+      inset 6px 0 0 rgba(11, 16, 32, 0.06),
+      inset 7px 0 0 rgba(255, 255, 255, 0.55);
+    background: var(--paper);
+  }
+
+  .page__face--back {
+    transform: rotateY(180deg);
+    background:
+      linear-gradient(
+        to right,
+        rgba(11, 16, 32, 0.04) 0%,
+        rgba(11, 16, 32, 0) 6%,
+        rgba(11, 16, 32, 0) 94%,
+        rgba(11, 16, 32, 0.06) 100%
+      ),
+      var(--paper-back);
+    border-radius: 12px 4px 4px 12px;
+  }
+
+  /* ============ FRONT COVER ============ */
+  .cover-front {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cream-block {
+    flex: 0 0 56%;
+    position: relative;
+    background: var(--paper);
+    overflow: hidden;
+    padding: 6cqw 7cqw 5cqw 7.5cqw;
+  }
+
+  .ampersand {
+    position: absolute;
+    top: 38%;
+    right: -10cqw;
+    transform: translateY(-50%);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 90cqw;
+    line-height: 1;
+    color: var(--paper-edge);
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+  }
+
+  .cover-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.7cqw, 12px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    position: relative;
+    z-index: 2;
+  }
+
+  .brand-mark {
+    width: 1.4cqw;
+    height: 1.4cqw;
+    min-width: 5px;
+    min-height: 5px;
+    border-radius: 50%;
+    background: var(--rust);
+    flex-shrink: 0;
+    display: inline-block;
+  }
+
+  .practitioner {
+    margin-top: 13cqw;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2.8cqw;
+    color: var(--rust);
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-title {
+    margin: 3cqw 0 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 14.5cqw;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    position: relative;
+    z-index: 2;
+  }
+
+  .income {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--rust);
+  }
+
+  .with-ai {
+    margin-top: 3cqw;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 6cqw;
+    line-height: 1;
+    color: var(--ink);
+    position: relative;
+    z-index: 2;
+  }
+
+  .build-line {
+    position: absolute;
+    bottom: 4.5cqw;
+    left: 7.5cqw;
+    right: 7cqw;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.55cqw, 11px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    z-index: 2;
+  }
+
+  .rule {
+    height: 0.35cqw;
+    min-height: 1px;
+    background: var(--rust);
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .navy-block {
+    flex: 1;
+    padding: 6cqw 7cqw 5.2cqw 7.5cqw;
+    background: var(--navy);
+    color: var(--paper);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pitch {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 3.6cqw;
+    line-height: 1.28;
+    color: var(--paper);
+    max-width: 88%;
+  }
+
+  .field-index {
+    margin: 4cqw 0 2.2cqw;
+    padding-top: 2.2cqw;
+    border-top: 1px solid rgba(255, 251, 247, 0.18);
+  }
+
+  .field-index-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.4cqw, 10px);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255, 251, 247, 0.55);
+    margin-bottom: 1.5cqw;
+    display: block;
+  }
+
+  .ticks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tick {
+    display: flex;
+    flex-direction: column;
+    gap: 1cqw;
+    padding-right: 1.5cqw;
+  }
+
+  .tick::before {
+    content: '';
+    width: 1.15cqw;
+    min-width: 4px;
+    height: 1px;
+    background: var(--rust-bright);
+  }
+
+  .roman {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(10px, 2.4cqw, 16px);
+    color: var(--paper);
+    line-height: 1;
+  }
+
+  .act-name {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(5.5px, 1.3cqw, 9px);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 251, 247, 0.7);
+    line-height: 1;
+  }
+
+  .credit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .by-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.5cqw, 11px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--rust-bright);
+    margin-bottom: 1cqw;
+  }
+
+  .by-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 3cqw;
+    color: var(--paper);
+  }
+
+  .imprint {
+    text-align: right;
+  }
+
+  .imprint-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 2.3cqw;
+    color: var(--paper);
+  }
+
+  .imprint-url {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.5cqw, 11px);
+    letter-spacing: 0.16em;
+    color: var(--rust-bright);
+    margin-top: 0.7cqw;
+  }
+
+  /* ============ INTERIOR PAGES ============ */
+  .interior {
+    background: var(--paper);
+    padding: 11cqw 8cqw 8cqw 9cqw;
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image:
+      radial-gradient(ellipse at 0% 50%, rgba(11, 16, 32, 0.04) 0%, transparent 35%);
+  }
+
+  .page-header {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.5cqw, 10px);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8cqw;
+  }
+
+  .page-footer {
+    margin-top: auto;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(7px, 1.6cqw, 11px);
+    color: var(--ink-soft);
+    opacity: 0.7;
+    letter-spacing: 0.04em;
+  }
+
+  /* ----- Dedication ----- */
+  .dedication {
+    justify-content: center;
+  }
+
+  .dedication-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3cqw;
+  }
+
+  .dedication-body p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 4.2cqw;
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 92%;
+    letter-spacing: -0.005em;
+  }
+
+  .dedication-close {
+    color: var(--rust) !important;
+    font-weight: 500;
+    margin-top: 1.5cqw;
+  }
+
+  /* ----- Chapter opener ----- */
+  .chapter-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 7cqw;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 6cqw;
+  }
+
+  .body-text p {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 3.4cqw;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 2.5cqw;
+  }
+
+  .body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .body-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .italic-aside {
+    font-style: italic;
+    color: var(--ink-soft) !important;
+    margin-top: 4cqw !important;
+  }
+
+  /* ----- Chapter beat (Silent Vault) ----- */
+  .callout {
+    margin: 6cqw 0;
+    padding: 5cqw 0;
+    border-top: 1px solid rgba(11, 16, 32, 0.12);
+    border-bottom: 1px solid rgba(11, 16, 32, 0.12);
+    text-align: center;
+  }
+
+  .callout-line {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 5.2cqw;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .callout-emphasis em {
+    font-style: italic;
+    color: var(--rust);
+    font-weight: 600;
+  }
+
+  /* ----- Think Before You Move On ----- */
+  .think-page {
+    justify-content: flex-start;
+    background-image:
+      radial-gradient(ellipse at 0% 50%, rgba(11, 16, 32, 0.04) 0%, transparent 35%),
+      linear-gradient(180deg, transparent 60%, rgba(198, 106, 45, 0.05) 100%);
+  }
+
+  .think-marker {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 14cqw;
+    color: var(--rust);
+    line-height: 0.5;
+    margin-bottom: 6cqw;
+  }
+
+  .think-eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(7px, 1.7cqw, 11px);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 5cqw;
+  }
+
+  .think-question {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 7.5cqw;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 4cqw;
+  }
+
+  .think-followup {
+    font-family: 'Fraunces', serif;
+    font-size: 3.8cqw;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin-bottom: 6cqw;
+  }
+
+  .think-rule {
+    width: 14cqw;
+    height: 1.5px;
+    background: var(--rust);
+    margin: 5cqw 0;
+  }
+
+  .think-meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2.9cqw;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    opacity: 0.85;
+    max-width: 88%;
+  }
+
+  /* ============ BACK COVER ============ */
+  .cover-back {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cream-block-top-back {
+    flex: 0 0 38%;
+    padding: 6cqw 7cqw 4cqw 7.5cqw;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .back-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.7cqw, 12px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .pull-quote {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 5.5cqw;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-top: 4cqw;
+  }
+
+  .pull-quote em {
+    font-style: italic;
+    color: var(--rust);
+    font-weight: 500;
+  }
+
+  .pull-source {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.6cqw, 11px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 2cqw;
+  }
+
+  .navy-body-back {
+    flex: 1;
+    padding: 5cqw 7cqw 6cqw 7.5cqw;
+    background: var(--navy);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    gap: 3cqw;
+  }
+
+  .back-blurb {
+    font-family: 'Fraunces', serif;
+    font-size: 2.9cqw;
+    line-height: 1.5;
+    color: rgba(255, 251, 247, 0.92);
+  }
+
+  .back-blurb strong {
+    color: var(--paper);
+    font-weight: 600;
+  }
+
+  .inside-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.2cqw;
+  }
+
+  .inside-head {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.5cqw, 10px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--rust-bright);
+    margin-bottom: 0.5cqw;
+  }
+
+  .inside-list li:not(.inside-head) {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 2.5cqw;
+    line-height: 1.4;
+    color: rgba(255, 251, 247, 0.88);
+    padding-left: 3cqw;
+    position: relative;
+  }
+
+  .inside-list li:not(.inside-head)::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rust-bright);
+  }
+
+  .back-closer {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2.9cqw;
+    line-height: 1.4;
+    color: var(--paper);
+    margin-top: auto;
+  }
+
+  .accent {
+    color: var(--rust-bright);
+    font-weight: 500;
+  }
+
+  /* ============ CONTROLS ============ */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  .ctrl {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 251, 247, 0.08);
+    border: 1px solid rgba(255, 149, 0, 0.5);
+    color: #FF9500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms ease;
+    padding: 0;
+  }
+
+  .ctrl:hover:not(:disabled) {
+    background: rgba(255, 149, 0, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .ctrl:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .counter {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: rgba(255, 251, 247, 0.7);
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .counter-current {
+    color: #FF9500;
+    font-weight: 500;
+  }
+
+  .counter-sep {
+    margin: 0 6px;
+    color: rgba(255, 251, 247, 0.4);
+  }
+
+  .hint {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 251, 247, 0.4);
+    margin-top: 2px;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 640px) {
+    .preview {
+      --cover-width: 280px !important;
+    }
+
+    .hint {
+      display: block;
+    }
+  }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    .page {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initBookPreview() {
+    const book = document.getElementById('bookPreview');
+    if (!book) return;
+
+    const pages = book.querySelectorAll('.page');
+    const total = pages.length;
+    const prevBtn = document.querySelector('.ctrl-prev') as HTMLButtonElement;
+    const nextBtn = document.querySelector('.ctrl-next') as HTMLButtonElement;
+    const currentEl = document.querySelector('.counter-current');
+    let current = 0;
+    let isAnimating = false;
+
+    // Initial z-index stack: page 0 highest, page N lowest
+    pages.forEach((page, i) => {
+      (page as HTMLElement).style.zIndex = String(total - i);
+    });
+
+    function pad(n: number) {
+      return String(n).padStart(2, '0');
+    }
+
+    function update() {
+      if (currentEl) currentEl.textContent = pad(current + 1);
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current === total - 1;
+    }
+
+    function goTo(index: number) {
+      if (isAnimating) return;
+      if (index < 0 || index >= total) return;
+      if (index === current) return;
+      isAnimating = true;
+
+      if (index > current) {
+        for (let i = current; i < index; i++) {
+          pages[i].classList.add('is-flipped');
+        }
+      } else {
+        for (let i = current - 1; i >= index; i--) {
+          pages[i].classList.remove('is-flipped');
+        }
+      }
+
+      current = index;
+      update();
+      window.setTimeout(() => {
+        isAnimating = false;
+      }, 720);
+    }
+
+    // Click on page area to advance
+    pages.forEach((page) => {
+      page.addEventListener('click', () => {
+        if (current < total - 1) goTo(current + 1);
+      });
+    });
+
+    // Prev / next buttons
+    prevBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(current - 1);
+    });
+    nextBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(current + 1);
+    });
+
+    // Keyboard arrows
+    document.addEventListener('keydown', (e) => {
+      // Only react when preview is in viewport
+      const rect = book.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goTo(current + 1);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goTo(current - 1);
+      }
+    });
+
+    // Swipe on mobile
+    let touchStartX = 0;
+    book.addEventListener(
+      'touchstart',
+      (e: TouchEvent) => {
+        touchStartX = e.touches[0].clientX;
+      },
+      { passive: true }
+    );
+    book.addEventListener(
+      'touchend',
+      (e: TouchEvent) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) < 40) return;
+        if (dx < 0) goTo(current + 1);
+        else goTo(current - 1);
+      },
+      { passive: true }
+    );
+
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBookPreview);
+  } else {
+    initBookPreview();
+  }
+</script>
