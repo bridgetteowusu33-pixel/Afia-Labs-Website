@@ -77,7 +77,7 @@ Also: **sometimes the bad reviewer is telling you the truth.**
 
 Not always. But sometimes. If you get the same complaint three times, it stops being noise and starts being signal.
 
-My first one-star review on MemeScanr said the app crashed on open. I checked the crash logs. There was exactly one crash, on one older iPhone model I had not tested on, with a specific iOS version combination. I fixed it in about six hours. I responded to the review. The user later updated it to five stars and wrote that I had fixed it personally faster than any app founder they had dealt with before.
+My first one-star review on MemeScanr said the app crashed on open. I checked the crash logs. There was exactly one crash, on one older iPhone model I had not tested on, with a specific iOS version combination. I fixed it in about six hours. I responded to the review honestly: thanked them, named the build the fix was in, and asked them to try again when the update landed.
 
 That review taught me something I still believe:
 
@@ -211,24 +211,11 @@ That is a twelve-week runway. At the end of it, you have a stable product, a res
 
 ### What Launch Actually Gives You
 
-A lot of people think launch gives you certainty.
+A lot of people think launch gives you certainty. It usually does not. Launch gives you contact with reality, which is better. Before launch, everything is theory. After launch, you get truth: about what users notice, what confuses them, what lands, and what does not matter nearly as much as you thought.
 
-It usually does not.
+That truth can bruise your ego. It can also save you months.
 
-Launch gives you contact with reality.
-
-That is better.
-
-Before launch, everything is theory. After launch, you finally get truth. Truth about what users notice. Truth about what confuses them. Truth about what lands. Truth about what does not matter nearly as much as you thought it would.
-
-That truth can bruise your ego a little. It can also save you months.
-
-So do not ask launch to make you feel like you made it.
-
-Ask launch to show you what is real.
-
-That is enough.
-That is more than enough.
+Do not ask launch to make you feel like you made it. Ask launch to show you what is real.
 
 ### > Think Before You Move On
 

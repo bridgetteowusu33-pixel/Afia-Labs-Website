@@ -1,33 +1,93 @@
 ---
-// BookCover.astro — Field Notes concept book cover, rendered in pure CSS.
-// Reusable. Pass props for title, subtitle, byline, and accent color.
-// Used on /book until we have a real designer-rendered cover.
+// BookCover.astro — Afia Labs Field Guide № 1 cover, rendered in CSS.
+// Scales as a unit via container queries: drop it in at any width.
+// Source-of-truth for the printed cover lives at docs/book/cover.html
+// in the manuscript repo.
 
 export interface Props {
-  title?: string;
-  subtitle?: string;
-  byline?: string;
   width?: string;
 }
 
-const {
-  title = 'From Idea to Income with AI Apps',
-  subtitle = 'The honest field guide to shipping a real consumer app as a solo builder.',
-  byline = 'Bridgette Owusu · Afia Labs',
-  width = '320px',
-} = Astro.props;
+const { width = '320px' } = Astro.props;
 ---
 
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+/>
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
 <div class="book-cover-wrapper" style={`--cover-width: ${width};`}>
-  <div class="book-cover" aria-label={`Book cover: ${title}`}>
-    <div class="book-cover-top">
-      <div class="book-cover-eyebrow">Coming Soon</div>
-      <h3 class="book-cover-title">{title}</h3>
+  <div class="book-cover" aria-label="Book cover: From Idea to Income with AI Apps">
+    <!-- ============== CREAM TOP BLOCK ============== -->
+    <div class="cream-block">
+      <span class="ampersand" aria-hidden="true">&amp;</span>
+
+      <div class="top-bar">
+        <span>Afia Labs · Field Guide № 1</span>
+        <span class="brand-mark"></span>
+      </div>
+
+      <div class="practitioner">A practitioner&rsquo;s playbook</div>
+
+      <h3 class="title">
+        From Idea<br />to <span class="income">Income</span>
+      </h3>
+
+      <div class="with-ai"><em>with AI Apps</em></div>
+
+      <div class="build-line">Build with AI. Own the outcome.</div>
     </div>
-    <div class="book-cover-rule" aria-hidden="true"></div>
-    <div class="book-cover-bottom">
-      <p class="book-cover-subtitle">{subtitle}</p>
-      <p class="book-cover-byline">{byline}</p>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- ============== NAVY BOTTOM BLOCK ============== -->
+    <div class="navy-block">
+      <div class="pitch">
+        The honest playbook for shipping a real consumer app as a solo builder.
+      </div>
+
+      <!-- Field Guide index strip -->
+      <div class="field-index" aria-hidden="true">
+        <span class="field-index-label">Inside the field guide</span>
+        <div class="ticks">
+          <div class="tick">
+            <span class="roman">I</span>
+            <span class="act-name">Belief</span>
+          </div>
+          <div class="tick">
+            <span class="roman">II</span>
+            <span class="act-name">Reality</span>
+          </div>
+          <div class="tick">
+            <span class="roman">III</span>
+            <span class="act-name">Ownership</span>
+          </div>
+          <div class="tick">
+            <span class="roman">A</span>
+            <span class="act-name">Appendices</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="credit-row">
+        <div class="by-block">
+          <div class="by-label">Written by</div>
+          <div class="by-name">Bridgette Owusu</div>
+        </div>
+        <div class="imprint">
+          <div class="imprint-name">Afia Labs</div>
+          <div class="imprint-url">afialabs.net</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -43,13 +103,13 @@ const {
   .book-cover {
     width: var(--cover-width);
     aspect-ratio: 6 / 9;
-    background: #fffbf7;
+    background: #FFFBF7;
     border-radius: 4px 12px 12px 4px;
     box-shadow:
-      0 1px 3px rgba(26, 10, 46, 0.08),
-      0 8px 24px rgba(26, 10, 46, 0.12),
-      0 24px 60px rgba(26, 10, 46, 0.18),
-      inset 6px 0 0 rgba(26, 10, 46, 0.06),
+      0 1px 3px rgba(11, 16, 32, 0.10),
+      0 8px 24px rgba(11, 16, 32, 0.14),
+      0 24px 60px rgba(11, 16, 32, 0.20),
+      inset 6px 0 0 rgba(11, 16, 32, 0.06),
       inset 7px 0 0 rgba(255, 255, 255, 0.6);
     display: flex;
     flex-direction: column;
@@ -57,90 +117,283 @@ const {
     position: relative;
     transform: rotateY(-3deg);
     transition: transform 0.4s ease;
+    font-family: 'Fraunces', Georgia, serif;
+    color: #1A1B2E;
+
+    /* Container query so all child sizes scale with the cover */
+    container-type: inline-size;
+    container-name: cover;
   }
 
   .book-cover:hover {
     transform: rotateY(0deg) translateY(-4px);
   }
 
-  .book-cover-top {
-    flex: 0 0 60%;
-    padding: 32px 28px 16px 36px;
+  /* ============== CREAM TOP BLOCK ============== */
+  .cream-block {
+    flex: 0 0 56%;
+    position: relative;
+    background: #FFFBF7;
+    overflow: hidden;
+    padding: 6cqw 7cqw 5cqw 7.5cqw;
+  }
+
+  .ampersand {
+    position: absolute;
+    top: 38%;
+    right: -10cqw;
+    transform: translateY(-50%);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 90cqw;
+    line-height: 1;
+    color: #F1E9DC;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+  }
+
+  .top-bar {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background: #fffbf7;
-  }
-
-  .book-cover-eyebrow {
-    font-size: 10px;
-    font-weight: 800;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.7cqw, 12px);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    letter-spacing: 1.6px;
-    color: #fb923c;
-    margin-bottom: 16px;
+    color: #1A1B2E;
+    position: relative;
+    z-index: 2;
   }
 
-  .book-cover-title {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: #1a0a2e;
-    margin: 0;
-    text-align: left;
+  .top-bar .brand-mark {
+    width: 1.4cqw;
+    height: 1.4cqw;
+    border-radius: 50%;
+    background: #C66A2D;
+    flex-shrink: 0;
   }
 
-  .book-cover-rule {
-    height: 3px;
-    background: #fb923c;
-    margin: 0;
+  .practitioner {
+    margin-top: 13cqw;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.8cqw;
+    color: #C66A2D;
+    letter-spacing: 0.005em;
+    position: relative;
+    z-index: 2;
   }
 
-  .book-cover-bottom {
+  .title {
+    margin: 3cqw 0 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 14.5cqw;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: #1A1B2E;
+    position: relative;
+    z-index: 2;
+  }
+
+  .title .income {
+    font-style: italic;
+    font-weight: 600;
+    color: #C66A2D;
+  }
+
+  .with-ai {
+    margin-top: 3cqw;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 6cqw;
+    line-height: 1;
+    color: #1A1B2E;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -0.01em;
+  }
+
+  .with-ai em {
+    font-style: italic;
+  }
+
+  .build-line {
+    position: absolute;
+    bottom: 4.5cqw;
+    left: 7.5cqw;
+    right: 7cqw;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.55cqw, 11px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #2C2E45;
+    z-index: 2;
+  }
+
+  /* ============== ORANGE RULE ============== */
+  .rule {
+    height: 0.35cqw;
+    background: #C66A2D;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  /* ============== NAVY BOTTOM BLOCK ============== */
+  .navy-block {
     flex: 1;
-    padding: 24px 28px 28px 36px;
-    background: #1a0a2e;
+    padding: 6cqw 7cqw 5.2cqw 7.5cqw;
+    background: #0B1020;
+    color: #FFFBF7;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #fffbf7;
   }
 
-  .book-cover-subtitle {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.45;
-    color: rgba(255, 251, 247, 0.85);
-    margin: 0;
-    letter-spacing: 0.01em;
+  .navy-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 100% 60% at 30% 30%,
+      rgba(139, 92, 246, 0.06) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
   }
 
-  .book-cover-byline {
-    font-size: 11px;
-    font-weight: 600;
-    color: rgba(255, 251, 247, 0.6);
-    margin: 16px 0 0;
-    letter-spacing: 0.04em;
+  .pitch {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3.6cqw;
+    line-height: 1.28;
+    color: #FFFBF7;
+    letter-spacing: -0.005em;
+    max-width: 88%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Field Guide index strip — the navigational detail */
+  .field-index {
+    position: relative;
+    z-index: 1;
+    margin: 4cqw 0 2.2cqw;
+    padding-top: 2.2cqw;
+    border-top: 0.18cqw solid rgba(255, 251, 247, 0.18);
+  }
+
+  .field-index-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.4cqw, 10px);
+    letter-spacing: 0.32em;
     text-transform: uppercase;
+    color: rgba(255, 251, 247, 0.55);
+    margin-bottom: 1.5cqw;
+    display: block;
+  }
+
+  .ticks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .tick {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1cqw;
+    padding-right: 1.5cqw;
+  }
+
+  .tick::before {
+    content: '';
+    width: 1.15cqw;
+    height: 0.18cqw;
+    background: #FF9500;
+    border-radius: 0.5px;
+  }
+
+  .roman {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(10px, 2.4cqw, 16px);
+    color: #FFFBF7;
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+
+  .act-name {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(5.5px, 1.3cqw, 9px);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 251, 247, 0.7);
+    line-height: 1;
+  }
+
+  /* Credit row */
+  .credit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+  }
+
+  .by-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.5cqw, 11px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #FF9500;
+    margin-bottom: 1cqw;
+  }
+
+  .by-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 3cqw;
+    color: #FFFBF7;
+    letter-spacing: -0.005em;
+  }
+
+  .imprint {
+    text-align: right;
+  }
+
+  .imprint-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 2.3cqw;
+    color: #FFFBF7;
+  }
+
+  .imprint-url {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: clamp(6px, 1.5cqw, 11px);
+    letter-spacing: 0.16em;
+    color: #FF9500;
+    margin-top: 0.7cqw;
+  }
+
+  /* Mobile fallback if container queries are unsupported */
+  @supports not (container-type: inline-size) {
+    .book-cover {
+      font-size: 14px;
+    }
   }
 
   @media (max-width: 640px) {
     .book-cover-wrapper {
       --cover-width: 240px !important;
-    }
-
-    .book-cover-top {
-      padding: 24px 20px 12px 26px;
-    }
-
-    .book-cover-title {
-      font-size: 22px;
-    }
-
-    .book-cover-bottom {
-      padding: 20px 20px 22px 26px;
     }
   }
 </style>

@@ -72,28 +72,7 @@ Four months later, MemeScanr is in the App Store. It has duplicate detection, Me
 
 It could have been faster. But this was my first app, and I was learning from scratch. Every week had a lesson I did not know I needed. The four months were not slow. They were honest.
 
-I did not build it alone. I built it with AI.
-
-And I want to tell you exactly how, because I think the gap between what people say building with AI feels like and what it actually feels like is one of the biggest opportunities in this whole category.
-
-### Why This Book Exists
-
-You do not need to be a genius programmer. You do not need to know everything before you start. You do not need to wait until you feel perfectly ready.
-
-You do need a system.
-You do need taste.
-You do need discernment.
-You do need enough confidence to stay involved in the process.
-
-If you can do that, AI becomes one of the most powerful tools available to modern builders. And when used the right way, it does not take your power away. It multiplies it.
-
-That matters because AI is no longer a cute side tool for a few curious people online. It is becoming part of how products are researched, designed, coded, tested, launched, marketed, and supported. It is changing how individuals compete and how companies move. The people who learn how to use it wisely will have a serious advantage.
-
-That does not mean you need to panic. It does not mean you need to let AI replace your brain.
-
-It does mean you need to adapt.
-
-This book is about adaptation with ownership. It is about becoming the kind of person who can use powerful tools without being controlled by them. That skill will matter far beyond one app.
+I did not build it alone. I built it with AI. And the gap between what people say building with AI feels like and what it actually feels like is one of the biggest opportunities in this whole category.
 
 ### What This Book Is, and What It Is Not
 
@@ -115,9 +94,7 @@ I wanted to write about what it felt like the day Apple rejected my build for th
 
 I wanted to write about the two-day period when I thought the app was done and then realized I had built the entire vault feature on top of a trust bug that could have earned me a first review that said, *"this app tricked me."*
 
-I wanted to write about the real stuff.
-
-Because the real stuff is where the teachable lessons live.
+I wanted to write about the real stuff, because the real stuff is where the teachable lessons live.
 
 And I wanted to write in a voice that feels like a friend. Not a textbook. Not a guru. Not a LinkedIn post. A friend who has actually done the thing and is willing to tell you about the part where she cried.
 
@@ -127,32 +104,11 @@ Here is the thing you have to buy into for any of this to work:
 
 **You can ship a real app, for real users, that makes real money, as a solo builder, using AI tools, but only if you stay in the driver's seat the entire time.**
 
-Every word in that sentence matters.
+Real app, real users, real money, real ownership. No cofounder, no VC, no fantasy that one prompt becomes a product. If you want easy, you are in the wrong store.
 
-*Real app* means a consumer product someone actually uses, not a portfolio piece.
-*Real users* means people who did not know you before they downloaded it.
-*Real money* means strangers giving you their credit card because your product is worth more than the number on the paywall.
-*Solo builder* means no cofounder, no team, no VC.
-*AI tools* means you are not writing every line by hand.
-*Driver's seat* means you are not a passenger. You are making the decisions. You are taking the blame. You are keeping the receipts.
+If you do buy that premise, even reluctantly, keep reading. By the end you will have a clearer sense of how to build apps with AI, and a clearer sense of who you need to become to do it well.
 
-If you do not buy that premise yet, read this chapter again. Or close the book. I mean that with love.
-
-There are a lot of AI-builder books out there right now that will sell you the fantasy that you can prompt your way to a product.
-
-That is not this book.
-
-If you want easy, you are in the wrong store.
-
-But if you do buy that premise, even if you are skeptical, even if it scares you, then keep reading. I am going to show you how I did it, and how you can too, without pretending any of it was clean.
-
-By the end of this book, you should not only have a clearer idea of how to build apps with AI. You should also have a clearer sense of who you need to become to do it well.
-
-Because this is not only about apps.
-
-It is about agency.
-It is about ownership.
-It is about becoming the kind of builder who can turn ideas into assets again and again.
+Because this is not only about apps. It is about agency, ownership, and becoming the kind of builder who turns ideas into assets again and again.
 
 ### > Think Before You Move On
 
