@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BookPreview from '../components/BookPreview.astro';
 
-// REPLACE THESE with the real Amazon listing URLs once you have them.
-// Tip: when you sign up for Amazon Associates, use your affiliate link
-// here so you earn a referral commission on top of the royalty.
-const AMAZON_BOOK_PAPERBACK = 'https://www.amazon.com/dp/REPLACE_WITH_BOOK_ASIN';
-const AMAZON_BOOK_KINDLE = 'https://www.amazon.com/dp/REPLACE_WITH_KINDLE_ASIN';
-const AMAZON_WORKBOOK = 'https://www.amazon.com/dp/REPLACE_WITH_WORKBOOK_ASIN';
+// Set a URL to a string when that format goes live on Amazon. Set to null
+// to show the button as "coming soon" until the listing is up.
+// Tip: when you sign up for Amazon Associates, swap these for affiliate
+// links to earn a referral commission on top of the royalty.
+const AMAZON_BOOK_KINDLE: string | null = 'https://a.co/d/0eHIoMRQ';
+const AMAZON_BOOK_PAPERBACK: string | null = null; // in KDP review
+const AMAZON_WORKBOOK: string | null = null; // in KDP review
 
 // Newsletter signup is repurposed as the Field Guide № 2 announce list.
 const waitlistUrl = 'https://form.jotform.com/261045381980054';
@@ -35,37 +36,34 @@ const description =
               The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it.
             </p>
             <p class="book-hero-meta">
-              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Available now as paperback, Kindle ebook, and a companion workbook.
+              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Kindle ebook available now. Paperback and companion workbook in Amazon review.
             </p>
             <div class="book-hero-buttons">
-              <a
-                href={AMAZON_BOOK_PAPERBACK}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary"
-              >
-                Buy the Paperback
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-              <a
-                href={AMAZON_BOOK_KINDLE}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-secondary"
-              >
-                Get the Kindle
-              </a>
-              <a
-                href={AMAZON_WORKBOOK}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-secondary"
-              >
-                Add the Workbook
-              </a>
+              {AMAZON_BOOK_KINDLE ? (
+                <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-primary">
+                  Get the Kindle
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              ) : (
+                <span class="btn-disabled">Kindle — coming soon</span>
+              )}
+              {AMAZON_BOOK_PAPERBACK ? (
+                <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  Buy the Paperback
+                </a>
+              ) : (
+                <span class="btn-disabled">Paperback — coming soon</span>
+              )}
+              {AMAZON_WORKBOOK ? (
+                <a href={AMAZON_WORKBOOK} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  Add the Workbook
+                </a>
+              ) : (
+                <span class="btn-disabled">Workbook — coming soon</span>
+              )}
             </div>
             <p class="book-hero-note">
-              All three on Amazon. Royalties go straight to one solo builder, not a publisher.
+              Kindle is live. Paperback and workbook follow as soon as Amazon's print review clears.
             </p>
           </div>
           <div class="book-hero-cover">
@@ -247,34 +245,31 @@ const description =
         <div class="cta-card">
           <h2>Get Field Guide № 1 on Amazon.</h2>
           <p>
-            Paperback, Kindle, and the companion workbook. All available now. Royalties go straight to one solo builder, not a publisher.
+            Kindle ebook available now. Paperback and companion workbook follow as soon as Amazon's print review clears. Royalties go straight to one solo builder, not a publisher.
           </p>
           <div class="cta-buttons">
-            <a
-              href={AMAZON_BOOK_PAPERBACK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary cta-button"
-            >
-              Buy the Paperback
-              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a
-              href={AMAZON_BOOK_KINDLE}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary cta-button"
-            >
-              Get the Kindle
-            </a>
-            <a
-              href={AMAZON_WORKBOOK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary cta-button"
-            >
-              Add the Workbook
-            </a>
+            {AMAZON_BOOK_KINDLE ? (
+              <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-primary cta-button">
+                Get the Kindle
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            ) : (
+              <span class="btn-disabled cta-button">Kindle — coming soon</span>
+            )}
+            {AMAZON_BOOK_PAPERBACK ? (
+              <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-secondary cta-button">
+                Buy the Paperback
+              </a>
+            ) : (
+              <span class="btn-disabled cta-button">Paperback — coming soon</span>
+            )}
+            {AMAZON_WORKBOOK ? (
+              <a href={AMAZON_WORKBOOK} target="_blank" rel="noopener noreferrer" class="btn-secondary cta-button">
+                Add the Workbook
+              </a>
+            ) : (
+              <span class="btn-disabled cta-button">Workbook — coming soon</span>
+            )}
           </div>
           <p class="cta-meta">
             Built with AI. Stayed in control. Owned the outcome.

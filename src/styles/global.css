@@ -311,6 +311,21 @@
             box-shadow: var(--shadow-md);
         }
 
+        .btn-disabled {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: rgba(26, 10, 46, 0.04);
+            color: rgba(26, 10, 46, 0.55);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1.5px dashed rgba(26, 10, 46, 0.18);
+            cursor: not-allowed;
+            user-select: none;
+        }
+
         /* Hero Illustration */
         .hero-visual {
             position: relative;
