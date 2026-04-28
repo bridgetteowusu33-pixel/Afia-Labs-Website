@@ -281,6 +281,58 @@ const description =
       </div>
     </section>
 
+    <!-- ========== THE FULL SET ========== -->
+    <section class="book-set" aria-label="Get the full Field Guide № 1 set">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">The Full Set</div>
+          <h2 class="section-title">Get all three on Amazon.</h2>
+          <p class="section-subtitle">
+            The book builds belief. The workbook builds clarity. The Kindle is the read-anywhere copy. Buy them as a set, or pick the one that fits.
+          </p>
+        </div>
+
+        <div class="set-grid">
+          <div class="set-card">
+            <div class="set-format">Paperback</div>
+            <h3 class="set-title">From Idea to Income with AI Apps</h3>
+            <p class="set-meta">6 × 9 trade paperback. The flagship.</p>
+            {AMAZON_BOOK_PAPERBACK ? (
+              <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-primary set-cta">Buy on Amazon</a>
+            ) : (
+              <span class="btn-disabled set-cta">Coming soon</span>
+            )}
+          </div>
+
+          <div class="set-card">
+            <div class="set-format">Kindle ebook</div>
+            <h3 class="set-title">From Idea to Income with AI Apps</h3>
+            <p class="set-meta">Read on any device. Live now.</p>
+            {AMAZON_BOOK_KINDLE ? (
+              <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-primary set-cta">Get on Kindle</a>
+            ) : (
+              <span class="btn-disabled set-cta">Coming soon</span>
+            )}
+          </div>
+
+          <div class="set-card">
+            <div class="set-format">Companion workbook</div>
+            <h3 class="set-title">The AI App Builder Workbook</h3>
+            <p class="set-meta">88 pages of prompts, scorecards, and decision tools.</p>
+            {AMAZON_WORKBOOK ? (
+              <a href={AMAZON_WORKBOOK} target="_blank" rel="noopener noreferrer" class="btn-primary set-cta">Buy on Amazon</a>
+            ) : (
+              <span class="btn-disabled set-cta">Coming soon</span>
+            )}
+          </div>
+        </div>
+
+        <p class="set-foot">
+          <strong>Tip:</strong> once the paperback is live, Amazon's MatchBook program lets paperback buyers add the Kindle for $0.99 — the closest thing to a real bundle Amazon offers KDP authors.
+        </p>
+      </div>
+    </section>
+
     <!-- ========== FIELD GUIDE № 2 NEWSLETTER ========== -->
     <section class="book-newsletter" aria-label="Field Guide № 2 announce list">
       <div class="container">
@@ -674,6 +726,88 @@ const description =
     gap: 0.75rem;
     justify-content: center;
     margin-top: 1.5rem;
+  }
+
+  .book-set {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(180deg, transparent, rgba(245, 158, 11, 0.04));
+  }
+
+  .set-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2.5rem auto 1.5rem;
+  }
+
+  .set-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid rgba(26, 15, 31, 0.08);
+    border-radius: 18px;
+    padding: 1.8rem 1.5rem;
+    text-align: left;
+    box-shadow: 0 6px 24px -12px rgba(26, 15, 31, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .set-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -12px rgba(26, 15, 31, 0.18);
+  }
+
+  .set-format {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C66A2D;
+    margin-bottom: 0.6rem;
+  }
+
+  .set-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: #1a0f1f;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .set-meta {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #6b5a72;
+    margin: 0 0 1.2rem 0;
+    flex-grow: 1;
+  }
+
+  .set-cta {
+    align-self: flex-start;
+    font-size: 0.9rem;
+  }
+
+  .set-foot {
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #6b5a72;
+    line-height: 1.55;
+  }
+
+  .set-foot strong {
+    color: #1a0f1f;
+  }
+
+  @media (max-width: 880px) {
+    .set-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .book-newsletter {
