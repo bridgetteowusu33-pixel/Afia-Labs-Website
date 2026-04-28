@@ -2,10 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BookPreview from '../components/BookPreview.astro';
 
+// REPLACE THESE with the real Amazon listing URLs once you have them.
+// Tip: when you sign up for Amazon Associates, use your affiliate link
+// here so you earn a referral commission on top of the royalty.
+const AMAZON_BOOK_PAPERBACK = 'https://www.amazon.com/dp/REPLACE_WITH_BOOK_ASIN';
+const AMAZON_BOOK_KINDLE = 'https://www.amazon.com/dp/REPLACE_WITH_KINDLE_ASIN';
+const AMAZON_WORKBOOK = 'https://www.amazon.com/dp/REPLACE_WITH_WORKBOOK_ASIN';
+
+// Newsletter signup is repurposed as the Field Guide № 2 announce list.
 const waitlistUrl = 'https://form.jotform.com/261045381980054';
-const title = 'From Idea to Income with AI Apps — Coming Soon | Afia Labs';
+
+const title = 'From Idea to Income with AI Apps — Field Guide № 1 | Afia Labs';
 const description =
-  'The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it. Book + workbook + course bundle from Afia Labs. Join the waitlist.';
+  'The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it. Now on Amazon as paperback, Kindle, and a companion workbook. Afia Labs Field Guide № 1.';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,7 +26,7 @@ const description =
           <div class="book-hero-text">
             <div class="hero-badge">
               <span></span>
-              Coming Soon from Afia Labs
+              Afia Labs · Field Guide № 1 · Now on Amazon
             </div>
             <h1>
               From idea to income with <span class="accent">AI apps</span>.
@@ -26,24 +35,37 @@ const description =
               The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it.
             </p>
             <p class="book-hero-meta">
-              A book, a workbook, and a course. Built by Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Coming soon.
+              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Available now as paperback, Kindle ebook, and a companion workbook.
             </p>
             <div class="book-hero-buttons">
               <a
-                href={waitlistUrl}
+                href={AMAZON_BOOK_PAPERBACK}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-primary"
               >
-                Join the Waitlist
+                Buy the Paperback
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
-              <a href="#whats-inside" class="btn-secondary">
-                What's Inside
+              <a
+                href={AMAZON_BOOK_KINDLE}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary"
+              >
+                Get the Kindle
+              </a>
+              <a
+                href={AMAZON_WORKBOOK}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary"
+              >
+                Add the Workbook
               </a>
             </div>
             <p class="book-hero-note">
-              We'll email you when it's ready. No spam, ever. Unsubscribe anytime.
+              All three on Amazon. Royalties go straight to one solo builder, not a publisher.
             </p>
           </div>
           <div class="book-hero-cover">
@@ -219,26 +241,65 @@ const description =
       </div>
     </section>
 
-    <!-- ========== WAITLIST CTA ========== -->
-    <section class="book-cta" aria-label="Join the waitlist">
+    <!-- ========== BUY CTA ========== -->
+    <section class="book-cta" aria-label="Buy on Amazon">
       <div class="container">
         <div class="cta-card">
-          <h2>Be first in line when it ships.</h2>
+          <h2>Get Field Guide № 1 on Amazon.</h2>
           <p>
-            Join the waitlist and I'll email you the moment the bundle is ready. No spam. No pre-launch nonsense. Just one email when there's something real to announce.
+            Paperback, Kindle, and the companion workbook. All available now. Royalties go straight to one solo builder, not a publisher.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href={AMAZON_BOOK_PAPERBACK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary cta-button"
+            >
+              Buy the Paperback
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a
+              href={AMAZON_BOOK_KINDLE}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary cta-button"
+            >
+              Get the Kindle
+            </a>
+            <a
+              href={AMAZON_WORKBOOK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary cta-button"
+            >
+              Add the Workbook
+            </a>
+          </div>
+          <p class="cta-meta">
+            Built with AI. Stayed in control. Owned the outcome.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FIELD GUIDE № 2 NEWSLETTER ========== -->
+    <section class="book-newsletter" aria-label="Field Guide № 2 announce list">
+      <div class="container">
+        <div class="newsletter-card">
+          <div class="newsletter-eyebrow">Afia Labs Field Guide Series</div>
+          <h2>Field Guide № 2 is in the works.</h2>
+          <p>
+            One email when the next volume is ready. No spam. No pre-launch noise. Just the announcement, the first sample, and the launch-week price.
           </p>
           <a
             href={waitlistUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-primary cta-button"
+            class="btn-secondary"
           >
-            Join the Waitlist
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Get Notified About № 2
           </a>
-          <p class="cta-meta">
-            Built with AI. Stayed in control. Owned the outcome.
-          </p>
         </div>
       </div>
     </section>
@@ -253,18 +314,18 @@ const description =
 
         <div class="faq-list">
           <details class="faq-item">
-            <summary>When does this launch?</summary>
-            <p>The book ships first, the workbook second, and the course third. We're finishing polish and review now. Join the waitlist and you'll be the first to know.</p>
+            <summary>Where can I buy it?</summary>
+            <p>Amazon — paperback, Kindle ebook, and the companion workbook (paperback). Use the buttons above. The course is in production and will be announced separately.</p>
           </details>
 
           <details class="faq-item">
-            <summary>What will it cost?</summary>
-            <p>The book will be available standalone and as part of a bundle with the workbook. The course will be the premium tier. Final pricing will be announced when we launch — waitlist subscribers get early access pricing.</p>
+            <summary>What does it cost?</summary>
+            <p>Set on the Amazon listings. Each format is priced independently — buy the one that fits. Workbook readers tend to also buy the book; book readers don't always need the workbook.</p>
           </details>
 
           <details class="faq-item">
             <summary>What format is the book?</summary>
-            <p>Ebook (PDF and EPUB) at launch, with a print-on-demand paperback shortly after. The workbook is digital and printable. The course will be pre-recorded video lessons.</p>
+            <p>6 × 9 in trade paperback (Amazon print on demand) and Kindle ebook. The workbook is also a 6 × 9 paperback designed to be filled in. The course will be pre-recorded video lessons when it launches.</p>
           </details>
 
           <details class="faq-item">
@@ -609,6 +670,54 @@ const description =
   }
 
   /* ========== CTA ========== */
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .book-newsletter {
+    padding: 5rem 0 6rem;
+  }
+
+  .newsletter-card {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.4rem 2rem;
+    border: 1px solid rgba(26, 15, 31, 0.1);
+    border-radius: 18px;
+    background: #fff;
+  }
+
+  .newsletter-eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C66A2D;
+    margin-bottom: 0.8rem;
+  }
+
+  .newsletter-card h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    margin: 0 0 0.7rem 0;
+    color: #1a0f1f;
+  }
+
+  .newsletter-card p {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #2d2438;
+    margin: 0 0 1.4rem 0;
+  }
+
   .book-cta {
     padding: 80px 0;
     background: var(--bg-white);
