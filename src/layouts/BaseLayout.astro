@@ -19,7 +19,7 @@ const derivedOgImage = hasOgPage
 
 const {
   title = 'Afia Labs — Building Delightful Apps',
-  description = 'Afia Labs creates smart, fun, and useful mobile experiences — from productivity tools like MemeScanr to educational adventures like Planet Wonders.',
+  description = 'Afia Labs creates smart, fun, and useful mobile experiences — like MemeScanr for storage, TripSquad for group travel, and Planet Wonders for kids.',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
   ogImage = derivedOgImage,
   ogType = 'website',
@@ -39,6 +39,8 @@ const organizationJsonLd = {
   foundingDate: '2024',
   sameAs: [
     'https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953',
+    'https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582',
+    'https://gettripsquad.com',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
