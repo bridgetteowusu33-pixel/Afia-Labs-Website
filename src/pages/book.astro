@@ -4,9 +4,12 @@ import BookPreview from '../components/BookPreview.astro';
 
 // Set a URL to a string when that format goes live on Amazon. Set to null
 // to show the button as "coming soon" until the listing is up.
-// Tip: when you sign up for Amazon Associates, swap these for affiliate
-// links to earn a referral commission on top of the royalty.
-const AMAZON_BOOK_KINDLE: string | null = 'https://a.co/d/0eHIoMRQ';
+//
+// Affiliate tag (Amazon Associates): afialabs-20.
+// Append ?tag=afialabs-20 to canonical product URLs. For paperback and
+// workbook ASINs, the format is:
+//   https://www.amazon.com/dp/<ASIN>/?tag=afialabs-20
+const AMAZON_BOOK_KINDLE: string | null = 'https://a.co/d/0eHIoMRQ?tag=afialabs-20';
 const AMAZON_BOOK_PAPERBACK: string | null = null; // in KDP review
 const AMAZON_WORKBOOK: string | null = null; // in KDP review
 
