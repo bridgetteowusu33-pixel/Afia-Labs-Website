@@ -6,19 +6,20 @@ import BookPreview from '../components/BookPreview.astro';
 // to show the button as "coming soon" until the listing is up.
 //
 // Affiliate tag (Amazon Associates): afialabs-20.
-// Append ?tag=afialabs-20 to canonical product URLs. For paperback and
-// workbook ASINs, the format is:
-//   https://www.amazon.com/dp/<ASIN>/?tag=afialabs-20
-const AMAZON_BOOK_KINDLE: string | null = 'https://www.amazon.com/dp/B0GYK4P3HX/?tag=afialabs-20';
-const AMAZON_BOOK_PAPERBACK: string | null = null; // in KDP review
-const AMAZON_WORKBOOK: string | null = null; // in KDP review
+// Canonical product URLs: https://www.amazon.com/dp/<ASIN>/?tag=afialabs-20
+// OR an amzn.to short link generated from the Associates dashboard
+// (which already carries the tag). Both work.
+const AMAZON_BOOK_KINDLE:    string | null = 'https://www.amazon.com/dp/B0GYK4P3HX/?tag=afialabs-20';
+const AMAZON_BOOK_PAPERBACK: string | null = 'https://amzn.to/4umRc93'; // affiliate short link
+const AMAZON_BOOK_HARDCOVER: string | null = null; // hardcover URL TBD
+const AMAZON_WORKBOOK:       string | null = null; // in KDP review
 
 // Newsletter signup is repurposed as the Field Guide № 2 announce list.
 const waitlistUrl = 'https://form.jotform.com/261045381980054';
 
 const title = 'From Idea to Income with AI Apps — Field Guide № 1 | Afia Labs';
 const description =
-  'The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it. Now on Amazon as paperback, Kindle, and a companion workbook. Afia Labs Field Guide № 1.';
+  'The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it. Now on Amazon as paperback, hardcover, Kindle, and a companion workbook. Afia Labs Field Guide № 1.';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -39,23 +40,30 @@ const description =
               The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it.
             </p>
             <p class="book-hero-meta">
-              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Kindle ebook available now. Paperback and companion workbook in Amazon review.
+              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Paperback, hardcover, and Kindle on Amazon. Companion workbook in print review.
             </p>
             <div class="book-hero-buttons">
-              {AMAZON_BOOK_KINDLE ? (
-                <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-primary">
-                  Get the Kindle
+              {AMAZON_BOOK_PAPERBACK ? (
+                <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-primary">
+                  Buy the Paperback
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
               ) : (
-                <span class="btn-disabled">Kindle — coming soon</span>
+                <span class="btn-disabled">Paperback — coming soon</span>
               )}
-              {AMAZON_BOOK_PAPERBACK ? (
-                <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                  Buy the Paperback
+              {AMAZON_BOOK_HARDCOVER ? (
+                <a href={AMAZON_BOOK_HARDCOVER} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  Get the Hardcover
                 </a>
               ) : (
-                <span class="btn-disabled">Paperback — coming soon</span>
+                <span class="btn-disabled">Hardcover — coming soon</span>
+              )}
+              {AMAZON_BOOK_KINDLE ? (
+                <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  Get the Kindle
+                </a>
+              ) : (
+                <span class="btn-disabled">Kindle — coming soon</span>
               )}
               {AMAZON_WORKBOOK ? (
                 <a href={AMAZON_WORKBOOK} target="_blank" rel="noopener noreferrer" class="btn-secondary">
@@ -66,7 +74,7 @@ const description =
               )}
             </div>
             <p class="book-hero-note">
-              Kindle is live. Paperback and workbook follow as soon as Amazon's print review clears.
+              Paperback, hardcover, and Kindle are live. Workbook follows as soon as Amazon's print review clears.
             </p>
           </div>
           <div class="book-hero-cover">
@@ -248,23 +256,30 @@ const description =
         <div class="cta-card">
           <h2>Get Field Guide № 1 on Amazon.</h2>
           <p>
-            Kindle ebook available now. Paperback and companion workbook follow as soon as Amazon's print review clears. Royalties go straight to one solo builder, not a publisher.
+            Paperback, hardcover, and Kindle are live on Amazon. Companion workbook follows as soon as Amazon's print review clears. Royalties go straight to one solo builder, not a publisher.
           </p>
           <div class="cta-buttons">
-            {AMAZON_BOOK_KINDLE ? (
-              <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-primary cta-button">
-                Get the Kindle
+            {AMAZON_BOOK_PAPERBACK ? (
+              <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-primary cta-button">
+                Buy the Paperback
                 <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             ) : (
-              <span class="btn-disabled cta-button">Kindle — coming soon</span>
+              <span class="btn-disabled cta-button">Paperback — coming soon</span>
             )}
-            {AMAZON_BOOK_PAPERBACK ? (
-              <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-secondary cta-button">
-                Buy the Paperback
+            {AMAZON_BOOK_HARDCOVER ? (
+              <a href={AMAZON_BOOK_HARDCOVER} target="_blank" rel="noopener noreferrer" class="btn-secondary cta-button">
+                Get the Hardcover
               </a>
             ) : (
-              <span class="btn-disabled cta-button">Paperback — coming soon</span>
+              <span class="btn-disabled cta-button">Hardcover — coming soon</span>
+            )}
+            {AMAZON_BOOK_KINDLE ? (
+              <a href={AMAZON_BOOK_KINDLE} target="_blank" rel="noopener noreferrer" class="btn-secondary cta-button">
+                Get the Kindle
+              </a>
+            ) : (
+              <span class="btn-disabled cta-button">Kindle — coming soon</span>
             )}
             {AMAZON_WORKBOOK ? (
               <a href={AMAZON_WORKBOOK} target="_blank" rel="noopener noreferrer" class="btn-secondary cta-button">
@@ -288,7 +303,7 @@ const description =
           <div class="section-label">The Full Set</div>
           <h2 class="section-title">Get all three on Amazon.</h2>
           <p class="section-subtitle">
-            The book builds belief. The workbook builds clarity. The Kindle is the read-anywhere copy. Buy them as a set, or pick the one that fits.
+            The paperback is the flagship. The hardcover is the keepsake. The Kindle is the read-anywhere copy. The workbook builds the clarity. Pick what fits.
           </p>
         </div>
 
@@ -299,6 +314,17 @@ const description =
             <p class="set-meta">6 × 9 trade paperback. The flagship.</p>
             {AMAZON_BOOK_PAPERBACK ? (
               <a href={AMAZON_BOOK_PAPERBACK} target="_blank" rel="noopener noreferrer" class="btn-primary set-cta">Buy on Amazon</a>
+            ) : (
+              <span class="btn-disabled set-cta">Coming soon</span>
+            )}
+          </div>
+
+          <div class="set-card">
+            <div class="set-format">Hardcover</div>
+            <h3 class="set-title">From Idea to Income with AI Apps</h3>
+            <p class="set-meta">The keep-on-the-shelf edition.</p>
+            {AMAZON_BOOK_HARDCOVER ? (
+              <a href={AMAZON_BOOK_HARDCOVER} target="_blank" rel="noopener noreferrer" class="btn-primary set-cta">Buy on Amazon</a>
             ) : (
               <span class="btn-disabled set-cta">Coming soon</span>
             )}
@@ -328,7 +354,7 @@ const description =
         </div>
 
         <p class="set-foot">
-          <strong>Tip:</strong> once the paperback is live, Amazon's MatchBook program lets paperback buyers add the Kindle for $0.99 — the closest thing to a real bundle Amazon offers KDP authors.
+          <strong>Tip:</strong> Amazon's MatchBook program lets print buyers add the Kindle for $0.99 — the closest thing to a real bundle Amazon offers KDP authors.
         </p>
       </div>
     </section>
@@ -365,7 +391,7 @@ const description =
         <div class="faq-list">
           <details class="faq-item">
             <summary>Where can I buy it?</summary>
-            <p>Amazon — paperback, Kindle ebook, and the companion workbook (paperback). Use the buttons above. The course is in production and will be announced separately.</p>
+            <p>Amazon — paperback, hardcover, Kindle ebook, and the companion workbook (paperback). Use the buttons above. The course is in production and will be announced separately.</p>
           </details>
 
           <details class="faq-item">
@@ -375,7 +401,7 @@ const description =
 
           <details class="faq-item">
             <summary>What format is the book?</summary>
-            <p>6 × 9 in trade paperback (Amazon print on demand) and Kindle ebook. The workbook is also a 6 × 9 paperback designed to be filled in. The course will be pre-recorded video lessons when it launches.</p>
+            <p>6 × 9 in trade paperback, 6 × 9 hardcover, and Kindle ebook (all on Amazon). The workbook is also a 6 × 9 paperback designed to be filled in. The course will be pre-recorded video lessons when it launches.</p>
           </details>
 
           <details class="faq-item">
