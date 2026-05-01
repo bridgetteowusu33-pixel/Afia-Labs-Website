@@ -24,9 +24,20 @@ export interface OgImageInput {
   title: string;
   eyebrow?: string;
   subtitle?: string;
+  /**
+   * Bottom-right footer text. Defaults to the MemeScanr tagline.
+   * Override for Studio / Book / other sub-brands so the OG card's
+   * footer reflects which Afia Labs surface the share came from.
+   */
+  footerRight?: string;
 }
 
-export async function renderOgPng({ title, eyebrow, subtitle }: OgImageInput): Promise<Buffer> {
+export async function renderOgPng({
+  title,
+  eyebrow,
+  subtitle,
+  footerRight,
+}: OgImageInput): Promise<Buffer> {
   const markup = {
     type: 'div',
     props: {
@@ -154,7 +165,7 @@ export async function renderOgPng({ title, eyebrow, subtitle }: OgImageInput): P
                     fontWeight: 600,
                     color: colors.whiteFaint,
                   },
-                  children: 'MemeScanr · iOS photo cleaner',
+                  children: footerRight ?? 'MemeScanr · iOS photo cleaner',
                 },
               },
             ],
