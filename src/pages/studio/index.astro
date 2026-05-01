@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Studio index — Afia Labs editorial layer.
+// Index zones: brand strip → featured (pinned or most-recent) → recent list.
+// No tag chips, no sidebar, no related-posts grid. Editorial discipline.
+
+const PILLAR_LABELS: Record<string, string> = {
+  'building-with-ai': 'Building with AI',
+  'indie-economics': 'Indie Economics',
+  'studio-philosophy': 'Studio Philosophy',
+  'launch-notes': 'Launch Notes',
+  'the-craft': 'The Craft',
+};
+
+const all = await getCollection('studio', ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true,
+);
+
+const sorted = [...all].sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const featured = sorted.find((p) => p.data.pinned) ?? sorted[0];
+const rest = sorted.filter((p) => p.id !== featured?.id);
+
+function fmtDate(d: Date): string {
+  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+---
+
+<BaseLayout
+  title="Studio — Afia Labs"
+  description="Notes from the studio. Cross-product thinking from Afia Labs — the team behind MemeScanr and TripSquad. Building with AI, shipping consumer apps solo, the parts of a launch nobody tells you about."
+  canonical="https://afialabs.net/studio/"
+>
+
+  <main class="studio-main">
+    <header class="studio-header">
+      <div class="studio-eyebrow">STUDIO</div>
+      <h1 class="studio-h1">Notes from the studio.</h1>
+      <p class="studio-lede">
+        Cross-product thinking from Afia Labs — the team behind
+        <a href="https://memescanr.com" target="_blank" rel="noopener noreferrer">MemeScanr</a>
+        and
+        <a href="https://gettripsquad.com" target="_blank" rel="noopener noreferrer">TripSquad</a>.
+        Building with AI, shipping consumer apps solo, the parts of a
+        launch nobody tells you about.
+      </p>
+    </header>
+
+    {featured && (
+      <section class="studio-featured" aria-label="Featured essay">
+        <a href={`/studio/${featured.id}/`} class="studio-featured-card">
+          <div class="studio-featured-meta">
+            <span class="studio-pillar">{PILLAR_LABELS[featured.data.pillar]}</span>
+            {featured.data.pinned && <span class="studio-pinned">Pinned</span>}
+          </div>
+          <h2 class="studio-featured-title">{featured.data.title}</h2>
+          <p class="studio-featured-excerpt">{featured.data.excerpt}</p>
+          <div class="studio-featured-foot">
+            {featured.data.readingTime && <span>{featured.data.readingTime} min read</span>}
+            {featured.data.readingTime && <span class="studio-dot">·</span>}
+            <span>{fmtDate(featured.data.date)}</span>
+          </div>
+        </a>
+      </section>
+    )}
+
+    {rest.length > 0 && (
+      <section class="studio-recent" aria-label="Recent essays">
+        <div class="studio-recent-label">RECENT</div>
+        <ul class="studio-list">
+          {rest.map((p) => (
+            <li class="studio-list-item">
+              <a href={`/studio/${p.id}/`} class="studio-list-link">
+                <div class="studio-list-meta">
+                  <span class="studio-pillar">{PILLAR_LABELS[p.data.pillar]}</span>
+                  <span class="studio-list-date">
+                    {p.data.readingTime && `${p.data.readingTime} min · `}
+                    {fmtDate(p.data.date)}
+                  </span>
+                </div>
+                <h3 class="studio-list-title">{p.data.title}</h3>
+                <span class="studio-list-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <footer class="studio-foot">
+      <a href="/studio/feed.xml" class="studio-foot-link">Subscribe via RSS</a>
+      <span class="studio-foot-sep">·</span>
+      <a href="/" class="studio-foot-link">afialabs.net</a>
+    </footer>
+  </main>
+</BaseLayout>
+
+<style>
+  .studio-main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+  }
+
+  /* ── Header ────────────────────────────────────────── */
+  .studio-header { margin-bottom: 64px; }
+  .studio-eyebrow {
+    font-family: var(--font-body, "Inter"), sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: var(--purple-light, #7c3aed);
+    margin-bottom: 22px;
+  }
+  .studio-h1 {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: clamp(40px, 5.5vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--text-primary, #1a0a2e);
+    margin-bottom: 18px;
+  }
+  .studio-lede {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--text-secondary, #5b5675);
+    max-width: 640px;
+  }
+  .studio-lede a {
+    color: var(--purple-light, #7c3aed);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  /* ── Featured ──────────────────────────────────────── */
+  .studio-featured { margin-bottom: 80px; }
+  .studio-featured-card {
+    display: block;
+    padding: 36px 0 40px;
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
+    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+  .studio-featured-card:hover { transform: translateY(-1px); }
+  .studio-featured-meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .studio-pillar {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--purple-light, #7c3aed);
+    text-transform: uppercase;
+  }
+  .studio-pinned {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--orange-accent, #fb923c);
+    text-transform: uppercase;
+  }
+  .studio-featured-title {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: clamp(30px, 3.8vw, 44px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--text-primary, #1a0a2e);
+    margin-bottom: 16px;
+  }
+  .studio-featured-card:hover .studio-featured-title {
+    color: var(--purple-light, #7c3aed);
+  }
+  .studio-featured-excerpt {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-secondary, #5b5675);
+    margin-bottom: 22px;
+    max-width: 620px;
+  }
+  .studio-featured-foot {
+    font-size: 13px;
+    color: var(--text-muted, #8e87a0);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .studio-dot { color: var(--text-muted, #8e87a0); }
+
+  /* ── Recent list ───────────────────────────────────── */
+  .studio-recent-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: var(--text-muted, #8e87a0);
+    margin-bottom: 8px;
+  }
+  .studio-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .studio-list-item {
+    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+  }
+  .studio-list-link {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px 24px;
+    padding: 28px 0;
+    text-decoration: none;
+    color: inherit;
+    align-items: end;
+    transition: transform 0.18s ease;
+  }
+  .studio-list-link:hover { transform: translateX(2px); }
+  .studio-list-meta {
+    grid-column: 1 / 2;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .studio-list-date {
+    font-size: 12px;
+    color: var(--text-muted, #8e87a0);
+    letter-spacing: 0.04em;
+  }
+  .studio-list-title {
+    grid-column: 1 / 2;
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: clamp(20px, 2.2vw, 24px);
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+    color: var(--text-primary, #1a0a2e);
+    margin: 0;
+  }
+  .studio-list-link:hover .studio-list-title {
+    color: var(--purple-light, #7c3aed);
+  }
+  .studio-list-arrow {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    color: var(--text-muted, #8e87a0);
+    font-size: 18px;
+    transition: transform 0.18s ease, color 0.18s ease;
+  }
+  .studio-list-link:hover .studio-list-arrow {
+    transform: translateX(4px);
+    color: var(--purple-light, #7c3aed);
+  }
+
+  /* ── Footer strip ──────────────────────────────────── */
+  .studio-foot {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+    font-size: 13px;
+    color: var(--text-muted, #8e87a0);
+    text-align: center;
+  }
+  .studio-foot-link {
+    color: var(--text-muted, #8e87a0);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .studio-foot-link:hover { color: var(--purple-light, #7c3aed); }
+  .studio-foot-sep { margin: 0 12px; }
+
+  @media (max-width: 640px) {
+    .studio-main { padding: 56px 20px 80px; }
+    .studio-header { margin-bottom: 48px; }
+    .studio-featured { margin-bottom: 56px; }
+    .studio-list-link {
+      grid-template-columns: 1fr;
+      padding: 22px 0;
+    }
+    .studio-list-arrow { display: none; }
+  }
+</style>

@@ -20,4 +20,29 @@ const docs = defineCollection({
   }),
 });
 
-export const collections = { bookChapters, docs };
+// Studio — Afia Labs' editorial layer.
+// Cross-product essays, founder thinking, launch retrospectives, building
+// with AI. Lives separately from MemeScanr's /blog and /guides so each
+// brand keeps its own topical SEO authority. Pillar enum is the
+// taxonomy; pinned drives the featured slot on the studio index.
+const studio = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/studio' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string(),
+    pillar: z.enum([
+      'building-with-ai',
+      'indie-economics',
+      'studio-philosophy',
+      'launch-notes',
+      'the-craft',
+    ]),
+    readingTime: z.number().optional(),
+    coverImage: z.string().optional(),
+    pinned: z.boolean().default(false),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { bookChapters, docs, studio };

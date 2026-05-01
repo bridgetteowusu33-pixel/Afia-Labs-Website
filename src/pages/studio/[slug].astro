@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const all = await getCollection('studio', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true,
+  );
+  return all.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props { entry: CollectionEntry<'studio'> }
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const PILLAR_LABELS: Record<string, string> = {
+  'building-with-ai': 'Building with AI',
+  'indie-economics': 'Indie Economics',
+  'studio-philosophy': 'Studio Philosophy',
+  'launch-notes': 'Launch Notes',
+  'the-craft': 'The Craft',
+};
+
+const dateStr = entry.data.date.toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+
+// JSON-LD: BlogPosting + BreadcrumbList for SERP enrichment.
+const canonicalUrl = `https://afialabs.net/studio/${entry.id}/`;
+const blogPostingJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: entry.data.title,
+  description: entry.data.excerpt,
+  datePublished: entry.data.date.toISOString(),
+  url: canonicalUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Bridgette Owusu',
+    url: 'https://afialabs.net',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://afialabs.net/memescanr_logo.png',
+    },
+  },
+  articleSection: PILLAR_LABELS[entry.data.pillar],
+  ...(entry.data.coverImage && { image: entry.data.coverImage }),
+};
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Studio', item: 'https://afialabs.net/studio/' },
+    { '@type': 'ListItem', position: 3, name: entry.data.title, item: canonicalUrl },
+  ],
+};
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Afia Labs Studio`}
+  description={entry.data.excerpt}
+  canonical={canonicalUrl}
+  ogType="article"
+>
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(blogPostingJsonLd)}
+    slot="head"
+  />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(breadcrumbJsonLd)}
+    slot="head"
+  />
+
+  <main class="studio-article-main">
+    <article class="studio-article">
+
+      <nav class="studio-article-nav" aria-label="Back to studio">
+        <a href="/studio/">← Studio</a>
+      </nav>
+
+      <header class="studio-article-header">
+        <div class="studio-article-meta">
+          <span class="studio-pillar">{PILLAR_LABELS[entry.data.pillar]}</span>
+          <span class="studio-meta-sep">·</span>
+          {entry.data.readingTime && (
+            <>
+              <span>{entry.data.readingTime} min read</span>
+              <span class="studio-meta-sep">·</span>
+            </>
+          )}
+          <time datetime={entry.data.date.toISOString()}>{dateStr}</time>
+        </div>
+        <h1 class="studio-article-title">{entry.data.title}</h1>
+        <p class="studio-article-excerpt">{entry.data.excerpt}</p>
+      </header>
+
+      <div class="studio-article-body">
+        <Content />
+      </div>
+
+      <footer class="studio-article-footer">
+        <div class="studio-author">
+          <div class="studio-author-name">Bridgette Owusu</div>
+          <div class="studio-author-bio">
+            Founder of <a href="/">Afia Labs</a>. Solo builder, two consumer
+            apps live —
+            <a href="https://memescanr.com" target="_blank" rel="noopener noreferrer">MemeScanr</a>
+            and
+            <a href="https://gettripsquad.com" target="_blank" rel="noopener noreferrer">TripSquad</a>.
+            Author of <a href="/book/">From Idea to Income with AI Apps</a>.
+          </div>
+        </div>
+        <div class="studio-cta">
+          <a href="/studio/" class="studio-cta-link">More notes from the studio →</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .studio-article-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 120px;
+  }
+
+  /* ── Back nav ──────────────────────────────────────── */
+  .studio-article-nav {
+    margin-bottom: 32px;
+  }
+  .studio-article-nav a {
+    font-size: 13px;
+    color: var(--text-muted, #8e87a0);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .studio-article-nav a:hover { color: var(--purple-light, #7c3aed); }
+
+  /* ── Header ────────────────────────────────────────── */
+  .studio-article-header { margin-bottom: 48px; }
+  .studio-article-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--text-muted, #8e87a0);
+    margin-bottom: 24px;
+  }
+  .studio-pillar {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--purple-light, #7c3aed);
+    text-transform: uppercase;
+  }
+  .studio-meta-sep { color: var(--text-muted, #8e87a0); }
+  .studio-article-title {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: clamp(36px, 5.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--text-primary, #1a0a2e);
+    margin-bottom: 18px;
+  }
+  .studio-article-excerpt {
+    font-size: clamp(18px, 1.7vw, 21px);
+    line-height: 1.55;
+    color: var(--text-secondary, #5b5675);
+    font-weight: 400;
+  }
+
+  /* ── Body typography ──────────────────────────────── */
+  .studio-article-body {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--text-primary, #1a0a2e);
+  }
+  .studio-article-body :global(p) { margin: 0 0 24px; }
+  .studio-article-body :global(h2) {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: clamp(24px, 2.6vw, 30px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--text-primary, #1a0a2e);
+    margin: 56px 0 18px;
+  }
+  .studio-article-body :global(h3) {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--text-primary, #1a0a2e);
+    margin: 38px 0 14px;
+  }
+  .studio-article-body :global(strong) {
+    color: var(--text-primary, #1a0a2e);
+    font-weight: 700;
+  }
+  .studio-article-body :global(em) {
+    color: var(--text-primary, #1a0a2e);
+    font-style: italic;
+  }
+  .studio-article-body :global(a) {
+    color: var(--purple-light, #7c3aed);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .studio-article-body :global(a:hover) {
+    color: var(--purple-deep, #1a0a2e);
+    text-decoration-thickness: 2px;
+  }
+  .studio-article-body :global(blockquote) {
+    border-left: 3px solid var(--purple-light, #7c3aed);
+    padding-left: 22px;
+    margin: 28px 0;
+    color: var(--text-secondary, #5b5675);
+    font-style: italic;
+  }
+  .studio-article-body :global(ul),
+  .studio-article-body :global(ol) {
+    padding-left: 24px;
+    margin: 0 0 24px;
+  }
+  .studio-article-body :global(li) { margin-bottom: 8px; }
+  .studio-article-body :global(code) {
+    background: rgba(124, 58, 237, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.92em;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    color: var(--purple-light, #7c3aed);
+  }
+  .studio-article-body :global(pre) {
+    background: var(--midnight, #0f0a1a);
+    color: #f8fafc;
+    padding: 20px 24px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 28px 0;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .studio-article-body :global(pre code) {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .studio-article-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+  .studio-article-body :global(thead) {
+    border-bottom: 2px solid var(--purple-light, #7c3aed);
+  }
+  .studio-article-body :global(th) {
+    text-align: left;
+    padding: 12px;
+    font-weight: 700;
+    color: var(--text-primary, #1a0a2e);
+  }
+  .studio-article-body :global(td) {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+    color: var(--text-secondary, #5b5675);
+  }
+  .studio-article-body :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
+    margin: 56px 0;
+  }
+
+  /* ── Article footer ────────────────────────────────── */
+  .studio-article-footer {
+    margin-top: 72px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
+  }
+  .studio-author { margin-bottom: 28px; }
+  .studio-author-name {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary, #1a0a2e);
+    margin-bottom: 6px;
+  }
+  .studio-author-bio {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-secondary, #5b5675);
+  }
+  .studio-author-bio a {
+    color: var(--purple-light, #7c3aed);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .studio-cta-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--purple-light, #7c3aed);
+    text-decoration: none;
+  }
+  .studio-cta-link:hover { color: var(--purple-deep, #1a0a2e); }
+
+  @media (max-width: 640px) {
+    .studio-article-main { padding: 40px 20px 80px; }
+    .studio-article-header { margin-bottom: 36px; }
+    .studio-article-body { font-size: 17px; }
+  }
+</style>

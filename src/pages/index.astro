@@ -1,6 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComingSoonBanner from '../components/ComingSoonBanner.astro';
+import { getCollection } from 'astro:content';
+
+// Pull the 3 most-recent published Studio essays for the homepage strip.
+const studioPosts = (
+  await getCollection('studio', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true,
+  )
+)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const STUDIO_PILLAR_LABELS: Record<string, string> = {
+  'building-with-ai': 'Building with AI',
+  'indie-economics': 'Indie Economics',
+  'studio-philosophy': 'Studio Philosophy',
+  'launch-notes': 'Launch Notes',
+  'the-craft': 'The Craft',
+};
+
+function fmtStudioDate(d: Date): string {
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
 ---
 
 <BaseLayout>
@@ -239,6 +261,40 @@ import ComingSoonBanner from '../components/ComingSoonBanner.astro';
       ctaHref="/book/"
     />
 
+    {studioPosts.length > 0 && (
+      <section id="studio-teaser" aria-label="From the Studio" class="studio-teaser-section">
+        <div class="container">
+          <div class="studio-teaser-header fade-in">
+            <div class="studio-teaser-eyebrow">FROM THE STUDIO</div>
+            <h2 class="studio-teaser-title">How we build, what we're learning.</h2>
+            <p class="studio-teaser-sub">
+              Cross-product thinking from the team behind MemeScanr and TripSquad.
+              Notes on building products solo, working with AI, and the parts of
+              a launch nobody tells you about.
+            </p>
+          </div>
+
+          <div class="studio-teaser-grid">
+            {studioPosts.map((p) => (
+              <a href={`/studio/${p.id}/`} class="studio-teaser-card fade-in">
+                <div class="studio-teaser-pillar">{STUDIO_PILLAR_LABELS[p.data.pillar]}</div>
+                <h3 class="studio-teaser-card-title">{p.data.title}</h3>
+                <div class="studio-teaser-meta">
+                  {p.data.readingTime && <span>{p.data.readingTime} min</span>}
+                  {p.data.readingTime && <span class="studio-teaser-dot">·</span>}
+                  <span>{fmtStudioDate(p.data.date)}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div class="studio-teaser-cta-wrap">
+            <a href="/studio/" class="studio-teaser-cta">Read all studio notes →</a>
+          </div>
+        </div>
+      </section>
+    )}
+
     <section id="about" aria-label="About Afia Labs">
         <div class="container">
             <div class="about-content">
@@ -286,3 +342,108 @@ import ComingSoonBanner from '../components/ComingSoonBanner.astro';
     </section>
     </main>
 </BaseLayout>
+
+<style>
+  /* From the Studio — homepage editorial strip */
+  .studio-teaser-section {
+    padding: 96px 0;
+    background: var(--bg-light, #faf9fc);
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+  }
+  .studio-teaser-header {
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+  .studio-teaser-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: var(--purple-light, #7c3aed);
+    margin-bottom: 18px;
+  }
+  .studio-teaser-title {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--text-primary, #1a0a2e);
+    margin: 0 0 16px;
+  }
+  .studio-teaser-sub {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-secondary, #5b5675);
+    max-width: 620px;
+  }
+  .studio-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .studio-teaser-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0 32px;
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.18s ease;
+  }
+  .studio-teaser-card:hover { transform: translateY(-2px); }
+  .studio-teaser-pillar {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--purple-light, #7c3aed);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .studio-teaser-card-title {
+    font-family: var(--font-heading, "Inter"), sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--text-primary, #1a0a2e);
+    margin: 0 0 18px;
+    flex-grow: 1;
+  }
+  .studio-teaser-card:hover .studio-teaser-card-title {
+    color: var(--purple-light, #7c3aed);
+  }
+  .studio-teaser-meta {
+    font-size: 12px;
+    color: var(--text-muted, #8e87a0);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .studio-teaser-dot { color: var(--text-muted, #8e87a0); }
+  .studio-teaser-cta-wrap {
+    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+    padding-top: 32px;
+  }
+  .studio-teaser-cta {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--purple-light, #7c3aed);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .studio-teaser-cta:hover { color: var(--purple-deep, #1a0a2e); }
+
+  @media (max-width: 880px) {
+    .studio-teaser-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .studio-teaser-card { padding: 24px 0; }
+  }
+  @media (max-width: 640px) {
+    .studio-teaser-section { padding: 64px 0; }
+    .studio-teaser-header { margin-bottom: 40px; }
+  }
+</style>
