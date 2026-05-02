@@ -10,9 +10,9 @@ import BookPreview from '../components/BookPreview.astro';
 // OR an amzn.to short link generated from the Associates dashboard
 // (which already carries the tag). Both work.
 const AMAZON_BOOK_KINDLE:    string | null = 'https://www.amazon.com/dp/B0GYK4P3HX/?tag=afialabs-20';
-const AMAZON_BOOK_PAPERBACK: string | null = 'https://amzn.to/4umRc93'; // affiliate short link
+const AMAZON_BOOK_PAPERBACK: string | null = 'https://www.amazon.com/dp/B0GZB1NN46/?tag=afialabs-20';
 const AMAZON_BOOK_HARDCOVER: string | null = null; // hardcover URL TBD
-const AMAZON_WORKBOOK:       string | null = null; // in KDP review
+const AMAZON_WORKBOOK:       string | null = 'https://www.amazon.com/dp/B0GZ34K8QD/?tag=afialabs-20';
 
 // Newsletter signup is repurposed as the Field Guide № 2 announce list.
 const waitlistUrl = 'https://form.jotform.com/261045381980054';
@@ -40,7 +40,7 @@ const description =
               The honest field guide to shipping a real consumer app with AI, from a solo builder who actually did it.
             </p>
             <p class="book-hero-meta">
-              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Paperback, hardcover, and Kindle on Amazon. Companion workbook in print review.
+              By Bridgette Owusu, founder of Afia Labs and builder of MemeScanr. Paperback, Kindle, and the companion workbook are on Amazon now.
             </p>
             <div class="book-hero-buttons">
               {AMAZON_BOOK_PAPERBACK ? (
@@ -74,7 +74,7 @@ const description =
               )}
             </div>
             <p class="book-hero-note">
-              Paperback, hardcover, and Kindle are live. Workbook follows as soon as Amazon's print review clears.
+              Paperback, Kindle, and the companion workbook are live on Amazon. Hardcover follows.
             </p>
           </div>
           <div class="book-hero-cover">
@@ -256,7 +256,7 @@ const description =
         <div class="cta-card">
           <h2>Get Field Guide № 1 on Amazon.</h2>
           <p>
-            Paperback, hardcover, and Kindle are live on Amazon. Companion workbook follows as soon as Amazon's print review clears. Royalties go straight to one solo builder, not a publisher.
+            Paperback, Kindle, and the companion workbook are live on Amazon. Hardcover follows. Royalties go straight to one solo builder, not a publisher.
           </p>
           <div class="cta-buttons">
             {AMAZON_BOOK_PAPERBACK ? (
