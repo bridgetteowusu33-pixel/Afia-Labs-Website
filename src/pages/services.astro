@@ -254,13 +254,18 @@ const servicesPageJsonLd = {
 
           <div class="form-row">
             <div class="form-field">
+              <label for="sf-phone">Phone</label>
+              <input id="sf-phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+            </div>
+            <div class="form-field">
               <label for="sf-business">Business name</label>
               <input id="sf-business" name="business" type="text" autocomplete="organization" />
             </div>
-            <div class="form-field">
-              <label for="sf-current-url">Current website (if any)</label>
-              <input id="sf-current-url" name="current_url" type="url" placeholder="https://" autocomplete="url" />
-            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="sf-current-url">Current website (if any)</label>
+            <input id="sf-current-url" name="current_url" type="url" placeholder="https://" autocomplete="url" />
           </div>
 
           <div class="form-row">
@@ -372,6 +377,7 @@ const servicesPageJsonLd = {
       const data = {
         name: form.name.value.trim(),
         email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
         business: form.business.value.trim(),
         current_url: form.current_url.value.trim(),
         project_type: form.project_type.value,
@@ -390,6 +396,7 @@ const servicesPageJsonLd = {
         botcheck: data.botcheck,
         name: data.name,
         email: data.email,
+        phone: data.phone || '(not provided)',
         business: data.business || '(not provided)',
         current_website: data.current_url || '(not provided)',
         project_type: data.project_type,
@@ -423,6 +430,7 @@ const servicesPageJsonLd = {
         const body = encodeURIComponent(
           'Name: ' + data.name + '\n' +
           'Email: ' + data.email + '\n' +
+          'Phone: ' + data.phone + '\n' +
           'Business: ' + data.business + '\n' +
           'Current site: ' + data.current_url + '\n' +
           'Project type: ' + data.project_type + '\n' +
