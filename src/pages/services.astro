@@ -362,6 +362,22 @@ const servicesPageJsonLd = {
 
     const WEB3FORMS_ACCESS_KEY = 'beee0115-97e9-4c38-bd91-052332eff5d1';
 
+    function resetServicesForm() {
+      form.style.display = '';
+      if (status) {
+        status.className = 'form-status';
+        status.textContent = '';
+      }
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = 'Send inquiry';
+      }
+    }
+
+    document.querySelectorAll('a[href="#start"]').forEach(function (a) {
+      a.addEventListener('click', resetServicesForm);
+    });
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       if (!status || !submit) return;
@@ -650,6 +666,9 @@ const servicesPageJsonLd = {
   }
 
   /* ===== Form ===== */
+  .services-form-section {
+    scroll-margin-top: 80px;
+  }
   .services-form {
     max-width: 760px;
     margin: 0 auto;
