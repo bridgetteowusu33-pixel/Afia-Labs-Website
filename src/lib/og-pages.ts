@@ -12,6 +12,7 @@ export const ogPages: OgPage[] = [
   { slug: 'studio', title: 'Notes from the studio.', eyebrow: 'STUDIO', subtitle: 'Cross-product thinking from Afia Labs. Building with AI, shipping consumer apps solo, the parts of a launch nobody tells you about.' },
   { slug: 'sitemap', title: 'Site map — afialabs.net', eyebrow: 'Site map' },
   { slug: 'faq', title: 'MemeScanr FAQ — every question, answered', eyebrow: 'FAQ', subtitle: 'Direct answers to 30+ MemeScanr questions — privacy, AI, pricing, features.' },
+  { slug: 'services', title: 'Studio services from Afia Labs', eyebrow: 'Services', subtitle: 'Websites, landing pages, and digital systems for founders, creators, and small businesses. Built by a product studio.' },
 
   { slug: 'memescanr', title: 'MemeScanr — on-device iPhone photo cleaner', eyebrow: 'Product', subtitle: 'Detects duplicates, memes, screenshots, and blurry photos. No server, no upload.' },
   { slug: 'memescanr-privacy', title: 'We literally don\'t have a server', eyebrow: 'Privacy', subtitle: 'MemeScanr processes every photo on-device. No cloud AI, no uploads, no account.' },

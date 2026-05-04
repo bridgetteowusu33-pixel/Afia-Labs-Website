@@ -1,0 +1,810 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Studio services from Afia Labs — websites & landing pages';
+const description =
+  'Afia Labs builds clean, modern websites, landing pages, and digital systems for small businesses, creators, and founders. Product thinking, conversion-focused structure, premium design.';
+
+const servicesPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Afia Labs Studio Services',
+  provider: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  serviceType: 'Website design and development',
+  areaServed: 'Worldwide',
+  description,
+  url: 'https://afialabs.net/services/',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical="https://afialabs.net/services/"
+  ogType="website"
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(servicesPageJsonLd)}
+  />
+
+  <main>
+    <section class="hero services-hero" aria-label="Studio services intro">
+      <div class="container">
+        <div class="hero-text services-hero-text">
+          <div class="hero-badge">
+            <span></span>
+            Afia Labs Studio Services
+          </div>
+          <h1>
+            Websites that make your business look <span class="accent">real</span>, and help customers take action.
+          </h1>
+          <p>
+            Afia Labs builds clean, modern websites, landing pages, and digital systems for small businesses, creators, and founders who need more than a pretty page.
+          </p>
+          <div class="hero-buttons">
+            <a href="#start" class="btn-primary" data-services-cta>
+              Start a Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#start" class="btn-secondary" data-services-audit>
+              Request a Website Audit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-band services-positioning" aria-label="Positioning">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Positioning</div>
+          <h2 class="section-title">Not just a website. A digital front door.</h2>
+          <p class="section-subtitle">
+            Your website should do more than sit online. It should help people understand what you offer, trust your business, and know exactly what to do next. Afia Labs brings product thinking, clean design, and conversion-focused structure to every site we build.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-band services-build" aria-label="What we build">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">What we build</div>
+          <h2 class="section-title">A few of the most common projects we take on.</h2>
+        </div>
+        <ul class="build-list fade-in">
+          <li><span class="check">✓</span> Business websites</li>
+          <li><span class="check">✓</span> Landing pages</li>
+          <li><span class="check">✓</span> Service pages</li>
+          <li><span class="check">✓</span> Booking and contact flows</li>
+          <li><span class="check">✓</span> Lead capture pages</li>
+          <li><span class="check">✓</span> Founder and creator pages</li>
+          <li><span class="check">✓</span> Simple automation add-ons</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="packages" class="services-band services-packages" aria-label="Service packages">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Packages</div>
+          <h2 class="section-title">Three ways to work with us.</h2>
+          <p class="section-subtitle">Pick the size that fits where you are right now. Every project starts with a short kickoff call so we get the brief right.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card fade-in fade-in-delay-1">
+            <div class="service-tier">Launch Page</div>
+            <div class="service-price">Projects start at $750</div>
+            <p class="service-pitch">
+              A polished one-page site for new businesses, creators, or offers that need to look credible fast.
+            </p>
+            <ul class="service-features">
+              <li><span class="check">✓</span> One-page responsive website</li>
+              <li><span class="check">✓</span> Mobile-first design</li>
+              <li><span class="check">✓</span> Clear CTA section</li>
+              <li><span class="check">✓</span> Contact form</li>
+              <li><span class="check">✓</span> Basic SEO setup</li>
+              <li><span class="check">✓</span> 1 revision round</li>
+            </ul>
+            <a href="#start" class="btn-primary service-cta" data-services-tier="Launch Page">Start a Project</a>
+          </article>
+
+          <article class="service-card service-card-featured fade-in fade-in-delay-2">
+            <div class="service-tier">Business Website</div>
+            <div class="service-price">Projects start at $2,000</div>
+            <p class="service-pitch">
+              A complete website for small businesses that need a stronger online presence and better customer flow.
+            </p>
+            <ul class="service-features">
+              <li><span class="check">✓</span> 4 to 7 core pages</li>
+              <li><span class="check">✓</span> Homepage, About, Services, Contact</li>
+              <li><span class="check">✓</span> Conversion-focused copy structure</li>
+              <li><span class="check">✓</span> Contact or booking flow</li>
+              <li><span class="check">✓</span> Basic SEO setup</li>
+              <li><span class="check">✓</span> Analytics setup</li>
+              <li><span class="check">✓</span> 2 revision rounds</li>
+            </ul>
+            <a href="#start" class="btn-primary service-cta" data-services-tier="Business Website">Start a Project</a>
+          </article>
+
+          <article class="service-card fade-in fade-in-delay-3">
+            <div class="service-tier">Growth System</div>
+            <div class="service-price">Custom quote</div>
+            <p class="service-pitch">
+              For businesses that need more than a site. Lead capture, automations, analytics, and smarter customer journeys.
+            </p>
+            <ul class="service-features">
+              <li><span class="check">✓</span> Full website strategy</li>
+              <li><span class="check">✓</span> Landing pages or funnels</li>
+              <li><span class="check">✓</span> Email capture</li>
+              <li><span class="check">✓</span> Booking and contact automation</li>
+              <li><span class="check">✓</span> Analytics and conversion tracking</li>
+              <li><span class="check">✓</span> Optional AI chatbot or smart FAQ</li>
+              <li><span class="check">✓</span> Priority support</li>
+            </ul>
+            <a href="#start" class="btn-primary service-cta" data-services-tier="Growth System">Start a Project</a>
+          </article>
+        </div>
+
+        <p class="services-disclaimer fade-in">
+          Final pricing depends on scope, timeline, content needs, integrations, and revision requirements.
+        </p>
+      </div>
+    </section>
+
+    <section class="services-band services-audience" aria-label="Who this is for">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Who this is for</div>
+          <h2 class="section-title">Built for founders who need to look serious online.</h2>
+        </div>
+        <ul class="audience-list fade-in">
+          <li><span class="check">✓</span> Local service businesses</li>
+          <li><span class="check">✓</span> Solo founders</li>
+          <li><span class="check">✓</span> Coaches and consultants</li>
+          <li><span class="check">✓</span> Creators with offers</li>
+          <li><span class="check">✓</span> Small businesses that look outdated online</li>
+          <li><span class="check">✓</span> Startup founders who need a polished landing page</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="services-band services-process" aria-label="How it works">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Process</div>
+          <h2 class="section-title">How it works.</h2>
+          <p class="section-subtitle">A short, predictable path from "we should fix the website" to a site that works.</p>
+        </div>
+
+        <ol class="process-grid">
+          <li class="process-card fade-in fade-in-delay-1">
+            <div class="process-step">1</div>
+            <h3>Audit</h3>
+            <p>We review your current website, brand, goals, and customer journey.</p>
+          </li>
+          <li class="process-card fade-in fade-in-delay-2">
+            <div class="process-step">2</div>
+            <h3>Strategy</h3>
+            <p>We define the pages, message, CTA, and structure your site needs.</p>
+          </li>
+          <li class="process-card fade-in fade-in-delay-3">
+            <div class="process-step">3</div>
+            <h3>Build</h3>
+            <p>We design and build a clean, responsive website that feels modern and trustworthy.</p>
+          </li>
+          <li class="process-card fade-in fade-in-delay-3">
+            <div class="process-step">4</div>
+            <h3>Launch</h3>
+            <p>We help you go live with the basics in place: forms, SEO, analytics, and next-step recommendations.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="services-band services-proof" aria-label="Why Afia Labs">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Why Afia Labs</div>
+          <h2 class="section-title">Built by a real product studio.</h2>
+          <p class="section-subtitle">
+            Afia Labs does not approach websites like decoration. We build digital products, mobile apps, and user experiences, so every website is designed with clarity, trust, and action in mind.
+          </p>
+        </div>
+        <ul class="proof-list fade-in">
+          <li><span class="check">✓</span> Product-first thinking</li>
+          <li><span class="check">✓</span> Mobile-first design</li>
+          <li><span class="check">✓</span> Clear user flows</li>
+          <li><span class="check">✓</span> Conversion-focused layouts</li>
+          <li><span class="check">✓</span> AI-enhanced workflows when useful</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="start" class="services-band services-form-section" aria-label="Project inquiry">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Tell us about your project</div>
+          <h2 class="section-title">Start a project with Afia Labs.</h2>
+          <p class="section-subtitle">
+            We'll review your inquiry and follow up with next steps. No pressure, no hard sell.
+          </p>
+        </div>
+
+        <form id="servicesForm" class="services-form fade-in" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="sf-name">Name <span class="required">*</span></label>
+              <input id="sf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-field">
+              <label for="sf-email">Email <span class="required">*</span></label>
+              <input id="sf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="sf-business">Business name</label>
+              <input id="sf-business" name="business" type="text" autocomplete="organization" />
+            </div>
+            <div class="form-field">
+              <label for="sf-current-url">Current website (if any)</label>
+              <input id="sf-current-url" name="current_url" type="url" placeholder="https://" autocomplete="url" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="sf-project-type">Project type <span class="required">*</span></label>
+              <select id="sf-project-type" name="project_type" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="Launch Page">Launch Page</option>
+                <option value="Business Website">Business Website</option>
+                <option value="Growth System">Growth System</option>
+                <option value="Website Audit">Website Audit</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="sf-budget">Budget range <span class="required">*</span></label>
+              <select id="sf-budget" name="budget" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="Under $1k">Under $1k</option>
+                <option value="$1k–$2.5k">$1k to $2.5k</option>
+                <option value="$2.5k–$5k">$2.5k to $5k</option>
+                <option value="$5k–$10k">$5k to $10k</option>
+                <option value="$10k+">$10k+</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="sf-message">Tell us about your project <span class="required">*</span></label>
+            <textarea id="sf-message" name="message" rows="6" required placeholder="What are you building? What does your current site look like? What do you want customers to do next?"></textarea>
+          </div>
+
+          <div class="form-field form-honeypot" aria-hidden="true">
+            <label for="sf-website-homepage">Your website (leave blank)</label>
+            <input id="sf-website-homepage" name="website_homepage" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="sf-submit">Send inquiry</button>
+            <p class="form-fallback">
+              Prefer email? Contact us at <a href="mailto:support@afialabs.net">support@afialabs.net</a>.
+            </p>
+          </div>
+
+          <div class="form-status" id="sf-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="services-band services-final-cta" aria-label="Final call to action">
+      <div class="container">
+        <div class="final-cta-card fade-in">
+          <h2>Ready to make your business look serious online?</h2>
+          <p>
+            Tell us what you're building, what your current website looks like, and what you want customers to do next.
+          </p>
+          <a href="#start" class="btn-primary">Start a Project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+
+    // Allow tier-specific deep links: /services/?tier=Business%20Website
+    const projectTypeSelect = document.getElementById('sf-project-type');
+    if (projectTypeSelect) {
+      const tier = params.get('tier');
+      if (tier) {
+        const opt = Array.from(projectTypeSelect.options).find(function (o) { return o.value === tier; });
+        if (opt) projectTypeSelect.value = tier;
+      }
+    }
+
+    // "Request a Website Audit" CTA pre-selects the audit option.
+    const auditBtn = document.querySelector('[data-services-audit]');
+    if (auditBtn && projectTypeSelect) {
+      auditBtn.addEventListener('click', function () {
+        projectTypeSelect.value = 'Website Audit';
+      });
+    }
+
+    // Package-card CTAs pre-select the matching tier.
+    document.querySelectorAll('[data-services-tier]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        const tier = el.getAttribute('data-services-tier');
+        if (projectTypeSelect && tier) projectTypeSelect.value = tier;
+      });
+    });
+
+    const form = document.getElementById('servicesForm');
+    const status = document.getElementById('sf-status');
+    const submit = document.getElementById('sf-submit');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (!status || !submit) return;
+
+      status.className = 'form-status';
+      status.textContent = '';
+
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        business: form.business.value.trim(),
+        current_url: form.current_url.value.trim(),
+        project_type: form.project_type.value,
+        budget: form.budget.value,
+        message: form.message.value.trim(),
+        website_homepage: form.website_homepage.value,
+      };
+
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/api/services-inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const json = await res.json().catch(function () { return {}; });
+        if (res.ok && json.ok) {
+          form.style.display = 'none';
+          status.className = 'form-status form-status-success';
+          status.innerHTML =
+            "Thanks, we received your inquiry. We'll review it and follow up with next steps.";
+          return;
+        }
+        throw new Error(json.error || 'send-failed');
+      } catch (err) {
+        status.className = 'form-status form-status-error';
+        const subject = encodeURIComponent('Project inquiry');
+        const body = encodeURIComponent(
+          'Name: ' + data.name + '\n' +
+          'Email: ' + data.email + '\n' +
+          'Business: ' + data.business + '\n' +
+          'Current site: ' + data.current_url + '\n' +
+          'Project type: ' + data.project_type + '\n' +
+          'Budget: ' + data.budget + '\n\n' +
+          data.message
+        );
+        status.innerHTML =
+          "Something went wrong sending your inquiry. Please try again, or " +
+          '<a href="mailto:support@afialabs.net?subject=' + subject + '&body=' + body +
+          '">email us directly</a>.';
+        submit.disabled = false;
+        submit.textContent = 'Send inquiry';
+      }
+    });
+  })();
+</script>
+
+<style>
+  /* ===== Services hero (single column, no device mockup) ===== */
+  .services-hero .container {
+    max-width: 880px;
+  }
+  .services-hero-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .services-hero-text .hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-hero-text h1 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 820px;
+  }
+  .services-hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-hero-text .hero-buttons {
+    justify-content: center;
+  }
+
+  /* ===== Section rhythm ===== */
+  .services-band {
+    padding: 96px 0;
+  }
+  .services-band:nth-of-type(even) {
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  /* ===== "What we build" + audience + proof: feature lists ===== */
+  .build-list,
+  .audience-list,
+  .proof-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+    row-gap: 14px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .build-list li,
+  .audience-list li,
+  .proof-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .build-list .check,
+  .audience-list .check,
+  .proof-list .check,
+  .service-features .check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    margin-top: 1px;
+    background: rgba(124, 58, 237, 0.08);
+    color: var(--purple-light);
+  }
+
+  /* ===== Package cards ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .service-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
+  }
+  .service-card-featured {
+    border-color: rgba(124, 58, 237, 0.18);
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  .service-card-featured::before {
+    content: 'Most popular';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 10px;
+    background: linear-gradient(135deg, var(--purple-light), var(--purple-glow));
+    color: white;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .service-tier {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 12px;
+  }
+  .service-price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--purple-deep);
+    margin-bottom: 16px;
+  }
+  .service-pitch {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .service-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-grow: 1;
+  }
+  .service-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .service-cta {
+    align-self: flex-start;
+  }
+  .services-disclaimer {
+    text-align: center;
+    margin: 36px auto 0;
+    max-width: 680px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== Process / "How it works" ===== */
+  .process-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .process-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .services-band:nth-of-type(even) .process-card {
+    background: var(--bg-light);
+  }
+  .process-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .process-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  }
+  .process-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--purple-deep);
+    margin-bottom: 8px;
+  }
+  .process-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===== Form ===== */
+  .services-form {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-md);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .form-row .form-field {
+    margin-bottom: 0;
+  }
+  .form-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .form-field .required {
+    color: var(--purple-light);
+    margin-left: 2px;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-field textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.5;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--purple-light);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  }
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .form-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-top: 8px;
+  }
+  .form-fallback {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .form-fallback a {
+    color: var(--purple-light);
+    font-weight: 600;
+  }
+  .form-fallback a:hover {
+    text-decoration: underline;
+  }
+  .form-status {
+    display: none;
+    margin-top: 24px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .form-status-success {
+    display: block;
+    background: rgba(124, 58, 237, 0.08);
+    color: var(--purple-deep);
+    border: 1px solid rgba(124, 58, 237, 0.16);
+  }
+  .form-status-error {
+    display: block;
+    background: rgba(245, 158, 11, 0.08);
+    color: var(--gold-warm);
+    border: 1px solid rgba(245, 158, 11, 0.18);
+  }
+  .form-status a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  /* ===== Final CTA card ===== */
+  .services-final-cta .container {
+    max-width: 880px;
+  }
+  .final-cta-card {
+    background: linear-gradient(160deg, rgba(124, 58, 237, 0.06), rgba(245, 158, 11, 0.04));
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 56px 40px;
+    text-align: center;
+  }
+  .final-cta-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--purple-deep);
+    margin-bottom: 16px;
+  }
+  .final-cta-card p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto 28px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 960px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .services-band {
+      padding: 72px 0;
+    }
+    .build-list,
+    .audience-list,
+    .proof-list {
+      grid-template-columns: 1fr;
+    }
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-bottom: 0;
+    }
+    .form-row .form-field {
+      margin-bottom: 20px;
+    }
+    .services-form {
+      padding: 24px;
+    }
+    .final-cta-card {
+      padding: 40px 24px;
+    }
+    .final-cta-card h2 {
+      font-size: 1.6rem;
+    }
+  }
+</style>
