@@ -362,22 +362,6 @@ const servicesPageJsonLd = {
 
     const WEB3FORMS_ACCESS_KEY = 'beee0115-97e9-4c38-bd91-052332eff5d1';
 
-    function resetServicesForm() {
-      form.style.display = '';
-      if (status) {
-        status.className = 'form-status';
-        status.textContent = '';
-      }
-      if (submit) {
-        submit.disabled = false;
-        submit.textContent = 'Send inquiry';
-      }
-    }
-
-    document.querySelectorAll('a[href="#start"]').forEach(function (a) {
-      a.addEventListener('click', resetServicesForm);
-    });
-
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       if (!status || !submit) return;
@@ -428,6 +412,8 @@ const servicesPageJsonLd = {
           status.className = 'form-status form-status-success';
           status.innerHTML =
             "Thanks, we received your inquiry. We'll review it and follow up with next steps.";
+          const finalCta = document.querySelector('.services-final-cta');
+          if (finalCta) finalCta.style.display = 'none';
           return;
         }
         throw new Error(json.message || 'send-failed');
