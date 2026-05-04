@@ -295,8 +295,8 @@ const servicesPageJsonLd = {
           </div>
 
           <div class="form-field form-honeypot" aria-hidden="true">
-            <label for="sf-website-homepage">Your website (leave blank)</label>
-            <input id="sf-website-homepage" name="website_homepage" type="text" tabindex="-1" autocomplete="off" />
+            <label for="sf-botcheck">Leave this empty</label>
+            <input id="sf-botcheck" name="botcheck" type="text" tabindex="-1" autocomplete="off" />
           </div>
 
           <div class="form-actions">
@@ -360,6 +360,8 @@ const servicesPageJsonLd = {
     const submit = document.getElementById('sf-submit');
     if (!form) return;
 
+    const WEB3FORMS_ACCESS_KEY = 'beee0115-97e9-4c38-bd91-052332eff5d1';
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       if (!status || !submit) return;
@@ -375,27 +377,44 @@ const servicesPageJsonLd = {
         project_type: form.project_type.value,
         budget: form.budget.value,
         message: form.message.value.trim(),
-        website_homepage: form.website_homepage.value,
+        botcheck: form.botcheck.value,
       };
 
       submit.disabled = true;
       submit.textContent = 'Sending…';
 
+      const payload = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: 'New project inquiry from ' + data.name + ' (' + data.project_type + ')',
+        from_name: 'Afia Labs Studio Services',
+        botcheck: data.botcheck,
+        name: data.name,
+        email: data.email,
+        business: data.business || '(not provided)',
+        current_website: data.current_url || '(not provided)',
+        project_type: data.project_type,
+        budget: data.budget,
+        message: data.message,
+      };
+
       try {
-        const res = await fetch('/api/services-inquiry', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
         });
         const json = await res.json().catch(function () { return {}; });
-        if (res.ok && json.ok) {
+        if (res.ok && json.success) {
           form.style.display = 'none';
           status.className = 'form-status form-status-success';
           status.innerHTML =
             "Thanks, we received your inquiry. We'll review it and follow up with next steps.";
           return;
         }
-        throw new Error(json.error || 'send-failed');
+        throw new Error(json.message || 'send-failed');
       } catch (err) {
         status.className = 'form-status form-status-error';
         const subject = encodeURIComponent('Project inquiry');
