@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// Studio index — Afia Labs editorial layer.
-// Index zones: brand strip → featured (pinned or most-recent) → recent list.
-// No tag chips, no sidebar, no related-posts grid. Editorial discipline.
+// Studio is the Afia Labs product/ecosystem hub: live products, in-dev,
+// services, field guides, and notes from the studio. The [slug].astro
+// route still serves individual essays at /studio/{slug}/.
 
 const PILLAR_LABELS: Record<string, string> = {
   'building-with-ai': 'Building with AI',
@@ -14,279 +14,538 @@ const PILLAR_LABELS: Record<string, string> = {
   'the-craft': 'The Craft',
 };
 
-const all = await getCollection('studio', ({ data }) =>
+const allEssays = await getCollection('studio', ({ data }) =>
   import.meta.env.PROD ? !data.draft : true,
 );
 
-const sorted = [...all].sort(
+const essays = [...allEssays].sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-const featured = sorted.find((p) => p.data.pinned) ?? sorted[0];
-const rest = sorted.filter((p) => p.id !== featured?.id);
-
 function fmtDate(d: Date): string {
-  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
+
+const title = 'Inside the Afia Labs Studio';
+const description =
+  'The full Afia Labs studio in one place: live products, work in development, studio services, field guides, and notes from the build process.';
 ---
 
 <BaseLayout
-  title="Studio — Afia Labs"
-  description="Notes from the studio. Cross-product thinking from Afia Labs — the team behind MemeScanr and TripSquad. Building with AI, shipping consumer apps solo, the parts of a launch nobody tells you about."
+  title={title}
+  description={description}
   canonical="https://afialabs.net/studio/"
 >
+  <main class="studio-hub">
+    <section class="hub-hero" aria-label="Studio intro">
+      <div class="container">
+        <div class="hub-eyebrow">Studio</div>
+        <h1 class="hub-h1">Inside the Afia Labs Studio</h1>
+        <p class="hub-lede">
+          The whole studio in one place. Products, services, field guides, and
+          notes from Afia Labs, all under one roof.
+        </p>
+      </div>
+    </section>
 
-  <main class="studio-main">
-    <header class="studio-header">
-      <div class="studio-eyebrow">STUDIO</div>
-      <h1 class="studio-h1">Notes from the studio.</h1>
-      <p class="studio-lede">
-        Cross-product thinking from Afia Labs — the team behind
-        <a href="https://memescanr.com" target="_blank" rel="noopener noreferrer">MemeScanr</a>
-        and
-        <a href="https://gettripsquad.com" target="_blank" rel="noopener noreferrer">TripSquad</a>.
-        Building with AI, shipping consumer apps solo, the parts of a
-        launch nobody tells you about.
-      </p>
-    </header>
+    <section id="live" class="hub-section" aria-label="Live products">
+      <div class="container">
+        <div class="hub-section-head">
+          <div class="section-label">Live</div>
+          <h2 class="hub-section-title">Live products.</h2>
+          <p class="hub-section-sub">Apps shipping today, used by real people.</p>
+        </div>
 
-    {featured && (
-      <section class="studio-featured" aria-label="Featured essay">
-        <a href={`/studio/${featured.id}/`} class="studio-featured-card">
-          <div class="studio-featured-meta">
-            <span class="studio-pillar">{PILLAR_LABELS[featured.data.pillar]}</span>
-            {featured.data.pinned && <span class="studio-pinned">Pinned</span>}
-          </div>
-          <h2 class="studio-featured-title">{featured.data.title}</h2>
-          <p class="studio-featured-excerpt">{featured.data.excerpt}</p>
-          <div class="studio-featured-foot">
-            {featured.data.readingTime && <span>{featured.data.readingTime} min read</span>}
-            {featured.data.readingTime && <span class="studio-dot">·</span>}
-            <span>{fmtDate(featured.data.date)}</span>
-          </div>
-        </a>
-      </section>
-    )}
-
-    {rest.length > 0 && (
-      <section class="studio-recent" aria-label="Recent essays">
-        <div class="studio-recent-label">RECENT</div>
-        <ul class="studio-list">
-          {rest.map((p) => (
-            <li class="studio-list-item">
-              <a href={`/studio/${p.id}/`} class="studio-list-link">
-                <div class="studio-list-meta">
-                  <span class="studio-pillar">{PILLAR_LABELS[p.data.pillar]}</span>
-                  <span class="studio-list-date">
-                    {p.data.readingTime && `${p.data.readingTime} min · `}
-                    {fmtDate(p.data.date)}
-                  </span>
-                </div>
-                <h3 class="studio-list-title">{p.data.title}</h3>
-                <span class="studio-list-arrow" aria-hidden="true">→</span>
+        <div class="hub-products-grid">
+          <article id="memescanr" class="hub-product hub-product-memescanr">
+            <div class="hub-product-head">
+              <div class="hub-product-icon">
+                <img src="/memescanr_logo.png" alt="MemeScanr logo" />
+              </div>
+              <div>
+                <h3>MemeScanr</h3>
+                <span class="status-badge status-live">Live</span>
+              </div>
+            </div>
+            <p class="hub-product-desc">
+              A privacy-first iPhone gallery cleaner that helps people reclaim
+              storage with personality. Detects duplicates, screenshots, memes,
+              and blurry photos on-device, with a private vault and a monthly
+              gallery personality reveal.
+            </p>
+            <div class="hub-product-actions">
+              <a href="/memescanr/" class="btn-primary">Explore MemeScanr</a>
+              <a
+                href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hub-link"
+              >
+                Get it on the App Store →
               </a>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </article>
+
+          <article id="tripsquad" class="hub-product hub-product-tripsquad">
+            <div class="hub-product-head">
+              <div class="hub-product-icon">
+                <img src="/tripsquad_logo.png" alt="TripSquad logo" />
+              </div>
+              <div>
+                <h3>TripSquad</h3>
+                <span class="status-badge status-live">Live</span>
+              </div>
+            </div>
+            <p class="hub-product-desc">
+              The group-trip planner for the whole squad. Invite friends by tag
+              or link, vote on destinations, let Scout (the AI travel companion)
+              suggest itineraries, and plan day-by-day in built-in chat.
+            </p>
+            <div class="hub-product-actions">
+              <a
+                href="https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+              >
+                Get it on the App Store
+              </a>
+              <a
+                href="https://gettripsquad.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hub-link"
+              >
+                Visit gettripsquad.com →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="in-development" class="hub-section hub-section-alt" aria-label="In development">
+      <div class="container">
+        <div class="hub-section-head">
+          <div class="section-label">In Development</div>
+          <h2 class="hub-section-title">In development.</h2>
+          <p class="hub-section-sub">Products being built inside the studio.</p>
+        </div>
+
+        <article id="planet-wonders" class="hub-product hub-product-planetwonders hub-product-single">
+          <div class="hub-product-head">
+            <div class="hub-product-icon">
+              <img src="/planet_wonders_launchscreen.png" alt="Planet Wonders logo" />
+            </div>
+            <div>
+              <h3>Planet Wonders</h3>
+              <span class="status-badge status-dev">In Development</span>
+            </div>
+          </div>
+          <p class="hub-product-desc">
+            A playful world-learning app for kids, designed around creativity,
+            curiosity, and global exploration. Stories, coloring, and mini-games
+            that teach cultures and countries through play.
+          </p>
+          <div class="hub-product-actions">
+            <a
+              href="mailto:support@afialabs.net?subject=Planet%20Wonders%20launch%20notification"
+              class="btn-secondary"
+            >
+              Notify me at launch
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="hub-section" aria-label="Studio services">
+      <div class="container">
+        <div class="hub-section-head">
+          <div class="section-label">Services</div>
+          <h2 class="hub-section-title">Studio services.</h2>
+          <p class="hub-section-sub">
+            The same product thinking behind Afia Labs apps, applied to client work.
+          </p>
+        </div>
+
+        <article class="hub-service-card">
+          <div class="hub-product-head">
+            <div>
+              <h3>Work With Afia Labs</h3>
+              <span class="status-badge status-service">Service</span>
+            </div>
+          </div>
+          <p class="hub-product-desc">
+            Websites, landing pages, and simple digital systems for small
+            businesses, creators, and founders who want to look professional
+            online. Conversion-focused structure, clean design, and clear next
+            steps for the visitor.
+          </p>
+          <div class="hub-product-actions">
+            <a href="/services/" class="btn-primary">Work with us</a>
+            <a href="/services/#contact" class="hub-link">Start a project →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="field-guides" class="hub-section hub-section-alt" aria-label="Field guides">
+      <div class="container">
+        <div class="hub-section-head">
+          <div class="section-label">Field Guides</div>
+          <h2 class="hub-section-title">Field guides.</h2>
+          <p class="hub-section-sub">
+            Practical resources for builders learning to use AI without losing
+            control of the process.
+          </p>
+        </div>
+
+        <div class="hub-guides-grid">
+          <article class="hub-guide-card">
+            <div class="hub-product-head">
+              <div>
+                <h3>From Idea to Income with AI Apps</h3>
+                <span class="status-badge status-field-guide">Field Guide</span>
+              </div>
+            </div>
+            <p class="hub-product-desc">
+              The honest field guide to shipping a real consumer app with AI.
+              Paperback and Kindle on Amazon.
+            </p>
+            <div class="hub-product-actions">
+              <a href="/book/" class="btn-primary">Explore the book</a>
+            </div>
+          </article>
+
+          <article class="hub-guide-card">
+            <div class="hub-product-head">
+              <div>
+                <h3>AI App Builder Workbook</h3>
+                <span class="status-badge status-field-guide">Field Guide</span>
+              </div>
+            </div>
+            <p class="hub-product-desc">
+              The companion workbook to From Idea to Income. Exercises and
+              prompts to help you build alongside the field guide.
+            </p>
+            <div class="hub-product-actions">
+              <a href="/book/" class="btn-primary">Explore the workbook</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    {essays.length > 0 && (
+      <section id="notes" class="hub-section" aria-label="Notes from the studio">
+        <div class="container">
+          <div class="hub-section-head">
+            <div class="section-label">Notes</div>
+            <h2 class="hub-section-title">Notes from the studio.</h2>
+            <p class="hub-section-sub">
+              Founder notes, product lessons, AI workflows, and behind-the-scenes
+              thinking from the Afia Labs build process.
+            </p>
+          </div>
+
+          <ul class="hub-notes-list">
+            {essays.map((p) => (
+              <li class="hub-note-item">
+                <a href={`/studio/${p.id}/`} class="hub-note-link">
+                  <div class="hub-note-meta">
+                    <span class="hub-note-pillar">{PILLAR_LABELS[p.data.pillar]}</span>
+                    <span class="hub-note-date">
+                      {p.data.readingTime && `${p.data.readingTime} min · `}
+                      {fmtDate(p.data.date)}
+                    </span>
+                  </div>
+                  <h3 class="hub-note-title">{p.data.title}</h3>
+                  <span class="hub-note-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div class="hub-notes-foot">
+            <a href="/studio/feed.xml" class="hub-link">Subscribe via RSS →</a>
+          </div>
+        </div>
       </section>
     )}
-
-    <footer class="studio-foot">
-      <a href="/studio/feed.xml" class="studio-foot-link">Subscribe via RSS</a>
-      <span class="studio-foot-sep">·</span>
-      <a href="/" class="studio-foot-link">afialabs.net</a>
-    </footer>
   </main>
 </BaseLayout>
 
 <style>
-  .studio-main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 80px 24px 120px;
-  }
+  .studio-hub { padding-bottom: 96px; }
 
-  /* ── Header ────────────────────────────────────────── */
-  .studio-header { margin-bottom: 64px; }
-  .studio-eyebrow {
-    font-family: var(--font-body, "Inter"), sans-serif;
+  /* ── Hero ───────────────────────────────────────────── */
+  .hub-hero {
+    padding: 140px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hub-hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hub-eyebrow {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.32em;
-    color: var(--purple-light, #7c3aed);
+    color: var(--purple-light);
+    text-transform: uppercase;
     margin-bottom: 22px;
   }
-  .studio-h1 {
-    font-family: var(--font-heading, "Inter"), sans-serif;
+  .hub-h1 {
     font-size: clamp(40px, 5.5vw, 64px);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.025em;
-    color: var(--text-primary, #1a0a2e);
+    color: var(--text-primary);
     margin-bottom: 18px;
+    max-width: 720px;
   }
-  .studio-lede {
+  .hub-lede {
     font-size: 19px;
     line-height: 1.6;
-    color: var(--text-secondary, #5b5675);
+    color: var(--text-secondary);
     max-width: 640px;
   }
-  .studio-lede a {
-    color: var(--purple-light, #7c3aed);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
+
+  /* ── Section rhythm ─────────────────────────────────── */
+  .hub-section { padding: 72px 0; }
+  .hub-section-alt {
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .hub-section-head {
+    margin-bottom: 40px;
+    max-width: 720px;
+  }
+  .hub-section-title {
+    font-size: clamp(28px, 3.6vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--purple-deep);
+    margin-bottom: 12px;
+  }
+  .hub-section-sub {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
   }
 
-  /* ── Featured ──────────────────────────────────────── */
-  .studio-featured { margin-bottom: 80px; }
-  .studio-featured-card {
-    display: block;
-    padding: 36px 0 40px;
-    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
-    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease;
+  /* ── Product cards ──────────────────────────────────── */
+  .hub-products-grid,
+  .hub-guides-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
-  .studio-featured-card:hover { transform: translateY(-1px); }
-  .studio-featured-meta {
+  @media (max-width: 880px) {
+    .hub-products-grid,
+    .hub-guides-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hub-product,
+  .hub-service-card,
+  .hub-guide-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .hub-product:hover,
+  .hub-service-card:hover,
+  .hub-guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
+  }
+
+  .hub-product-single { max-width: 640px; }
+
+  .hub-product::before,
+  .hub-service-card::before,
+  .hub-guide-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .hub-product:hover::before,
+  .hub-service-card:hover::before,
+  .hub-guide-card:hover::before { opacity: 1; }
+
+  .hub-product-memescanr::before {
+    background: linear-gradient(90deg, var(--purple-light), var(--purple-glow));
+  }
+  .hub-product-tripsquad::before {
+    background: linear-gradient(90deg, #ccff45, var(--purple-glow));
+  }
+  .hub-product-planetwonders::before {
+    background: linear-gradient(90deg, var(--gold), var(--orange-accent));
+  }
+  .hub-service-card::before {
+    background: linear-gradient(90deg, var(--orange-accent), var(--gold));
+  }
+  .hub-guide-card::before {
+    background: linear-gradient(90deg, var(--purple-light), var(--gold));
+  }
+
+  .hub-product-head {
     display: flex;
-    gap: 16px;
     align-items: center;
+    gap: 16px;
     margin-bottom: 18px;
   }
-  .studio-pillar {
-    font-size: 11px;
+  .hub-product-head h3 {
+    font-size: 1.4rem;
     font-weight: 700;
-    letter-spacing: 0.22em;
-    color: var(--purple-light, #7c3aed);
-    text-transform: uppercase;
-  }
-  .studio-pinned {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    color: var(--orange-accent, #fb923c);
-    text-transform: uppercase;
-  }
-  .studio-featured-title {
-    font-family: var(--font-heading, "Inter"), sans-serif;
-    font-size: clamp(30px, 3.8vw, 44px);
-    font-weight: 800;
-    line-height: 1.12;
     letter-spacing: -0.02em;
-    color: var(--text-primary, #1a0a2e);
-    margin-bottom: 16px;
+    color: var(--purple-deep);
+    margin-bottom: 6px;
   }
-  .studio-featured-card:hover .studio-featured-title {
-    color: var(--purple-light, #7c3aed);
-  }
-  .studio-featured-excerpt {
-    font-size: 17px;
-    line-height: 1.6;
-    color: var(--text-secondary, #5b5675);
-    margin-bottom: 22px;
-    max-width: 620px;
-  }
-  .studio-featured-foot {
-    font-size: 13px;
-    color: var(--text-muted, #8e87a0);
+  .hub-product-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
     display: flex;
-    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    background: var(--bg-light);
+  }
+  .hub-product-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .hub-product-memescanr .hub-product-icon {
+    background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+  }
+  .hub-product-tripsquad .hub-product-icon {
+    background: #08080e;
+  }
+  .hub-product-planetwonders .hub-product-icon {
+    background: linear-gradient(135deg, var(--gold-warm), var(--orange-accent));
+  }
+
+  .hub-product-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  .hub-product-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
     align-items: center;
   }
-  .studio-dot { color: var(--text-muted, #8e87a0); }
-
-  /* ── Recent list ───────────────────────────────────── */
-  .studio-recent-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.32em;
-    color: var(--text-muted, #8e87a0);
-    margin-bottom: 8px;
+  .hub-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--purple-light);
+    text-decoration: none;
   }
-  .studio-list {
+  .hub-link:hover { color: var(--purple-deep); }
+
+  /* ── Notes list ─────────────────────────────────────── */
+  .hub-notes-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    max-width: 760px;
   }
-  .studio-list-item {
-    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+  .hub-note-item {
+    border-bottom: 1px solid var(--border-light);
   }
-  .studio-list-link {
+  .hub-note-link {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 12px 24px;
-    padding: 28px 0;
+    padding: 24px 0;
     text-decoration: none;
     color: inherit;
     align-items: end;
     transition: transform 0.18s ease;
   }
-  .studio-list-link:hover { transform: translateX(2px); }
-  .studio-list-meta {
+  .hub-note-link:hover { transform: translateX(2px); }
+  .hub-note-meta {
     grid-column: 1 / 2;
     display: flex;
     gap: 16px;
     align-items: center;
     flex-wrap: wrap;
   }
-  .studio-list-date {
+  .hub-note-pillar {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--purple-light);
+    text-transform: uppercase;
+  }
+  .hub-note-date {
     font-size: 12px;
-    color: var(--text-muted, #8e87a0);
+    color: var(--text-muted);
     letter-spacing: 0.04em;
   }
-  .studio-list-title {
+  .hub-note-title {
     grid-column: 1 / 2;
-    font-family: var(--font-heading, "Inter"), sans-serif;
-    font-size: clamp(20px, 2.2vw, 24px);
+    font-size: clamp(18px, 2vw, 22px);
     font-weight: 700;
-    line-height: 1.22;
+    line-height: 1.25;
     letter-spacing: -0.015em;
-    color: var(--text-primary, #1a0a2e);
+    color: var(--text-primary);
     margin: 0;
   }
-  .studio-list-link:hover .studio-list-title {
-    color: var(--purple-light, #7c3aed);
-  }
-  .studio-list-arrow {
+  .hub-note-link:hover .hub-note-title { color: var(--purple-light); }
+  .hub-note-arrow {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-    color: var(--text-muted, #8e87a0);
+    color: var(--text-muted);
     font-size: 18px;
     transition: transform 0.18s ease, color 0.18s ease;
   }
-  .studio-list-link:hover .studio-list-arrow {
+  .hub-note-link:hover .hub-note-arrow {
     transform: translateX(4px);
-    color: var(--purple-light, #7c3aed);
+    color: var(--purple-light);
   }
-
-  /* ── Footer strip ──────────────────────────────────── */
-  .studio-foot {
-    margin-top: 80px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
-    font-size: 13px;
-    color: var(--text-muted, #8e87a0);
-    text-align: center;
+  .hub-notes-foot {
+    margin-top: 24px;
   }
-  .studio-foot-link {
-    color: var(--text-muted, #8e87a0);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-  .studio-foot-link:hover { color: var(--purple-light, #7c3aed); }
-  .studio-foot-sep { margin: 0 12px; }
 
   @media (max-width: 640px) {
-    .studio-main { padding: 56px 20px 80px; }
-    .studio-header { margin-bottom: 48px; }
-    .studio-featured { margin-bottom: 56px; }
-    .studio-list-link {
+    .hub-hero { padding: 110px 0 48px; }
+    .hub-section { padding: 56px 0; }
+    .hub-product,
+    .hub-service-card,
+    .hub-guide-card { padding: 28px 24px; }
+    .hub-note-link {
       grid-template-columns: 1fr;
-      padding: 22px 0;
+      padding: 20px 0;
     }
-    .studio-list-arrow { display: none; }
+    .hub-note-arrow { display: none; }
   }
 </style>

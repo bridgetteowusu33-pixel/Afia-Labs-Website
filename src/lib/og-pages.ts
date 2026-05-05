@@ -6,13 +6,13 @@ export interface OgPage {
 }
 
 export const ogPages: OgPage[] = [
-  { slug: 'default', title: 'Afia Labs — Building Delightful Apps', eyebrow: 'Independent App Studio', subtitle: 'Smart, fun, and useful mobile experiences. Makers of MemeScanr.' },
+  { slug: 'default', title: 'Afia Labs — Apps, AI-Assisted Tools & Field Guides', eyebrow: 'Independent Product Studio', subtitle: 'Useful apps, AI-assisted tools, small-business digital systems, and practical field guides.' },
   { slug: 'about', title: 'About Afia Labs', eyebrow: 'About', subtitle: 'Independent iOS app studio founded by Bridgette Owusu. Makers of MemeScanr.' },
   { slug: 'book', title: 'From Idea to Income with AI Apps', eyebrow: 'Now on Amazon · Field Guide № 1', subtitle: 'The honest field guide to shipping a real consumer app with AI. Paperback, Kindle, and companion workbook live on Amazon. By Bridgette Owusu, Afia Labs.' },
-  { slug: 'studio', title: 'Notes from the studio.', eyebrow: 'STUDIO', subtitle: 'Cross-product thinking from Afia Labs. Building with AI, shipping consumer apps solo, the parts of a launch nobody tells you about.' },
+  { slug: 'studio', title: 'Inside the Afia Labs Studio', eyebrow: 'STUDIO', subtitle: 'Apps, services, field guides, and notes from the studio.' },
   { slug: 'sitemap', title: 'Site map — afialabs.net', eyebrow: 'Site map' },
   { slug: 'faq', title: 'MemeScanr FAQ — every question, answered', eyebrow: 'FAQ', subtitle: 'Direct answers to 30+ MemeScanr questions — privacy, AI, pricing, features.' },
-  { slug: 'services', title: 'Studio services from Afia Labs', eyebrow: 'Services', subtitle: 'Websites, landing pages, and digital systems for founders, creators, and small businesses. Built by a product studio.' },
+  { slug: 'services', title: 'Work With Afia Labs', eyebrow: 'Work With Us', subtitle: 'Websites, landing pages, and digital systems for founders, creators, and small businesses. Built by a product studio.' },
 
   { slug: 'memescanr', title: 'MemeScanr — on-device iPhone photo cleaner', eyebrow: 'Product', subtitle: 'Detects duplicates, memes, screenshots, and blurry photos. No server, no upload.' },
   { slug: 'memescanr-privacy', title: 'We literally don\'t have a server', eyebrow: 'Privacy', subtitle: 'MemeScanr processes every photo on-device. No cloud AI, no uploads, no account.' },

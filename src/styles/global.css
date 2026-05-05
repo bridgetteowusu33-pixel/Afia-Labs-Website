@@ -1353,3 +1353,129 @@
                 padding: 0 16px;
             }
         }
+
+        /* ========== NAV CTA SOFT (Work With Us pill) ========== */
+        .nav-cta-soft {
+            padding: 9px 20px;
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--purple-deep) !important;
+            border: 1px solid rgba(124, 58, 237, 0.18);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            -webkit-text-fill-color: var(--purple-deep) !important;
+        }
+        .nav-cta-soft::after {
+            display: none !important;
+        }
+        .nav-cta-soft:hover {
+            background: var(--purple-light);
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+            border-color: var(--purple-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.25);
+        }
+
+        /* ========== STATUS BADGES ========== */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 100px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.4;
+            vertical-align: middle;
+        }
+        .status-live {
+            background: rgba(34, 197, 94, 0.1);
+            color: #15803d;
+        }
+        .status-dev {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--gold-warm);
+        }
+        .status-field-guide {
+            background: rgba(167, 139, 250, 0.14);
+            color: var(--purple-light);
+        }
+        .status-service {
+            background: rgba(251, 146, 60, 0.12);
+            color: var(--gold-warm);
+        }
+        .status-concept {
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--text-secondary);
+        }
+
+        /* ========== WHAT-CARD (neutral card pattern) ========== */
+        .what-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        @media (min-width: 1024px) {
+            .what-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .what-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .what-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .what-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+        .what-card-icon {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            line-height: 1;
+        }
+        .what-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--purple-deep);
+            margin-bottom: 10px;
+        }
+        .what-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .what-card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+        .what-card-cta:hover {
+            color: var(--purple-deep);
+        }
+
+        /* ========== Apps grid: 3 columns at desktop ========== */
+        @media (min-width: 1024px) {
+            .apps-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }

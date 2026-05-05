@@ -18,8 +18,8 @@ const derivedOgImage = hasOgPage
   : 'https://afialabs.net/og/default.png';
 
 const {
-  title = 'Afia Labs — Building Delightful Apps',
-  description = 'Afia Labs creates smart, fun, and useful mobile experiences — like MemeScanr for storage, TripSquad for group travel, and Planet Wonders for kids.',
+  title = 'Afia Labs — Apps, AI-Assisted Tools, Digital Systems & Field Guides',
+  description = 'Afia Labs is an independent product studio building useful apps, AI-assisted tools, small-business digital systems, and practical field guides for modern builders and everyday life.',
   canonical = new URL(Astro.url.pathname, Astro.site).href,
   ogImage = derivedOgImage,
   ogType = 'website',
@@ -31,7 +31,8 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Afia Labs',
   url: 'https://afialabs.net',
-  logo: 'https://afialabs.net/memescanr_logo.png',
+  description:
+    'Independent product studio building useful apps, AI-assisted tools, small-business digital systems, and practical field guides.',
   founder: {
     '@type': 'Person',
     name: 'Bridgette Owusu',
@@ -53,10 +54,9 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Afia Labs',
-  alternateName: 'MemeScanr',
   url: 'https://afialabs.net',
   description:
-    'Afia Labs builds MemeScanr, an on-device iPhone photo cleaner. Independent iOS app studio.',
+    'Independent product studio building useful apps, AI-assisted tools, small-business digital systems, and practical field guides.',
   publisher: {
     '@type': 'Organization',
     name: 'Afia Labs',
@@ -111,14 +111,12 @@ const websiteJsonLd = {
         <div class="container nav-inner">
             <a href="/" class="nav-logo" aria-label="Afia Labs — Home">Afia Labs</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="/memescanr/">MemeScanr</a></li>
-                <li><a href="/book/">Book <sup style="font-size:9px;color:#fb923c;font-weight:800;letter-spacing:0.06em;">NEW</sup></a></li>
                 <li><a href="/studio/">Studio</a></li>
+                <li><a href="/book/">Book <sup style="font-size:9px;color:#fb923c;font-weight:800;letter-spacing:0.06em;">NEW</sup></a></li>
                 <li><a href="/guides/">Guides</a></li>
-                <li><a href="/services/">Services</a></li>
                 <li><a href="/blog/">Blog</a></li>
                 <li><a href="/faq/">FAQ</a></li>
-                <li><a href="/memescanr/" class="nav-cta">Explore MemeScanr</a></li>
+                <li><a href="/services/" class="nav-cta-soft">Work With Us</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
                 <span></span>
@@ -135,7 +133,7 @@ const websiteJsonLd = {
             <div class="footer-inner">
                 <div class="footer-brand">
                     <div class="footer-logo">Afia Labs</div>
-                    <p>Building smart, fun, and useful mobile experiences for everyone.</p>
+                    <p>Afia Labs builds useful apps, AI-assisted tools, digital systems, and field guides for modern life and small businesses.</p>
                     <div class="footer-newsletter">
                         <p>Stay in the loop — get updates on new apps and features.</p>
                         <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter signup">
@@ -147,27 +145,34 @@ const websiteJsonLd = {
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h4>Navigate</h4>
+                        <h4>Studio</h4>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/memescanr/">MemeScanr</a></li>
-                            <li><a href="/book/">Book</a></li>
                             <li><a href="/studio/">Studio</a></li>
-                            <li><a href="/services/">Services</a></li>
-                            <li><a href="/guides/">Guides</a></li>
-                            <li><a href="/compare/">Compare</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/faq/">FAQ</a></li>
-                            <li><a href="/sitemap/">Site map</a></li>
-                            <li><a href="mailto:support@afialabs.net">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Apps</h4>
+                        <h4>Products</h4>
                         <ul>
-                            <li><a href="https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953" target="_blank" rel="noopener noreferrer">MemeScanr</a></li>
-                            <li><a href="/#apps">Planet Wonders</a></li>
-                            <li><a href="/#apps">TripSquad</a></li>
+                            <li><a href="/memescanr/">MemeScanr</a></li>
+                            <li><a href="/studio/#tripsquad">TripSquad</a></li>
+                            <li><a href="/studio/#planet-wonders">Planet Wonders</a></li>
+                            <li><a href="/compare/">Compare</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Work With Us</h4>
+                        <ul>
+                            <li><a href="/services/">Services</a></li>
+                            <li><a href="/services/#contact">Start a Project</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Learn</h4>
+                        <ul>
+                            <li><a href="/book/">Book</a></li>
+                            <li><a href="/guides/">Guides</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">

@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Studio services from Afia Labs — websites & landing pages';
+const title = 'Work With Afia Labs — Websites, Landing Pages & Digital Systems';
 const description =
-  'Afia Labs builds clean, modern websites, landing pages, and digital systems for small businesses, creators, and founders. Product thinking, conversion-focused structure, premium design.';
+  'Afia Labs builds polished websites, landing pages, and simple digital systems for small businesses, creators, and founders who want to look professional online.';
 
 const servicesPageJsonLd = {
   '@context': 'https://schema.org',
@@ -47,14 +47,17 @@ const servicesPageJsonLd = {
           <p>
             Afia Labs builds clean, modern websites, landing pages, and digital systems for small businesses, creators, and founders who need more than a pretty page.
           </p>
+          <p class="services-bridge-line">
+            The same product thinking behind Afia Labs apps, now available for small businesses, creators, and founders.
+          </p>
           <div class="hero-buttons">
-            <a href="#start" class="btn-primary" data-services-cta>
+            <a href="#contact" class="btn-primary" data-services-cta>
               Start a Project
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </a>
-            <a href="#start" class="btn-secondary" data-services-audit>
+            <a href="#contact" class="btn-secondary" data-services-audit>
               Request a Website Audit
             </a>
           </div>
@@ -115,7 +118,7 @@ const servicesPageJsonLd = {
               <li><span class="check">✓</span> Basic SEO setup</li>
               <li><span class="check">✓</span> 1 revision round</li>
             </ul>
-            <a href="#start" class="btn-primary service-cta" data-services-tier="Launch Page">Start a Project</a>
+            <a href="#contact" class="btn-primary service-cta" data-services-tier="Launch Page">Start a Project</a>
           </article>
 
           <article class="service-card service-card-featured fade-in fade-in-delay-2">
@@ -133,7 +136,7 @@ const servicesPageJsonLd = {
               <li><span class="check">✓</span> Analytics setup</li>
               <li><span class="check">✓</span> 2 revision rounds</li>
             </ul>
-            <a href="#start" class="btn-primary service-cta" data-services-tier="Business Website">Start a Project</a>
+            <a href="#contact" class="btn-primary service-cta" data-services-tier="Business Website">Start a Project</a>
           </article>
 
           <article class="service-card fade-in fade-in-delay-3">
@@ -151,7 +154,7 @@ const servicesPageJsonLd = {
               <li><span class="check">✓</span> Optional AI chatbot or smart FAQ</li>
               <li><span class="check">✓</span> Priority support</li>
             </ul>
-            <a href="#start" class="btn-primary service-cta" data-services-tier="Growth System">Start a Project</a>
+            <a href="#contact" class="btn-primary service-cta" data-services-tier="Growth System">Start a Project</a>
           </article>
         </div>
 
@@ -230,7 +233,8 @@ const servicesPageJsonLd = {
       </div>
     </section>
 
-    <section id="start" class="services-band services-form-section" aria-label="Project inquiry">
+    <section id="contact" class="services-band services-form-section" aria-label="Project inquiry">
+      <span id="start" aria-hidden="true" class="anchor-compat"></span>
       <div class="container">
         <div class="section-header fade-in">
           <div class="section-label">Tell us about your project</div>
@@ -323,7 +327,7 @@ const servicesPageJsonLd = {
           <p>
             Tell us what you're building, what your current website looks like, and what you want customers to do next.
           </p>
-          <a href="#start" class="btn-primary">Start a Project</a>
+          <a href="#contact" class="btn-primary">Start a Project</a>
         </div>
       </div>
     </section>
@@ -449,6 +453,15 @@ const servicesPageJsonLd = {
 </script>
 
 <style>
+  /* Backwards-compat anchor: the form section's id was renamed from "start"
+     to "contact". This empty span keeps any external /services/#start links
+     scrolling to the same place. */
+  .anchor-compat {
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
   /* ===== Services hero (single column, no device mockup) ===== */
   .services-hero .container {
     max-width: 880px;
@@ -472,6 +485,14 @@ const servicesPageJsonLd = {
   }
   .services-hero-text .hero-buttons {
     justify-content: center;
+  }
+  .services-bridge-line {
+    margin: 0 auto 28px;
+    max-width: 640px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    font-style: italic;
   }
 
   /* ===== Section rhythm ===== */
