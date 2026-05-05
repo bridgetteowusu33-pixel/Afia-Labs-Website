@@ -25,9 +25,10 @@ export interface OgImageInput {
   eyebrow?: string;
   subtitle?: string;
   /**
-   * Bottom-right footer text. Defaults to the MemeScanr tagline.
-   * Override for Studio / Book / other sub-brands so the OG card's
-   * footer reflects which Afia Labs surface the share came from.
+   * Bottom-right footer text. Defaults to the studio tagline so any page
+   * that doesn't customize still reads as Afia Labs. Override per page
+   * (Services, Book, MemeScanr, etc.) so the OG card reflects which
+   * surface the share came from.
    */
   footerRight?: string;
 }
@@ -165,7 +166,7 @@ export async function renderOgPng({
                     fontWeight: 600,
                     color: colors.whiteFaint,
                   },
-                  children: footerRight ?? 'MemeScanr · iOS photo cleaner',
+                  children: footerRight ?? 'Independent Product Studio',
                 },
               },
             ],
