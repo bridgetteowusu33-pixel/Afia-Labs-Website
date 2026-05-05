@@ -3,10 +3,10 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 const title = 'Site map — every page on afialabs.net';
 const description =
-  'Complete site map for afialabs.net. Every MemeScanr page, feature, comparison, guide, blog post, and FAQ in one scannable index.';
+  'Complete site map for afialabs.net. Every studio page, product, service, comparison, guide, blog post, and FAQ in one scannable index.';
 const heading = 'Site map';
 const lede =
-  'Every page on afialabs.net, organized by section. LLM crawlers and humans both welcome. XML sitemap at /sitemap-index.xml; RSS feed at /rss.xml.';
+  'Every page on afialabs.net, organized by section. Studio, products, services, field guides, and notes. LLM crawlers and humans both welcome. XML sitemap at /sitemap-index.xml, RSS feed at /rss.xml.';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -18,9 +18,28 @@ const sections = [
     heading: 'Core pages',
     pages: [
       { href: '/', label: 'Home — Afia Labs' },
-      { href: '/memescanr/', label: 'MemeScanr — what is it?' },
-      { href: '/memescanr/privacy/', label: 'MemeScanr privacy — we literally don\'t have a server' },
+      { href: '/studio/', label: 'Studio — products, services, field guides, and notes' },
+      { href: '/services/', label: 'Services — work with Afia Labs' },
+      { href: '/book/', label: 'Book — From Idea to Income with AI Apps' },
+      { href: '/about/', label: 'About — independent product studio founded by Bridgette Owusu' },
       { href: '/faq/', label: 'FAQ — every question, answered directly' },
+    ],
+  },
+  {
+    heading: 'Studio products',
+    pages: [
+      { href: '/memescanr/', label: 'MemeScanr — privacy-first iPhone gallery cleaner' },
+      { href: '/memescanr/privacy/', label: 'MemeScanr privacy — we literally don\'t have a server' },
+      { href: '/studio/#tripsquad', label: 'TripSquad — group-trip planner for the whole squad' },
+      { href: '/studio/#planet-wonders', label: 'Planet Wonders — kids\' world-learning app (in development)' },
+    ],
+  },
+  {
+    heading: 'Work with us',
+    pages: [
+      { href: '/services/', label: 'Studio services overview' },
+      { href: '/services/#packages', label: 'Service packages — Launch Page, Business Website, Growth System' },
+      { href: '/services/#contact', label: 'Start a project — inquiry form' },
     ],
   },
   {
