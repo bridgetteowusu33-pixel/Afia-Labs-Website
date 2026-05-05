@@ -309,6 +309,38 @@ const servicesPageJsonLd = {
             Afia Labs does not approach websites like decoration. We build digital products, mobile apps, and user experiences, so every website is designed with clarity, trust, and action in mind.
           </p>
         </div>
+
+        <div class="services-comparison fade-in">
+          <p class="comparison-intro">
+            Most small-business websites get built one of three ways. Each has a place, and the differences are worth being honest about.
+          </p>
+
+          <div class="comparison-row">
+            <h3>DIY website builders (Squarespace, Wix, Webflow templates)</h3>
+            <p>
+              Great when budget is the only constraint and the brief is small. The trade-off is structure. Most templates were not designed for your offer, so you end up shaping the business around the template instead of the other way around. The trust signals that quietly turn visitors into customers (typography rhythm, spacing, copy hierarchy, the order of the buttons) are usually what gets sacrificed.
+            </p>
+          </div>
+
+          <div class="comparison-row">
+            <h3>Freelance web designers</h3>
+            <p>
+              The good ones build careful, considered sites. The risk is uneven follow-through. Hand-offs often skip analytics setup, SEO basics, and the reasoning that helps you keep evolving the site after launch. You end up with a finished page and no playbook for what to do when traffic does or does not show up.
+            </p>
+          </div>
+
+          <div class="comparison-row">
+            <h3>A small product studio</h3>
+            <p>
+              We bring the same care to client websites that we bring to our own apps. Product thinking, conversion-focused structure, accessible code, working analytics, sensible SEO, and a clear hand-off. You get a site shaped around your offer and a structure you can actually run after launch.
+            </p>
+          </div>
+
+          <p class="comparison-conclusion">
+            We are not the cheapest option, and we are not the fastest. We are the choice you make when how the site reads, how it ranks, and how it converts matters to the business.
+          </p>
+        </div>
+
         <ul class="proof-list fade-in">
           <li><span class="check">✓</span> Product-first thinking</li>
           <li><span class="check">✓</span> Mobile-first design</li>
@@ -777,6 +809,46 @@ const servicesPageJsonLd = {
     font-size: 0.92rem;
     color: var(--text-secondary);
     line-height: 1.6;
+  }
+
+  /* ===== "Why Afia Labs" comparison block ===== */
+  .services-comparison {
+    max-width: 760px;
+    margin: 0 auto 56px;
+  }
+  .comparison-intro {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+  }
+  .comparison-row {
+    padding: 24px 0;
+    border-top: 1px solid var(--border-light);
+  }
+  .comparison-row:last-of-type {
+    border-bottom: 1px solid var(--border-light);
+  }
+  .comparison-row h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  .comparison-row p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .comparison-conclusion {
+    margin-top: 32px;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--purple-deep);
+    font-weight: 500;
   }
 
   /* ===== FAQ ===== */
