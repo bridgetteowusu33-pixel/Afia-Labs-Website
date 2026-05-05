@@ -1,9 +1,45 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
 
 const title = 'Work With Afia Labs — Websites, Landing Pages & Digital Systems';
 const description =
   'Afia Labs builds polished websites, landing pages, and simple digital systems for small businesses, creators, and founders who want to look professional online.';
+
+const servicesFaq = [
+  {
+    q: 'How much does a website from Afia Labs cost?',
+    a: 'Launch Pages start at $750. Business Websites start at $2,000. Growth Systems are custom-quoted based on scope. Final pricing depends on the number of pages, integrations, content needs, timeline, and revision rounds.',
+  },
+  {
+    q: 'How long does a typical project take?',
+    a: 'Launch Pages typically ship in 1 to 2 weeks. Business Websites usually take 3 to 5 weeks. Growth Systems vary by scope and integrations. Every project starts with a short kickoff call so we agree on the timeline up front.',
+  },
+  {
+    q: 'What platform do you build on (Webflow, WordPress, custom)?',
+    a: 'We pick the right tool for the brief. Most small-business sites are built as fast static sites (Astro) or on a no-code platform like Webflow when easy in-house editing matters more than custom logic. We do not default to WordPress, but we will use it when it fits the team.',
+  },
+  {
+    q: 'Do you work with clients outside the US?',
+    a: 'Yes. Most communication is async via email and Loom. Calls happen on Google Meet. We have worked with founders and small businesses across multiple time zones.',
+  },
+  {
+    q: "What's included in the Launch Page package?",
+    a: 'A polished one-page responsive website, mobile-first design, a clear CTA section, a working contact form, basic SEO setup (titles, descriptions, sitemap), and one revision round. The brief covers your goals, your audience, and the single action you most want visitors to take.',
+  },
+  {
+    q: 'Do you offer ongoing maintenance after launch?',
+    a: 'Maintenance is not bundled into project pricing. After launch you can request hourly support for one-off updates, or a small monthly retainer if you want predictable help with content, tweaks, and analytics.',
+  },
+  {
+    q: 'Can you migrate or rebuild my existing website?',
+    a: 'Yes. We start with an audit of your current site, identify what is working and what is hurting conversion, and rebuild with a sharper structure. We can keep your existing copy, refine it, or rewrite the structure with you.',
+  },
+  {
+    q: 'Do I need to provide my own copy and images?',
+    a: 'You can bring your own copy or work with us to refine it. For images, we use a mix of yours, licensed stock, and AI-generated visuals where appropriate. We do not write long-form marketing copy from scratch as part of the package, but we can recommend a writer if needed.',
+  },
+];
 
 const servicesPageJsonLd = {
   '@context': 'https://schema.org',
@@ -18,6 +54,56 @@ const servicesPageJsonLd = {
   areaServed: 'Worldwide',
   description,
   url: 'https://afialabs.net/services/',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Afia Labs Studio Services packages',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        url: 'https://afialabs.net/services/#packages',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '750',
+          priceCurrency: 'USD',
+          minPrice: '750',
+          valueAddedTaxIncluded: false,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Launch Page',
+          description:
+            'A polished one-page responsive website for new businesses, creators, or offers that need to look credible fast. Includes mobile-first design, clear CTA, contact form, basic SEO, and one revision round.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        url: 'https://afialabs.net/services/#packages',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: '2000',
+          priceCurrency: 'USD',
+          minPrice: '2000',
+          valueAddedTaxIncluded: false,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Business Website',
+          description:
+            'A 4 to 7 page website for small businesses that need a stronger online presence. Includes homepage, About, Services, and Contact pages, conversion-focused copy structure, contact or booking flow, basic SEO, analytics setup, and two revision rounds.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        url: 'https://afialabs.net/services/#packages',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Growth System',
+          description:
+            'For businesses that need more than a site. Includes website strategy, landing pages or funnels, email capture, booking and contact automation, analytics and conversion tracking, optional AI chatbot or smart FAQ, and priority support.',
+        },
+      },
+    ],
+  },
 };
 ---
 
@@ -230,6 +316,19 @@ const servicesPageJsonLd = {
           <li><span class="check">✓</span> Conversion-focused layouts</li>
           <li><span class="check">✓</span> AI-enhanced workflows when useful</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="services-band services-faq-section" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">Common questions before starting a project.</h2>
+          <p class="section-subtitle">Cost, timeline, platform, and what's included. The questions we hear most from founders and small-business owners.</p>
+        </div>
+        <div class="services-faq-wrap">
+          <FAQ items={servicesFaq} heading="" />
+        </div>
       </div>
     </section>
 
@@ -678,6 +777,36 @@ const servicesPageJsonLd = {
     font-size: 0.92rem;
     color: var(--text-secondary);
     line-height: 1.6;
+  }
+
+  /* ===== FAQ ===== */
+  .services-faq-wrap :global(.faq-section) {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .services-faq-wrap :global(.faq-section h2) {
+    display: none;
+  }
+  .services-faq-wrap :global(.faq-item) {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .services-faq-wrap :global(.faq-item:last-child) {
+    border-bottom: none;
+  }
+  .services-faq-wrap :global(.faq-item h3) {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  .services-faq-wrap :global(.faq-item p) {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
   }
 
   /* ===== Form ===== */
