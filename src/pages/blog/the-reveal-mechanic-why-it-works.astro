@@ -1,0 +1,129 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'The reveal mechanic, and why it works for group decisions';
+const description =
+  'TripSquad reveals the winning destination after voting closes, all at once. The reveal feels like a small thing. It is the most important social-design choice in the app. Here is why.';
+const heading = 'The reveal mechanic, and why it works';
+const lede =
+  'In TripSquad, every voter votes privately and the winning destination is revealed to everyone at the same time after voting closes. This sounds like a small UI choice. It is the most important social-design decision in the entire app, and it is the reason group trips planned in TripSquad actually get booked.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'The reveal mechanic, and why it works' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/the-reveal-mechanic-why-it-works/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel · Design Story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/the-reveal-mechanic-why-it-works/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>Three ways to take a group vote</h2>
+
+  <h3>1. The free-for-all (most group chats)</h3>
+  <p>
+    Someone proposes a destination. Someone else proposes a different one. Replies stack up in real time. Whoever is most opinionated and most online ends up dominating the thread. The destination either gets picked because the loud friend wore everyone down, or it never gets picked because nobody wants to be the one to call the question.
+  </p>
+  <p>
+    Outcomes: low quality, slow, politically expensive.
+  </p>
+
+  <h3>2. The visible poll (Doodle, Google Forms, basic apps)</h3>
+  <p>
+    Someone sets up a poll with a few options. Everyone votes, and the running tally is visible as people vote. The first few votes anchor the rest. People see Charleston is winning and reluctantly vote Charleston too, even if they secretly preferred Savannah, because the social cost of being "the one who voted against the consensus" feels real.
+  </p>
+  <p>
+    Outcomes: medium quality, faster, still politically expensive but in a different way.
+  </p>
+
+  <h3>3. The reveal mechanic (TripSquad)</h3>
+  <p>
+    Each person nominates options privately. Everyone votes privately. Voting closes. The winner is revealed to everyone at once. Nobody saw the running tally. Nobody knows who voted for what. The result feels like the group's collective decision because, in a sense, it actually is.
+  </p>
+  <p>
+    Outcomes: high quality, fast, politically cheap.
+  </p>
+
+  <h2>Why the reveal works</h2>
+
+  <h3>Anchoring is removed</h3>
+  <p>
+    In a visible poll, the first few votes anchor the rest. Behavioral psychology has been documenting this for forty years. People who would have voted differently if voting first will vote with the crowd if voting later. The reveal mechanic kills this effect. Everyone votes from their own preference, not from the running score.
+  </p>
+
+  <h3>Nobody is "the one who voted no"</h3>
+  <p>
+    In a visible poll or a free-for-all, voting against an option is a public act. Your friend Sara proposed Aruba. You really do not want Aruba. Voting no in a visible poll registers as you voting against Sara's idea. People avoid that, even if it means voting yes on a destination they will quietly resent for months.
+  </p>
+  <p>
+    In a reveal, nobody knows who voted for what. Sara's proposal can lose without anyone visibly opposing it. The friendship survives the vote.
+  </p>
+
+  <h3>The decision feels like the group's</h3>
+  <p>
+    Maybe the most important effect. When the reveal happens, there is a small collective moment. Everyone learns the winner at the same instant. There is no proposer to credit and no opposer to blame. The destination feels chosen by the group, not by an individual. That feeling is the difference between "the trip we are taking" and "the trip Sara talked us into."
+  </p>
+  <p>
+    Trips that feel like the group's choice get the group's commitment. Trips that feel like one person's choice get one person's commitment.
+  </p>
+
+  <h2>Where we got the idea</h2>
+  <p>
+    The reveal mechanic is not new. Game shows use it. Bachelor parties use it. Some workplaces run blind salary calibrations the same way. Anywhere the social cost of revealing your vote in real time exceeds the value of the running tally, a reveal is the better mechanic.
+  </p>
+  <p>
+    The thing we learned building TripSquad is that group trip planning is exactly that kind of situation. The social cost of opposing a friend's destination in a real-time poll is real and meaningful, and it is the reason most group decisions stall. Take that cost out of the system and the decision flows.
+  </p>
+
+  <h2>What it feels like in TripSquad</h2>
+  <p>
+    The vote in TripSquad is a private screen. You see the nominated destinations and you pick your favorites. You can see how many people have voted, but not what they voted for. When everyone has submitted, the reveal screen shows up for everyone at once: the winning destination, the tally, the next step. The energy of the moment is the same energy you get when a group plays Codenames or watches a TV show twist together. Shared, collective, light.
+  </p>
+  <p>
+    From the reveal, the trip moves into planning. Day-by-day in built-in chat, deposits via the group's preferred payment app, departure dates locked. The decision is made and stays made.
+  </p>
+
+  <h2>The general lesson</h2>
+  <p>
+    Most decision-making tools default to transparency. Show all the votes, show the running tally, show who said what. Transparency is great when the participants are professionals making low-stakes decisions in low-conflict contexts. It is terrible when the participants are friends making personal decisions in social contexts.
+  </p>
+  <p>
+    For friends, the right default is privacy until the moment of revelation. Vote-and-reveal beats live-poll for any decision where the social cost of disagreement matters. Group trip planning is one of those decisions. Restaurant choice is another. Movie night is another. Wedding venue is another.
+  </p>
+  <p>
+    Pick the mechanic that matches the social context. The right mechanic makes the decision feel collective. The wrong one makes it feel coerced.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Try the reveal mechanic on your next group trip.</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS.
+  </p>
+</ArticleLayout>

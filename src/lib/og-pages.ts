@@ -78,6 +78,11 @@ export const ogPages: OgPage[] = [
   { slug: 'blog-instagram-not-enough-local-business', title: 'Why Instagram is not enough for local beauty and service businesses', eyebrow: 'Small Business', subtitle: 'Instagram shows the work. A website does the booking. The four problems with Instagram-only.', footerRight: 'afialabs.net/services' },
   { slug: 'blog-booking-ready-website-helps-small-businesses', title: 'How a booking-ready website helps small businesses get more clients', eyebrow: 'Small Business', subtitle: 'What booking-ready actually means, why it changes the economics, and the simple setup that ships in a week.', footerRight: 'afialabs.net/services' },
   { slug: 'blog-website-checklist-virginia-small-businesses', title: 'Website checklist for Virginia small businesses', eyebrow: 'Small Business', subtitle: 'The 18-item practical, Virginia-specific website checklist for small business owners. Ordered by what to do first.', footerRight: 'afialabs.net/services' },
+
+  { slug: 'blog-why-group-trips-fall-apart', title: 'Why group trips fall apart', eyebrow: 'Group Travel · Story', subtitle: 'Most group trips never happen. The reason is not the destination. It is the social design of group decisions.', footerRight: 'TripSquad · Free on iOS' },
+  { slug: 'blog-scout-the-ai-travel-companion', title: 'Scout, the AI travel companion', eyebrow: 'Group Travel · Feature', subtitle: 'The AI inside TripSquad knows what the group voted on, what dates are locked, and what kind of trip the squad is shaping. AI as leverage, not autopilot.', footerRight: 'TripSquad · Free on iOS' },
+  { slug: 'blog-getting-friends-to-actually-commit-to-the-trip', title: 'Getting friends to actually commit to the trip', eyebrow: 'Group Travel · Strategy', subtitle: 'The four moves that convert "yes, I want to go" into "yes, I am committed."', footerRight: 'TripSquad · Free on iOS' },
+  { slug: 'blog-the-reveal-mechanic-why-it-works', title: 'The reveal mechanic, and why it works', eyebrow: 'Group Travel · Design Story', subtitle: 'Voting privately and revealing the winner all at once is the most important social-design choice in TripSquad. Here is why.', footerRight: 'TripSquad · Free on iOS' },
 ];
 
 /**

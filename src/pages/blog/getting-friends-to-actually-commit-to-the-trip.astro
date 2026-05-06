@@ -1,0 +1,124 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'Getting friends to actually commit to the trip';
+const description =
+  'The single hardest moment in any group trip is converting "yes, I want to go" into "yes, I am committed." Here are the four moves that get the trip from hypothetical to real.';
+const heading = 'Getting friends to actually commit to the trip';
+const lede =
+  'Every group trip has the same hinge moment: the conversion of "yes, I want to go" into "yes, I am paying the deposit." Most trips die at this moment. Here are the four moves that get the trip from hypothetical to real, and why most groups skip them.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Getting friends to commit to the trip' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/getting-friends-to-actually-commit-to-the-trip/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel · Strategy"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/getting-friends-to-actually-commit-to-the-trip/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>The yes-versus-yes problem</h2>
+  <p>
+    There are two kinds of yes in a group chat. There is "yes, I want to go," which means "I like the idea of this trip and I am not opposed in principle." And there is "yes, I am going," which means "I have rearranged my calendar, paid a deposit, and bought a flight."
+  </p>
+  <p>
+    Most group trip conversations get plenty of the first kind of yes. They never collect enough of the second kind to actually happen. The first kind costs nothing. The second kind costs money and time, which is exactly why most people stop short of it without specifically being asked.
+  </p>
+  <p>
+    The job of the trip organizer (or the trip-planning app) is to force the conversion. The four moves below are how you do it.
+  </p>
+
+  <h2>Move 1: Ask the binary question on day one</h2>
+  <p>
+    Most group trips never ask the binary question. The conversation starts with "where should we go?" instead of "are you in for a trip?" The destination question is a thousand times more fun, so everyone jumps straight to it. But it is the wrong question.
+  </p>
+  <p>
+    The right first question is binary: "Are you in for a trip in the next 4 to 6 months? Yes or no, with a date window." That filters the people who are genuinely available from the people who are casually amused by the idea. The amused-but-not-available friends will gracefully bow out at this stage if you give them the option. They will resent being roped in if you do not.
+  </p>
+  <p>
+    Treat "maybe" as no. Plan for the people who said yes. The maybes can join later if their situation changes.
+  </p>
+
+  <h2>Move 2: Talk about money on day one, not month two</h2>
+  <p>
+    The second biggest reason group trips fall apart is money, and the second biggest thing nobody wants to talk about in a friend group is money. People assume budgets are similar to their own. They are not. Some friends in your group can afford a $300 flight and some cannot. Some are saving for a wedding. Some are 19 months into freelance.
+  </p>
+  <p>
+    A budget range out loud, on day one, before destinations get suggested, gives everyone permission to opt out at the price tier they cannot afford. "Per-person all-in $500 to $900" is a reasonable starting frame. People who cannot do that will quietly say so or quietly drop. People who can will lean in.
+  </p>
+  <p>
+    The cost of skipping this conversation: month four, two of your friends decline the trip because the destination ended up at $1,800 per person and they cannot eat that. Now the group is fractured and someone is the bad guy.
+  </p>
+
+  <h2>Move 3: Lock the date window before the destination</h2>
+  <p>
+    Calendars are tighter than destinations. Once you know which week works for everyone, the destination question simplifies enormously (long weekend driving distance vs week-long international, etc.). If you do the destination first, you waste energy on a place nobody can actually fly to.
+  </p>
+  <p>
+    Send a list of 4-6 candidate weeks. Ask everyone which work and which do not. Use a poll, a TripSquad date vote, or just a message thread. Pick the week with the most yeses. Lock it. Move on.
+  </p>
+  <p>
+    A locked date is the first piece of real commitment. It changes the trip from "we should go somewhere sometime" to "we are going on these specific dates."
+  </p>
+
+  <h2>Move 4: Convert with a deposit</h2>
+  <p>
+    Here is where most trips die. The group has agreed on dates. The group has voted on a destination. The group has even agreed on a rental property. And then everyone says "great, let's book it" and nobody books it. Three weeks pass. The rental gets taken by someone else. The trip has to start over.
+  </p>
+  <p>
+    Avoid this by forcing a deposit. As soon as the destination is locked, somebody in the group books the lodging and everyone else pays their share to a shared pot (Splitwise, Venmo, Apple Cash). Even $100 per person changes the dynamic. People who paid will rearrange their schedules. People who never paid were never really going.
+  </p>
+  <p>
+    The deposit is the final filter. After the deposit, your headcount is real. Plan the rest of the trip around the people who paid. Do not chase the maybes.
+  </p>
+
+  <h2>Why most groups skip these moves</h2>
+  <p>
+    The four moves are uncomfortable. Asking a binary "are you in" feels intense. Talking about money feels rude. Locking a date feels presumptuous. Asking for a deposit feels mercenary. So most groups skip them and assume "we will figure it out."
+  </p>
+  <p>
+    "We will figure it out" is exactly how trips do not happen. The discomfort of the four moves is the price of the trip actually happening. The friends who do this for their group are not pushy; they are the reason the group has a trip every year.
+  </p>
+
+  <h2>Where the tool comes in</h2>
+  <p>
+    The four moves are easier when an app handles the structure. <a href="/tripsquad/">TripSquad</a> runs the date check, the budget setting, the destination vote, and the day-by-day plan. The deposit is on you, but the rest of the structure is built in.
+  </p>
+  <p>
+    Without a tool, you can do the same four moves with a Google Form, a Notion doc, and Splitwise. The structure is what matters. The tool just makes the structure cheaper to set up.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Want a tool that runs the four moves for your group?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS.
+  </p>
+</ArticleLayout>

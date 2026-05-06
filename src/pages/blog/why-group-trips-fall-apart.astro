@@ -1,0 +1,131 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'Why group trips fall apart';
+const description =
+  'Most group trips never happen, and the reason is not the destination. It is the social design of group decisions. Here is what actually breaks group trips and what TripSquad does about it.';
+const heading = 'Why group trips fall apart';
+const lede =
+  'Most group trips never happen. The trip everyone keeps texting about, the dream getaway nobody can stop talking about, the "we should really do this" trip that has been "we should really do this" for two years. The reason is not the destination. It is the social design of group decisions.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Why group trips fall apart' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/why-group-trips-fall-apart/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel · Story"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/why-group-trips-fall-apart/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>The pattern</h2>
+  <p>
+    Eight friends in a group chat. Someone says "we should go on a trip." Everyone agrees. Three of them suggest cities. Two pull up vague hotel links. The conversation drifts to a meme about the new season of something. Nobody picks dates.
+  </p>
+  <p>
+    Two months later, somebody bumps the thread: "are we still doing this?" Everyone says yes. The same three people suggest cities. Nobody picks dates. The conversation drifts again.
+  </p>
+  <p>
+    Six months in, the group has had this exact loop four or five times. By now, the trip has acquired a kind of mythological status. Everyone "wants" to go. Nobody is actually going. The trip is hypothetical and stays hypothetical. Eventually one friend moves cities, another has a kid, and the trip quietly dies.
+  </p>
+  <p>
+    This is not a story about lazy friends. The same loop happens to motivated, well-organized people. The reason is structural.
+  </p>
+
+  <h2>The three things that actually break group trips</h2>
+
+  <h3>1. Group chats are a terrible decision-making interface</h3>
+  <p>
+    A group chat is a conversation tool, not a decision tool. Suggestions get buried under unrelated messages. Polls get ignored because polling in a chat thread feels weirdly formal. Whoever speaks loudest dominates. Whoever speaks least gets ignored, and is also the most likely to bail on the eventual decision because they were never bought in.
+  </p>
+  <p>
+    The chat is doing exactly what chats are designed to do: keep the conversation going. The problem is that "keep the conversation going" is the opposite of "force a decision and lock it in."
+  </p>
+
+  <h3>2. Nobody wants to be "the one who decided"</h3>
+  <p>
+    The group cannot decide because, socially, deciding has costs. If you suggest Charleston and everyone says "ugh, fine, Charleston," now you are the friend who picked the trip nobody loved. If you suggest dates and someone has a conflict, you are the friend who picked dates that did not work. Most people would rather no decision get made than risk being the one who made an unpopular decision.
+  </p>
+  <p>
+    The result is a Nash equilibrium of polite indecision. Everyone is waiting for someone else to commit so they can react to it. Nobody wants to be the one who proposes.
+  </p>
+
+  <h3>3. There is no neutral structure</h3>
+  <p>
+    Companies have meeting agendas, motions, votes, and minutes. Sports have referees and rules. Even a group of friends ordering at a restaurant has the implicit structure of "the server comes around in order." None of those structures exist in a group chat trying to plan a trip.
+  </p>
+  <p>
+    Without structure, the group falls back on "whoever is most assertive wins," which means the loud friend wins, which means the quiet half of the group passively resists, which means the trip never coheres.
+  </p>
+
+  <h2>Why this is a design problem, not a discipline problem</h2>
+  <p>
+    The first instinct is to blame the people. "Our group is just bad at planning." But you can take eight different friend groups and run them through the same broken interface and get the same result. The bug is in the tool, not the team.
+  </p>
+  <p>
+    This is also why tools like Doodle or Google Forms half-work. They introduce structure (the poll), but they do not solve the social cost of being "the one who proposed." Whoever creates the poll is still the friend who picked the options. The political problem is unsolved.
+  </p>
+  <p>
+    The fix is structure that takes the political weight off any one person. That is what the vote-and-reveal mechanic does.
+  </p>
+
+  <h2>Vote and reveal</h2>
+  <p>
+    Vote-and-reveal is a small mechanic with outsized effect. Each person nominates options privately. Everyone votes privately. The winner is revealed all at once, after voting closes.
+  </p>
+  <p>
+    Why this works:
+  </p>
+  <ul class="subpage-checklist">
+    <li><strong>Nobody is publicly "the proposer."</strong> The options were nominated privately. The friend who suggested Charleston is not visibly attached to it during the vote.</li>
+    <li><strong>Nobody has to publicly disagree.</strong> Voting against an option in private feels different from arguing against a friend in a group chat.</li>
+    <li><strong>The decision feels like the group's.</strong> The reveal moment has the energy of "we collectively chose this," not "I steamrolled you into this."</li>
+  </ul>
+  <p>
+    This is the design idea at the core of <a href="/tripsquad/">TripSquad</a>. Take the political weight off the individual and put it on the group's collective vote. Suddenly the trip can get decided.
+  </p>
+
+  <h2>What this is really about</h2>
+  <p>
+    Group trips are not really about destinations. They are about whether a group can make a real decision together. The destination is whatever the group commits to. The trip happens when the commitment is real.
+  </p>
+  <p>
+    A trip nobody can commit to, no matter how dreamy the destination, will never happen. A trip a group commits to, no matter how modest the destination, will happen. The bottleneck is always the commitment, and the commitment is always blocked by the tool you are using to make it.
+  </p>
+  <p>
+    Pick the right tool, get the trip.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Want to actually take the trip?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/how-to-plan-a-group-trip-everyone-shows-up-for/">five-step group trip planning guide</a>.
+  </p>
+</ArticleLayout>

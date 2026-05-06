@@ -1,0 +1,118 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'Scout, the AI travel companion inside TripSquad';
+const description =
+  'Scout is the AI travel companion built into TripSquad. Unlike generic travel chatbots, Scout knows what the group has voted on, what dates are locked, and what kind of trip the squad is shaping. Here is how it works and why it is different.';
+const heading = 'Scout, the AI travel companion';
+const lede =
+  'Scout is the AI feature inside TripSquad. It is not a chatbot grafted on top of an app. It is a travel companion that knows what your group has voted on, what dates are locked, and what kind of trip the squad is shaping. Here is how it actually works and why it is different from the generic travel chatbots you have seen.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Scout the AI travel companion' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/scout-the-ai-travel-companion/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel · Feature"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/scout-the-ai-travel-companion/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>What Scout is and is not</h2>
+  <p>
+    Scout is the AI travel companion built into <a href="/tripsquad/">TripSquad</a>. Scout suggests destinations, drafts itineraries, and answers travel questions in plain language. So far, that probably sounds like every other travel chatbot.
+  </p>
+  <p>
+    The difference is that Scout has context. Scout knows that your squad has eight people. Scout knows you already voted out Las Vegas and locked in mid-July. Scout knows that two of the eight are vegetarian and one is on a budget. Scout's suggestions reflect those constraints because Scout sees the group's state, not just the prompt you typed.
+  </p>
+  <p>
+    Generic travel chatbots cannot do this. They are stateless. You ask "where should my group go for four nights in July with $1500 each?" and they suggest Reykjavik because it is in their training data. They do not know that two of you went to Reykjavik last year. They do not know that the loud friend has been pushing for Mexico City for six months. Scout knows.
+  </p>
+
+  <h2>What Scout actually does inside TripSquad</h2>
+
+  <h3>Destination suggestions tied to the group's vibe</h3>
+  <p>
+    Before the vote, Scout looks at what the group has indicated about the trip. Budget range. Date window. Domestic or international. Type of trip (chill weekend vs adventure vs city break). It then suggests a short list of destinations that fit. The list goes into the vote-and-reveal mechanic alongside whatever the group nominated manually.
+  </p>
+  <p>
+    The point is not that Scout picks the destination. The group picks the destination. Scout's job is to give the group better options to vote on, especially when the group has been stuck.
+  </p>
+
+  <h3>Itinerary drafts after the destination is locked</h3>
+  <p>
+    Once the squad has voted and revealed the destination, Scout can draft a starting itinerary day-by-day. "Day 1 arrival, day 2 the river walk and dinner downtown, day 3 a full-day excursion to X, day 4 chill morning and depart." The draft is editable in TripSquad's day-by-day view; the group can drag, reorder, swap, or delete anything.
+  </p>
+  <p>
+    Scout's draft is a starting point, not a fixed plan. Most groups want 60-70% of an itinerary done for them so they can argue about the remaining 30. Scout does the boring 60.
+  </p>
+
+  <h3>Travel questions in plain language</h3>
+  <p>
+    Inside TripSquad chat, anyone in the squad can ask Scout a question and get an answer that all members can see. "What is the best neighborhood to stay in if we want walkable nightlife?" "Is it worth renting a car in this city?" "What is the dress code for that restaurant?" Scout answers, the answer is visible to everyone, and the answer is grounded in the trip the group is actually planning.
+  </p>
+
+  <h2>What Scout is not</h2>
+
+  <h3>Not a booking engine</h3>
+  <p>
+    Scout does not book your flights or hotel. We deliberately did not build a booking funnel into TripSquad. The world has plenty of booking sites; the gap is in deciding what to book. Scout helps you decide. Once you have decided, you book on Airbnb, Vrbo, hotels.com, the airline's own site, or wherever you would normally go.
+  </p>
+  <p>
+    The honest reason: integrating booking would require commercial relationships with travel suppliers, which would change Scout's incentives. We do not want Scout to suggest the destination that pays us the most affiliate revenue. We want Scout to suggest the destination that fits the group.
+  </p>
+
+  <h3>Not a generic travel writer</h3>
+  <p>
+    Scout does not write generic blog posts. If you ask "what should I do in Paris," Scout will not give you a 2,000-word guide; it will give you suggestions calibrated to your group's specific trip. The internet already has more "what to do in Paris" content than any traveler can read. Scout adds context, not volume.
+  </p>
+
+  <h3>Not always right</h3>
+  <p>
+    Scout makes mistakes. AI models hallucinate, especially on specific business names, hours, or addresses. We always recommend verifying Scout's specific recommendations (a restaurant address, a tour company name) on Google or the actual business's site before relying on them. Scout is a planning aid, not a fact-checker.
+  </p>
+
+  <h2>The design philosophy</h2>
+  <p>
+    Most consumer apps that added AI in 2024 and 2025 grafted a chatbot onto an existing product. The chatbot lived in a side panel and answered general questions. It was usually disconnected from whatever the user was actually doing in the app.
+  </p>
+  <p>
+    Scout is the opposite. Scout is part of TripSquad's core flow, not a side panel. Scout sees the group, the votes, the dates, the budget, the destination. Every suggestion Scout makes is grounded in those facts. The AI feels useful because the AI has context.
+  </p>
+  <p>
+    This is what we believe AI in consumer apps should look like in 2026 and forward: not a chatbot bolted on, but an AI feature that knows what the user is trying to do and helps them do it. AI as leverage, not autopilot.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Try Scout in TripSquad.</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS.
+  </p>
+</ArticleLayout>
