@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'Best group travel apps in 2026';
+const description =
+  'A ranked, honest comparison of the best group travel apps in 2026. TripSquad, TripIt, Google Travel, Troupe, Splitwise, and how to pick the right one for your group trip.';
+const heading = 'Best group travel apps in 2026';
+const lede =
+  'Most "best apps" lists are affiliate roundups that rank by who paid the most. Here is the honest one. Six tools for planning a group trip together, what each is actually good for, and how to pick the right one for your squad.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Best group travel apps in 2026' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/guides/best-group-travel-apps-2026/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/best-group-travel-apps-2026/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 9 min read</span>
+  </div>
+
+  <h2>Honest disclosure</h2>
+  <p>
+    Afia Labs is the studio behind <a href="/tripsquad/">TripSquad</a>. We build it. Bias acknowledged. We are still going to give you the honest take, because the version where every "best apps" article ranks the writer's product first is exactly what makes those articles useless to read.
+  </p>
+  <p>
+    What follows is what each app is actually best at, what each one is bad at, and which kind of group should pick which.
+  </p>
+
+  <h2>1. TripSquad — best for groups that struggle to commit</h2>
+  <p>
+    Free on iOS. Built around the decision problem in groups: vote, reveal, lock the trip, plan day-by-day in one place.
+  </p>
+  <p>
+    <strong>Best for:</strong> friend groups, bachelorette parties, family reunions, groups of 4 to 12 where someone needs to facilitate the decision but nobody wants to be "that friend." The vote-and-reveal mechanic and Scout the AI travel companion are the differentiators.
+  </p>
+  <p>
+    <strong>Less ideal for:</strong> solo travelers, groups under 3 people, business travel, multi-month nomad coordination. Built for friend trips, not corporate.
+  </p>
+
+  <h2>2. TripIt — best for solo trip itinerary management</h2>
+  <p>
+    The original travel itinerary app. Forward your hotel, flight, and rental car confirmations to TripIt and it auto-builds an itinerary. Free tier is generous, Pro tier ($49 per year) adds flight tracking and seat alerts.
+  </p>
+  <p>
+    <strong>Best for:</strong> solo business travelers, frequent flyers, anyone whose problem is "where is my confirmation number" and not "should we go to Charleston or Savannah."
+  </p>
+  <p>
+    <strong>Less ideal for:</strong> the actual decision-making part of group travel. TripIt assumes the trip is already booked. It does not help groups agree on a destination or run polls. If you are still deciding where to go, it will not help.
+  </p>
+
+  <h2>3. Google Travel — best for solo planning research</h2>
+  <p>
+    Free, baked into Google search. Aggregates flights, hotels, and explore-by-destination data. Tied into Gmail so it picks up your bookings automatically.
+  </p>
+  <p>
+    <strong>Best for:</strong> the research phase. Comparing flight prices, scanning hotels, browsing destinations. Works well if you already know roughly where you want to go.
+  </p>
+  <p>
+    <strong>Less ideal for:</strong> group coordination. Google Travel is single-player by design. There is no way to share a trip with friends and get them to vote, comment, or co-edit. You would still need a separate group chat or doc on top.
+  </p>
+
+  <h2>4. Troupe — best for travel content creators</h2>
+  <p>
+    Group itinerary tool with strong social features. Designed for travel-content groups, group tours, and trip leaders who plan for others.
+  </p>
+  <p>
+    <strong>Best for:</strong> trip organizers running a group of 6 to 30 people, content creators planning content trips, tour leaders. The professional-trip-leader use case.
+  </p>
+  <p>
+    <strong>Less ideal for:</strong> a casual group of friends planning a weekend. Troupe leans toward "one organizer plans for everyone" rather than "the group decides together." If your group is collaborative rather than led, the dynamic is off.
+  </p>
+
+  <h2>5. Splitwise — best for splitting costs after the trip</h2>
+  <p>
+    Free expense-splitting app. Track who paid for what, who owes what, and settle up at the end. Standard tool for any group trip.
+  </p>
+  <p>
+    <strong>Best for:</strong> the money side of the trip after it is booked. "I paid for the Airbnb, you paid for groceries, here is what we owe each other." Works in tandem with whatever planning tool you are using.
+  </p>
+  <p>
+    <strong>Less ideal for:</strong> planning, voting, deciding. Splitwise is a calculator with social features, not a planner. Use it alongside something else.
+  </p>
+
+  <h2>6. The group chat plus a shared note</h2>
+  <p>
+    Free, already installed, what most groups end up using by default.
+  </p>
+  <p>
+    <strong>Best for:</strong> groups of 2 to 4 going somewhere they have been before. The decision is small, the planning is small, and the chat does fine.
+  </p>
+  <p>
+    <strong>Less ideal for:</strong> any group bigger than 4. The chat fragments the second one person mutes it. Suggestions get buried under 200 unrelated messages. The "official link to the Airbnb" gets sent six times because nobody can find the original.
+  </p>
+
+  <h2>How to pick</h2>
+  <p>
+    Three questions to answer:
+  </p>
+  <ul class="subpage-checklist">
+    <li><strong>Are you stuck on the destination?</strong> If yes, you need a tool with a vote mechanic. <a href="/tripsquad/">TripSquad</a> or a manual Google Form.</li>
+    <li><strong>Is the trip already booked and you just need to track logistics?</strong> TripIt or Google Travel are fine for solo. TripSquad if the group needs to see the itinerary together.</li>
+    <li><strong>Are you the one organizing for everyone else?</strong> Troupe is built for this. TripSquad works too if the group is small.</li>
+  </ul>
+
+  <h2>The honest conclusion</h2>
+  <p>
+    There is no single best app. There is a best app for the specific problem your group has. The most common gap by far is "we cannot agree on a destination," and the apps that solve that problem (vote-and-reveal mechanics) are different from the ones that solve "where is my confirmation email" (auto-itinerary apps). Use the one that solves your actual problem, not the one with the prettiest screenshots.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Trying to plan a trip with friends right now?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/how-to-plan-a-group-trip-everyone-shows-up-for/">five-step group trip planning guide</a> if you would rather do it manually.
+  </p>
+</ArticleLayout>

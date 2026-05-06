@@ -1,0 +1,141 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'Group trip checklist before booking';
+const description =
+  'The 14-item checklist every group trip needs to clear before anyone books anything. Catches the conversations groups skip and saves the trip from collapsing in month two.';
+const heading = 'Group trip checklist before booking';
+const lede =
+  'The 14-item checklist every group trip needs to clear before anyone books a hotel, books a flight, or pays a deposit. Each item exists because skipping it is what causes group trips to collapse in month two.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Group trip checklist before booking' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/guides/group-trip-checklist-before-booking/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/group-trip-checklist-before-booking/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>The dates and the headcount</h2>
+
+  <h3>1. The actual date window is locked in writing</h3>
+  <p>
+    Not "around July." Not "the second weekend of August or maybe the third." The actual dates, written down, with start and end. If anyone in the group cannot see the dates in their calendar, the dates are not locked.
+  </p>
+
+  <h3>2. Every "yes" is binary</h3>
+  <p>
+    "Maybe" is no. "Probably" is no. Treat the trip headcount as the number of people who said an unqualified yes. The maybes will become noes when the deposit comes due. Plan for the real number, not the optimistic one.
+  </p>
+
+  <h3>3. There is a hard headcount cap or floor</h3>
+  <p>
+    Some trips work better with 4. Some need 8. A bachelorette weekend in a 12-person rental works at full capacity but feels weird with 4. Decide upfront whether the trip needs a minimum (some house rentals require it) or a maximum (some experiences cap at a number). Communicate the rule, not just the suggestion.
+  </p>
+
+  <h2>The money</h2>
+
+  <h3>4. Per-person budget range was discussed out loud</h3>
+  <p>
+    Not assumed. Discussed. The group has agreed on a per-person range. People who could not afford the agreed range have either spoken up or quietly opted out before the suggestions phase.
+  </p>
+
+  <h3>5. Who pays for what is decided in advance</h3>
+  <p>
+    Are flights individual? Yes, almost always. Is the rental split evenly? Or by room size? Are groceries pooled? Who books and pays the deposit? Who collects? Set the rules before the money moves so there is no awkwardness on day one.
+  </p>
+
+  <h3>6. A deposit pot exists</h3>
+  <p>
+    Splitwise, Venmo, Apple Cash, whatever. Real money, not a promise. The point is forcing the maybe-people to commit before booking. Without this step, you will book for 8 and travel with 5.
+  </p>
+
+  <h2>The destination and the lodging</h2>
+
+  <h3>7. The destination was decided by vote, not by the loudest friend</h3>
+  <p>
+    Even if the loud friend was right. The vote is the social-design step that makes the decision feel like the group's, not one person's. If the loud friend's pick wins the vote, great. If it does not, the group has made a real decision instead of going along with it.
+  </p>
+  <p>
+    Apps like <a href="/tripsquad/">TripSquad</a> run this flow as a vote-and-reveal mechanic. A Google Form works too.
+  </p>
+
+  <h3>8. The lodging is real, not a "we should look at"</h3>
+  <p>
+    Specific link. Specific check-in date. Specific cancellation policy. A real listing one person could book in the next ten minutes if everyone said go.
+  </p>
+
+  <h3>9. Cancellation and refund policy is read by at least two people</h3>
+  <p>
+    What happens if a person drops out? What happens if the whole trip is canceled? What is the cancellation date? Surprises here are the most common reason group trips get expensive and resentful. Read the fine print before paying.
+  </p>
+
+  <h2>The logistics</h2>
+
+  <h3>10. Travel arrangements are documented somewhere everyone can see</h3>
+  <p>
+    A pinned Notion doc, a TripSquad trip, a shared note, anything. Do not let the booking confirmations live in 8 different inboxes. If one person is driving, when do they leave? If people are flying, when do they land?
+  </p>
+
+  <h3>11. The first day has a plan</h3>
+  <p>
+    "We will figure it out" on day one is how groups end up at a 9 PM dinner with a 45-minute argument about where to eat. Decide the first dinner before the trip starts. Everything else can be loose.
+  </p>
+
+  <h3>12. Dietary restrictions, allergies, and accessibility needs were asked about</h3>
+  <p>
+    Once. In writing. Not assumed. Not pieced together from stray comments. The vegetarian friend should not have to remind the group that they are still vegetarian.
+  </p>
+
+  <h2>The vibe</h2>
+
+  <h3>13. Expectations are aligned on the kind of trip this is</h3>
+  <p>
+    "Chill weekend" and "we are going to do five things a day" are different trips with the same dates. Have the conversation about the vibe before booking. The group that is aligned will have a better trip than the group that has the same itinerary but conflicting expectations.
+  </p>
+
+  <h3>14. There is a plan for the photos and the recap</h3>
+  <p>
+    Sounds small. Is not. The shared photo album, the group recap, the post-trip texting that keeps the trip alive in memory, these are what makes group trips repeat year after year. A trip with no shared documentation is a trip people forget. Make it easy on day one.
+  </p>
+
+  <h2>If you only do five</h2>
+  <p>
+    Items 1, 2, 4, 6, and 8. Real dates. Real yeses. Real budget. Real deposit. Real lodging. Everything else is optimization. These five separate "we are taking a trip" from "we are talking about taking a trip."
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Want a tool that handles the vote-and-deposit flow for you?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/how-to-plan-a-group-trip-everyone-shows-up-for/">five-step group trip planning guide</a> for the full process.
+  </p>
+</ArticleLayout>

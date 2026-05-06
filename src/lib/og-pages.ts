@@ -42,7 +42,10 @@ export const ogPages: OgPage[] = [
   { slug: 'compare-memescanr-vs-smart-cleaner', title: 'MemeScanr vs Smart Cleaner', eyebrow: 'Comparison', subtitle: 'Traditional grid cleaners vs a modern swipe flow with a private vault.' },
   { slug: 'compare-memescanr-vs-magic-cleaner', title: 'MemeScanr vs Magic Cleaner', eyebrow: 'Comparison', subtitle: 'On-device vs cloud AI. The privacy question that should decide this.' },
 
-  { slug: 'guides', title: 'Afia Labs Guides', eyebrow: 'Guides', subtitle: 'Practical how-tos from the studio. iPhone cleanup, small-business websites, local SEO. Pick the guide that matches your problem.' },
+  { slug: 'guides', title: 'Afia Labs Guides', eyebrow: 'Guides', subtitle: 'Practical how-tos from the studio. iPhone cleanup, small-business websites, group travel. Pick the guide that matches your problem.' },
+  { slug: 'guides-how-to-plan-a-group-trip-everyone-shows-up-for', title: 'How to plan a group trip everyone shows up for', eyebrow: 'Group Travel', subtitle: 'The five-step decision flow that gets the trip booked instead of stuck in the group chat forever.', footerRight: 'Built by the TripSquad team' },
+  { slug: 'guides-best-group-travel-apps-2026', title: 'Best group travel apps in 2026', eyebrow: 'Group Travel', subtitle: 'Honest comparison of TripSquad, TripIt, Google Travel, Troupe, Splitwise, and the group chat.', footerRight: 'Built by the TripSquad team' },
+  { slug: 'guides-group-trip-checklist-before-booking', title: 'Group trip checklist before booking', eyebrow: 'Group Travel', subtitle: 'The 14-item checklist every group trip needs to clear before anyone pays a deposit.', footerRight: 'Built by the TripSquad team' },
   { slug: 'guides-iphone-storage-full-fix', title: 'iPhone storage full? The real fix', eyebrow: 'Guide', subtitle: 'The 15-minute cleanup that frees 10–40 GB on a bloated library.' },
   { slug: 'guides-clean-iphone-storage-fast', title: 'Clean iPhone storage fast', eyebrow: 'Guide', subtitle: 'The fastest path from "storage almost full" to 2–20 GB free.' },
   { slug: 'guides-delete-duplicate-photos-iphone', title: 'Delete duplicate photos on iPhone', eyebrow: 'Guide', subtitle: 'Exact duplicates and the near-duplicates iOS misses.' },

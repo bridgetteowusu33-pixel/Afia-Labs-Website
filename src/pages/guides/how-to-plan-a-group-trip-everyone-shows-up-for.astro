@@ -1,0 +1,143 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-06';
+const title = 'How to plan a group trip everyone actually shows up for';
+const description =
+  'A step-by-step guide to planning a group trip everyone in the squad commits to. The five-step decision flow that gets the trip booked instead of stuck in the group chat forever.';
+const heading = 'How to plan a group trip everyone actually shows up for';
+const lede =
+  'Most group trips never happen. Not because the group does not want to go, but because the decision-making in groups is broken by default. Here is the five-step flow that gets the trip booked, the squad on the same page, and the deposit paid.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: 'How to plan a group trip everyone shows up for' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/guides/how-to-plan-a-group-trip-everyone-shows-up-for/',
+  articleSection: 'Group Travel',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Group Travel"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/guides/how-to-plan-a-group-trip-everyone-shows-up-for/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 7 min read</span>
+  </div>
+
+  <h2>Why most group trips never happen</h2>
+  <p>
+    Three or four people in a group chat say "we should go somewhere," everyone agrees, and then nothing happens for six months. The reason is not that the group does not want to go. The reason is that the group has no decision flow. Suggestions get buried under memes. Polls get ignored. Everyone is waiting for someone else to "just pick something."
+  </p>
+  <p>
+    The fix is structure. A group of friends with a clear five-step flow can plan a trip in two weeks. The same group with no flow will still be talking about "the trip" eighteen months from now.
+  </p>
+
+  <h2>Step 1: Pin a window before pinning a place</h2>
+  <p>
+    The single biggest mistake is starting with "where should we go?" Calendars are the bottleneck, not destinations. Reverse the order.
+  </p>
+  <p>
+    Send a 2-question prompt to the group: "Are you in for a trip in the next 4 to 6 months? Which 2 weekends or weeks could work?" Get binary commitment first. The people who say "maybe" are the ones who will flake later. Knowing this on day one saves you weeks of pretending the group is bigger than it is.
+  </p>
+  <p>
+    Lock the date window before doing anything else. The destination conversation is meaningless until everyone has the same dates open.
+  </p>
+
+  <h2>Step 2: Set a budget range out loud</h2>
+  <p>
+    Money is the second biggest reason group trips fall apart, and the second biggest thing nobody wants to talk about explicitly. Talk about it explicitly, on day one, before suggestions start.
+  </p>
+  <p>
+    A budget range is enough. "Per-person all-in $500 to $900" or "$1,200 to $2,000." That tells the group whether you are picking a rental in driving distance or international flights, before anyone gets attached to a specific place.
+  </p>
+  <p>
+    People feel less awkward picking a low-end budget out loud than they do politely declining the trip three months in because the destination got too expensive. Give them the chance early.
+  </p>
+
+  <h2>Step 3: Use a vote-and-reveal flow, not a free-for-all</h2>
+  <p>
+    Now do destinations. Do not start with "where should we go?" in the group chat. That triggers the loud-friend-wins dynamic, where the most opinionated person ends up steering the trip and the quieter half of the group goes along for a year before silently bailing.
+  </p>
+  <p>
+    Use a vote-and-reveal mechanic. Each person nominates one or two destinations privately. Everyone votes privately. Reveal the winner all at once.
+  </p>
+  <p>
+    The reveal is the social-design trick. Nobody has to publicly disagree with the friend who proposed Aruba. Nobody is "the one who voted no." The decision feels like the group's decision instead of one person's win.
+  </p>
+  <p>
+    Apps like <a href="/tripsquad/">TripSquad</a> are built around this flow. The same flow works in a Notion doc or a Google Form, it just takes more friction to set up by hand.
+  </p>
+
+  <h2>Step 4: Lock the trip with a deposit</h2>
+  <p>
+    A trip nobody has paid for is not a real trip. It is a conversation about a hypothetical trip. The transition from "we agreed" to "we are going" happens at the deposit, and if you do not force that transition, the trip will keep slipping.
+  </p>
+  <p>
+    Pick the rental, the hotel, or the flights, and make everyone in the group pay their share to a shared pot. Even $100 per person at this stage changes the dynamic. People who paid will rearrange their schedules to be there. People who said "maybe" but never paid will quietly disappear, which is fine, because now you know the real headcount.
+  </p>
+  <p>
+    A no-deposit trip with eight maybes will become a five-person trip with three last-minute drop-outs. A deposit-locked trip with five committed people will become a five-person trip that actually happens.
+  </p>
+
+  <h2>Step 5: Plan day-by-day in one place, not five</h2>
+  <p>
+    Once the trip is locked, the planning conversation needs a home. Group texts are terrible for this. Suggestions get buried, the conversation forks, and by week 3 nobody can find the link to the Airbnb anymore.
+  </p>
+  <p>
+    Keep it in one place. Pick the place before suggestions start landing. Options:
+  </p>
+  <ul class="subpage-checklist">
+    <li><strong>A trip planner app</strong> like TripSquad. Built for exactly this.</li>
+    <li><strong>A shared Notion or Google Doc</strong> with sections for hotel, flights, day-by-day, packing, restaurants. Works if someone is willing to maintain it.</li>
+    <li><strong>A pinned message in the group chat</strong> with all the links. Works for short trips, fails on long ones.</li>
+  </ul>
+  <p>
+    Whatever the tool, the rule is: planning lives in the planner, not in the chat. Chat is for the energy. Planning is for the decisions.
+  </p>
+
+  <h2>The two-week timeline</h2>
+  <p>If you actually do the five steps, here is what a realistic timeline looks like:</p>
+  <ul class="subpage-checklist">
+    <li><strong>Week 1, day 1.</strong> Send the date prompt. Get binary commitments.</li>
+    <li><strong>Week 1, day 2.</strong> Set the budget range. Confirm the date window.</li>
+    <li><strong>Week 1, days 3 to 5.</strong> Run the vote-and-reveal on destinations.</li>
+    <li><strong>Week 1, days 5 to 7.</strong> Pick the rental or hotel. Lock with deposits.</li>
+    <li><strong>Week 2.</strong> Day-by-day planning. Restaurants, activities, packing list.</li>
+    <li><strong>Trip day.</strong> The trip happens, because everyone is committed and nobody is mad at the loud friend.</li>
+  </ul>
+
+  <h2>The thing nobody tells you</h2>
+  <p>
+    Group trips are not really about the destination. They are about whether your group can make a decision together. The destination is whatever the group commits to. The trip works when the commitment is real.
+  </p>
+  <p>
+    A weekend in a rental house an hour away with a group that all showed up beats a "dream trip" to Greece that fell apart at month four.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Want a tool that runs this five-step flow for you?</strong> <a href="/tripsquad/">TripSquad</a> is built around exactly this. Free on iOS.
+  </p>
+</ArticleLayout>

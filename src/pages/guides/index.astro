@@ -1,20 +1,19 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import AppStoreCTA from '../../components/AppStoreCTA.astro';
 
-const title = 'iPhone cleanup guides — step-by-step how-tos | MemeScanr';
+const title = 'Afia Labs Guides — practical how-tos from the studio';
 const description =
-  'Step-by-step guides for cleaning up your iPhone: delete duplicates, screenshots, memes, blurry photos, compress videos, hide photos in a private vault, merge duplicate contacts, and more.';
-const heading = 'iPhone cleanup guides';
+  'Practical how-to guides from Afia Labs Studio. Step-by-step iPhone cleanup, small-business website checklists, group trip planning, and tutorials for founders, creators, and small business owners.';
+const heading = 'Afia Labs Guides';
 const lede =
-  'Every guide here is a direct step-by-step: what the problem is, how to solve it with native iOS tools first, and how to do it faster with MemeScanr when native tools don\'t cover the category. Start with whichever one matches your problem.';
+  'Practical how-tos from the studio. iPhone cleanup, small-business websites, group trip planning, and tutorials for founders, creators, and small business owners. Pick the guide that matches the problem you are trying to solve.';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
   { label: 'Guides' },
 ];
 
-const guides = [
+const cleanupGuides = [
   { href: '/guides/iphone-storage-full-fix/', title: 'iPhone storage full? The real fix', blurb: 'The 15-minute cleanup that frees 10–40 GB on a typical bloated library. No iCloud upgrade required.', emoji: '📱' },
   { href: '/guides/clean-iphone-storage-fast/', title: 'How to clean up iPhone storage fast', blurb: 'The fastest path from "storage almost full" to "2–20 GB free." Native iOS steps plus the one app that closes the gap.', emoji: '⚡' },
   { href: '/guides/delete-duplicate-photos-iphone/', title: 'Delete duplicate photos on iPhone', blurb: 'Exact duplicates via the built-in Duplicates album, plus near-duplicates that iOS misses.', emoji: '📸' },
@@ -25,6 +24,20 @@ const guides = [
   { href: '/guides/free-up-iphone-storage-without-icloud/', title: 'Free up iPhone storage without iCloud', blurb: 'Every step runs on-device. No cloud, no subscription, no iCloud upgrade.', emoji: '🔒' },
   { href: '/guides/hide-photos-iphone-private-vault/', title: 'Hide photos on iPhone with a real private vault', blurb: 'The iOS Hidden album isn\'t private. Here\'s how to use Face ID + PIN with a decoy vault.', emoji: '🕵️' },
   { href: '/guides/merge-duplicate-contacts-iphone/', title: 'Merge duplicate iPhone contacts', blurb: 'Fuzzy matching for contacts where iOS Link Contacts falls short — typos, comma-flip, phone normalization.', emoji: '📇' },
+];
+
+const smallBusinessGuides = [
+  { href: '/blog/website-checklist-virginia-small-businesses/', title: 'Website checklist for Virginia small businesses', blurb: 'The 18-item practical, Virginia-specific website checklist for small business owners. Ordered by what to do first.', emoji: '✅' },
+  { href: '/blog/local-service-business-website-checklist/', title: 'What every local service business website needs before launch', blurb: 'The 12-item pre-launch checklist for local service business websites, ordered by impact.', emoji: '🚀' },
+  { href: '/blog/small-business-website-cost-virginia/', title: 'How much does a small business website cost in Virginia?', blurb: 'Tier-by-tier breakdown for VA. DIY builders, freelancers, studios, agencies. What you pay, what you get.', emoji: '💵' },
+  { href: '/blog/booking-ready-website-helps-small-businesses/', title: 'How a booking-ready website helps small businesses get more clients', blurb: 'What booking-ready actually means, why it changes the economics, and the simple setup that ships in a week.', emoji: '📅' },
+  { href: '/blog/instagram-not-enough-local-business/', title: 'Why Instagram is not enough for local beauty and service businesses', blurb: 'Instagram shows the work. A website does the booking. The four problems with Instagram-only.', emoji: '📲' },
+];
+
+const groupTravelGuides = [
+  { href: '/guides/how-to-plan-a-group-trip-everyone-shows-up-for/', title: 'How to plan a group trip everyone actually shows up for', blurb: 'The five-step decision flow that gets the trip booked instead of stuck in the group chat forever. Dates, budget, vote-and-reveal, deposit, plan.', emoji: '🧭' },
+  { href: '/guides/best-group-travel-apps-2026/', title: 'Best group travel apps in 2026', blurb: 'Honest comparison of TripSquad, TripIt, Google Travel, Troupe, Splitwise, and the group chat. What each is best for and how to pick.', emoji: '⚖️' },
+  { href: '/guides/group-trip-checklist-before-booking/', title: 'Group trip checklist before booking', blurb: 'The 14-item checklist every group trip needs to clear before anyone books a hotel, books a flight, or pays a deposit.', emoji: '📋' },
 ];
 ---
 
@@ -38,8 +51,43 @@ const guides = [
   canonical="https://afialabs.net/guides/"
   ogType="website"
 >
+  <h2 id="iphone-cleanup">iPhone cleanup</h2>
+  <p>
+    Step-by-step how-tos for cleaning up an iPhone. Each one leads with native iOS steps, then shows the MemeScanr flow for categories the native tools do not cover. You do not have to install anything to get value from the native-iOS portion of each guide.
+  </p>
+
   <div class="feature-grid">
-    {guides.map((g) => (
+    {cleanupGuides.map((g) => (
+      <a href={g.href} class="feature-grid-card" style="text-decoration: none; display: block;">
+        <span class="emoji">{g.emoji}</span>
+        <h3>{g.title}</h3>
+        <p>{g.blurb}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2 id="small-business-websites">Small business websites</h2>
+  <p>
+    Practical guides for small-business owners, founders, and creators making decisions about a website. Pricing, pre-launch checklists, booking flows, and honest takes on what works in 2026. Some of these are framed as long-form posts on the blog rather than step-by-step how-tos, but they are written as decision tools, not opinion pieces.
+  </p>
+
+  <div class="feature-grid">
+    {smallBusinessGuides.map((g) => (
+      <a href={g.href} class="feature-grid-card" style="text-decoration: none; display: block;">
+        <span class="emoji">{g.emoji}</span>
+        <h3>{g.title}</h3>
+        <p>{g.blurb}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2 id="group-travel">Group travel</h2>
+  <p>
+    Guides for planning trips with friends, family, or any group bigger than three. The decision flows, the budget conversations, the apps to use, and the checklist that keeps the trip from collapsing in month two. Built around what we learned shipping <a href="/tripsquad/">TripSquad</a>.
+  </p>
+
+  <div class="feature-grid">
+    {groupTravelGuides.map((g) => (
       <a href={g.href} class="feature-grid-card" style="text-decoration: none; display: block;">
         <span class="emoji">{g.emoji}</span>
         <h3>{g.title}</h3>
@@ -50,11 +98,17 @@ const guides = [
 
   <h2>How to pick the right guide</h2>
   <p>
-    Start with <a href="/guides/iphone-storage-full-fix/">iPhone storage full fix</a> if your phone is already at capacity and you want the full cleanup sequence. Start with a category-specific guide (duplicates, screenshots, memes, blurry) if you know which category is eating your storage and just want that one cleaned.
+    <strong>Cleaning up an iPhone?</strong> Start with <a href="/guides/iphone-storage-full-fix/">iPhone storage full fix</a> if your phone is already at capacity. Pick a category-specific guide if you know which category is eating your storage.
   </p>
   <p>
-    Every guide leads with native iOS steps, then shows the MemeScanr flow for anything the native tools don\'t handle. You don\'t have to install anything to get value from the native-iOS portion of each guide.
+    <strong>Building or rebuilding a small-business website?</strong> Start with the <a href="/blog/website-checklist-virginia-small-businesses/">Virginia small business website checklist</a> for a comprehensive launch list, or the <a href="/blog/small-business-website-cost-virginia/">cost breakdown</a> if you are still deciding what tier of help to hire. If you would rather have us build it, see the <a href="/services/">studio services</a>.
+  </p>
+  <p>
+    <strong>Planning a group trip?</strong> Start with <a href="/guides/how-to-plan-a-group-trip-everyone-shows-up-for/">how to plan a group trip</a> for the full five-step flow, or the <a href="/guides/group-trip-checklist-before-booking/">pre-booking checklist</a> if you are deep in the weeds. Check the <a href="/guides/best-group-travel-apps-2026/">app comparison</a> if you are picking a tool.
   </p>
 
-  <AppStoreCTA />
+  <h2>More guides coming</h2>
+  <p>
+    The studio publishes new guides as we work on the kinds of problems that come up repeatedly with clients and in the apps. <a href="/blog/">Follow the blog</a> or subscribe to <a href="/blog/subscribe/">the newsletter</a> for new posts.
+  </p>
 </ArticleLayout>
