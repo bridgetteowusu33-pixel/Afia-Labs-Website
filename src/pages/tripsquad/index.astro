@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'TripSquad — group trip planner for the whole squad | Afia Labs';
+const description =
+  'TripSquad is the group-trip planner that helps friends agree, vote, reveal, and actually take the trip. Scout the AI travel companion suggests destinations. Built-in chat, packing list, and trip recap. Free on iOS.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'TripSquad', item: 'https://afialabs.net/tripsquad/' },
+  ],
+};
+
+const productJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'TripSquad',
+  applicationCategory: 'TravelApplication',
+  operatingSystem: 'iOS',
+  description,
+  url: 'https://afialabs.net/tripsquad/',
+  downloadUrl: 'https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582',
+  installUrl: 'https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Afia Labs',
+    url: 'https://afialabs.net',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  sameAs: [
+    'https://gettripsquad.com',
+    'https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582',
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/tripsquad/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="TripSquad intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/studio/">Studio</a> <span>›</span> <span>TripSquad</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Live on iOS · Group travel
+        </div>
+        <h1>Group trips that actually happen.</h1>
+        <p class="subpage-lede">
+          TripSquad is the group-trip planner for the whole squad. Invite by tag or share link, vote on destinations, let Scout (the AI travel companion) suggest itineraries, and plan day-by-day in built-in chat. Built so the trip everyone keeps talking about actually gets booked.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Get TripSquad on the App Store
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://gettripsquad.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            Visit gettripsquad.com
+          </a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">⚡</span>
+          Free on iOS · Built by Afia Labs Studio
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>The problem TripSquad fixes.</h2>
+        <p>
+          Group trips fall apart at the same place every time. Someone in the group chat says "we should go somewhere," everyone agrees, and then... nothing happens. Dates never get pinned. Destinations never get picked. The conversation drifts. Three months later the same group is having the same conversation about a different theoretical trip.
+        </p>
+        <p>
+          The bottleneck is decision-making in groups. There is no neutral structure. Whoever speaks loudest wins, and most groups have someone who refuses to commit until "everyone else decides." TripSquad replaces that dynamic with a clear flow.
+        </p>
+
+        <h2>How it works.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>Invite the squad.</strong> Tag friends in-app, or share a link with anyone (no download required to vote).</li>
+          <li><strong>Get destination suggestions from Scout.</strong> Scout, the AI travel companion, looks at the group's vibe and suggests destinations the squad will actually like. Pick from the suggestions or add your own.</li>
+          <li><strong>Vote.</strong> Everyone votes. The winning destination is revealed at once, so nobody can argue they "wanted that one all along."</li>
+          <li><strong>Plan day-by-day.</strong> Built-in chat keeps the planning conversation in one place. Add stops, hotels, restaurants, activities. Scout suggests itineraries.</li>
+          <li><strong>Pack and go.</strong> Shared packing list so nobody forgets the charger. Trip recap after you get back.</li>
+        </ul>
+
+        <h2>Features.</h2>
+
+        <h3>Scout, the AI travel companion</h3>
+        <p>
+          Scout is the AI feature inside TripSquad that suggests destinations, builds itineraries, and answers travel questions in plain language. Unlike generic travel chatbots, Scout knows what the group has already voted on, what dates are locked, and what kind of trip the squad is shaping. Suggestions match the group, not just the prompt.
+        </p>
+
+        <h3>Vote and reveal</h3>
+        <p>
+          Everyone in the squad votes privately. The winning destination is revealed when voting closes, all at once. No one feels overruled by the loud friend. No one has to publicly disagree with the friend who proposed Aruba. The reveal mechanic is the social-design trick that makes group decisions stick.
+        </p>
+
+        <h3>Built-in chat</h3>
+        <p>
+          Trip planning lives in TripSquad chat instead of getting buried under pet videos and memes in your group text. The chat scrolls alongside the day-by-day itinerary so suggestions stay anchored to what they're suggesting about.
+        </p>
+
+        <h3>Day-by-day itinerary</h3>
+        <p>
+          Hotels, restaurants, activities, and stops, organized by date. Drag to reorder. Add notes. Share with anyone via link.
+        </p>
+
+        <h3>Shared packing list</h3>
+        <p>
+          The packing list everyone in the group can see and check off. The "did anyone bring the charger" problem, solved.
+        </p>
+
+        <h3>Trip recap</h3>
+        <p>
+          After the trip, TripSquad generates a recap with the highlights, the photo wall, and the best moments. Built so the trip lives on past the airport.
+        </p>
+
+        <h2>Who TripSquad is for.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>College friend groups</strong> trying to do "the trip" before everyone scatters.</li>
+          <li><strong>Bachelorette and bachelor parties</strong> where 8 people need to agree on a destination, dates, and an Airbnb.</li>
+          <li><strong>Adult friend groups</strong> with calendars, kids, and conflicting work schedules.</li>
+          <li><strong>Family reunions</strong> that need a neutral place to coordinate flights, hotels, and the dinner schedule.</li>
+          <li><strong>Roommate getaways</strong> where the trip planning has been "next month" for six months.</li>
+          <li><strong>Travel-blogger groups</strong> coordinating destinations for content trips.</li>
+        </ul>
+
+        <h2>Why TripSquad and not a group text.</h2>
+        <p>
+          Group texts and shared Notion pages work for one or two trips and then fall apart. The problem is that conversation and decisions live in the same scrolling thread. Suggestions get buried. Polls get ignored. The thread becomes a graveyard of "we should…" messages that nobody is acting on.
+        </p>
+        <p>
+          TripSquad separates the decision flow (vote, reveal, plan) from the conversation flow (chat). Decisions get made and stay made. Chat keeps the energy without becoming the bottleneck.
+        </p>
+
+        <h2>Get TripSquad.</h2>
+        <p>
+          TripSquad is free on iOS. Download from the App Store and start your first squad trip in under five minutes.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Ready to plan a trip that actually happens?</h2>
+          <p>Free on iOS. Add the friends, vote on the destination, plan day-by-day. Trip starts.</p>
+          <a href="https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582" target="_blank" rel="noopener noreferrer" class="btn-primary">Get TripSquad on the App Store</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="https://gettripsquad.com" target="_blank" rel="noopener noreferrer">gettripsquad.com — TripSquad marketing site</a></li>
+          <li><a href="/studio/tripsquad-launched-what-id-do-differently/">"TripSquad launched. Here's what I'd do differently." — launch essay</a></li>
+          <li><a href="/studio/">Inside the Afia Labs Studio</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

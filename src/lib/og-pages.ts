@@ -23,6 +23,7 @@ export const ogPages: OgPage[] = [
   { slug: 'legal-services-agreement', title: 'Services Agreement', eyebrow: 'Legal · Plain-English', subtitle: 'Plain-English terms of engagement for client work. Scope, payment, IP, revisions, cancellation. Final binding terms live in the signed SOW.', footerRight: 'Last updated 2026-05-06' },
 
   { slug: 'memescanr', title: 'MemeScanr — on-device iPhone photo cleaner', eyebrow: 'Product', subtitle: 'Detects duplicates, memes, screenshots, and blurry photos. No server, no upload.' },
+  { slug: 'tripsquad', title: 'TripSquad — group trip planner for the whole squad', eyebrow: 'Product', subtitle: 'Invite, vote, reveal, plan day-by-day. Scout, the AI travel companion, suggests destinations the squad will actually like. Free on iOS.', footerRight: 'TripSquad · Free on iOS' },
   { slug: 'memescanr-privacy', title: 'We literally don\'t have a server', eyebrow: 'Privacy', subtitle: 'MemeScanr processes every photo on-device. No cloud AI, no uploads, no account.' },
   { slug: 'memescanr-features', title: 'MemeScanr features', eyebrow: 'Features', subtitle: 'Memory Lane, Gallery Wrapped, Phone Therapist, Backroom, Boost, and more.' },
   { slug: 'memescanr-features-memory-lane', title: 'Memory Lane — Tinder for your camera roll', eyebrow: 'Feature', subtitle: 'Swipe left to delete, right to keep, up to vault. Streaks, stamps, time capsule badges.' },
@@ -41,7 +42,7 @@ export const ogPages: OgPage[] = [
   { slug: 'compare-memescanr-vs-smart-cleaner', title: 'MemeScanr vs Smart Cleaner', eyebrow: 'Comparison', subtitle: 'Traditional grid cleaners vs a modern swipe flow with a private vault.' },
   { slug: 'compare-memescanr-vs-magic-cleaner', title: 'MemeScanr vs Magic Cleaner', eyebrow: 'Comparison', subtitle: 'On-device vs cloud AI. The privacy question that should decide this.' },
 
-  { slug: 'guides', title: 'iPhone cleanup guides', eyebrow: 'Guides', subtitle: 'Step-by-step how-tos for every iPhone cleanup problem.' },
+  { slug: 'guides', title: 'Afia Labs Guides', eyebrow: 'Guides', subtitle: 'Practical how-tos from the studio. iPhone cleanup, small-business websites, local SEO. Pick the guide that matches your problem.' },
   { slug: 'guides-iphone-storage-full-fix', title: 'iPhone storage full? The real fix', eyebrow: 'Guide', subtitle: 'The 15-minute cleanup that frees 10–40 GB on a bloated library.' },
   { slug: 'guides-clean-iphone-storage-fast', title: 'Clean iPhone storage fast', eyebrow: 'Guide', subtitle: 'The fastest path from "storage almost full" to 2–20 GB free.' },
   { slug: 'guides-delete-duplicate-photos-iphone', title: 'Delete duplicate photos on iPhone', eyebrow: 'Guide', subtitle: 'Exact duplicates and the near-duplicates iOS misses.' },
