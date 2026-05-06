@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Mobile App Development | Afia Labs Studio';
+const description =
+  'Mobile app development from a real product studio. Afia Labs ships consumer apps on iOS and selectively takes on client app projects. Built by the team behind MemeScanr and TripSquad.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://afialabs.net/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Mobile App Development', item: 'https://afialabs.net/services/mobile-app-development/' },
+  ],
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Mobile App Development',
+  serviceType: 'Mobile application design and development',
+  provider: {
+    '@type': 'ProfessionalService',
+    '@id': 'https://afialabs.net/services/#studio',
+    name: 'Afia Labs Studio',
+    url: 'https://afialabs.net/services/',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Remote, worldwide' },
+  ],
+  url: 'https://afialabs.net/services/mobile-app-development/',
+  description,
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/services/mobile-app-development/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Mobile app development intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Mobile App Development</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Studio Services · Apps
+        </div>
+        <h1>Mobile app development from a real product studio.</h1>
+        <p class="subpage-lede">
+          Afia Labs ships consumer apps on iOS (<a href="/memescanr/">MemeScanr</a>, <a href="/studio/#tripsquad">TripSquad</a>, <a href="/studio/#planet-wonders">Planet Wonders</a> in development). We selectively take on client app projects where the brief is well-defined and we can ship something we are proud to put our name on.
+        </p>
+        <div class="hero-buttons">
+          <a href="/services/#contact" class="btn-primary">Discuss your app</a>
+          <a href="/studio/" class="btn-secondary">See our apps</a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📍</span>
+          Based in Virginia. Working with founders remote and worldwide.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>What we build (and what we do not).</h2>
+        <p>
+          We are a small studio, not an app farm. We do best when the brief is small enough to ship in 8 to 16 weeks and clear enough that we can name the one thing the app is for in a single sentence. We do not build everything for everyone, and we do not pitch on apps where we cannot be honest about the timeline or the trade-offs.
+        </p>
+
+        <h3>Apps we are a strong fit for.</h3>
+        <ul class="subpage-checklist">
+          <li><strong>Consumer iOS apps</strong> with a single clear job: a tool, a tracker, a daily ritual, a smart utility, a niche social product.</li>
+          <li><strong>Privacy-first apps</strong> that need to run on-device, store no server-side personal data, or use Apple ML/Core ML.</li>
+          <li><strong>AI-assisted apps</strong> that use foundation models thoughtfully, where the AI is leverage, not the entire product.</li>
+          <li><strong>Founder-led products</strong> where one person or a small team is making the calls and shipping fast matters more than committee.</li>
+        </ul>
+
+        <h3>Projects we are not the right fit for.</h3>
+        <ul class="subpage-checklist">
+          <li>Enterprise admin dashboards or back-office systems.</li>
+          <li>Marketplaces, social networks, or "the next" anything.</li>
+          <li>Apps that need a 12-person team to ship.</li>
+          <li>Anything that requires us to stop caring about quality to hit a deadline.</li>
+        </ul>
+
+        <h2>Our stack and our approach.</h2>
+        <p>
+          For iOS we ship in <strong>Flutter with native Swift channels</strong> for the parts that need real native performance (Apple ML/Core ML, AVFoundation, Photos framework, Keychain). Storage is SQLite. Where possible, processing happens on-device. Crash reports through Firebase only. We do not build apps that ship customer photos or audio to a server unless there is a specific, defensible reason.
+        </p>
+        <p>
+          We work in short cycles. We ship internal builds early, learn from them, and iterate. We do not disappear for three months and reveal a finished app. You see progress weekly.
+        </p>
+
+        <h2>What it costs and how long it takes.</h2>
+        <p>
+          Mobile apps are project-quoted, not on the package list. A small consumer app with a clear single job typically lands in the <strong>$15,000 to $40,000</strong> range and ships in 8 to 16 weeks. Larger projects with backend, payments, accounts, or significant native work scope up from there. Every engagement starts with a kickoff call and a written proposal so you know exactly what is in and what is out before you commit.
+        </p>
+
+        <h2>Studio hours and how we communicate.</h2>
+        <p>
+          Project inquiries are reviewed during evening and weekend studio hours: Monday to Friday 6:00 PM to 9:00 PM, Saturday 10:00 AM to 3:00 PM. Sunday is closed.
+        </p>
+        <p>
+          Most communication is async via email and Zoom. Calls happen on Google Meet, Microsoft Teams, Zoom, or WhatsApp, whichever method suits you.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Have an app idea worth shipping?</h2>
+          <p>Tell us what the app does, who it is for, and what makes the one thing it is for clear. We will follow up with a kickoff call.</p>
+          <a href="/services/#contact" class="btn-primary">Discuss your app</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/studio/">Inside the Afia Labs Studio</a> (our shipped apps)</li>
+          <li><a href="/services/website-design-virginia/">Website design in Virginia</a></li>
+          <li><a href="/services/landing-pages/">Landing page design</a></li>
+          <li><a href="/services/">All studio services</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

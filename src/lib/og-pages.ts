@@ -15,6 +15,11 @@ export const ogPages: OgPage[] = [
   { slug: 'sitemap', title: 'Site map — afialabs.net', eyebrow: 'Site map' },
   { slug: 'faq', title: 'MemeScanr FAQ — every question, answered', eyebrow: 'FAQ', subtitle: 'Direct answers to 30+ MemeScanr questions — privacy, AI, pricing, features.' },
   { slug: 'services', title: 'Work With Afia Labs', eyebrow: 'Studio Services', subtitle: 'Websites, landing pages, and digital systems for founders and small businesses. Built by a product studio.', footerRight: 'afialabs.net/services' },
+  { slug: 'services-website-design-virginia', title: 'Website Design in Virginia', eyebrow: 'Studio Services', subtitle: 'Website design for small businesses in Virginia. Mobile-first, conversion-focused, and built by a product studio.', footerRight: 'Based in Virginia · Remote welcome' },
+  { slug: 'services-website-design-fredericksburg', title: 'Website Design in Fredericksburg, VA', eyebrow: 'Studio Services', subtitle: 'Local studio in Fredericksburg, Spotsylvania, and Stafford. Polished websites for small business owners.', footerRight: 'Fredericksburg · Spotsylvania · Stafford' },
+  { slug: 'services-small-business-websites', title: 'Small Business Websites', eyebrow: 'Studio Services', subtitle: 'Websites that look real and help customers take action. Mobile-first, booking-ready, built to convert.', footerRight: 'afialabs.net/services' },
+  { slug: 'services-landing-pages', title: 'Landing Page Design', eyebrow: 'Studio Services', subtitle: 'Single-purpose pages that sell the offer. Built for launches, services, books, waitlists, and ad campaigns.', footerRight: 'afialabs.net/services' },
+  { slug: 'services-mobile-app-development', title: 'Mobile App Development', eyebrow: 'Studio Services', subtitle: 'Consumer iOS apps from a real product studio. Built by the team behind MemeScanr and TripSquad.', footerRight: 'afialabs.net/services' },
 
   { slug: 'memescanr', title: 'MemeScanr — on-device iPhone photo cleaner', eyebrow: 'Product', subtitle: 'Detects duplicates, memes, screenshots, and blurry photos. No server, no upload.' },
   { slug: 'memescanr-privacy', title: 'We literally don\'t have a server', eyebrow: 'Privacy', subtitle: 'MemeScanr processes every photo on-device. No cloud AI, no uploads, no account.' },

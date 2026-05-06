@@ -419,6 +419,23 @@ const servicesPageJsonLd = {
       </div>
     </section>
 
+    <section class="services-band services-deep-dives" aria-label="Service deep dives">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Service Deep Dives</div>
+          <h2 class="section-title">Looking for a specific service?</h2>
+          <p class="section-subtitle">Detailed pages for each of the things we get asked about most. Each one covers what is included, who it suits, and what it costs.</p>
+        </div>
+        <ul class="services-deep-list fade-in">
+          <li><a href="/services/website-design-virginia/"><span class="deep-link-title">Website design in Virginia</span><span class="deep-link-sub">For small businesses across the state.</span></a></li>
+          <li><a href="/services/website-design-fredericksburg/"><span class="deep-link-title">Website design in Fredericksburg, VA</span><span class="deep-link-sub">Local studio, Fredericksburg, Spotsylvania, and Stafford.</span></a></li>
+          <li><a href="/services/small-business-websites/"><span class="deep-link-title">Small business websites</span><span class="deep-link-sub">Websites that look real and help customers take action.</span></a></li>
+          <li><a href="/services/landing-pages/"><span class="deep-link-title">Landing page design</span><span class="deep-link-sub">Single-purpose pages for launches, services, and offers.</span></a></li>
+          <li><a href="/services/mobile-app-development/"><span class="deep-link-title">Mobile app development</span><span class="deep-link-sub">Consumer iOS apps from a real product studio.</span></a></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="services-band services-area-section" aria-label="Service area">
       <div class="container">
         <div class="section-header fade-in">
@@ -747,6 +764,52 @@ const servicesPageJsonLd = {
   .services-location-pin {
     font-size: 0.95rem;
     line-height: 1;
+  }
+
+  /* ===== Service Deep Dives ===== */
+  .services-deep-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .services-deep-list li {
+    margin: 0;
+  }
+  .services-deep-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 22px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .services-deep-list a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(124, 58, 237, 0.18);
+  }
+  .deep-link-title {
+    font-weight: 700;
+    color: var(--purple-deep);
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .deep-link-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  @media (max-width: 720px) {
+    .services-deep-list {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ===== Service Area chips ===== */

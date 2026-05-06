@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Landing Page Design | Afia Labs Studio';
+const description =
+  'Landing pages that sell the offer. Afia Labs Studio designs single-purpose pages for product launches, services, books, waitlists, and ad campaigns, with conversion-focused structure built in.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://afialabs.net/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Landing Page Design', item: 'https://afialabs.net/services/landing-pages/' },
+  ],
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Landing Page Design',
+  serviceType: 'Landing page design and conversion optimization',
+  provider: {
+    '@type': 'ProfessionalService',
+    '@id': 'https://afialabs.net/services/#studio',
+    name: 'Afia Labs Studio',
+    url: 'https://afialabs.net/services/',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Remote, worldwide' },
+  ],
+  url: 'https://afialabs.net/services/landing-pages/',
+  description,
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/services/landing-pages/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Landing page design intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Landing Page Design</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Studio Services
+        </div>
+        <h1>Landing pages that actually sell the offer.</h1>
+        <p class="subpage-lede">
+          A landing page has one job: turn the visitor in front of it into the action you need them to take. Afia Labs Studio designs single-purpose pages with conversion-focused structure, clean copy hierarchy, and the trust signals that close the click.
+        </p>
+        <div class="hero-buttons">
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+          <a href="/services/#packages" class="btn-secondary">See packages</a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📍</span>
+          Based in Virginia. Working with founders and small businesses anywhere.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>What a landing page is, and what it is not.</h2>
+        <p>
+          A landing page is a single page built for a single decision. It is not a homepage, an "About us" page, or a brochure. It exists for one moment in the customer journey: the moment a person clicks an ad, scans a flyer QR code, lands from a social post, or comes from a podcast mention. They have one question in their head ("is this worth my attention?") and one action in front of them. Everything on the page should serve that.
+        </p>
+        <p>
+          Most landing pages fail because they try to be a small website. They have a nav bar with five menu items, a footer with site-wide links, and three competing calls to action. The visitor leaks out one of those exits and never converts.
+        </p>
+
+        <h2>What we build into every landing page.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>One promise above the fold.</strong> A headline that names the problem, the audience, and the outcome in a sentence.</li>
+          <li><strong>One primary CTA.</strong> The one action you actually want. Repeat it down the page.</li>
+          <li><strong>Trust signals in the right places.</strong> Real photos, real reviews, named testimonials, and proof of the work.</li>
+          <li><strong>An honest objection-handling block.</strong> The questions a real prospect would ask before clicking, answered before they have to ask.</li>
+          <li><strong>Mobile-first layout.</strong> Most ad clicks are mobile. The phone view is the priority.</li>
+          <li><strong>Tracking that actually fires.</strong> Conversion events on the form submit, scroll-depth, and the analytics setup that lets you read what is working.</li>
+        </ul>
+
+        <h2>Common landing page projects we take on.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>Product launches.</strong> A page for a new app, course, or product.</li>
+          <li><strong>Service offers.</strong> A focused page for one service in your roster, separate from your main site.</li>
+          <li><strong>Book launches.</strong> A page that sells the book and lists the formats and where to buy.</li>
+          <li><strong>Waitlists and pre-launches.</strong> Email capture before there is anything to sell yet.</li>
+          <li><strong>Ad-campaign destinations.</strong> Pages designed to match the ad's promise and not the homepage.</li>
+          <li><strong>Lead-magnet pages.</strong> A guide, checklist, or download in exchange for an email.</li>
+        </ul>
+
+        <h2>What it costs.</h2>
+        <p>
+          A focused landing page typically falls in the <strong>Launch Page</strong> tier, which starts at <strong>$750</strong> and ships in 1 to 2 weeks. Multi-variant launches with email capture, automation, or paid-traffic instrumentation move into the <strong>Growth System</strong> tier and are custom-quoted. <a href="/services/#packages">See the full package breakdown.</a>
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Have a launch coming up?</h2>
+          <p>Tell us what you are launching, who it is for, and what one action the visitor should take. We will follow up with a proposal that fits.</p>
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/services/small-business-websites/">Small business websites</a></li>
+          <li><a href="/services/website-design-virginia/">Website design in Virginia</a></li>
+          <li><a href="/services/mobile-app-development/">Mobile app development</a></li>
+          <li><a href="/services/">All studio services</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

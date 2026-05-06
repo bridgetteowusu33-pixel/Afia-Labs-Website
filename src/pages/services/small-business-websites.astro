@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Small Business Websites | Afia Labs Studio';
+const description =
+  'Small business websites that look real and help customers take action. Afia Labs Studio builds clean, mobile-first sites and booking-ready contact flows for service businesses, founders, and creators in Virginia and remote.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://afialabs.net/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Small Business Websites', item: 'https://afialabs.net/services/small-business-websites/' },
+  ],
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Small Business Websites',
+  serviceType: 'Website design and development for small businesses',
+  provider: {
+    '@type': 'ProfessionalService',
+    '@id': 'https://afialabs.net/services/#studio',
+    name: 'Afia Labs Studio',
+    url: 'https://afialabs.net/services/',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Remote, worldwide' },
+  ],
+  url: 'https://afialabs.net/services/small-business-websites/',
+  description,
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/services/small-business-websites/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Small business websites intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Small Business Websites</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Studio Services
+        </div>
+        <h1>Small business websites that look real and help customers take action.</h1>
+        <p class="subpage-lede">
+          A small-business website should do more than sit online. It should explain what you offer in plain language, build trust at first glance, and give the visitor an obvious next step. That is what Afia Labs Studio builds.
+        </p>
+        <div class="hero-buttons">
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+          <a href="/services/#packages" class="btn-secondary">See packages</a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📍</span>
+          Based in Virginia. Serving small businesses locally and online.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>Most small-business websites get one of three things wrong.</h2>
+        <p>
+          They look outdated, so visitors do not trust them. They are confusing, so visitors do not know what is on offer. Or they are pretty but inert, so visitors do not have an obvious next step and they leave. Each of those problems is a conversion leak. Together, they explain why a lot of small businesses have a site and still get most of their leads from referrals.
+        </p>
+        <p>
+          A small-business website should be the place that turns word-of-mouth and search traffic into booked work. That is the job. We design for that job, not for design awards.
+        </p>
+
+        <h2>What we include in a small-business website.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>Clean, modern design</strong> aligned with your brand and the level of business you actually want.</li>
+          <li><strong>Mobile-first layout</strong> so the phone experience is the priority, not an afterthought.</li>
+          <li><strong>Plain-language copy structure</strong> for the homepage, About, Services, and Contact pages.</li>
+          <li><strong>Booking or contact flow</strong> that actually works on mobile and routes the inquiry to your inbox or scheduling tool.</li>
+          <li><strong>Basic SEO setup</strong> so search engines understand what you do and where you do it.</li>
+          <li><strong>Analytics setup</strong> so you can see what visitors are doing without a marketing degree.</li>
+          <li><strong>A clean hand-off</strong> with a short doc explaining how to update content, run reports, and tweak settings.</li>
+        </ul>
+
+        <h2>Who this is for.</h2>
+        <p>
+          Local service businesses, solo founders, coaches and consultants, creators with offers, small businesses that look outdated online, startup founders who need a polished landing page. If your customer journey runs through search, social, or referrals and ends with a website visit, this is the kind of site we build.
+        </p>
+
+        <h2>What it costs and how long it takes.</h2>
+        <p>
+          Launch Pages start at <strong>$750</strong> and ship in 1 to 2 weeks. Business Websites start at <strong>$2,000</strong> and ship in 3 to 5 weeks. Growth Systems are custom-quoted based on the scope of automations, integrations, and lead capture you need. Final pricing depends on scope, content, integrations, and revision rounds. <a href="/services/#packages">See the full package breakdown.</a>
+        </p>
+
+        <h2>Why hire a studio instead of going DIY.</h2>
+        <p>
+          DIY builders are great when budget is the only constraint. The trade-off is structure: most templates were not designed for your offer, so you end up shaping the business around the template instead of the other way around. The trust signals that quietly turn visitors into customers (typography rhythm, spacing, copy hierarchy, the order of the buttons) are usually what gets sacrificed. If your website is your storefront, that is not a trade you want to make.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Ready for a website that does the work?</h2>
+          <p>Tell us about your business, your customer, and what you want them to do next.</p>
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/services/website-design-virginia/">Website design in Virginia</a></li>
+          <li><a href="/services/website-design-fredericksburg/">Website design in Fredericksburg, VA</a></li>
+          <li><a href="/services/landing-pages/">Landing page design</a></li>
+          <li><a href="/services/mobile-app-development/">Mobile app development</a></li>
+          <li><a href="/services/">All studio services</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

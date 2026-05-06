@@ -1480,6 +1480,162 @@
             }
         }
 
+        /* ========== Service / blog sub-page (landing-style) ========== */
+        .subpage-hero {
+            padding: 140px 0 64px;
+        }
+        .subpage-breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+        .subpage-breadcrumbs a {
+            color: var(--purple-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .subpage-breadcrumbs a:hover { color: var(--purple-deep); }
+        .subpage-breadcrumbs span { margin: 0 8px; }
+        .subpage-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--purple-deep);
+            margin-bottom: 22px;
+            max-width: 820px;
+        }
+        .subpage-lede {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 720px;
+        }
+        .subpage-band {
+            padding: 80px 0;
+            background: var(--bg-white);
+            border-top: 1px solid var(--border-light);
+        }
+        .subpage-prose {
+            max-width: 760px;
+        }
+        .subpage-prose h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--purple-deep);
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+        .subpage-prose h2:first-of-type { margin-top: 0; }
+        .subpage-prose h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: var(--purple-deep);
+            margin-top: 32px;
+            margin-bottom: 10px;
+        }
+        .subpage-prose p {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+        .subpage-prose strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .subpage-prose a {
+            color: var(--purple-light);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .subpage-prose a:hover { color: var(--purple-deep); }
+        .subpage-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .subpage-checklist li {
+            padding-left: 24px;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .subpage-checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--purple-light);
+            font-weight: 800;
+        }
+        .subpage-checklist strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .subpage-cta-card {
+            margin-top: 56px;
+            padding: 40px 32px;
+            background: linear-gradient(160deg, rgba(124, 58, 237, 0.06), rgba(245, 158, 11, 0.04));
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        .subpage-cta-card h2 {
+            font-size: 1.5rem;
+            margin: 0 0 12px;
+            margin-top: 0 !important;
+        }
+        .subpage-cta-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0 auto 24px;
+            max-width: 520px;
+        }
+        .subpage-related {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .subpage-related a {
+            color: var(--purple-light);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .subpage-related a:hover { color: var(--purple-deep); }
+
+        /* Reusable hero location pill (matches services hero) */
+        .subpage-location-line {
+            margin: 24px 0 0;
+            max-width: none;
+            font-size: 0.875rem;
+            line-height: 1.55;
+            color: var(--purple-light);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px solid rgba(124, 58, 237, 0.12);
+            border-radius: 100px;
+        }
+        .subpage-location-pin {
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+
         /* ========== Footer location block ========== */
         .footer-location {
             margin-top: 16px;

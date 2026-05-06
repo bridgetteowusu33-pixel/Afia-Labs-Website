@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Website Design in Virginia | Afia Labs Studio';
+const description =
+  'Website design for small businesses in Virginia. Afia Labs Studio builds clean, mobile-first websites, landing pages, and booking-ready contact flows for local service businesses, with remote work available across the DMV and beyond.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://afialabs.net/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Website Design in Virginia', item: 'https://afialabs.net/services/website-design-virginia/' },
+  ],
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Website Design in Virginia',
+  serviceType: 'Website design and development',
+  provider: {
+    '@type': 'ProfessionalService',
+    '@id': 'https://afialabs.net/services/#studio',
+    name: 'Afia Labs Studio',
+    url: 'https://afialabs.net/services/',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Virginia' },
+    { '@type': 'City', name: 'Fredericksburg, Virginia' },
+    { '@type': 'City', name: 'Spotsylvania, Virginia' },
+    { '@type': 'City', name: 'Stafford, Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Northern Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Washington D.C. Metropolitan Area (DMV)' },
+  ],
+  url: 'https://afialabs.net/services/website-design-virginia/',
+  description,
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/services/website-design-virginia/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Website design in Virginia intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Website Design in Virginia</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Virginia · Studio Services
+        </div>
+        <h1>Website design for small businesses in Virginia.</h1>
+        <p class="subpage-lede">
+          Afia Labs Studio builds clean, modern websites for service businesses, founders, and creators across Virginia. Mobile-first design, conversion-focused structure, and a clean hand-off so you can actually run the site after launch.
+        </p>
+        <div class="hero-buttons">
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+          <a href="/services/#packages" class="btn-secondary">See packages</a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📍</span>
+          Based in Virginia. Serving small businesses locally and online.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>Built for the Virginia small-business owner.</h2>
+        <p>
+          A good small-business website does three things: it makes you look credible at first glance, it explains what you offer in plain language, and it gives the visitor an obvious next step. Most templates and DIY builders miss at least one of those, and a lot of freelance hand-offs leave you with a finished page but no playbook for what to do after launch.
+        </p>
+        <p>
+          We bring product thinking to client websites. The same care that goes into our own apps (clear flows, accessible code, real analytics, sensible SEO) is what we bring to your homepage, your services pages, and your contact flow. You get a site shaped around your offer instead of the other way around.
+        </p>
+
+        <h2>What we build for Virginia clients.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>Business websites.</strong> Four to seven core pages that explain who you serve, what you do, how to reach you, and why you are the right call.</li>
+          <li><strong>Landing pages.</strong> Single-purpose pages for launches, services, books, products, waitlists, and ad campaigns.</li>
+          <li><strong>Booking and contact flows.</strong> Working forms, calendar links, and inquiry handling so leads do not slip through the cracks.</li>
+          <li><strong>Mobile-first design.</strong> The phone is where most of your customers will see you first. We build for that screen first, then scale up.</li>
+          <li><strong>SEO setup.</strong> Titles, descriptions, schema, sitemap, and the foundational on-page work that helps you show up in local search.</li>
+          <li><strong>Analytics that actually report.</strong> A dashboard you can read, not a wall of vanity metrics.</li>
+        </ul>
+
+        <h2>Local service businesses we work well with.</h2>
+        <p>
+          Afia Labs is a strong fit for service-based small businesses across Virginia: home services, beauty and wellness studios, coaches and consultants, fitness and yoga studios, photographers, real estate teams, restaurants and food businesses, and creative practices. If your customer journey runs through a website, a calendar, and a contact form, we can build the kind of site that turns search clicks into booked work.
+        </p>
+
+        <h2>Local in Virginia, remote everywhere else.</h2>
+        <p>
+          We are based in Virginia and serve clients in Fredericksburg, Spotsylvania, Stafford, Northern Virginia, and the wider DMV. We also work remotely with founders and small businesses in other states and other time zones. Most communication is async via email and Zoom. Calls happen on Google Meet, Microsoft Teams, Zoom, or WhatsApp, whichever method suits you.
+        </p>
+
+        <h2>Studio hours.</h2>
+        <p>
+          Project inquiries are reviewed during evening and weekend studio hours: Monday to Friday 6:00 PM to 9:00 PM, Saturday 10:00 AM to 3:00 PM. Sunday is closed. Submit your project details anytime, and we will follow up with next steps.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Ready to make your business look serious online?</h2>
+          <p>Tell us what you are building, what your current website looks like, and what you want customers to do next.</p>
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/services/website-design-fredericksburg/">Website design in Fredericksburg, VA</a></li>
+          <li><a href="/services/small-business-websites/">Small business websites</a></li>
+          <li><a href="/services/landing-pages/">Landing page design</a></li>
+          <li><a href="/services/mobile-app-development/">Mobile app development</a></li>
+          <li><a href="/services/">All studio services</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+

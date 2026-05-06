@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Website Design in Fredericksburg, VA | Afia Labs Studio';
+const description =
+  'Website design in Fredericksburg, Virginia. Afia Labs Studio builds clean, mobile-friendly websites and booking-ready contact flows for local service businesses across Fredericksburg, Spotsylvania, and Stafford.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://afialabs.net/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Website Design in Fredericksburg, VA', item: 'https://afialabs.net/services/website-design-fredericksburg/' },
+  ],
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Website Design in Fredericksburg, VA',
+  serviceType: 'Website design and development',
+  provider: {
+    '@type': 'ProfessionalService',
+    '@id': 'https://afialabs.net/services/#studio',
+    name: 'Afia Labs Studio',
+    url: 'https://afialabs.net/services/',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Fredericksburg, Virginia' },
+    { '@type': 'City', name: 'Spotsylvania, Virginia' },
+    { '@type': 'City', name: 'Stafford, Virginia' },
+  ],
+  url: 'https://afialabs.net/services/website-design-fredericksburg/',
+  description,
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/services/website-design-fredericksburg/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Website design in Fredericksburg intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Website Design in Fredericksburg, VA</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Fredericksburg · Spotsylvania · Stafford
+        </div>
+        <h1>Website design for small businesses in Fredericksburg, Virginia.</h1>
+        <p class="subpage-lede">
+          Afia Labs Studio is based in Virginia and builds polished websites for small-business owners in Fredericksburg, Spotsylvania, Stafford, and the surrounding Rappahannock region. Mobile-first design, booking-ready contact flows, and a clean hand-off after launch.
+        </p>
+        <div class="hero-buttons">
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+          <a href="/services/#packages" class="btn-secondary">See packages</a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📍</span>
+          Local studio. Remote work also welcome.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>A Fredericksburg-area studio that takes small business seriously.</h2>
+        <p>
+          The Fredericksburg, Spotsylvania, and Stafford area is full of independent service businesses doing real work: salons, contractors, photographers, fitness studios, restaurants, real estate teams, and family-run shops. Most of them deserve a website that reflects that work and helps customers actually find them. A lot of them do not have one.
+        </p>
+        <p>
+          Afia Labs Studio was built to bring product-level care to small-business websites. The same thinking that goes into our own apps (clear flows, accessible code, working analytics, and conversion-focused structure) is what we bring to your homepage and your services pages. You get a site shaped around your offer, your customer, and your local market.
+        </p>
+
+        <h2>What a Fredericksburg small-business website needs.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>A clear "what we do, where, and for whom" above the fold.</strong> Locals are scrolling on a phone with one bar of signal. Make the answer obvious.</li>
+          <li><strong>An easy way to call, message, or book.</strong> A real phone link, a tap-to-text option, or a calendar link that works on mobile.</li>
+          <li><strong>Real photos, not stock.</strong> Customers can tell. Real photos of the shop, the team, the work, the inside of the space build instant trust.</li>
+          <li><strong>Service area pages.</strong> Spotsylvania, Stafford, and surrounding zip codes spelled out so Google connects your business with the searches people actually run.</li>
+          <li><strong>A Google Business Profile that links back to the site.</strong> The map listing and the website should reinforce each other, not contradict each other.</li>
+          <li><strong>Reviews on the page.</strong> Five-star reviews from a Google Business Profile, embedded or quoted, do more for conversion than any clever copy.</li>
+        </ul>
+
+        <h2>How we work with local clients.</h2>
+        <p>
+          We start with a short kickoff call (Google Meet, Zoom, or a phone call) to understand your business, your offer, and your customer. We do an audit of your existing site and your Google Business Profile. We agree on the right package (Launch Page, Business Website, or Growth System), draft the structure, and ship the build over 1 to 5 weeks depending on scope. After launch you get the working site, the analytics dashboard, and a short hand-off that explains what to do if traffic does or does not show up in the first few months.
+        </p>
+
+        <h2>Studio hours and how we communicate.</h2>
+        <p>
+          Project inquiries are reviewed during evening and weekend studio hours: Monday to Friday 6:00 PM to 9:00 PM, Saturday 10:00 AM to 3:00 PM. Sunday is closed. Submit your project details anytime, and we will follow up with next steps.
+        </p>
+        <p>
+          Most communication is async via email and Zoom. Calls happen on Google Meet, Microsoft Teams, Zoom, or WhatsApp, whichever method suits you.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Building a small business in Fredericksburg?</h2>
+          <p>Tell us what you offer, who you serve, and what you want customers to do next. We will follow up with a proposal that fits.</p>
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/services/website-design-virginia/">Website design in Virginia</a></li>
+          <li><a href="/services/small-business-websites/">Small business websites</a></li>
+          <li><a href="/services/landing-pages/">Landing page design</a></li>
+          <li><a href="/services/">All studio services</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
