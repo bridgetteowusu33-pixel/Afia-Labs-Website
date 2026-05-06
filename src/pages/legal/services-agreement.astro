@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Services Agreement | Afia Labs Studio';
+const description =
+  'Plain-English terms of engagement for Afia Labs Studio client services. Scope, payment, intellectual property, revisions, cancellation, and what to expect when working with us. Final binding terms live in the signed Statement of Work for each project.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Legal', item: 'https://afialabs.net/legal/' },
+    { '@type': 'ListItem', position: 3, name: 'Services Agreement', item: 'https://afialabs.net/legal/services-agreement/' },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/legal/services-agreement/" ogType="website" noindex={false}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Services Agreement intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Services Agreement</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Legal · Plain-English
+        </div>
+        <h1>Services Agreement.</h1>
+        <p class="subpage-lede">
+          Plain-English terms of engagement for client services with Afia Labs Studio. This is the starting point. Final binding terms for each engagement are set in the signed Statement of Work for that project.
+        </p>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📅</span>
+          Last updated: May 6, 2026
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <p>
+          <em>This page is a plain-English summary, not legal advice. It describes how Afia Labs Studio typically works with clients on paid services. The binding contract for any specific project is the Statement of Work (SOW) signed by both parties for that project. Where this page and a signed SOW differ, the SOW controls. For legal advice specific to your situation, consult a Virginia-licensed attorney.</em>
+        </p>
+
+        <h2>1. Scope of services</h2>
+        <p>
+          Afia Labs Studio offers the services described on our <a href="/services/">Services</a> page, including (without limitation): website design, landing page design, mobile app development, and small-business digital systems. Each project is scoped individually based on a kickoff conversation and a written Statement of Work.
+        </p>
+        <p>
+          Each engagement starts with a short kickoff call so both sides agree on the scope, timeline, deliverables, and payment terms in writing before any work begins.
+        </p>
+
+        <h2>2. Packages</h2>
+        <p>The studio publishes three standard packages on the <a href="/services/#packages">Services page</a>:</p>
+        <ul class="subpage-checklist">
+          <li><strong>Launch Page</strong>, projects start at $750. A polished one-page responsive website. Typical timeline 1 to 2 weeks.</li>
+          <li><strong>Business Website</strong>, projects start at $2,000. A 4 to 7 page website with conversion-focused copy structure, contact or booking flow, basic SEO setup, analytics setup. Typical timeline 2 to 5 weeks depending on the task. Faster turnaround can be requested.</li>
+          <li><strong>Growth System</strong>, custom-quoted. Lead capture, automations, analytics, and smarter customer journeys for businesses that need more than a site.</li>
+        </ul>
+        <p>
+          Final pricing depends on scope, timeline, content needs, integrations, and revision requirements. Custom projects outside the package list (such as mobile app development) are quoted individually.
+        </p>
+
+        <h2>3. Payment terms</h2>
+        <p>The studio's standard payment schedule for fixed-fee projects is:</p>
+        <ul class="subpage-checklist">
+          <li><strong>50%</strong> at kickoff (after the SOW is signed and before design or development begins).</li>
+          <li><strong>50%</strong> on completion (before final files, code, or hosting credentials are transferred to the client).</li>
+        </ul>
+        <p>
+          Larger projects (Growth Systems, mobile apps, multi-month engagements) may be split into milestone-based payments specified in the SOW. All payments are due in U.S. dollars. Invoices are net 7 unless otherwise agreed in writing. The studio reserves the right to pause work if invoices are past due.
+        </p>
+        <p>
+          Hosting fees, domain registration fees, third-party software licenses (calendar tools, email platforms, analytics, payment processors), and stock content licensing are passed through to the client at cost or are paid by the client directly.
+        </p>
+
+        <h2>4. Timeline and delivery</h2>
+        <p>
+          Project timelines are agreed in the SOW and depend on the package, scope, and the client's responsiveness with feedback and content. Typical timelines are listed in section 2 above.
+        </p>
+        <p>
+          Project delays caused by missing client content, delayed feedback, or scope changes do not extend the studio's payment schedule. Project delays caused by the studio do not increase the client's fee.
+        </p>
+
+        <h2>5. Revisions</h2>
+        <p>Each package includes a defined number of revision rounds:</p>
+        <ul class="subpage-checklist">
+          <li>Launch Page: 1 revision round.</li>
+          <li>Business Website: 2 revision rounds.</li>
+          <li>Growth System: revision rounds defined per SOW.</li>
+        </ul>
+        <p>
+          A revision round is a consolidated batch of feedback delivered after each milestone (typically design review, build review, and pre-launch review). Item-level requests submitted across multiple emails are batched into the next round.
+        </p>
+        <p>
+          Revisions outside the agreed scope (new pages, new features, new sections, fundamental design redirection after sign-off) are billed separately at the studio's standard hourly rate or quoted as a change order.
+        </p>
+
+        <h2>6. Intellectual property and ownership</h2>
+        <p>
+          Upon full payment of all invoices for a project, the client receives ownership of the final deliverables produced specifically for that project. This includes the final design files, custom code, and copy written by the studio for the project.
+        </p>
+        <p>The following items are NOT transferred to the client:</p>
+        <ul class="subpage-checklist">
+          <li>Third-party software, frameworks, libraries, fonts, or stock assets used in the build, which remain governed by their own licenses.</li>
+          <li>The studio's internal tools, methods, code libraries, design systems, and templates used across multiple client projects.</li>
+          <li>Working files, exploratory drafts, or rejected concepts that were not part of the final delivery.</li>
+        </ul>
+        <p>
+          Until full payment is received, all work product remains the property of Afia Labs Studio and may not be deployed, modified, or redistributed by the client.
+        </p>
+        <p>
+          <strong>Portfolio rights.</strong> The studio retains the right to display completed work in its portfolio, case studies, and marketing materials, including screenshots, descriptions, and links to the live site. Clients may opt out of portfolio inclusion by notifying the studio in writing before the project launches. Confidential client information disclosed during the engagement is not used in portfolio content.
+        </p>
+
+        <h2>7. Cancellation and refunds</h2>
+        <p>
+          Either party may cancel an engagement at any time by written notice.
+        </p>
+        <p>
+          <strong>If the client cancels:</strong> The 50% deposit is non-refundable. Any work delivered up to the cancellation date is invoiced at the studio's standard hourly rate, capped at the remaining contract value. The client receives the work product completed to that date upon payment.
+        </p>
+        <p>
+          <strong>If the studio cancels:</strong> The studio refunds any portion of the deposit not earned through work delivered to the cancellation date. The client receives the work product completed to that date.
+        </p>
+        <p>
+          The studio reserves the right to cancel an engagement and refund unearned deposit amounts if the project scope, communication patterns, or working relationship become untenable in the studio's reasonable judgment.
+        </p>
+
+        <h2>8. Client responsibilities</h2>
+        <p>To deliver on time and on scope, the studio relies on the client to:</p>
+        <ul class="subpage-checklist">
+          <li>Provide accurate and timely content (copy, photos, brand assets) when needed.</li>
+          <li>Respond to feedback requests within agreed turnaround windows (typically 3 to 5 business days unless otherwise specified).</li>
+          <li>Make payments on schedule.</li>
+          <li>Provide access to required third-party accounts (domain registrar, hosting, analytics, email platforms) when needed for delivery.</li>
+          <li>Have the rights, licenses, and permissions for any content provided to the studio for use in the project.</li>
+        </ul>
+
+        <h2>9. Confidentiality</h2>
+        <p>
+          Information shared during a client engagement is treated as confidential and used only to deliver the agreed services. The studio will not disclose confidential client information to third parties except as required by law or to operate the project (for example, deploying the site to a hosting provider). Confidentiality obligations continue after the engagement ends.
+        </p>
+
+        <h2>10. Disclaimer of business outcomes</h2>
+        <p>
+          The studio designs and builds work product to professional standards. The studio does not guarantee specific business outcomes, including (without limitation) website traffic, search engine rankings, lead volume, conversion rates, app store approval, or revenue. Outcomes depend on factors outside the studio's control (the client's market, audience, content, marketing investment, and ongoing operations).
+        </p>
+
+        <h2>11. Limitation of liability</h2>
+        <p>
+          To the fullest extent permitted by law, Afia Labs Studio's total liability for any claim arising out of or related to a client engagement is limited to the total amount actually paid by the client for the specific Statement of Work giving rise to the claim. The studio is not liable for indirect, incidental, consequential, or punitive damages, including lost profits, lost data, or business interruption.
+        </p>
+
+        <h2>12. Governing law and disputes</h2>
+        <p>
+          This Services Agreement is governed by the laws of the Commonwealth of Virginia, without regard to its conflict-of-law principles. Disputes arising from or related to this agreement or any Statement of Work are subject to the exclusive jurisdiction of the state or federal courts located in Virginia.
+        </p>
+        <p>
+          Both parties agree to attempt to resolve any dispute informally for at least 30 days before initiating formal legal action.
+        </p>
+
+        <h2>13. Changes to this agreement</h2>
+        <p>
+          The studio may update this Services Agreement from time to time. Updated terms apply to new engagements signed after the update date. For engagements already in progress, the version of this agreement referenced in the signed SOW continues to apply for that engagement unless both parties agree in writing to the updated version.
+        </p>
+
+        <h2>14. Contact</h2>
+        <p>
+          Questions about this Services Agreement, or about scoping a project: <a href="mailto:support@afialabs.net">support@afialabs.net</a> or <a href="/services/#contact">start a project</a> through the inquiry form.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Ready to start a project?</h2>
+          <p>Tell us about your business, your customer, and what you want them to do next. We will follow up with a kickoff call and a written Statement of Work.</p>
+          <a href="/services/#contact" class="btn-primary">Start a Project</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/services/">All studio services</a></li>
+          <li><a href="/services/#packages">Service packages and pricing</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

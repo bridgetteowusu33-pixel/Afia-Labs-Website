@@ -20,6 +20,7 @@ export const ogPages: OgPage[] = [
   { slug: 'services-small-business-websites', title: 'Small Business Websites', eyebrow: 'Studio Services', subtitle: 'Websites that look real and help customers take action. Mobile-first, booking-ready, built to convert.', footerRight: 'afialabs.net/services' },
   { slug: 'services-landing-pages', title: 'Landing Page Design', eyebrow: 'Studio Services', subtitle: 'Single-purpose pages that sell the offer. Built for launches, services, books, waitlists, and ad campaigns.', footerRight: 'afialabs.net/services' },
   { slug: 'services-mobile-app-development', title: 'Mobile App Development', eyebrow: 'Studio Services', subtitle: 'Consumer iOS apps from a real product studio. Built by the team behind MemeScanr and TripSquad.', footerRight: 'afialabs.net/services' },
+  { slug: 'legal-services-agreement', title: 'Services Agreement', eyebrow: 'Legal · Plain-English', subtitle: 'Plain-English terms of engagement for client work. Scope, payment, IP, revisions, cancellation. Final binding terms live in the signed SOW.', footerRight: 'Last updated 2026-05-06' },
 
   { slug: 'memescanr', title: 'MemeScanr — on-device iPhone photo cleaner', eyebrow: 'Product', subtitle: 'Detects duplicates, memes, screenshots, and blurry photos. No server, no upload.' },
   { slug: 'memescanr-privacy', title: 'We literally don\'t have a server', eyebrow: 'Privacy', subtitle: 'MemeScanr processes every photo on-device. No cloud AI, no uploads, no account.' },
