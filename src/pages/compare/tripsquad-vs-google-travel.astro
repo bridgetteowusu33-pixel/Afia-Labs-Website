@@ -1,0 +1,139 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const title = 'TripSquad vs Google Travel — which is better for group trips? (2026)';
+const description =
+  'Head-to-head comparison of TripSquad and Google Travel in 2026. Google Travel is single-player research and booking. TripSquad is built for groups deciding together. Direct recommendation based on use case.';
+const heading = 'TripSquad vs Google Travel (2026)';
+const lede =
+  'Google Travel is excellent at research and booking for one person. TripSquad is excellent at group decisions and shared planning. They look similar from a distance, but the second you try to share a Google Travel trip with five friends and have them vote, the gap is obvious.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'TripSquad vs Google Travel' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/tripsquad-vs-google-travel/',
+};
+
+const faqItems = [
+  {
+    q: 'Can Google Travel do group voting?',
+    a: 'No. Google Travel is single-player by design. There is no built-in way to share a trip with friends, get them to vote on destinations, or coordinate a group decision. You would still need a separate group chat or planning tool on top.',
+  },
+  {
+    q: 'Is Google Travel free?',
+    a: 'Yes. Google Travel is free and built into Google search. TripSquad is also free on iOS.',
+  },
+  {
+    q: 'Can I find flights and hotels in TripSquad like I can in Google Travel?',
+    a: 'TripSquad does not aggregate live flight and hotel inventory the way Google Travel does. TripSquad is the planning and decision layer. For flight and hotel research, use Google Flights or Google Hotels alongside TripSquad. Once the booking is made, log it in the TripSquad itinerary.',
+  },
+  {
+    q: 'Should I use Google Travel and TripSquad together?',
+    a: 'Yes. Use Google Travel or Google Flights for the research and price-comparison part. Use TripSquad for the group decision flow and the day-by-day planning. They cover different jobs.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/tripsquad-vs-google-travel/"
+  ogType="article"
+  jsonLd={webPageJsonLd}
+>
+  <div class="article-meta">
+    <span>Updated May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>The honest one-line summary</h2>
+  <p>
+    <strong>Google Travel</strong> is for one person researching and booking a trip. <strong>TripSquad</strong> is for a group deciding what trip to take and planning it together. Different jobs.
+  </p>
+
+  <h2>What each one does</h2>
+
+  <h3>Google Travel</h3>
+  <p>
+    Google Travel (the unified product that includes Google Flights, Google Hotels, and Explore Destinations) is a research and booking tool. It aggregates flight prices, hotel inventory, and destination suggestions from across the web, all tied into Google search and Gmail. If you have a Gmail confirmation, it auto-organizes the trip in your account. Free, fast, and excellent at the research phase.
+  </p>
+
+  <h3>TripSquad</h3>
+  <p>
+    TripSquad is a group-trip planner built around the decision-making problem in groups. Invite the squad by tag or share link, vote on destinations, get suggestions from Scout (the AI travel companion), reveal the winner, and plan day-by-day in built-in chat. Free on iOS.
+  </p>
+
+  <h2>Where the two tools clash</h2>
+  <p>
+    Google Travel is excellent at "where can I go for the cheapest flight in early August?" It is terrible at "the eight of us cannot decide between Charleston and Nashville and the conversation has been stuck for three weeks."
+  </p>
+  <p>
+    TripSquad is excellent at "let us all vote on three destinations and reveal the winner." It does not aggregate live flight and hotel inventory the way Google does.
+  </p>
+  <p>
+    The honest answer is they are complements, not competitors. Most group trips end up using both: Google to research candidate destinations, TripSquad to vote on which one and run the planning.
+  </p>
+
+  <h2>Feature matrix</h2>
+  <ul class="subpage-checklist">
+    <li><strong>Live flight inventory and prices:</strong> Google Travel yes. TripSquad no.</li>
+    <li><strong>Live hotel inventory and prices:</strong> Google Travel yes. TripSquad no.</li>
+    <li><strong>Destination explore by interest, climate, budget:</strong> Google Travel yes (limited). TripSquad partial via Scout AI.</li>
+    <li><strong>Auto-import bookings from Gmail:</strong> Google Travel yes. TripSquad no.</li>
+    <li><strong>Group voting on destinations:</strong> TripSquad yes. Google Travel no.</li>
+    <li><strong>Vote-and-reveal mechanic:</strong> TripSquad yes. Google Travel no.</li>
+    <li><strong>AI destination suggestions tuned to the group's vibe:</strong> TripSquad yes (Scout). Google Travel partial (single-user).</li>
+    <li><strong>Built-in group chat:</strong> TripSquad yes. Google Travel no.</li>
+    <li><strong>Shared packing list:</strong> TripSquad yes. Google Travel no.</li>
+    <li><strong>Trip recap after the trip:</strong> TripSquad yes. Google Travel no.</li>
+    <li><strong>Free:</strong> Both yes.</li>
+  </ul>
+
+  <h2>Who should pick which</h2>
+
+  <h3>Pick Google Travel if</h3>
+  <ul class="subpage-checklist">
+    <li>You are researching destinations, flights, or hotels solo.</li>
+    <li>The trip is just you (or you and one other person).</li>
+    <li>Your bookings live in Gmail and you want them auto-organized.</li>
+    <li>You want price tracking on a specific route or hotel.</li>
+  </ul>
+
+  <h3>Pick TripSquad if</h3>
+  <ul class="subpage-checklist">
+    <li>The group cannot decide where to go.</li>
+    <li>You want a neutral vote-and-reveal mechanic so the loud friend does not win by default.</li>
+    <li>You want all the trip planning in one place instead of scattered across a group chat, a Google Doc, and three browser tabs.</li>
+    <li>You want AI-assisted destination and itinerary suggestions that take the group's vibe into account.</li>
+  </ul>
+
+  <h3>Use both if (most groups should)</h3>
+  <p>
+    Use Google Travel and Google Flights for the research and price-comparison phase. Use TripSquad for the group decision and the planning. Once a booking is made on Google, log it into the TripSquad itinerary so the whole group can see it.
+  </p>
+
+  <h2>The bottom line</h2>
+  <p>
+    Google Travel and TripSquad are not really competitors. They solve different problems for different audiences. If you are solo, Google Travel is enough. If you are in a group that cannot agree, Google Travel will not help you and TripSquad is the only one of the two that addresses the actual blocker.
+  </p>
+
+  <FAQ items={faqItems} heading="Common questions" />
+
+  <p style="margin-top: 40px;">
+    <strong>Stuck on the destination?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/best-group-travel-apps-2026/">2026 group travel apps comparison</a>.
+  </p>
+</ArticleLayout>

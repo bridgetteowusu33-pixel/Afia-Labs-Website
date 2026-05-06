@@ -1,0 +1,139 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const title = 'TripSquad vs TripIt — which is better for group trips in 2026?';
+const description =
+  'Head-to-head comparison of TripSquad and TripIt for travel planning in 2026. TripIt manages itineraries for solo travelers. TripSquad is built for groups deciding together. Direct recommendation based on use case.';
+const heading = 'TripSquad vs TripIt (2026)';
+const lede =
+  'TripIt and TripSquad solve two different problems. TripIt builds itineraries from confirmation emails, mostly for solo travelers. TripSquad runs the group decision flow that gets a trip booked in the first place. Here is the direct comparison and a clear recommendation.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'TripSquad vs TripIt' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/tripsquad-vs-tripit/',
+};
+
+const faqItems = [
+  {
+    q: 'Is TripSquad or TripIt better for group trips?',
+    a: 'TripSquad. TripIt is designed around an individual traveler with confirmed bookings. TripSquad is designed around a group still deciding what trip to take, with vote-and-reveal mechanics for picking destinations and built-in chat for coordinating. If your trip is already booked and you just need an itinerary, TripIt works. If your group is still deciding where and when, TripSquad is the better tool.',
+  },
+  {
+    q: 'Does TripIt support group voting on destinations?',
+    a: 'No. TripIt does not have voting, group decision flows, or destination-suggestion features. It assumes the destination has already been chosen and the bookings have been made.',
+  },
+  {
+    q: 'Is TripSquad free?',
+    a: 'Yes. TripSquad is free on iOS. TripIt has a free tier and a Pro tier ($49 per year) that adds flight tracking and seat alerts.',
+  },
+  {
+    q: 'Can I use both?',
+    a: 'Yes, and many groups do. Use TripSquad for the decision and planning phase. Once the trip is booked, individual travelers can forward confirmations to TripIt for itinerary tracking. They serve different stages of the trip.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/tripsquad-vs-tripit/"
+  ogType="article"
+  jsonLd={webPageJsonLd}
+>
+  <div class="article-meta">
+    <span>Updated May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>The honest one-line summary</h2>
+  <p>
+    <strong>TripSquad</strong> helps a group decide what trip to take. <strong>TripIt</strong> tracks the trip after a solo traveler has booked it. Different stages, different problems, different audiences.
+  </p>
+
+  <h2>What each one does</h2>
+
+  <h3>TripIt</h3>
+  <p>
+    TripIt is the original travel itinerary app. Forward your hotel, flight, and rental car confirmations to plans@tripit.com and TripIt parses them into a unified itinerary. The free tier covers itinerary management. The Pro tier ($49 per year) adds flight tracking, seat alerts, and refund monitoring. Loyal user base of business travelers and frequent flyers. Built around one person, one inbox, one stream of confirmations.
+  </p>
+
+  <h3>TripSquad</h3>
+  <p>
+    TripSquad is a group-trip planner built around the decision-making problem in groups. Invite by tag or share link, vote on destinations, get suggestions from Scout (the AI travel companion), reveal the winner, and plan day-by-day in built-in chat. Free on iOS. Built around a group of 3 to 12 people who need to agree on a trip and execute it together.
+  </p>
+
+  <h2>Feature matrix</h2>
+  <ul class="subpage-checklist">
+    <li><strong>Auto-itinerary from email confirmations:</strong> TripIt yes. TripSquad no.</li>
+    <li><strong>Group voting on destinations:</strong> TripSquad yes. TripIt no.</li>
+    <li><strong>Vote-and-reveal mechanic:</strong> TripSquad yes. TripIt no.</li>
+    <li><strong>AI destination suggestions tied to the group's vibe:</strong> TripSquad yes (Scout). TripIt no.</li>
+    <li><strong>Built-in group chat:</strong> TripSquad yes. TripIt no.</li>
+    <li><strong>Shared packing list:</strong> TripSquad yes. TripIt no.</li>
+    <li><strong>Trip recap after the trip:</strong> TripSquad yes. TripIt no.</li>
+    <li><strong>Real-time flight tracking:</strong> TripIt Pro yes. TripSquad no.</li>
+    <li><strong>Seat upgrade alerts:</strong> TripIt Pro yes. TripSquad no.</li>
+    <li><strong>Refund monitoring:</strong> TripIt Pro yes. TripSquad no.</li>
+    <li><strong>Free tier:</strong> Both have one.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>
+    TripIt requires you to forward your confirmation emails to its servers, which is necessary for the auto-itinerary feature. Your itineraries are stored on TripIt's infrastructure (Concur, owned by SAP). TripSquad keeps trip data tied to the trip rather than the individual inbox; group chat and itinerary content live in the app, and Scout's AI features run on Afia Labs infrastructure. Both are reasonable; the trade-offs are different.
+  </p>
+
+  <h2>Pricing</h2>
+  <ul class="subpage-checklist">
+    <li><strong>TripIt free:</strong> itinerary management, basic features.</li>
+    <li><strong>TripIt Pro:</strong> $49 per year. Adds flight tracking, seat alerts, refund monitoring.</li>
+    <li><strong>TripSquad:</strong> free on iOS.</li>
+  </ul>
+
+  <h2>Who should pick which</h2>
+
+  <h3>Pick TripIt if</h3>
+  <ul class="subpage-checklist">
+    <li>You travel solo or for business and need a clean itinerary.</li>
+    <li>You fly often and would benefit from flight tracking and seat alerts.</li>
+    <li>The trips are already booked and you just want them organized.</li>
+  </ul>
+
+  <h3>Pick TripSquad if</h3>
+  <ul class="subpage-checklist">
+    <li>You are trying to plan a trip with a group and the decision-making has stalled.</li>
+    <li>The group needs a neutral structure to vote on destinations and dates.</li>
+    <li>You want the planning conversation in one place instead of buried in a group chat.</li>
+    <li>You want AI-assisted destination and itinerary suggestions tuned to the group.</li>
+  </ul>
+
+  <h3>Use both if</h3>
+  <p>
+    Many groups do. Plan the trip in TripSquad. Once it is booked, individual travelers forward their confirmations to TripIt for personal itinerary tracking. The two tools cover different stages of the trip without overlapping.
+  </p>
+
+  <h2>The bottom line</h2>
+  <p>
+    If your problem is "we have not even decided where to go," TripIt cannot help you and TripSquad is the obvious choice. If your problem is "the trip is booked but my flights and hotels are scattered across five emails," TripIt was built for exactly that and TripSquad does not solve it. Most groups need both at different stages.
+  </p>
+
+  <FAQ items={faqItems} heading="Common questions" />
+
+  <p style="margin-top: 40px;">
+    <strong>Trying to plan a group trip right now?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/how-to-plan-a-group-trip-everyone-shows-up-for/">five-step group trip planning guide</a>.
+  </p>
+</ArticleLayout>

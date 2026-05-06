@@ -1,0 +1,130 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const title = 'TripSquad vs Troupe — which is better for your group trip? (2026)';
+const description =
+  'Head-to-head comparison of TripSquad and Troupe in 2026. Troupe is built for trip leaders organizing tours and group travel for clients. TripSquad is built for friend groups making decisions together.';
+const heading = 'TripSquad vs Troupe (2026)';
+const lede =
+  'TripSquad and Troupe both look like "group travel apps" from the outside. The difference shows up in who they assume is in charge. Troupe assumes one organizer plans for everyone. TripSquad assumes the group decides together. The right pick depends on which dynamic matches yours.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'TripSquad vs Troupe' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/tripsquad-vs-troupe/',
+};
+
+const faqItems = [
+  {
+    q: 'Is Troupe better than TripSquad?',
+    a: 'Better at different things. Troupe is stronger if you are running a group trip as the leader for everyone else, especially trips of 8 to 30 people, content groups, or tour-style travel. TripSquad is stronger for a friend group of 3 to 12 where the decision-making is collaborative and nobody wants to be "in charge."',
+  },
+  {
+    q: 'Does TripSquad work for trip leaders running content trips or group tours?',
+    a: 'It can, but Troupe is built specifically for that use case. If your audience is paying you or following you because you organize trips for them, Troupe has features tailored to that dynamic.',
+  },
+  {
+    q: 'Is TripSquad free?',
+    a: 'Yes, TripSquad is free on iOS. Troupe has different tiers depending on the size of the trip and the use case; check their site for current pricing.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/tripsquad-vs-troupe/"
+  ogType="article"
+  jsonLd={webPageJsonLd}
+>
+  <div class="article-meta">
+    <span>Updated May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>The honest one-line summary</h2>
+  <p>
+    <strong>Troupe</strong> is built for the trip leader running travel for others. <strong>TripSquad</strong> is built for the friend group running travel together. Same general space, different power dynamic.
+  </p>
+
+  <h2>What each one does</h2>
+
+  <h3>Troupe</h3>
+  <p>
+    Troupe is a group travel platform geared toward organizers who run trips for groups of 8 to 30 people, including content creators, tour leaders, and event organizers. Strong features for trip-leader-to-attendee communication, attendee management, and the logistics of running a structured group trip. The professional-or-semi-professional trip leader is the target user.
+  </p>
+
+  <h3>TripSquad</h3>
+  <p>
+    TripSquad is a peer-group travel app built around the decision-making problem in friend groups. Invite by tag or share link, vote on destinations, get suggestions from Scout (the AI travel companion), reveal the winner, and plan day-by-day in built-in chat. Free on iOS. Optimized for casual groups of 3 to 12 people where nobody is "the organizer."
+  </p>
+
+  <h2>The dynamic difference</h2>
+  <p>
+    The most important question to answer is: in your trip, is there a clear organizer, or is the group deciding together?
+  </p>
+  <p>
+    If there is a clear organizer (a tour leader, a content creator running a trip for followers, an event planner organizing a corporate retreat), Troupe is built for that flow. The organizer plans, the attendees follow, the communication is mostly one-to-many.
+  </p>
+  <p>
+    If the group is a peer-group of friends or family where everyone gets a say and the loud-friend dynamic is the actual problem, TripSquad's vote-and-reveal mechanic is the differentiator. Nobody is "the organizer." The group decides as a unit.
+  </p>
+
+  <h2>Feature matrix</h2>
+  <ul class="subpage-checklist">
+    <li><strong>Group voting on destinations:</strong> TripSquad yes (vote-and-reveal). Troupe partial.</li>
+    <li><strong>AI destination suggestions:</strong> TripSquad yes (Scout). Troupe varies.</li>
+    <li><strong>Built-in group chat:</strong> Both yes.</li>
+    <li><strong>Day-by-day itinerary:</strong> Both yes.</li>
+    <li><strong>Trip-leader-to-attendee broadcasting:</strong> Troupe yes. TripSquad limited.</li>
+    <li><strong>Attendee management for paid trips:</strong> Troupe yes. TripSquad no.</li>
+    <li><strong>Built for groups of 3 to 12:</strong> TripSquad yes. Troupe possible but skewed bigger.</li>
+    <li><strong>Built for groups of 8 to 30:</strong> Troupe yes. TripSquad possible but skewed smaller.</li>
+    <li><strong>Trip recap after the trip:</strong> TripSquad yes. Troupe varies.</li>
+    <li><strong>Shared packing list:</strong> TripSquad yes. Troupe varies.</li>
+    <li><strong>Free tier:</strong> TripSquad yes. Troupe varies by use case.</li>
+  </ul>
+
+  <h2>Who should pick which</h2>
+
+  <h3>Pick Troupe if</h3>
+  <ul class="subpage-checklist">
+    <li>You are organizing a trip for a group that is following you (content audience, tour group, retreat).</li>
+    <li>The group is bigger than 8 people.</li>
+    <li>You need attendee management features (waivers, payment collection at scale, broadcasting).</li>
+    <li>The trip is the product, not the social outing.</li>
+  </ul>
+
+  <h3>Pick TripSquad if</h3>
+  <ul class="subpage-checklist">
+    <li>The trip is with friends, family, or a peer group of 3 to 12.</li>
+    <li>The group decision is the actual blocker, not the logistics.</li>
+    <li>You want a neutral vote mechanic so the loud friend does not win by default.</li>
+    <li>You want AI-assisted destination suggestions tuned to the group.</li>
+  </ul>
+
+  <h2>The bottom line</h2>
+  <p>
+    Troupe and TripSquad both call themselves group travel apps but they are aimed at different jobs. Troupe is built for the trip leader, TripSquad for the trip group. Pick based on which one matches your actual dynamic, not based on which one looks more polished in screenshots.
+  </p>
+
+  <FAQ items={faqItems} heading="Common questions" />
+
+  <p style="margin-top: 40px;">
+    <strong>Planning a trip with a friend group?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/best-group-travel-apps-2026/">full 2026 group travel apps comparison</a>.
+  </p>
+</ArticleLayout>

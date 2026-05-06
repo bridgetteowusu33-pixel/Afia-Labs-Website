@@ -42,6 +42,11 @@ export const ogPages: OgPage[] = [
   { slug: 'compare-memescanr-vs-smart-cleaner', title: 'MemeScanr vs Smart Cleaner', eyebrow: 'Comparison', subtitle: 'Traditional grid cleaners vs a modern swipe flow with a private vault.' },
   { slug: 'compare-memescanr-vs-magic-cleaner', title: 'MemeScanr vs Magic Cleaner', eyebrow: 'Comparison', subtitle: 'On-device vs cloud AI. The privacy question that should decide this.' },
 
+  { slug: 'compare-tripsquad-vs-tripit', title: 'TripSquad vs TripIt', eyebrow: 'Comparison', subtitle: 'TripIt builds itineraries for solo travelers. TripSquad runs the group decision. Different stages.', footerRight: 'TripSquad · Free on iOS' },
+  { slug: 'compare-tripsquad-vs-google-travel', title: 'TripSquad vs Google Travel', eyebrow: 'Comparison', subtitle: 'Google Travel is single-player research. TripSquad is built for groups deciding together.', footerRight: 'TripSquad · Free on iOS' },
+  { slug: 'compare-tripsquad-vs-troupe', title: 'TripSquad vs Troupe', eyebrow: 'Comparison', subtitle: 'Troupe is for trip leaders. TripSquad is for friend groups making decisions together.', footerRight: 'TripSquad · Free on iOS' },
+  { slug: 'compare-tripsquad-vs-splitwise-for-travel', title: 'TripSquad vs Splitwise for travel', eyebrow: 'Comparison', subtitle: 'Splitwise splits expenses after. TripSquad runs the planning before. Most groups need both.', footerRight: 'TripSquad · Free on iOS' },
+
   { slug: 'guides', title: 'Afia Labs Guides', eyebrow: 'Guides', subtitle: 'Practical how-tos from the studio. iPhone cleanup, small-business websites, group travel. Pick the guide that matches your problem.' },
   { slug: 'guides-how-to-plan-a-group-trip-everyone-shows-up-for', title: 'How to plan a group trip everyone shows up for', eyebrow: 'Group Travel', subtitle: 'The five-step decision flow that gets the trip booked instead of stuck in the group chat forever.', footerRight: 'Built by the TripSquad team' },
   { slug: 'guides-best-group-travel-apps-2026', title: 'Best group travel apps in 2026', eyebrow: 'Group Travel', subtitle: 'Honest comparison of TripSquad, TripIt, Google Travel, Troupe, Splitwise, and the group chat.', footerRight: 'Built by the TripSquad team' },

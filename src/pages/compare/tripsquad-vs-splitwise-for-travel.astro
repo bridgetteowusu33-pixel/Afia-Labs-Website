@@ -1,0 +1,138 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const title = 'TripSquad vs Splitwise for travel — which one do groups need? (2026)';
+const description =
+  'Comparison of TripSquad and Splitwise for group trip planning in 2026. Splitwise splits expenses after the trip. TripSquad runs the planning, voting, and itinerary before. Most groups need both.';
+const heading = 'TripSquad vs Splitwise for travel (2026)';
+const lede =
+  'Splitwise and TripSquad are not really competitors. Splitwise is the calculator that splits the bill after the trip. TripSquad is the planner that gets the group to agree on the trip in the first place. Most groups need both, but at different stages.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'TripSquad vs Splitwise for travel' },
+];
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: 'https://afialabs.net/compare/tripsquad-vs-splitwise-for-travel/',
+};
+
+const faqItems = [
+  {
+    q: 'Does TripSquad split expenses like Splitwise?',
+    a: 'TripSquad does not replicate Splitwise\'s full expense-splitting feature set. For settling up after a trip, Splitwise is still the standard tool. Many groups use TripSquad for the planning phase and Splitwise for the money phase.',
+  },
+  {
+    q: 'Does Splitwise help me plan a trip?',
+    a: 'No. Splitwise is purely an expense-tracking and bill-splitting app. It does not have voting, destination suggestions, itinerary planning, group chat, or any of the planning features that TripSquad provides.',
+  },
+  {
+    q: 'Should I use both?',
+    a: 'Most groups should. Use TripSquad for the planning phase: invite the squad, vote on destinations, plan day-by-day. Use Splitwise during and after the trip to track who paid for what and settle up at the end. They cover non-overlapping jobs.',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Comparison"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/compare/tripsquad-vs-splitwise-for-travel/"
+  ogType="article"
+  jsonLd={webPageJsonLd}
+>
+  <div class="article-meta">
+    <span>Updated May 6, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>The honest one-line summary</h2>
+  <p>
+    <strong>Splitwise</strong> handles "who paid for what" after the trip. <strong>TripSquad</strong> handles "where are we going and when" before the trip. Different stages, different problems, different audiences. Use both.
+  </p>
+
+  <h2>What each one does</h2>
+
+  <h3>Splitwise</h3>
+  <p>
+    Splitwise is the standard expense-splitting app. Add an expense, mark who paid and how it should split, and Splitwise tracks the running balance between everyone in the group. At the end, settle up. Free tier covers most use cases. Paid tier adds receipt scanning and a few power features. Has been the default trip-money tool for over a decade.
+  </p>
+
+  <h3>TripSquad</h3>
+  <p>
+    TripSquad is a group-trip planner built around the decision-making problem in groups. Invite the squad, vote on destinations, get suggestions from Scout (the AI travel companion), reveal the winner, and plan day-by-day in built-in chat. Free on iOS. Built around the planning phase of the trip, not the money phase.
+  </p>
+
+  <h2>Where they overlap (a little)</h2>
+  <p>
+    Both apps have group-coordination features. Both let you invite people. Both are tied to a specific shared activity (a trip, an apartment, a roommate situation). The overlap stops there.
+  </p>
+  <p>
+    Splitwise has no destination voting, no itinerary planning, no AI travel suggestions, no built-in chat, no day-by-day schedule. TripSquad does not replicate Splitwise's bill-splitting math, settlement balances, or expense categorization.
+  </p>
+
+  <h2>Feature matrix</h2>
+  <ul class="subpage-checklist">
+    <li><strong>Expense splitting and balances:</strong> Splitwise yes. TripSquad partial.</li>
+    <li><strong>Settle-up calculation:</strong> Splitwise yes. TripSquad no.</li>
+    <li><strong>Receipt scanning:</strong> Splitwise Pro yes. TripSquad no.</li>
+    <li><strong>Group voting on destinations:</strong> TripSquad yes. Splitwise no.</li>
+    <li><strong>AI destination and itinerary suggestions:</strong> TripSquad yes (Scout). Splitwise no.</li>
+    <li><strong>Day-by-day itinerary:</strong> TripSquad yes. Splitwise no.</li>
+    <li><strong>Built-in group chat:</strong> TripSquad yes. Splitwise no.</li>
+    <li><strong>Shared packing list:</strong> TripSquad yes. Splitwise no.</li>
+    <li><strong>Trip recap:</strong> TripSquad yes. Splitwise no.</li>
+    <li><strong>Free tier:</strong> Both yes.</li>
+  </ul>
+
+  <h2>The complementary workflow most groups should use</h2>
+  <p>For a typical group trip:</p>
+  <ul class="subpage-checklist">
+    <li><strong>Planning phase:</strong> TripSquad. Vote on destination, lock dates, plan day-by-day.</li>
+    <li><strong>Booking phase:</strong> Whatever booking tool fits (Airbnb, Vrbo, hotels.com, direct flights). Log bookings in TripSquad so the group sees them.</li>
+    <li><strong>During the trip:</strong> Splitwise for adding expenses as they happen. TripSquad for the day-by-day schedule and group chat.</li>
+    <li><strong>After the trip:</strong> Splitwise for settle-up. TripSquad for the trip recap and photos.</li>
+  </ul>
+
+  <h2>Who should pick which</h2>
+
+  <h3>Pick Splitwise if</h3>
+  <ul class="subpage-checklist">
+    <li>The trip is already planned and the only outstanding question is "who owes whom what."</li>
+    <li>You need to track shared expenses across multiple categories (rent, utilities, trips) for the same group of people.</li>
+    <li>You only want one tool and the money is the part you cannot solve in your head.</li>
+  </ul>
+
+  <h3>Pick TripSquad if</h3>
+  <ul class="subpage-checklist">
+    <li>You are still in the planning phase of the trip.</li>
+    <li>The group cannot agree on a destination, dates, or what kind of trip this is.</li>
+    <li>You want a single place for the planning conversation, not 14 group-chat threads.</li>
+  </ul>
+
+  <h3>Use both if (most groups should)</h3>
+  <p>
+    They cover different stages. The trip-planning gap is what TripSquad fills. The money gap is what Splitwise fills. Most groups need to fill both.
+  </p>
+
+  <h2>The bottom line</h2>
+  <p>
+    Splitwise and TripSquad are complements, not alternatives. If a "TripSquad vs Splitwise" question came up because you are trying to pick one, you are probably picking the wrong dimension. Pick based on which problem you have right now: planning or money.
+  </p>
+
+  <FAQ items={faqItems} heading="Common questions" />
+
+  <p style="margin-top: 40px;">
+    <strong>Planning a group trip right now?</strong> <a href="/tripsquad/">TripSquad</a> is free on iOS. Or read the <a href="/guides/best-group-travel-apps-2026/">full 2026 group travel apps comparison</a>.
+  </p>
+</ArticleLayout>

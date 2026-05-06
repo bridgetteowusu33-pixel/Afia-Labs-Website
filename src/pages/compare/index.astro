@@ -1,20 +1,19 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import AppStoreCTA from '../../components/AppStoreCTA.astro';
 
-const title = 'MemeScanr comparisons — vs every major iPhone photo cleaner';
+const title = 'Comparisons — Afia Labs apps vs the alternatives';
 const description =
-  'Head-to-head comparisons of MemeScanr against every major iPhone photo cleaner in 2026. Features, privacy, pricing, and clear recommendations for each use case.';
-const heading = 'MemeScanr comparisons';
+  'Honest, factual head-to-head comparisons of Afia Labs apps against every major alternative in their categories. MemeScanr vs other iPhone photo cleaners. TripSquad vs other group travel apps.';
+const heading = 'Comparisons';
 const lede =
-  'Honest, factual comparisons of MemeScanr against the iPhone photo cleaners you might also be considering. Every comparison includes a feature matrix, a privacy matrix, pricing, and a clear recommendation for who should pick which.';
+  'Honest, factual comparisons of the apps Afia Labs ships against the alternatives you might also be considering. Every comparison includes a feature matrix, pricing, and a clear recommendation for who should pick which. No hostile framing, no invented features, and an explicit "the alternative is better when…" call-out.';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
   { label: 'Compare' },
 ];
 
-const comparisons = [
+const memescanrComparisons = [
   {
     href: '/compare/best-photo-cleaner-apps-2026/',
     title: 'Best photo cleaner apps for iPhone in 2026',
@@ -52,6 +51,46 @@ const comparisons = [
     tag: 'Privacy-first',
   },
 ];
+
+const tripsquadComparisons = [
+  {
+    href: '/compare/tripsquad-vs-tripit/',
+    title: 'TripSquad vs TripIt',
+    blurb: 'TripIt builds itineraries from confirmation emails for solo travelers. TripSquad runs the group decision flow that gets a trip booked. Different stages of the trip.',
+    tag: 'Itinerary',
+  },
+  {
+    href: '/compare/tripsquad-vs-google-travel/',
+    title: 'TripSquad vs Google Travel',
+    blurb: 'Google Travel is single-player research and booking. TripSquad is built for groups deciding together. Most groups need both at different stages.',
+    tag: 'Research',
+  },
+  {
+    href: '/compare/tripsquad-vs-troupe/',
+    title: 'TripSquad vs Troupe',
+    blurb: 'Troupe is built for trip leaders organizing trips for clients. TripSquad is built for friend groups making decisions together. Different power dynamic.',
+    tag: 'Leader vs peer',
+  },
+  {
+    href: '/compare/tripsquad-vs-splitwise-for-travel/',
+    title: 'TripSquad vs Splitwise for travel',
+    blurb: 'Splitwise splits expenses after the trip. TripSquad runs the planning, voting, and itinerary before. Most groups need both.',
+    tag: 'Money vs planning',
+  },
+];
+
+const tagEmoji = (tag) => {
+  switch (tag) {
+    case 'Ranking': return '🏆';
+    case 'Privacy-first': return '🔒';
+    case 'Free alternative': return '🆓';
+    case 'Itinerary': return '📋';
+    case 'Research': return '🔎';
+    case 'Leader vs peer': return '👥';
+    case 'Money vs planning': return '💰';
+    default: return '⚖️';
+  }
+};
 ---
 
 <ArticleLayout
@@ -64,10 +103,30 @@ const comparisons = [
   canonical="https://afialabs.net/compare/"
   ogType="website"
 >
+  <h2 id="memescanr">MemeScanr vs other iPhone photo cleaners</h2>
+  <p>
+    Direct comparisons of <a href="/memescanr/">MemeScanr</a> against the iPhone photo cleaners you might also be considering. Every comparison includes a feature matrix, a privacy matrix, pricing, and a clear recommendation.
+  </p>
+
   <div class="feature-grid">
-    {comparisons.map((c) => (
+    {memescanrComparisons.map((c) => (
       <a href={c.href} class="feature-grid-card" style="text-decoration: none; display: block;">
-        <span class="emoji">{c.tag === 'Ranking' ? '🏆' : c.tag === 'Privacy-first' ? '🔒' : c.tag === 'Free alternative' ? '🆓' : '⚖️'}</span>
+        <span class="emoji">{tagEmoji(c.tag)}</span>
+        <h3>{c.title}</h3>
+        <p>{c.blurb}</p>
+      </a>
+    ))}
+  </div>
+
+  <h2 id="tripsquad">TripSquad vs other group travel apps</h2>
+  <p>
+    Direct comparisons of <a href="/tripsquad/">TripSquad</a> against the other tools groups use for travel planning. Most of these are not really competitors but complements at different stages of the trip; the comparisons make that explicit.
+  </p>
+
+  <div class="feature-grid">
+    {tripsquadComparisons.map((c) => (
+      <a href={c.href} class="feature-grid-card" style="text-decoration: none; display: block;">
+        <span class="emoji">{tagEmoji(c.tag)}</span>
         <h3>{c.title}</h3>
         <p>{c.blurb}</p>
       </a>
@@ -76,11 +135,9 @@ const comparisons = [
 
   <h2>Why these comparisons are honest</h2>
   <p>
-    Every comparison on this site follows the same rules: no hostile framing, no invented features, and an explicit recommendation for when the alternative is the better pick. If a competitor is the right answer for your use case, we\'ll say so. If MemeScanr has feature parity with another app on a row, we mark it as parity, not as a MemeScanr advantage. Tables are generated from the <a href="/memescanr/">MemeScanr entity page</a> features list, which is kept in sync with the current shipping release.
+    Every comparison on this site follows the same rules: no hostile framing, no invented features, and an explicit recommendation for when the alternative is the better pick. If a competitor is the right answer for your use case, we say so. If our app has feature parity with an alternative on a row, we mark it as parity, not as an advantage. Bias is acknowledged upfront.
   </p>
   <p>
-    Competitor information is based on publicly available product pages and App Store listings as of April 2026. Competitor features and pricing change frequently — always verify current claims on the specific App Store listing before purchase.
+    Competitor information is based on publicly available product pages and App Store listings as of May 2026. Competitor features and pricing change frequently. Always verify current claims on the specific App Store listing before purchase.
   </p>
-
-  <AppStoreCTA />
 </ArticleLayout>
