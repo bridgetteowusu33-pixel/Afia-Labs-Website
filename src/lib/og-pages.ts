@@ -52,7 +52,7 @@ export const ogPages: OgPage[] = [
   { slug: 'guides-hide-photos-iphone-private-vault', title: 'Hide photos with a real private vault', eyebrow: 'Guide', subtitle: 'The iOS Hidden album isn\'t private. Here\'s what is.' },
   { slug: 'guides-merge-duplicate-contacts-iphone', title: 'Merge duplicate contacts on iPhone', eyebrow: 'Guide', subtitle: 'Fuzzy matching — typos, comma-flip, phone normalization.' },
 
-  { slug: 'blog', title: 'MemeScanr blog', eyebrow: 'Blog', subtitle: 'iPhone cleanup, privacy deep dives, design stories.' },
+  { slug: 'blog', title: 'The Afia Labs blog', eyebrow: 'Blog', subtitle: 'Small-business websites, local SEO writing, design and privacy stories from MemeScanr, and founder notes from the studio.' },
   { slug: 'blog-the-privacy-problem-with-ai-photo-cleaners', title: 'The privacy problem with "AI-powered" photo cleaners', eyebrow: 'Privacy', subtitle: 'Most AI cleaners upload your photos. Here\'s what that actually exposes.' },
   { slug: 'blog-tinder-for-your-camera-roll', title: 'Tinder for your camera roll', eyebrow: 'Design story', subtitle: 'The Memory Lane origin story. Why we built swipe review.' },
   { slug: 'blog-your-phone-needs-therapy', title: 'Your phone needs therapy', eyebrow: 'Design story', subtitle: 'The Phone Therapist origin story. Naming behavior with humor, not guilt.' },
@@ -62,6 +62,12 @@ export const ogPages: OgPage[] = [
   { slug: 'blog-gallery-wrapped-2026-what-personality-are-you', title: 'Gallery Wrapped 2026 — which personality are you?', eyebrow: 'Launch', subtitle: 'Eight gallery personality types, computed on-device.' },
   { slug: 'blog-seasonal-icons-why-we-built-them', title: 'Why MemeScanr ships seasonal app icons', eyebrow: 'Design story', subtitle: 'Tiny feature, outsized value for retention and Apple editorial.' },
   { slug: 'blog-the-decoy-vault-explained', title: 'The decoy vault, explained', eyebrow: 'Security', subtitle: 'How Backroom fools snoopers with a fake library on wrong PIN.' },
+
+  { slug: 'blog-small-business-website-cost-virginia', title: 'How much does a small business website cost in Virginia?', eyebrow: 'Small Business', subtitle: 'The honest tier-by-tier breakdown for VA. DIY, freelancer, studio, agency. What you pay and what you get.', footerRight: 'afialabs.net/services' },
+  { slug: 'blog-local-service-business-website-checklist', title: 'What every local service business website needs before launch', eyebrow: 'Small Business', subtitle: 'The 12-item pre-launch checklist for local service business websites, ordered by impact.', footerRight: 'afialabs.net/services' },
+  { slug: 'blog-instagram-not-enough-local-business', title: 'Why Instagram is not enough for local beauty and service businesses', eyebrow: 'Small Business', subtitle: 'Instagram shows the work. A website does the booking. The four problems with Instagram-only.', footerRight: 'afialabs.net/services' },
+  { slug: 'blog-booking-ready-website-helps-small-businesses', title: 'How a booking-ready website helps small businesses get more clients', eyebrow: 'Small Business', subtitle: 'What booking-ready actually means, why it changes the economics, and the simple setup that ships in a week.', footerRight: 'afialabs.net/services' },
+  { slug: 'blog-website-checklist-virginia-small-businesses', title: 'Website checklist for Virginia small businesses', eyebrow: 'Small Business', subtitle: 'The 18-item practical, Virginia-specific website checklist for small business owners. Ordered by what to do first.', footerRight: 'afialabs.net/services' },
 ];
 
 /**

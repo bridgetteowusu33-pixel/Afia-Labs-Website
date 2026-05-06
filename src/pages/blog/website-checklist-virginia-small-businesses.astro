@@ -1,0 +1,167 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-05';
+const title = 'Website checklist for Virginia small businesses';
+const description =
+  'A practical, Virginia-specific website checklist for small business owners. The 18 things to set up, in order, so the site does its job and ranks for local search.';
+const heading = 'Website checklist for Virginia small businesses';
+const lede =
+  'You do not need a 50-page site. You need the right pages with the right elements in the right order. Here is the practical, Virginia-specific website checklist for small business owners, ordered by what to do first.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Website checklist for Virginia small businesses' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/website-checklist-virginia-small-businesses/',
+  articleSection: 'Small Business',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Small Business"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/website-checklist-virginia-small-businesses/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 5, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 8 min read</span>
+  </div>
+
+  <h2>Before you build anything</h2>
+
+  <h3>1. Pick the one action you want a visitor to take</h3>
+  <p>
+    Book an appointment. Call. Send an inquiry. Add to waitlist. Pick one. Every page on the site should make that one action easy to take. Sites with three competing CTAs convert worse than sites with one.
+  </p>
+
+  <h3>2. Write the hero headline</h3>
+  <p>
+    What you do, where you do it, who it is for. In one sentence. "Wedding photography in Northern Virginia for couples who want their actual day documented, not directed." That is a hero. "Welcome to my website" is not.
+  </p>
+
+  <h3>3. List the services with prices (or ranges)</h3>
+  <p>
+    Even a range. "Most jobs $200 to $600" tells visitors more than no number does. People who cannot see a price assume the worst or compare to whoever did show one.
+  </p>
+
+  <h2>The pages every Virginia small-business site needs</h2>
+
+  <h3>4. Homepage</h3>
+  <p>
+    Hero, services overview, social proof (Google reviews), service area, primary CTA. That is the order. Everything else is bonus.
+  </p>
+
+  <h3>5. Services page</h3>
+  <p>
+    What you offer, what is included, what it costs (or starts at), and how to book. One CTA per service.
+  </p>
+
+  <h3>6. About page</h3>
+  <p>
+    Who runs the business. A real photo. Why you do this work. Where you are based ("Family-owned in Spotsylvania, VA, serving the Fredericksburg area since 2018"). Trust comes from specificity.
+  </p>
+
+  <h3>7. Contact page</h3>
+  <p>
+    Phone (with <code>tel:</code> link for mobile tap), email, hours, service area, and a working form. Keep it simple.
+  </p>
+
+  <h3>8. Service area page (or section)</h3>
+  <p>
+    The towns and zip codes you serve. "We serve Fredericksburg, Spotsylvania, Stafford, Caroline, and surrounding zip codes." Spelled out for both humans and search engines.
+  </p>
+
+  <h2>The local SEO essentials</h2>
+
+  <h3>9. Page titles that name the service and the location</h3>
+  <p>
+    "Plumbing in Fredericksburg, VA | Owens Plumbing" beats "Home | Owens Plumbing" by a country mile. Fix the title field on every page.
+  </p>
+
+  <h3>10. Meta descriptions written by a human</h3>
+  <p>
+    150 to 160 characters, written like a sentence a real person would say to describe the page. The default meta description from your builder is almost always wrong.
+  </p>
+
+  <h3>11. Google Business Profile claimed and verified</h3>
+  <p>
+    This is free and one of the highest-impact things you can do. Same name, address (or service area), phone, hours, and category as the website. Inconsistency hurts ranking.
+  </p>
+
+  <h3>12. LocalBusiness or ProfessionalService schema</h3>
+  <p>
+    Structured data on the homepage that tells Google your category, hours, area served, and contact info in machine-readable form. Most templates do not include it. Adding it does not guarantee rich results, but missing it definitely hurts.
+  </p>
+
+  <h3>13. Real reviews on the homepage</h3>
+  <p>
+    Pull two or three of your best Google reviews and quote them on the homepage. Link out to the full Google Business Profile so visitors can read more. Reviews are one of the strongest local trust signals you can show.
+  </p>
+
+  <h2>The technical baseline</h2>
+
+  <h3>14. Mobile-first</h3>
+  <p>
+    Most local searches happen on a phone. Build for the phone first. The desktop view should look good, but the phone view is the priority. Test it on your own phone with one bar of signal.
+  </p>
+
+  <h3>15. Fast page load</h3>
+  <p>
+    Under 3 seconds on a phone over LTE. Compress your images. Do not load four tracking scripts you will never check. Speed is a real ranking factor and a real bounce-rate factor.
+  </p>
+
+  <h3>16. HTTPS / SSL certificate</h3>
+  <p>
+    Padlock in the browser. Almost every modern host enables this for free. If your site does not have it, fix it before doing anything else.
+  </p>
+
+  <h3>17. Working analytics</h3>
+  <p>
+    Google Analytics 4 or a privacy-friendly alternative (Plausible, Fathom). Track form submissions and phone-tap events as conversions. Without this, you have no idea if the site is working.
+  </p>
+
+  <h3>18. A pre-launch test</h3>
+  <p>
+    Hand the site to someone who has never seen your business. Three questions: What does this business do? Would I trust them? What would I do next if I wanted to hire them? If they cannot answer all three in 30 seconds, fix it before launch.
+  </p>
+
+  <h2>The Virginia-specific extras</h2>
+  <p>
+    A few details specifically helpful for businesses in Virginia:
+  </p>
+  <ul class="subpage-checklist">
+    <li><strong>Use full city names plus VA</strong> ("Fredericksburg, VA" not just "Fredericksburg") so Google connects you to local intent searches that include the state.</li>
+    <li><strong>List the specific counties</strong> if you serve multiple (Spotsylvania County, Stafford County, etc.). County-level search is a real query pattern in VA.</li>
+    <li><strong>Mention the DMV if relevant</strong>. "Northern Virginia and the DMV" is a recognized regional query in this market.</li>
+    <li><strong>Apply for state-specific lists</strong> like the Virginia Living Best Of awards, local chamber of commerce listings, and the regional small-business directories. These are real backlinks that move local rankings.</li>
+  </ul>
+
+  <h2>The shortcut</h2>
+  <p>
+    If you only do five things from this list, do these: hero headline that says what/where/who-for, services page with prices, Google Business Profile verified and consistent with the site, real reviews on the homepage, working booking or contact flow on mobile. That covers 80% of what makes a small-business site convert.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Want a website that has all of this set up out of the gate?</strong> <a href="/services/website-design-virginia/">See our Virginia website design service</a> or <a href="/services/#contact">start a project →</a>
+  </p>
+</ArticleLayout>

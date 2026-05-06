@@ -1,0 +1,124 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-05';
+const title = 'What every local service business website needs before launch';
+const description =
+  'A pre-launch checklist for local service business websites. The 12 things every local site needs to convert search traffic into booked work, ordered by impact.';
+const heading = 'What every local service business website needs before launch';
+const lede =
+  'You can ship a local service business website in a weekend, but most of them launch missing the few elements that actually drive bookings. Here is the pre-launch checklist, ordered by what moves the needle most.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Local service business website checklist' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/local-service-business-website-checklist/',
+  articleSection: 'Small Business',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Small Business"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/local-service-business-website-checklist/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 5, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 6 min read</span>
+  </div>
+
+  <h2>The high-impact items</h2>
+
+  <h3>1. A clear "what, where, who for" line above the fold</h3>
+  <p>
+    The first sentence on the homepage should answer three questions in one breath: what you do, where you do it, and who it is for. "Family-owned plumbing in Fredericksburg, Virginia. Same-week appointments for homeowners in Spotsylvania and Stafford." That is a hero headline. It tells the visitor in one second whether they are in the right place.
+  </p>
+
+  <h3>2. A phone number that taps to call on mobile</h3>
+  <p>
+    Use <code>tel:</code> links so a tap on the number opens the dialer. Most local service inquiries from search are people scrolling on their phone deciding who to call right now. Make it one tap, not a copy-paste.
+  </p>
+
+  <h3>3. Real photos of you, the team, and the work</h3>
+  <p>
+    Stock photos read as "this could be anyone, including a scam." Real photos of the truck, the storefront, the team, and the finished work read as "real local business." This is one of the biggest trust deltas on local service sites and it is free. Use your phone.
+  </p>
+
+  <h3>4. A booking or contact flow that actually works on mobile</h3>
+  <p>
+    A form that is hard to fill out on a phone is the same as no form. Test it. Fill it out as a stranger from your car. If it takes more than 30 seconds, fix it.
+  </p>
+
+  <h3>5. Reviews on the page</h3>
+  <p>
+    Five-star Google reviews quoted on the homepage move conversion more than almost any other element. Pull two or three good ones, put them above the fold or right under the hero. Link out to your full Google Business Profile so visitors can read more.
+  </p>
+
+  <h2>The medium-impact items</h2>
+
+  <h3>6. Service area pages or sections</h3>
+  <p>
+    Spell out the towns and zip codes you serve. "We serve Fredericksburg, Spotsylvania, Stafford, and surrounding zip codes" is the line a search engine connects to local intent queries. Without it, you compete in a much wider pool than you need to.
+  </p>
+
+  <h3>7. A clear pricing line, even if it is a range</h3>
+  <p>
+    "Most jobs run $200 to $600 depending on scope." That sentence does more for trust than a full pricing page. Visitors who cannot see a number assume the worst, or they compare you against the competitor who did show one.
+  </p>
+
+  <h3>8. A working Google Business Profile that links back to the site</h3>
+  <p>
+    The map listing and the website should reinforce each other. Same name, same address (or service area), same phone, same hours. Inconsistency between the two is a real ranking signal. Audit the profile while you are at it.
+  </p>
+
+  <h3>9. Page titles and meta descriptions written for humans, not the title field default</h3>
+  <p>
+    "Home | My Business" is the default title field on most builders. Replace it with a real title that names what you do and where. "Plumbing in Fredericksburg, VA | Owens Plumbing" beats "Home | Owens Plumbing" by a country mile in search.
+  </p>
+
+  <h2>The often-skipped items</h2>
+
+  <h3>10. Schema markup for LocalBusiness</h3>
+  <p>
+    LocalBusiness JSON-LD tells Google your name, hours, area served, phone, and category in a structured format. Most templates do not include it. Adding it does not guarantee rich results, but missing it definitely hurts.
+  </p>
+
+  <h3>11. Analytics that actually tracks form submissions</h3>
+  <p>
+    A working analytics dashboard with conversion events on form submits is the difference between "I have no idea if my site works" and "I can see we got 14 inquiries from Google last month." Set this up before launch, not after.
+  </p>
+
+  <h3>12. An honest hand-off doc</h3>
+  <p>
+    If a designer built the site, get a short doc that explains how to update copy, swap photos, and run the analytics report. If you built it yourself, write the doc anyway. Future-you will need it.
+  </p>
+
+  <h2>The quick test</h2>
+  <p>
+    Before launch, hand the site to someone who has never seen your business and ask three questions: What does this business do? Would I trust them to do it? What would I do next if I wanted to hire them? If they cannot answer all three in 30 seconds, you have a checklist item left.
+  </p>
+
+  <p style="margin-top: 40px;">
+    <strong>Want help building a website that does the job?</strong> <a href="/services/">See our studio services</a> or <a href="/services/#contact">start a project →</a>
+  </p>
+</ArticleLayout>

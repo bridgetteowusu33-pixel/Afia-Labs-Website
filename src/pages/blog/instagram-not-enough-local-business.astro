@@ -1,0 +1,105 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const pubDate = '2026-05-05';
+const title = 'Why Instagram is not enough for local beauty and service businesses';
+const description =
+  'Instagram is great for showing your work, but it is a rented audience and it is not built to convert. Here is why a real website still matters for local beauty and service businesses, even if Instagram is your main channel.';
+const heading = 'Why Instagram is not enough for local beauty and service businesses';
+const lede =
+  'Instagram is one of the best tools ever made for showing the work. It is also a rented audience on a platform you do not control, and it is not built to convert. Here is why a real website still matters for local beauty and service businesses, even if Instagram is where most of your customers find you.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Why Instagram is not enough' },
+];
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: heading,
+  description,
+  datePublished: pubDate,
+  dateModified: pubDate,
+  author: { '@type': 'Organization', name: 'Afia Labs', url: 'https://afialabs.net' },
+  publisher: { '@type': 'Organization', name: 'Afia Labs' },
+  mainEntityOfPage: 'https://afialabs.net/blog/instagram-not-enough-local-business/',
+  articleSection: 'Small Business',
+  inLanguage: 'en-US',
+};
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  eyebrow="Small Business"
+  heading={heading}
+  lede={lede}
+  breadcrumbs={breadcrumbs}
+  canonical="https://afialabs.net/blog/instagram-not-enough-local-business/"
+  ogType="article"
+  jsonLd={articleJsonLd}
+>
+  <div class="article-meta">
+    <span>Published May 5, 2026</span>
+    <span>· Afia Labs Studio</span>
+    <span>· 5 min read</span>
+  </div>
+
+  <h2>What Instagram is great at</h2>
+  <p>
+    For local beauty and service businesses (hair, lashes, nails, skincare, makeup, fitness, photography), Instagram does three things really well. It shows the work in motion. It builds a personal connection with the person doing the work. And it gives potential clients a low-stakes way to scroll through your portfolio before they commit to a booking.
+  </p>
+  <p>
+    Those are real strengths. If you have a busy Instagram and your DMs are open, you are not wrong to lean into it. But Instagram alone has four problems that get worse the bigger your business gets.
+  </p>
+
+  <h2>Problem 1: it is a rented audience</h2>
+  <p>
+    Your Instagram followers are not your audience. They are Instagram's audience that you currently have access to. The platform decides who sees your posts. The platform can change the rules. The platform can suspend your account for a hashtag you did not realize was flagged. The platform can lose its algorithmic favor with your work, and your reach can drop 80% in a quarter.
+  </p>
+  <p>
+    Every booking you take that started in a DM is a booking that started on infrastructure you do not own. A website with an email list and a booking flow is infrastructure you do own. The two should work together.
+  </p>
+
+  <h2>Problem 2: Instagram does not show up in Google search</h2>
+  <p>
+    When someone in your town types "lash extensions Fredericksburg" into Google, your Instagram profile is unlikely to be on page one. A website with a service area page, a Google Business Profile, and a few quoted reviews can get there. Without that, you are missing every potential client who searches before they scroll.
+  </p>
+  <p>
+    Search and social are two different audiences. Search is people in deep buying intent ("I want this service in this town, this week"). Social is people in passive discovery mode ("look at this work"). Both matter. A business that only has Instagram is invisible to half its potential market.
+  </p>
+
+  <h2>Problem 3: Instagram is built to keep people on Instagram</h2>
+  <p>
+    Open the app, tap your profile, count the friction between "I want to book this person" and "I have a confirmed appointment." For most beauty businesses on Instagram, the path runs through a DM, a back-and-forth about availability, a request to send a deposit via Venmo, and a manual calendar entry on both sides.
+  </p>
+  <p>
+    A website with a real booking system collapses all of that into two taps. The visitor lands, sees your services and prices, picks a time, pays the deposit, and gets a confirmation. The DMs stay for the conversation that actually needs a human in the loop.
+  </p>
+
+  <h2>Problem 4: Instagram does not build trust the way a website does</h2>
+  <p>
+    A polished business website with real photos, a clear services page, transparent pricing, and a few quoted Google reviews tells a first-time client "this is a real business that does real work and other people have hired them." An Instagram profile, no matter how aesthetic, reads as "individual content creator who does this thing."
+  </p>
+  <p>
+    For lower-stakes purchases, the Instagram-only setup is fine. For services where the client is paying $80 to $500 and putting a real piece of their face or body in your hands, the trust gap matters. The website is what closes it.
+  </p>
+
+  <h2>What the Instagram-plus-website setup looks like</h2>
+  <p>
+    The right answer is not "ditch Instagram." The right answer is to use Instagram for what it is great at (showing work, building rapport, posting frequently) and use a website for what Instagram cannot do (search ranking, booking, pricing, trust, owned audience).
+  </p>
+  <ul class="subpage-checklist">
+    <li><strong>Instagram bio link</strong> goes to your website, not a Linktree dead-end.</li>
+    <li><strong>Website</strong> has a clear services page, transparent pricing, real reviews, and a booking flow.</li>
+    <li><strong>Google Business Profile</strong> is set up and links back to the website. Same name, hours, photos.</li>
+    <li><strong>Email list</strong> on the website captures returning clients so you have an audience the algorithm cannot take from you.</li>
+    <li><strong>Bookings</strong> flow through the website. The Instagram DMs handle conversation, not scheduling.</li>
+  </ul>
+
+  <p style="margin-top: 40px;">
+    <strong>Need a website that complements your Instagram, not competes with it?</strong> <a href="/services/small-business-websites/">See how we build small-business websites</a> or <a href="/services/#contact">start a project →</a>
+  </p>
+</ArticleLayout>
