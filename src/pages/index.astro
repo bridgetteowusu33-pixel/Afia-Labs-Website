@@ -64,20 +64,20 @@ function fmtStudioDate(d: Date): string {
 
                     <div class="device-mockup device-card-1">
                         <div class="mini-card-inner">
-                            <div class="mini-icon bg-purple-soft">🧹</div>
+                            <div class="mini-icon bg-purple-soft">📱</div>
                             <div>
-                                <div class="mini-label">Storage Cleaned</div>
-                                <div class="mini-value">2.4 GB</div>
+                                <div class="mini-label">Apps</div>
+                                <div class="mini-value mini-value-compact">MemeScanr · TripSquad</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="device-mockup device-card-2">
                         <div class="mini-card-inner">
-                            <div class="mini-icon bg-gold-soft">🌍</div>
+                            <div class="mini-icon bg-gold-soft">🛠️</div>
                             <div>
-                                <div class="mini-label">Countries</div>
-                                <div class="mini-value">32 Explored</div>
+                                <div class="mini-label">Studio Services</div>
+                                <div class="mini-value mini-value-compact">Websites · Apps</div>
                             </div>
                         </div>
                     </div>
@@ -373,6 +373,14 @@ function fmtStudioDate(d: Date): string {
   .work-cta-wrap {
     margin-top: 40px;
     text-align: center;
+  }
+
+  /* Hero floating cards: longer brand-pillar labels need a smaller font to fit */
+  .mini-value-compact {
+    font-size: 0.78rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
   }
 
   /* About values list */
