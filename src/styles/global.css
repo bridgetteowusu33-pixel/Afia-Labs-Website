@@ -1479,3 +1479,21 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* ========== Footer location block ========== */
+        .footer-location {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-location-line {
+            display: block;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.45;
+        }
+        .footer-location-line:first-child {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+        }

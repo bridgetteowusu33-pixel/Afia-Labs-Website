@@ -2,9 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 
-const title = 'Work With Afia Labs — Websites, Landing Pages & Digital Systems';
+const title = 'Website Design & Digital Systems in Virginia | Afia Labs Studio';
 const description =
-  'Afia Labs builds polished websites, landing pages, and simple digital systems for small businesses, creators, and founders who want to look professional online.';
+  'Afia Labs Studio is a Virginia-based product studio building websites, landing pages, mobile apps, and digital systems for small businesses, creators, and founders.';
+
+const SERVICE_AREAS = [
+  'Virginia',
+  'Fredericksburg',
+  'Spotsylvania',
+  'Stafford',
+  'Northern Virginia',
+  'DMV',
+  'Remote',
+];
 
 const servicesFaq = [
   {
@@ -43,17 +53,58 @@ const servicesFaq = [
 
 const servicesPageJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Afia Labs Studio Services',
-  provider: {
-    '@type': 'Organization',
-    name: 'Afia Labs',
-    url: 'https://afialabs.net',
-  },
-  serviceType: 'Website design and development',
-  areaServed: 'Worldwide',
-  description,
+  '@type': 'ProfessionalService',
+  '@id': 'https://afialabs.net/services/#studio',
+  name: 'Afia Labs Studio',
+  alternateName: 'Afia Labs',
   url: 'https://afialabs.net/services/',
+  description,
+  founder: {
+    '@type': 'Person',
+    name: 'Bridgette Owusu',
+  },
+  // Service-area business: region + country only, no street address by design.
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'VA',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Virginia' },
+    { '@type': 'City', name: 'Fredericksburg, Virginia' },
+    { '@type': 'City', name: 'Spotsylvania, Virginia' },
+    { '@type': 'City', name: 'Stafford, Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Northern Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Washington D.C. Metropolitan Area (DMV)' },
+    { '@type': 'AdministrativeArea', name: 'Remote, worldwide' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '18:00',
+      closes: '21:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '10:00',
+      closes: '15:00',
+    },
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@afialabs.net',
+    contactType: 'customer support',
+    areaServed: 'US',
+    availableLanguage: 'English',
+  },
+  sameAs: [
+    'https://apps.apple.com/us/app/memescanr-save-phone-storage/id6758227953',
+    'https://apps.apple.com/us/app/tripsquad-plan-vote-go/id6762568582',
+    'https://gettripsquad.com',
+  ],
+  serviceType: 'Website design and digital systems',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Afia Labs Studio Services packages',
@@ -135,6 +186,10 @@ const servicesPageJsonLd = {
           </p>
           <p class="services-bridge-line">
             The same product thinking behind Afia Labs apps, now available for small businesses, creators, and founders.
+          </p>
+          <p class="services-location-line">
+            <span class="services-location-pin" aria-hidden="true">📍</span>
+            Based in Virginia. Serving small businesses locally and online.
           </p>
           <div class="hero-buttons">
             <a href="#contact" class="btn-primary" data-services-cta>
@@ -364,6 +419,27 @@ const servicesPageJsonLd = {
       </div>
     </section>
 
+    <section class="services-band services-area-section" aria-label="Service area">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Service Area</div>
+          <h2 class="section-title">Where we work.</h2>
+          <p class="section-subtitle">
+            Based in Virginia. We serve small businesses locally and online, from Fredericksburg and the DMV out to remote teams worldwide.
+          </p>
+        </div>
+        <ul class="service-area-chips fade-in" aria-label="Locations served">
+          {SERVICE_AREAS.map((area) => (
+            <li class={`service-area-chip${area === 'Remote' ? ' service-area-chip-remote' : ''}`}>
+              {area !== 'Remote' && <span class="service-area-chip-pin" aria-hidden="true">📍</span>}
+              {area === 'Remote' && <span class="service-area-chip-pin" aria-hidden="true">🌐</span>}
+              {area}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="services-band services-form-section" aria-label="Project inquiry">
       <span id="start" aria-hidden="true" class="anchor-compat"></span>
       <div class="container">
@@ -373,6 +449,34 @@ const servicesPageJsonLd = {
           <p class="section-subtitle">
             We'll review your inquiry and follow up with next steps. No pressure, no hard sell.
           </p>
+        </div>
+
+        <div class="contact-info fade-in">
+          <div class="contact-info-block">
+            <div class="contact-info-label">Studio hours</div>
+            <dl class="contact-hours">
+              <div class="contact-hours-row">
+                <dt>Monday – Friday</dt>
+                <dd>6:00 PM – 9:00 PM</dd>
+              </div>
+              <div class="contact-hours-row">
+                <dt>Saturday</dt>
+                <dd>10:00 AM – 3:00 PM</dd>
+              </div>
+              <div class="contact-hours-row">
+                <dt>Sunday</dt>
+                <dd>Closed</dd>
+              </div>
+            </dl>
+            <p class="contact-info-note">
+              Project inquiries are reviewed during evening and weekend studio hours. Submit your project details anytime, and we'll follow up with next steps.
+            </p>
+          </div>
+          <div class="contact-info-block">
+            <div class="contact-info-label">Based in Virginia</div>
+            <p class="contact-info-text">Serving small businesses locally and online.</p>
+            <p class="contact-info-text contact-info-text-muted">Virginia · Fredericksburg · Spotsylvania · Stafford · Northern Virginia · DMV · Remote</p>
+          </div>
         </div>
 
         <form id="servicesForm" class="services-form fade-in" novalidate>
@@ -618,12 +722,146 @@ const servicesPageJsonLd = {
     justify-content: center;
   }
   .services-bridge-line {
-    margin: 0 auto 28px;
+    margin: 0 auto 16px;
     max-width: 640px;
     font-size: 0.95rem;
     line-height: 1.55;
     color: var(--text-muted);
     font-style: italic;
+  }
+  .services-location-line {
+    margin: 0 auto 28px;
+    max-width: 640px;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--purple-light);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(124, 58, 237, 0.06);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 100px;
+  }
+  .services-location-pin {
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  /* ===== Service Area chips ===== */
+  .services-area-section .container {
+    max-width: 880px;
+  }
+  .service-area-chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .service-area-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-area-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(124, 58, 237, 0.18);
+  }
+  .service-area-chip-pin {
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+  .service-area-chip-remote {
+    background: rgba(124, 58, 237, 0.06);
+    border-color: rgba(124, 58, 237, 0.18);
+    color: var(--purple-light);
+  }
+
+  /* ===== Contact info bar (hours + location) ===== */
+  .contact-info {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .contact-info-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+  }
+  .contact-info-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 14px;
+  }
+  .contact-hours {
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact-hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    font-size: 0.92rem;
+  }
+  .contact-hours-row dt {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .contact-hours-row dd {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .contact-info-note {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+  }
+  .contact-info-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+  .contact-info-text + .contact-info-text {
+    margin-top: 12px;
+  }
+  .contact-info-text-muted {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  @media (max-width: 720px) {
+    .contact-info {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ===== Section rhythm ===== */
