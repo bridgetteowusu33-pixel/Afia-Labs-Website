@@ -825,24 +825,33 @@ const description =
       gap: 24px;
     }
     .case-study-visuals {
-      padding-bottom: 0;
-      padding-right: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 16px;
+      padding-bottom: 36px;
+      padding-right: 24px;
+      max-width: 520px;
+      margin: 0 auto;
     }
-    .case-study-screenshot { flex: 1; min-width: 0; }
     .case-study-phone {
-      position: static;
-      flex-shrink: 0;
       width: 30%;
       max-width: 130px;
     }
   }
   @media (max-width: 520px) {
-    .case-study-visuals { flex-direction: column; }
-    .case-study-phone { align-self: flex-end; width: 38%; }
+    .case-study-visuals {
+      padding-bottom: 28px;
+      padding-right: 18px;
+    }
+    .case-study-phone {
+      width: 32%;
+      max-width: 110px;
+    }
+    .case-study-screenshot img { max-height: 340px; }
+  }
+  @media (max-width: 380px) {
+    .case-study-visuals {
+      padding-bottom: 24px;
+      padding-right: 14px;
+    }
+    .case-study-phone { width: 34%; max-width: 96px; }
   }
 
   /* ========== TESTIMONIALS (homepage) ========== */
