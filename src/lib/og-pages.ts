@@ -8,7 +8,7 @@ export interface OgPage {
 }
 
 export const ogPages: OgPage[] = [
-  { slug: 'default', title: 'Afia Labs — Apps, AI-Assisted Tools & Field Guides', eyebrow: 'Independent Product Studio', subtitle: 'Useful apps, AI-assisted tools, small-business digital systems, and practical field guides.' },
+  { slug: 'default', title: 'Afia Labs — Apps, Websites & Field Guides', eyebrow: 'Independent Product Studio', subtitle: 'A founder-led product studio. Consumer apps (MemeScanr, TripSquad), small-business websites, and a practical field guide for AI app builders.' },
   { slug: 'about', title: 'About Afia Labs', eyebrow: 'About', subtitle: 'Independent iOS app studio founded by Bridgette Owusu. Makers of MemeScanr.' },
   { slug: 'book', title: 'From Idea to Income with AI Apps', eyebrow: 'Now on Amazon · Field Guide № 1', subtitle: 'The honest field guide to shipping a real consumer app with AI. Paperback, Kindle, and companion workbook live on Amazon. By Bridgette Owusu, Afia Labs.' },
   { slug: 'studio', title: 'Inside the Afia Labs Studio', eyebrow: 'STUDIO', subtitle: 'Apps, services, field guides, and notes from the studio.' },

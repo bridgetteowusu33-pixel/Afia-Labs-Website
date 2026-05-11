@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoonBanner from '../components/ComingSoonBanner.astro';
 import { getCollection } from 'astro:content';
 
 // Pull the 3 most-recent published Studio essays for the homepage strip.
@@ -23,26 +22,32 @@ const STUDIO_PILLAR_LABELS: Record<string, string> = {
 function fmtStudioDate(d: Date): string {
   return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
+
+const title = 'Afia Labs — Apps, Websites, and Field Guides from an Independent Product Studio';
+const description =
+  'Afia Labs is a founder-led product studio. We ship consumer apps (MemeScanr, TripSquad), build websites for small businesses, and publish field guides for AI app builders.';
 ---
 
-<BaseLayout>
+<BaseLayout title={title} description={description}>
     <main>
+
+    <!-- ========== HERO (broad and brand-led) ========== -->
     <section class="hero" aria-label="Introduction">
         <div class="container hero-content">
             <div class="hero-text">
                 <div class="hero-badge">
                     <span></span>
-                    Independent Product Studio
+                    Independent Product Studio · Founded by Bridgette Owusu
                 </div>
-                <h1>Afia Labs builds useful <span class="accent">apps, AI-assisted tools, and digital systems</span> with personality and purpose.</h1>
-                <p>We create consumer apps, small-business web systems, and practical field guides for people building, organizing, learning, and growing with technology.</p>
+                <h1>One studio for <span class="accent">apps, websites, and practical tools</span> built with care.</h1>
+                <p>Afia Labs is a founder-led product studio building useful digital products with personality, ownership, and intention. We design client websites, ship our own apps, and create practical guides for builders learning to stay in control while building with AI.</p>
                 <div class="hero-buttons">
-                    <a href="/studio/" class="btn-primary">
-                        Explore the Studio
+                    <a href="/services/" class="btn-primary">
+                        Work with the studio
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
-                    <a href="/services/" class="btn-secondary">
-                        Work With Us
+                    <a href="/studio/" class="btn-secondary">
+                        See what we've built
                     </a>
                 </div>
             </div>
@@ -76,8 +81,8 @@ function fmtStudioDate(d: Date): string {
                         <div class="mini-card-inner">
                             <div class="mini-icon bg-gold-soft">🛠️</div>
                             <div>
-                                <div class="mini-label">Studio Services</div>
-                                <div class="mini-value mini-value-compact">Websites · Apps</div>
+                                <div class="mini-label">Services</div>
+                                <div class="mini-value mini-value-compact">Glam by Cella · Live</div>
                             </div>
                         </div>
                     </div>
@@ -86,43 +91,170 @@ function fmtStudioDate(d: Date): string {
         </div>
     </section>
 
-    <section id="what-we-build" aria-label="What We Build">
+    <!-- ========== STUDIO AT A GLANCE (proof band) ========== -->
+    <section class="studio-glance" aria-label="Studio at a glance">
+        <div class="container">
+            <ul class="studio-glance-bar fade-in">
+                <li>
+                    <a href="/studio/" class="glance-chip">
+                        <span class="glance-icon" aria-hidden="true">📱</span>
+                        <div>
+                            <strong>Apps in the studio</strong>
+                            <span>MemeScanr · TripSquad · Planet Wonders in development</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/review/" class="glance-chip">
+                        <span class="glance-icon" aria-hidden="true">⭐</span>
+                        <div>
+                            <strong>5-star on Google</strong>
+                            <span>Verified client reviews</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/services/#recent-work" class="glance-chip">
+                        <span class="glance-icon" aria-hidden="true">🛠️</span>
+                        <div>
+                            <strong>Recent client work</strong>
+                            <span>Glam by Cella, Virginia</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/services/" class="glance-chip">
+                        <span class="glance-icon" aria-hidden="true">📍</span>
+                        <div>
+                            <strong>Based in Virginia</strong>
+                            <span>Serving locally and online</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/book/" class="glance-chip">
+                        <span class="glance-icon" aria-hidden="true">📖</span>
+                        <div>
+                            <strong>Field guide on Amazon</strong>
+                            <span>From Idea to Income with AI Apps</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== WHAT WE DO (one studio, four lanes — weighted) ========== -->
+    <section id="what-we-do" aria-label="What We Do">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-label">What We Build</div>
-                <h2 class="section-title">Four ways the studio shows up.</h2>
-                <p class="section-subtitle">Afia Labs creates useful digital products across consumer apps, small-business systems, and practical builder education.</p>
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">One studio, four lanes.</h2>
+                <p class="section-subtitle">Afia Labs ships in four directions. Two of them serve clients directly. Two of them serve builders.</p>
             </div>
 
-            <div class="what-grid">
-                <div class="what-card fade-in fade-in-delay-1">
-                    <div class="what-card-icon">📱</div>
-                    <h3>Consumer Apps</h3>
-                    <p>Privacy-first, personality-rich apps for everyday life. From photo cleanup to group travel and playful learning.</p>
-                    <a href="/studio/" class="what-card-cta">Explore products →</a>
-                </div>
-                <div class="what-card fade-in fade-in-delay-2">
-                    <div class="what-card-icon">🛠️</div>
-                    <h3>Studio Services</h3>
-                    <p>Websites, landing pages, and simple digital systems for small businesses, creators, and founders.</p>
-                    <a href="/services/" class="what-card-cta">Work with us →</a>
-                </div>
-                <div class="what-card fade-in fade-in-delay-2">
-                    <div class="what-card-icon">📖</div>
-                    <h3>Field Guides</h3>
-                    <p>Practical books, workbooks, and resources for builders learning how to use AI without losing control of the process.</p>
-                    <a href="/book/" class="what-card-cta">Read the book →</a>
-                </div>
-                <div class="what-card fade-in fade-in-delay-3">
-                    <div class="what-card-icon">📝</div>
-                    <h3>Studio Notes</h3>
-                    <p>Founder notes, product lessons, AI workflows, and behind-the-scenes thinking from the Afia Labs build process.</p>
-                    <a href="/blog/" class="what-card-cta">Read the latest →</a>
-                </div>
+            <div class="what-do-large-grid">
+                <article class="what-do-large fade-in fade-in-delay-1">
+                    <div class="what-do-large-eyebrow">For small businesses</div>
+                    <h3>Studio Services — websites, landing pages, and digital systems</h3>
+                    <p>We build polished websites for small businesses, creators, and founders. Mobile-first design, booking-ready flows, local SEO, and a clean handoff so you can actually run the site after launch.</p>
+                    <a href="/services/" class="btn-primary what-do-cta">
+                        Work with us
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </article>
+
+                <article class="what-do-large fade-in fade-in-delay-2">
+                    <div class="what-do-large-eyebrow">For everyday life</div>
+                    <h3>Consumer Apps — shipped in the App Store</h3>
+                    <p>Privacy-first, personality-rich consumer apps. MemeScanr cleans up your camera roll. TripSquad gets your group to take the trip. Planet Wonders teaches kids the world.</p>
+                    <a href="/studio/" class="btn-primary what-do-cta">
+                        Explore the apps
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </article>
+            </div>
+
+            <div class="what-do-small-strip">
+                <article class="what-do-small fade-in fade-in-delay-2">
+                    <div class="what-do-small-icon">📖</div>
+                    <div class="what-do-small-body">
+                        <h3>Field Guides</h3>
+                        <p>Practical books and workbooks for builders learning to ship with AI. <em>From Idea to Income</em> is on Amazon now.</p>
+                        <a href="/book/" class="what-do-small-cta">Read the book →</a>
+                    </div>
+                </article>
+                <article class="what-do-small fade-in fade-in-delay-3">
+                    <div class="what-do-small-icon">📝</div>
+                    <div class="what-do-small-body">
+                        <h3>Studio Notes</h3>
+                        <p>Founder notes on building with AI, ownership, and shipping consumer products solo.</p>
+                        <a href="/blog/" class="what-do-small-cta">Read the latest →</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
+    <!-- ========== RECENT CLIENT WORK (Glam by Cella case study) ========== -->
+    <section id="recent-client-work" aria-label="Recent client work" class="home-recent-work">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Recent Client Work</div>
+                <h2 class="section-title">Built and launched by Afia Labs Studio.</h2>
+                <p class="section-subtitle">A look at the real projects shipping from the studio.</p>
+            </div>
+
+            <article class="home-case-study fade-in">
+                <div class="case-study-visuals">
+                    <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="case-study-screenshot" aria-label="View Glam by Cella website on desktop">
+                        <div class="case-study-browser-bar">
+                            <span class="case-browser-dot case-browser-dot-red" aria-hidden="true"></span>
+                            <span class="case-browser-dot case-browser-dot-yellow" aria-hidden="true"></span>
+                            <span class="case-browser-dot case-browser-dot-green" aria-hidden="true"></span>
+                            <span class="case-browser-url">glambycella.com</span>
+                        </div>
+                        <img
+                            src="/glambycella-screenshot.jpg"
+                            alt="Desktop screenshot of the Glam by Cella website built by Afia Labs Studio"
+                            loading="lazy"
+                            width="1440"
+                            height="900"
+                        />
+                    </a>
+                    <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="case-study-phone" aria-label="View Glam by Cella website on mobile">
+                        <span class="case-phone-notch" aria-hidden="true"></span>
+                        <img
+                            src="/glambycella-screenshot-mobile.jpg"
+                            alt="Mobile screenshot of the Glam by Cella website built by Afia Labs Studio"
+                            loading="lazy"
+                            width="390"
+                            height="844"
+                        />
+                    </a>
+                </div>
+                <div class="case-study-body">
+                    <div class="case-study-eyebrow">Live · Virginia</div>
+                    <h3>Glam by Cella</h3>
+                    <p>Beauty website and booking flow for a Virginia makeup artist. Polished mobile-first design, integrated booking calendar, clear service pricing, and local-SEO setup so search traffic finds the studio.</p>
+                    <ul class="case-study-tags">
+                        <li>Website design</li>
+                        <li>Booking flow</li>
+                        <li>Local SEO</li>
+                        <li>Mobile-first build</li>
+                    </ul>
+                    <div class="case-study-actions">
+                        <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="case-study-cta">
+                            View glambycella.com →
+                        </a>
+                        <a href="/services/" class="case-study-cta-secondary">See all studio services →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED PRODUCTS (apps) ========== -->
     <section id="apps" aria-label="Featured Products">
         <div class="container">
             <div class="section-header fade-in">
@@ -135,7 +267,7 @@ function fmtStudioDate(d: Date): string {
                 <div class="app-card memescanr fade-in fade-in-delay-1">
                     <div class="app-icon"><img src="/memescanr_logo.png" alt="MemeScanr logo"></div>
                     <h3>MemeScanr <span class="status-badge status-live">Live</span></h3>
-                    <p class="app-desc">A privacy-first iPhone gallery cleaner that helps people reclaim storage with personality. On-device duplicate, screenshot, meme, and blur detection.</p>
+                    <p class="app-desc">A privacy-first iPhone gallery cleaner with personality.</p>
                     <a href="/memescanr/" class="btn-app">
                         Explore MemeScanr
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -145,7 +277,7 @@ function fmtStudioDate(d: Date): string {
                 <div class="app-card tripsquad fade-in fade-in-delay-2">
                     <div class="app-icon"><img src="/tripsquad_logo.png" alt="TripSquad logo"></div>
                     <h3>TripSquad <span class="status-badge status-live">Live</span></h3>
-                    <p class="app-desc">The group-trip planner for the whole squad. Built to help friends agree, vote, reveal, and actually take the trip.</p>
+                    <p class="app-desc">The group-trip planner that helps friends agree, vote, and actually take the trip.</p>
                     <a href="/tripsquad/" class="btn-app">
                         Explore TripSquad
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -155,7 +287,7 @@ function fmtStudioDate(d: Date): string {
                 <div class="app-card planetwonders fade-in fade-in-delay-3">
                     <div class="app-icon"><img src="/planet_wonders_launchscreen.png" alt="Planet Wonders logo"></div>
                     <h3>Planet Wonders <span class="status-badge status-dev">In Development</span></h3>
-                    <p class="app-desc">A playful world-learning app for kids, designed around creativity, curiosity, and global exploration.</p>
+                    <p class="app-desc">A playful world-learning app for kids around creativity and curiosity.</p>
                     <a href="/studio/#planet-wonders" class="btn-app">
                         Explore Planet Wonders
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -165,49 +297,108 @@ function fmtStudioDate(d: Date): string {
         </div>
     </section>
 
-    <section id="work-with-us" aria-label="Work With Afia Labs" style="background: var(--bg-white); position: relative;">
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="home-testimonials" aria-label="What clients are saying">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-label">Work With Us</div>
-                <h2 class="section-title">Work with Afia Labs.</h2>
-                <p class="section-subtitle">Need a website, landing page, or digital system that makes your business look serious online? Afia Labs brings product thinking, clean design, and conversion-focused structure to small businesses, creators, and founders.</p>
+                <div class="section-label">Testimonials</div>
+                <h2 class="section-title">What clients are saying.</h2>
+                <p class="section-subtitle">Verified Google reviews from small-business owners we have built for.</p>
             </div>
 
-            <div class="what-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="what-card fade-in fade-in-delay-1">
-                    <div class="what-card-icon">🔒</div>
-                    <h3>Websites that build trust</h3>
-                    <p>Clean, mobile-friendly websites that help customers understand who you are, what you offer, and how to take the next step.</p>
-                </div>
-                <div class="what-card fade-in fade-in-delay-2">
-                    <div class="what-card-icon">🎯</div>
-                    <h3>Landing pages that sell the offer</h3>
-                    <p>Focused pages for launches, services, books, products, waitlists, and campaigns.</p>
-                </div>
-                <div class="what-card fade-in fade-in-delay-3">
-                    <div class="what-card-icon">⚙️</div>
-                    <h3>Simple digital systems</h3>
-                    <p>Forms, intake flows, automation-ready content, and lightweight systems that make the business easier to run.</p>
-                </div>
+            <div class="home-testimonials-grid fade-in">
+                <blockquote class="home-testimonial-card">
+                    <p class="home-testimonial-text">
+                        "Afia Labs Studio did an amazing job helping bring my website vision for Glam by Cella to life. Bridgette was creative, professional, and really understood the look and feel I wanted for my beauty business. The final website feels polished, elegant, and easy for clients to use. I would definitely recommend Afia Labs Studio to other small business owners."
+                    </p>
+                    <footer class="home-testimonial-meta">
+                        <span class="home-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                        <div>
+                            <span class="home-testimonial-author">Princella K.</span>
+                            <span class="home-testimonial-role">Owner, <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer">Glam by Cella</a></span>
+                        </div>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="home-testimonial-card">
+                    <p class="home-testimonial-text">
+                        "Bridgette at Afia Labs Studio was amazing to work with. She listened to what I wanted for my business and created a website that feels elegant, professional, and easy for my clients to use. I love that she understood the beauty side of my business and made sure the site matched my brand, not just a generic template. I'm so happy with the final result. Thanks Bridgette."
+                    </p>
+                    <footer class="home-testimonial-meta">
+                        <span class="home-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                        <div>
+                            <span class="home-testimonial-author">Josephine B.</span>
+                            <span class="home-testimonial-role">Small-business owner</span>
+                        </div>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="home-testimonial-card">
+                    <p class="home-testimonial-text">
+                        "Afia Labs Studio exceeded my expectations. From communication to delivery, everything was handled professionally. The website design was modern, responsive, and beautifully done. Definitely one of the best web development experiences I've had."
+                    </p>
+                    <footer class="home-testimonial-meta">
+                        <span class="home-testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                        <div>
+                            <span class="home-testimonial-author">Rebecca A.</span>
+                            <span class="home-testimonial-role">Web development client</span>
+                        </div>
+                    </footer>
+                </blockquote>
             </div>
 
-            <div class="work-cta-wrap fade-in">
-                <a href="/services/#contact" class="btn-primary">
-                    Start Your Website Project
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
+            <p class="home-testimonials-source fade-in">
+                All quotes are verified Google reviews. <a href="https://g.page/r/CRL7lWvgmT0ZEBI/" target="_blank" rel="noopener noreferrer">Read more on Google →</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== FIELD GUIDE (calmer non-banner section) ========== -->
+    <section class="home-field-guide" aria-label="Field Guide">
+        <div class="container">
+            <div class="field-guide-grid fade-in">
+                <div class="field-guide-cover">
+                    <img src="/book-cover.jpg" alt="From Idea to Income with AI Apps — Afia Labs Field Guide No 1" loading="lazy" />
+                </div>
+                <div class="field-guide-body">
+                    <div class="field-guide-eyebrow">Field Guide № 1 · On Amazon</div>
+                    <h2>Build with AI. Stay in control. Own the outcome.</h2>
+                    <p>From Idea to Income with AI Apps is the practical field guide to shipping a real consumer app with AI. Paperback, Kindle, and a companion workbook are live on Amazon.</p>
+                    <a href="/book/" class="btn-primary">
+                        Explore the book
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <ComingSoonBanner
-      eyebrow="Field Guide № 1"
-      headline="Build with AI. Stay in control. Own the outcome."
-      subheadline="Afia Labs Field Guides turn real product-building lessons into practical resources for founders, creators, and solo builders."
-      ctaText="Explore the book"
-      ctaHref="/book/"
-    />
+    <!-- ========== FOUNDER NOTE (compact, BEFORE the studio essay strip) ========== -->
+    <section id="founder-note" aria-label="Founder Note">
+        <div class="container">
+            <div class="founder-note-grid">
+                <div class="founder-note-visual fade-in">
+                    <img src="/founder.jpg" alt="Bridgette Owusu, founder of Afia Labs" class="founder-note-photo" loading="lazy">
+                </div>
+                <div class="founder-note-body fade-in fade-in-delay-1">
+                    <div class="section-label">Founder Note</div>
+                    <h2 class="section-title">One founder, one studio, four lanes.</h2>
+                    <p>Afia Labs was founded by Bridgette Owusu in 2024. The studio shipped a consumer iOS app first, then grew into client services, more apps, and a field guide. Founder-led from day one.</p>
+                    <p>Every decision is made by a small team that cares about the work. Every line of code, every word of copy, every client engagement gets the same standard.</p>
+                    <ul class="founder-values">
+                        <li><span class="check">✓</span> Ownership-first</li>
+                        <li><span class="check">✓</span> Useful over flashy</li>
+                        <li><span class="check">✓</span> Personality is product</li>
+                        <li><span class="check">✓</span> AI as leverage, not autopilot</li>
+                        <li><span class="check">✓</span> Built with care for real people</li>
+                    </ul>
+                    <a href="/about/" class="founder-note-cta">Read the full studio story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ========== FROM THE STUDIO (essay strip, now AFTER founder note) ========== -->
     {studioPosts.length > 0 && (
       <section id="studio-teaser" aria-label="From the Studio" class="studio-teaser-section">
         <div class="container">
@@ -215,8 +406,7 @@ function fmtStudioDate(d: Date): string {
             <div class="studio-teaser-eyebrow">FROM THE STUDIO</div>
             <h2 class="studio-teaser-title">How we build, what we're learning.</h2>
             <p class="studio-teaser-sub">
-              Founder notes, product lessons, AI workflows, and behind-the-scenes
-              thinking from the Afia Labs build process.
+              Founder notes, product lessons, and AI workflows from the build process.
             </p>
           </div>
 
@@ -241,166 +431,611 @@ function fmtStudioDate(d: Date): string {
       </section>
     )}
 
-    <section id="about" aria-label="About Afia Labs">
+    <!-- ========== FINAL ROUTING CTA (3-card decision band) ========== -->
+    <section class="final-routing" aria-label="Where do you want to go next?">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <div class="section-label">About</div>
-                    <h2 class="section-title">An independent product studio.</h2>
-                    <p>Afia Labs was founded by Bridgette Owusu as an independent product studio for building useful technology with intention. What started with a shipped iPhone app has grown into a studio ecosystem of consumer apps, AI-assisted tools, small-business digital systems, and practical guides for people who want to build with more ownership.</p>
-                    <ul class="about-values">
-                        <li><span class="check">✓</span> Ownership-first</li>
-                        <li><span class="check">✓</span> Useful over flashy</li>
-                        <li><span class="check">✓</span> Personality is product</li>
-                        <li><span class="check">✓</span> AI as leverage, not autopilot</li>
-                        <li><span class="check">✓</span> Built with care for real people</li>
-                    </ul>
-                </div>
-                <div class="about-visual fade-in fade-in-delay-1">
-                    <img src="/founder.jpg" alt="Bridgette Owusu, founder of Afia Labs" class="founder-photo" loading="lazy">
-                </div>
+            <div class="section-header fade-in">
+                <h2 class="section-title">Where do you want to go next?</h2>
+            </div>
+            <div class="final-routing-grid fade-in">
+                <a href="/services/" class="final-routing-card final-routing-primary">
+                    <div class="final-routing-eyebrow">For small businesses</div>
+                    <h3>I need a website</h3>
+                    <p>Studio services for small businesses, founders, and creators.</p>
+                    <span class="final-routing-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="/studio/" class="final-routing-card">
+                    <div class="final-routing-eyebrow">For app curious</div>
+                    <h3>I'm here for the apps</h3>
+                    <p>MemeScanr, TripSquad, Planet Wonders, and more.</p>
+                    <span class="final-routing-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="/book/" class="final-routing-card">
+                    <div class="final-routing-eyebrow">For builders</div>
+                    <h3>I want to learn to build</h3>
+                    <p>From Idea to Income field guide and the AI App Builder Workbook.</p>
+                    <span class="final-routing-arrow" aria-hidden="true">→</span>
+                </a>
             </div>
         </div>
     </section>
+
     </main>
 </BaseLayout>
 
 <style>
-  /* From the Studio — homepage editorial strip */
-  .studio-teaser-section {
-    padding: 96px 0;
-    background: var(--bg-light, #faf9fc);
-    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
-    border-bottom: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
+  /* ========== STUDIO AT A GLANCE BAND ========== */
+  .studio-glance {
+    padding: 32px 0 12px;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
   }
-  .studio-teaser-header {
-    max-width: 720px;
-    margin-bottom: 56px;
-  }
-  .studio-teaser-eyebrow {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.32em;
-    color: var(--purple-light, #7c3aed);
-    margin-bottom: 18px;
-  }
-  .studio-teaser-title {
-    font-family: var(--font-heading, "Inter"), sans-serif;
-    font-size: clamp(32px, 4vw, 44px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
-    color: var(--text-primary, #1a0a2e);
-    margin: 0 0 16px;
-  }
-  .studio-teaser-sub {
-    font-size: 17px;
-    line-height: 1.6;
-    color: var(--text-secondary, #5b5675);
-    max-width: 620px;
-  }
-  .studio-teaser-grid {
+  .studio-glance-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-bottom: 48px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
   }
-  .studio-teaser-card {
+  .studio-glance-bar li {
+    margin: 0;
+  }
+  .glance-chip {
     display: flex;
-    flex-direction: column;
-    padding: 28px 0 32px;
-    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.16));
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(124, 58, 237, 0.04);
+    border: 1px solid rgba(124, 58, 237, 0.1);
     text-decoration: none;
     color: inherit;
-    transition: transform 0.18s ease;
+    height: 100%;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   }
-  .studio-teaser-card:hover { transform: translateY(-2px); }
-  .studio-teaser-pillar {
-    font-size: 11px;
+  .glance-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(124, 58, 237, 0.25);
+    background: rgba(124, 58, 237, 0.07);
+  }
+  .glance-icon {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .glance-chip strong {
+    display: block;
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.22em;
-    color: var(--purple-light, #7c3aed);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .studio-teaser-card-title {
-    font-family: var(--font-heading, "Inter"), sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-    color: var(--text-primary, #1a0a2e);
-    margin: 0 0 18px;
-    flex-grow: 1;
-  }
-  .studio-teaser-card:hover .studio-teaser-card-title {
-    color: var(--purple-light, #7c3aed);
-  }
-  .studio-teaser-meta {
-    font-size: 12px;
-    color: var(--text-muted, #8e87a0);
-    display: flex;
-    gap: 6px;
-    align-items: center;
-  }
-  .studio-teaser-dot { color: var(--text-muted, #8e87a0); }
-  .studio-teaser-cta-wrap {
-    border-top: 1px solid var(--border-light, rgba(124, 58, 237, 0.08));
-    padding-top: 32px;
-  }
-  .studio-teaser-cta {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--purple-light, #7c3aed);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-  .studio-teaser-cta:hover { color: var(--purple-deep, #1a0a2e); }
-
-  @media (max-width: 880px) {
-    .studio-teaser-grid {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-    .studio-teaser-card { padding: 24px 0; }
-  }
-  @media (max-width: 640px) {
-    .studio-teaser-section { padding: 64px 0; }
-    .studio-teaser-header { margin-bottom: 40px; }
-  }
-
-  /* Work With Us CTA wrapper */
-  .work-cta-wrap {
-    margin-top: 40px;
-    text-align: center;
-  }
-
-  /* Hero floating cards: longer brand-pillar labels need a smaller font to fit */
-  .mini-value-compact {
-    font-size: 0.78rem !important;
-    line-height: 1.25 !important;
+    color: var(--purple-deep);
     letter-spacing: -0.005em;
-    white-space: nowrap;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+  .glance-chip span:not(.glance-icon) {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+  @media (max-width: 1080px) {
+    .studio-glance-bar {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 720px) {
+    .studio-glance-bar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .studio-glance-bar {
+      grid-template-columns: 1fr;
+    }
   }
 
-  /* About values list */
-  .about-values {
-    list-style: none;
-    margin-top: 24px;
+  /* ========== WHAT WE DO ========== */
+  .what-do-large-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .what-do-large {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 36px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 0;
+    gap: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .about-values li {
+  .what-do-large:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(124, 58, 237, 0.18);
+  }
+  .what-do-large-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+  }
+  .what-do-large h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--purple-deep);
+    line-height: 1.2;
+    margin: 0;
+  }
+  .what-do-large p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0 0 8px;
+    flex-grow: 1;
+  }
+  .what-do-cta {
+    align-self: flex-start;
+  }
+  .what-do-small-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .what-do-small {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .what-do-small:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(124, 58, 237, 0.16);
+  }
+  .what-do-small-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .what-do-small h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    margin: 0 0 6px;
+  }
+  .what-do-small p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0 0 10px;
+  }
+  .what-do-small-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--purple-light);
+    text-decoration: none;
+  }
+  .what-do-small-cta:hover { color: var(--purple-deep); }
+  @media (max-width: 880px) {
+    .what-do-large-grid,
+    .what-do-small-strip {
+      grid-template-columns: 1fr;
+    }
+    .what-do-large {
+      padding: 28px;
+    }
+  }
+
+  /* ========== RECENT CLIENT WORK (case study on homepage) ========== */
+  .home-recent-work {
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .home-case-study {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    max-width: 960px;
+    margin: 0 auto;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .home-case-study:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(124, 58, 237, 0.18);
+  }
+  .case-study-visuals {
+    position: relative;
+    padding-bottom: 40px;
+    padding-right: 30px;
+  }
+  .case-study-screenshot {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(26, 10, 46, 0.18), 0 8px 20px rgba(26, 10, 46, 0.08);
+    border: 1px solid var(--border-light);
+    background: var(--bg-light);
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .case-study-screenshot:hover {
+    transform: translateY(-2px);
+  }
+  .case-study-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: linear-gradient(180deg, #f7f4fb, #ece8f3);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .case-browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .case-browser-dot-red { background: #ff5f57; }
+  .case-browser-dot-yellow { background: #febc2e; }
+  .case-browser-dot-green { background: #28c840; }
+  .case-browser-url {
+    margin-left: 12px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', Monaco, monospace;
+  }
+  .case-study-screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+    max-height: 480px;
+  }
+  .case-study-phone {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 32%;
+    max-width: 150px;
+    aspect-ratio: 9 / 19.5;
+    background: #0b0b10;
+    border-radius: 22px;
+    padding: 6px;
+    box-shadow: 0 24px 50px rgba(26, 10, 46, 0.28), 0 8px 18px rgba(26, 10, 46, 0.12);
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .case-study-phone:hover {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  .case-study-phone img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 16px;
+  }
+  .case-phone-notch {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36%;
+    max-width: 50px;
+    height: 14px;
+    background: #0b0b10;
+    border-radius: 0 0 12px 12px;
+    z-index: 2;
+  }
+  .case-study-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .case-study-eyebrow {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(34, 197, 94, 0.1);
+    color: #15803d;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    align-self: flex-start;
+  }
+  .case-study-body h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--purple-deep);
+    margin: 0;
+  }
+  .case-study-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .case-study-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .case-study-tags li {
+    padding: 4px 10px;
+    background: rgba(124, 58, 237, 0.06);
+    color: var(--purple-light);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .case-study-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .case-study-cta {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--purple-light);
+    text-decoration: none;
+  }
+  .case-study-cta:hover { color: var(--purple-deep); }
+  .case-study-cta-secondary {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .case-study-cta-secondary:hover { color: var(--purple-light); }
+  @media (max-width: 880px) {
+    .home-case-study {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .case-study-visuals {
+      padding-bottom: 0;
+      padding-right: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .case-study-screenshot { flex: 1; min-width: 0; }
+    .case-study-phone {
+      position: static;
+      flex-shrink: 0;
+      width: 30%;
+      max-width: 130px;
+    }
+  }
+  @media (max-width: 520px) {
+    .case-study-visuals { flex-direction: column; }
+    .case-study-phone { align-self: flex-end; width: 38%; }
+  }
+
+  /* ========== TESTIMONIALS (homepage) ========== */
+  .home-testimonials {
+    padding: 96px 0;
+  }
+  .home-testimonials .container { max-width: 1080px; }
+  .home-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .home-testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 28px 26px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .home-testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(124, 58, 237, 0.18);
+  }
+  .home-testimonial-text {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin: 0;
+    flex-grow: 1;
+  }
+  .home-testimonial-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+  }
+  .home-testimonial-stars { color: var(--gold); font-size: 0.95rem; letter-spacing: 1px; }
+  .home-testimonial-author {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+  }
+  .home-testimonial-role {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .home-testimonial-role a {
+    color: var(--purple-light);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .home-testimonial-role a:hover { color: var(--purple-deep); }
+  .home-testimonials-source {
+    text-align: center;
+    margin: 32px auto 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+  .home-testimonials-source a {
+    color: var(--purple-light);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .home-testimonials-source a:hover { color: var(--purple-deep); }
+  @media (max-width: 960px) {
+    .home-testimonials-grid {
+      grid-template-columns: 1fr;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+  }
+
+  /* ========== FIELD GUIDE (calmer than the old banner) ========== */
+  .home-field-guide {
+    padding: 96px 0;
+    background: linear-gradient(160deg, rgba(124, 58, 237, 0.04), rgba(245, 158, 11, 0.03));
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .field-guide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .field-guide-cover {
+    text-align: center;
+  }
+  .field-guide-cover img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(26, 10, 46, 0.18), 0 8px 20px rgba(26, 10, 46, 0.08);
+  }
+  .field-guide-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .field-guide-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+  }
+  .field-guide-body h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--purple-deep);
+    margin: 0;
+  }
+  .field-guide-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .field-guide-body .btn-primary {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+  @media (max-width: 880px) {
+    .field-guide-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      text-align: center;
+    }
+    .field-guide-body {
+      align-items: center;
+    }
+    .field-guide-body .btn-primary {
+      align-self: center;
+    }
+  }
+
+  /* ========== FOUNDER NOTE (compact) ========== */
+  .founder-note-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .founder-note-visual {
+    display: flex;
+    justify-content: center;
+  }
+  .founder-note-photo {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1;
+    border-radius: var(--radius-xl);
+    object-fit: cover;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+  }
+  .founder-note-body p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+  .founder-note-body .section-title {
+    margin-bottom: 18px;
+  }
+  .founder-values {
+    list-style: none;
+    margin: 18px 0 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .founder-values li {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.5;
   }
-  .about-values .check {
+  .founder-values .check {
     flex-shrink: 0;
     width: 22px;
     height: 22px;
@@ -413,17 +1048,208 @@ function fmtStudioDate(d: Date): string {
     background: rgba(124, 58, 237, 0.08);
     color: var(--purple-light);
   }
+  .founder-note-cta {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--purple-light);
+    text-decoration: none;
+  }
+  .founder-note-cta:hover { color: var(--purple-deep); }
+  @media (max-width: 880px) {
+    .founder-note-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      text-align: center;
+    }
+    .founder-values {
+      align-items: flex-start;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .founder-note-photo { max-width: 220px; }
+  }
 
-  /* Status badge spacing inside featured product H3 */
+  /* ========== FROM THE STUDIO (kept) ========== */
+  .studio-teaser-section {
+    padding: 96px 0;
+    background: var(--bg-light);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .studio-teaser-header {
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+  .studio-teaser-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: var(--purple-light);
+    margin-bottom: 18px;
+  }
+  .studio-teaser-title {
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin: 0 0 16px;
+  }
+  .studio-teaser-sub {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 620px;
+  }
+  .studio-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .studio-teaser-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0 32px;
+    border-top: 1px solid var(--border-light);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.18s ease;
+  }
+  .studio-teaser-card:hover { transform: translateY(-2px); }
+  .studio-teaser-pillar {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .studio-teaser-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    margin: 0 0 18px;
+    flex-grow: 1;
+  }
+  .studio-teaser-card:hover .studio-teaser-card-title { color: var(--purple-light); }
+  .studio-teaser-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .studio-teaser-dot { color: var(--text-muted); }
+  .studio-teaser-cta-wrap {
+    border-top: 1px solid var(--border-light);
+    padding-top: 32px;
+  }
+  .studio-teaser-cta {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--purple-light);
+    text-decoration: none;
+  }
+  .studio-teaser-cta:hover { color: var(--purple-deep); }
+  @media (max-width: 880px) {
+    .studio-teaser-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .studio-teaser-card { padding: 24px 0; }
+  }
+  @media (max-width: 640px) {
+    .studio-teaser-section { padding: 64px 0; }
+    .studio-teaser-header { margin-bottom: 40px; }
+  }
+
+  /* ========== FINAL ROUTING CTA ========== */
+  .final-routing {
+    padding: 96px 0;
+    background: var(--bg-white);
+  }
+  .final-routing .section-header { margin-bottom: 40px; }
+  .final-routing-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .final-routing-card {
+    display: block;
+    padding: 32px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .final-routing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(124, 58, 237, 0.25);
+  }
+  .final-routing-primary {
+    background: linear-gradient(160deg, rgba(124, 58, 237, 0.07), rgba(245, 158, 11, 0.04));
+    border-color: rgba(124, 58, 237, 0.2);
+  }
+  .final-routing-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 10px;
+  }
+  .final-routing-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--purple-deep);
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  .final-routing-card p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .final-routing-arrow {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    font-size: 1.2rem;
+    color: var(--purple-light);
+    transition: transform 0.2s ease;
+  }
+  .final-routing-card:hover .final-routing-arrow {
+    transform: translateX(4px);
+  }
+  @media (max-width: 960px) {
+    .final-routing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ========== Hero floating cards: longer brand-pillar labels need a smaller font ========== */
+  .mini-value-compact {
+    font-size: 0.78rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+
+  /* ========== Status badge spacing inside featured product H3 ========== */
   .app-card h3 .status-badge {
     margin-left: 8px;
     vertical-align: middle;
-  }
-
-  /* Work With Us mini cards adapt to 1-col on small screens */
-  @media (max-width: 880px) {
-    section#work-with-us .what-grid {
-      grid-template-columns: 1fr !important;
-    }
   }
 </style>
