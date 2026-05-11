@@ -557,6 +557,25 @@ const servicesPageJsonLd = {
       </div>
     </section>
 
+    <section class="services-band services-leave-review" aria-label="Leave a review">
+      <div class="container">
+        <div class="leave-review-card fade-in">
+          <div class="leave-review-copy">
+            <div class="leave-review-eyebrow">⭐ Did we work together?</div>
+            <p class="leave-review-text">
+              A 30-second review on Google helps other small businesses find the studio.
+            </p>
+          </div>
+          <a href="/review/" class="leave-review-cta">
+            Leave a quick review
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="services-band services-form-section" aria-label="Project inquiry">
       <span id="start" aria-hidden="true" class="anchor-compat"></span>
       <div class="container">
@@ -1389,6 +1408,71 @@ const servicesPageJsonLd = {
   @media (max-width: 640px) {
     .testimonial-text {
       font-size: 1.15rem;
+    }
+  }
+
+  /* ===== Leave-a-review inline strip ===== */
+  .services-leave-review {
+    padding: 40px 0;
+    background: var(--bg-white);
+  }
+  .leave-review-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 28px;
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.18);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .leave-review-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gold-warm);
+    margin-bottom: 4px;
+  }
+  .leave-review-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .leave-review-copy {
+    flex: 1;
+    min-width: 220px;
+  }
+  .leave-review-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--gold-warm);
+    color: white !important;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+    white-space: nowrap;
+  }
+  .leave-review-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+  }
+  @media (max-width: 640px) {
+    .leave-review-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .leave-review-cta {
+      width: 100%;
+      justify-content: center;
     }
   }
 
