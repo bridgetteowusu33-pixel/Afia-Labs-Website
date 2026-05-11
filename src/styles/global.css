@@ -1741,13 +1741,18 @@
             font-weight: 600;
             color: rgba(255, 255, 255, 0.7);
         }
-        .footer-gbp {
+        .footer-gbp,
+        .footer-phone {
             margin-top: 6px;
             color: var(--purple-glow) !important;
             font-weight: 600;
             text-decoration: none;
             transition: color 0.2s;
         }
-        .footer-gbp:hover {
+        .footer-phone {
+            font-variant-numeric: tabular-nums;
+        }
+        .footer-gbp:hover,
+        .footer-phone:hover {
             color: white !important;
         }

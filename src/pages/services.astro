@@ -98,8 +98,10 @@ const servicesPageJsonLd = {
       closes: '20:00',
     },
   ],
+  telephone: '+1-571-293-1319',
   contactPoint: {
     '@type': 'ContactPoint',
+    telephone: '+1-571-293-1319',
     email: 'support@afialabs.net',
     contactType: 'customer support',
     areaServed: 'US',
@@ -634,7 +636,7 @@ const servicesPageJsonLd = {
           <div class="section-label">Tell us about your project</div>
           <h2 class="section-title">Start a project with Afia Labs.</h2>
           <p class="section-subtitle">
-            We'll review your inquiry and follow up with next steps. No pressure, no hard sell.
+            Send a project inquiry below, or call us during studio hours at <a href="tel:+15712931319" class="services-phone-inline">+1 (571) 293-1319</a>. We follow up on every inquiry within one business day.
           </p>
         </div>
 
@@ -667,6 +669,13 @@ const servicesPageJsonLd = {
             <div class="contact-info-label">Based in Virginia</div>
             <p class="contact-info-text">Serving small businesses locally and online.</p>
             <p class="contact-info-text contact-info-text-muted">Virginia · Fredericksburg · Spotsylvania · Stafford · Northern Virginia · DMV · Remote</p>
+          </div>
+          <div class="contact-info-block">
+            <div class="contact-info-label">Prefer to call?</div>
+            <p class="contact-info-text">
+              <a href="tel:+15712931319" class="contact-info-phone">+1 (571) 293-1319</a>
+            </p>
+            <p class="contact-info-text contact-info-text-muted">Call or text during studio hours. Voicemail after hours.</p>
           </div>
         </div>
 
@@ -1030,13 +1039,18 @@ const servicesPageJsonLd = {
     color: var(--purple-light);
   }
 
-  /* ===== Contact info bar (hours + location) ===== */
+  /* ===== Contact info bar (hours + location + phone) ===== */
   .contact-info {
-    max-width: 760px;
+    max-width: 1080px;
     margin: 0 auto 36px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr 1fr;
     gap: 20px;
+  }
+  @media (max-width: 960px) {
+    .contact-info {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   .contact-info-block {
     background: var(--bg-card);
@@ -1098,7 +1112,28 @@ const servicesPageJsonLd = {
     color: var(--text-muted);
     line-height: 1.6;
   }
-  @media (max-width: 720px) {
+  .contact-info-phone {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--purple-deep);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .contact-info-phone:hover {
+    color: var(--purple-light);
+  }
+  .services-phone-inline {
+    color: var(--purple-light);
+    font-weight: 700;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .services-phone-inline:hover {
+    color: var(--purple-deep);
+  }
+  @media (max-width: 600px) {
     .contact-info {
       grid-template-columns: 1fr;
     }
