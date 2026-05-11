@@ -243,24 +243,41 @@ const servicesPageJsonLd = {
         </div>
 
         <div class="recent-work-grid fade-in">
-          <article class="recent-work-card">
-            <div class="recent-work-card-eyebrow">Live · Virginia</div>
-            <h3 class="recent-work-card-title">Glam by Cella</h3>
-            <p class="recent-work-card-desc">
-              Beauty website and booking flow for a Virginia makeup artist. Polished mobile-first design, integrated booking calendar, clear service pricing, and local-SEO setup so search traffic finds the studio.
-            </p>
-            <ul class="recent-work-card-tags">
-              <li>Website design</li>
-              <li>Booking flow</li>
-              <li>Local SEO</li>
-              <li>Mobile-first build</li>
-            </ul>
-            <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="recent-work-card-cta">
-              View glambycella.com
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+          <article class="recent-work-card recent-work-card-rich">
+            <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="recent-work-screenshot" aria-label="View Glam by Cella website">
+              <div class="recent-work-browser-bar">
+                <span class="browser-dot browser-dot-red" aria-hidden="true"></span>
+                <span class="browser-dot browser-dot-yellow" aria-hidden="true"></span>
+                <span class="browser-dot browser-dot-green" aria-hidden="true"></span>
+                <span class="browser-url">glambycella.com</span>
+              </div>
+              <img
+                src="/glambycella-screenshot.jpg"
+                alt="Screenshot of the Glam by Cella website homepage built by Afia Labs Studio"
+                loading="lazy"
+                width="1440"
+                height="900"
+              />
             </a>
+            <div class="recent-work-card-body">
+              <div class="recent-work-card-eyebrow">Live · Virginia</div>
+              <h3 class="recent-work-card-title">Glam by Cella</h3>
+              <p class="recent-work-card-desc">
+                Beauty website and booking flow for a Virginia makeup artist. Polished mobile-first design, integrated booking calendar, clear service pricing, and local-SEO setup so search traffic finds the studio.
+              </p>
+              <ul class="recent-work-card-tags">
+                <li>Website design</li>
+                <li>Booking flow</li>
+                <li>Local SEO</li>
+                <li>Mobile-first build</li>
+              </ul>
+              <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="recent-work-card-cta">
+                View glambycella.com
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
           </article>
         </div>
       </div>
@@ -353,23 +370,6 @@ const servicesPageJsonLd = {
       </div>
     </section>
 
-    <section class="services-band services-testimonial" aria-label="Client testimonial">
-      <div class="container">
-        <blockquote class="testimonial-quote fade-in">
-          <p class="testimonial-text">
-            "Afia Labs Studio did an amazing job helping bring my website vision for Glam by Cella to life. Bridgette was creative, professional, and really understood the look and feel I wanted for my beauty business. The final website feels polished, elegant, and easy for clients to use. I would definitely recommend Afia Labs Studio to other small business owners."
-          </p>
-          <footer class="testimonial-meta">
-            <span class="testimonial-author">Princella K.</span>
-            <span class="testimonial-divider">·</span>
-            <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer">Owner, Glam by Cella</a>
-            <span class="testimonial-divider">·</span>
-            <a href="https://g.page/r/CRL7lWvgmT0ZEBI/" target="_blank" rel="noopener noreferrer" class="testimonial-verified">⭐ Verified Google review</a>
-          </footer>
-        </blockquote>
-      </div>
-    </section>
-
     <section class="services-band services-audience" aria-label="Who this is for">
       <div class="container">
         <div class="section-header fade-in">
@@ -437,7 +437,7 @@ const servicesPageJsonLd = {
 
           <div class="comparison-grid">
             <div class="comparison-col">
-              <div class="comparison-col-tag">Cheapest</div>
+              <div class="comparison-col-tag">Budget-first</div>
               <h3>DIY builders</h3>
               <p class="comparison-col-sub">Squarespace · Wix · Webflow templates</p>
               <p class="comparison-col-best"><strong>Best when:</strong> budget is the only constraint and the brief is small.</p>
@@ -476,18 +476,58 @@ const servicesPageJsonLd = {
       </div>
     </section>
 
-    <section class="services-band services-testimonial services-testimonial-mid" aria-label="Client testimonial">
+    <section class="services-band services-testimonials" aria-label="What clients are saying">
       <div class="container">
-        <blockquote class="testimonial-quote fade-in">
-          <p class="testimonial-text">
-            "Bridgette at Afia Labs Studio was amazing to work with. She listened to what I wanted for business and created a website that feels elegant, professional, and easy for my clients to use. I love that she understood the beauty side of my business and made sure the site matched my brand, not just a generic template. I'm so happy with the final result. Thanks Bridgette."
-          </p>
-          <footer class="testimonial-meta">
-            <span class="testimonial-author">Josephine B.</span>
-            <span class="testimonial-divider">·</span>
-            <a href="https://g.page/r/CRL7lWvgmT0ZEBI/" target="_blank" rel="noopener noreferrer" class="testimonial-verified">⭐ Verified Google review</a>
-          </footer>
-        </blockquote>
+        <div class="section-header fade-in">
+          <div class="section-label">Testimonials</div>
+          <h2 class="section-title">What clients are saying.</h2>
+          <p class="section-subtitle">Verified Google reviews from small-business owners we have built for.</p>
+        </div>
+
+        <div class="testimonials-grid fade-in">
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card-text">
+              "Afia Labs Studio did an amazing job helping bring my website vision for Glam by Cella to life. Bridgette was creative, professional, and really understood the look and feel I wanted for my beauty business. The final website feels polished, elegant, and easy for clients to use. I would definitely recommend Afia Labs Studio to other small business owners."
+            </p>
+            <footer class="testimonial-card-meta">
+              <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <div>
+                <span class="testimonial-card-author">Princella K.</span>
+                <span class="testimonial-card-role">Owner, <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer">Glam by Cella</a></span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card-text">
+              "Bridgette at Afia Labs Studio was amazing to work with. She listened to what I wanted for my business and created a website that feels elegant, professional, and easy for my clients to use. I love that she understood the beauty side of my business and made sure the site matched my brand, not just a generic template. I'm so happy with the final result. Thanks Bridgette."
+            </p>
+            <footer class="testimonial-card-meta">
+              <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <div>
+                <span class="testimonial-card-author">Josephine B.</span>
+                <span class="testimonial-card-role">Small-business owner</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card-text">
+              "Afia Labs Studio exceeded my expectations. From communication to delivery, everything was handled professionally. The website design was modern, responsive, and beautifully done. Definitely one of the best web development experiences I've had."
+            </p>
+            <footer class="testimonial-card-meta">
+              <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <div>
+                <span class="testimonial-card-author">Rebecca A.</span>
+                <span class="testimonial-card-role">Web development client</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+
+        <p class="testimonials-source fade-in">
+          All quotes are verified Google reviews. <a href="https://g.page/r/CRL7lWvgmT0ZEBI/" target="_blank" rel="noopener noreferrer">Read more on Google →</a>
+        </p>
       </div>
     </section>
 
@@ -539,21 +579,6 @@ const servicesPageJsonLd = {
             </li>
           ))}
         </ul>
-      </div>
-    </section>
-
-    <section class="services-band services-testimonial services-testimonial-secondary" aria-label="Client testimonial near contact form">
-      <div class="container">
-        <blockquote class="testimonial-quote fade-in">
-          <p class="testimonial-text">
-            "Afia Labs Studio exceeded my expectations. From communication to delivery, everything was handled professionally. The website design was modern, responsive, and beautifully done. Definitely one of the best web development experiences I've had."
-          </p>
-          <footer class="testimonial-meta">
-            <span class="testimonial-author">Rebecca A.</span>
-            <span class="testimonial-divider">·</span>
-            <a href="https://g.page/r/CRL7lWvgmT0ZEBI/" target="_blank" rel="noopener noreferrer" class="testimonial-verified">⭐ Verified Google review</a>
-          </footer>
-        </blockquote>
       </div>
     </section>
 
@@ -1286,7 +1311,7 @@ const servicesPageJsonLd = {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    max-width: 760px;
+    max-width: 960px;
     margin: 0 auto;
   }
   .recent-work-card {
@@ -1300,6 +1325,68 @@ const servicesPageJsonLd = {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
     border-color: rgba(124, 58, 237, 0.18);
+  }
+  .recent-work-card-rich {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    padding: 32px;
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .recent-work-card-rich {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  .recent-work-screenshot {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(26, 10, 46, 0.18), 0 8px 20px rgba(26, 10, 46, 0.08);
+    border: 1px solid var(--border-light);
+    background: var(--bg-light);
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .recent-work-screenshot:hover {
+    transform: translateY(-2px);
+  }
+  .recent-work-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: linear-gradient(180deg, #f7f4fb, #ece8f3);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .browser-dot-red { background: #ff5f57; }
+  .browser-dot-yellow { background: #febc2e; }
+  .browser-dot-green { background: #28c840; }
+  .browser-url {
+    margin-left: 12px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', Monaco, monospace;
+    letter-spacing: 0.01em;
+  }
+  .recent-work-screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+    max-height: 480px;
+  }
+  .recent-work-card-body {
+    display: flex;
+    flex-direction: column;
   }
   .recent-work-card-eyebrow {
     display: inline-block;
@@ -1355,59 +1442,90 @@ const servicesPageJsonLd = {
     color: var(--purple-deep);
   }
 
-  /* ===== Testimonials ===== */
-  .services-testimonial {
-    background: var(--bg-white);
-    padding: 64px 0;
+  /* ===== Consolidated "What clients are saying" section ===== */
+  .services-testimonials .container {
+    max-width: 1080px;
   }
-  .services-testimonial .container {
-    max-width: 760px;
-  }
-  .testimonial-quote {
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin: 0;
-    padding: 0;
-    text-align: center;
   }
-  .testimonial-text {
-    font-size: 1.35rem;
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--purple-deep);
-    letter-spacing: -0.015em;
-    margin: 0 0 20px;
+  .testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 28px 26px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .testimonial-meta {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(124, 58, 237, 0.18);
+  }
+  .testimonial-card-text {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin: 0;
+    flex-grow: 1;
+  }
+  .testimonial-card-meta {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    justify-content: center;
-    font-size: 0.88rem;
-    color: var(--text-muted);
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
   }
-  .testimonial-meta a {
+  .testimonial-card-stars {
+    color: var(--gold);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+  .testimonial-card-author {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+  }
+  .testimonial-card-role {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .testimonial-card-role a {
     color: var(--purple-light);
     text-decoration: none;
     font-weight: 600;
   }
-  .testimonial-meta a:hover {
+  .testimonial-card-role a:hover {
     color: var(--purple-deep);
   }
-  .testimonial-author {
-    color: var(--text-primary);
-    font-weight: 600;
-  }
-  .testimonial-divider {
+  .testimonials-source {
+    text-align: center;
+    margin: 32px auto 0;
+    font-size: 0.88rem;
     color: var(--text-muted);
   }
-  .testimonial-verified {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+  .testimonials-source a {
+    color: var(--purple-light);
+    font-weight: 600;
+    text-decoration: none;
   }
-  @media (max-width: 640px) {
-    .testimonial-text {
-      font-size: 1.15rem;
+  .testimonials-source a:hover {
+    color: var(--purple-deep);
+  }
+  @media (max-width: 960px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      max-width: 640px;
+      margin: 0 auto;
     }
   }
 
