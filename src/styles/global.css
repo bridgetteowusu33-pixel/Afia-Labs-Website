@@ -45,6 +45,11 @@
             overflow-x: hidden;
         }
 
+        /* Lock body scroll while the mobile nav overlay is open */
+        body.nav-open {
+            overflow: hidden;
+        }
+
         a {
             text-decoration: none;
             color: inherit;
@@ -1216,30 +1221,88 @@
             .nav-links {
                 display: none;
                 position: fixed;
-                top: 0;
+                top: 64px; /* sits just below the nav bar so the close button stays visible */
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
+                background: var(--bg-light); /* fully opaque so hero content cannot show through */
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 32px;
-                z-index: 999;
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0;
+                padding: 28px 24px 48px;
+                z-index: 1005;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .nav-links.active {
                 display: flex;
             }
 
+            .nav-links li {
+                list-style: none;
+                margin: 0;
+                width: 100%;
+            }
+
             .nav-links a {
-                font-size: 1.2rem;
+                display: block;
+                width: 100%;
+                padding: 20px 8px;
+                font-size: 1.15rem;
+                font-weight: 600;
+                color: var(--purple-deep);
+                border-bottom: 1px solid var(--border-light);
+                letter-spacing: -0.005em;
+                transition: color 0.2s, background 0.2s;
+            }
+
+            .nav-links a:hover {
+                color: var(--purple-light);
+            }
+
+            .nav-links a::after {
+                display: none; /* kill the desktop underline animation in the mobile menu */
+            }
+
+            /* Work With Us pill renders as a prominent filled button at the end of the mobile menu */
+            .nav-links .nav-cta-soft {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-top: 24px;
+                padding: 16px 24px;
+                background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+                color: white !important;
+                -webkit-text-fill-color: white !important;
+                border: none;
+                border-radius: 100px;
+                font-size: 1rem;
+                font-weight: 700;
+                letter-spacing: 0;
+                box-shadow: 0 8px 24px rgba(124, 58, 237, 0.28);
+            }
+
+            .nav-links .nav-cta-soft:hover {
+                color: white !important;
+                -webkit-text-fill-color: white !important;
+                transform: translateY(-1px);
+            }
+
+            /* When menu is open the nav bar itself stays solid so it doesn't reveal hero behind it */
+            .nav.nav-open {
+                background: var(--bg-light);
+                border-bottom: 1px solid var(--border-light);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
 
             .mobile-toggle {
                 display: flex;
-                z-index: 1001;
+                position: relative;
+                z-index: 1010; /* stays above the .nav-links overlay */
             }
 
             .mobile-toggle.active span:nth-child(1) {

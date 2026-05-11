@@ -212,16 +212,32 @@ const websiteJsonLd = {
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
+        function setNavOpen(isOpen) {
+            mobileToggle.classList.toggle('active', isOpen);
+            navLinks.classList.toggle('active', isOpen);
+            nav.classList.toggle('nav-open', isOpen);
+            document.body.classList.toggle('nav-open', isOpen);
+            mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-controls', 'navLinks');
+
         mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            setNavOpen(!navLinks.classList.contains('active'));
         });
 
         navLinks.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+                setNavOpen(false);
             });
+        });
+
+        // Close the menu when crossing back above the mobile breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                setNavOpen(false);
+            }
         });
 
         const observerOptions = {
