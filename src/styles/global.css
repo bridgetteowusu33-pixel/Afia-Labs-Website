@@ -45,10 +45,9 @@
             overflow-x: hidden;
         }
 
-        /* Lock body scroll while the mobile nav overlay is open */
-        body.nav-open {
-            overflow: hidden;
-        }
+        /* Mobile nav overlay handles its own internal scroll via overflow-y: auto
+           and overscroll-behavior: contain. We deliberately do NOT lock body scroll
+           so the page behaves naturally and iOS Safari doesn't fight us. */
 
         a {
             text-decoration: none;
@@ -1218,30 +1217,44 @@
         }
 
         @media (max-width: 768px) {
+            /* Full-viewport overlay. Always in the DOM; we toggle opacity + pointer-events
+               for a smooth fade/slide in rather than display: none. */
             .nav-links {
-                display: none;
+                display: flex;
                 position: fixed;
-                top: 64px; /* sits just below the nav bar so the close button stays visible */
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: var(--bg-light); /* fully opaque so hero content cannot show through */
+                inset: 0;
                 flex-direction: column;
-                justify-content: flex-start;
                 align-items: stretch;
+                justify-content: flex-start;
                 gap: 0;
-                padding: 28px 24px 48px;
-                z-index: 1005;
+                list-style: none;
+
+                /* Top padding clears the fixed nav bar (~66px) plus iOS safe-area inset.
+                   Bottom padding respects the iPhone home-indicator safe area. */
+                padding: max(84px, calc(env(safe-area-inset-top, 0px) + 76px)) 24px max(40px, calc(env(safe-area-inset-bottom, 0px) + 24px));
+
+                background: var(--bg-light);
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
+
+                /* hidden default state */
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-6px);
+                transition: opacity 0.22s ease, transform 0.22s ease;
+
+                /* sits inside .nav (z-index 1000); mobile-toggle below is bumped above this */
+                z-index: 5;
             }
 
             .nav-links.active {
-                display: flex;
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
             }
 
             .nav-links li {
-                list-style: none;
                 margin: 0;
                 width: 100%;
             }
@@ -1249,24 +1262,25 @@
             .nav-links a {
                 display: block;
                 width: 100%;
-                padding: 20px 8px;
-                font-size: 1.15rem;
+                padding: 18px 4px;
+                font-size: 1.1rem;
                 font-weight: 600;
                 color: var(--purple-deep);
-                border-bottom: 1px solid var(--border-light);
+                border-bottom: 1px solid rgba(124, 58, 237, 0.08);
                 letter-spacing: -0.005em;
-                transition: color 0.2s, background 0.2s;
+                transition: color 0.18s ease;
             }
 
-            .nav-links a:hover {
+            .nav-links a:hover,
+            .nav-links a:active {
                 color: var(--purple-light);
             }
 
             .nav-links a::after {
-                display: none; /* kill the desktop underline animation in the mobile menu */
+                display: none;
             }
 
-            /* Work With Us pill renders as a prominent filled button at the end of the mobile menu */
+            /* Work With Us pill becomes a clean full-width filled button at the bottom of the list */
             .nav-links .nav-cta-soft {
                 display: inline-flex;
                 justify-content: center;
@@ -1282,7 +1296,7 @@
                 font-size: 1rem;
                 font-weight: 700;
                 letter-spacing: 0;
-                box-shadow: 0 8px 24px rgba(124, 58, 237, 0.28);
+                box-shadow: 0 10px 28px rgba(124, 58, 237, 0.28);
             }
 
             .nav-links .nav-cta-soft:hover {
@@ -1291,7 +1305,8 @@
                 transform: translateY(-1px);
             }
 
-            /* When menu is open the nav bar itself stays solid so it doesn't reveal hero behind it */
+            /* When the menu opens, the nav bar above the overlay stays solid so the close button
+               always reads cleanly. */
             .nav.nav-open {
                 background: var(--bg-light);
                 border-bottom: 1px solid var(--border-light);
@@ -1302,7 +1317,7 @@
             .mobile-toggle {
                 display: flex;
                 position: relative;
-                z-index: 1010; /* stays above the .nav-links overlay */
+                z-index: 10; /* sits above .nav-links inside the .nav stacking context */
             }
 
             .mobile-toggle.active span:nth-child(1) {
