@@ -1232,8 +1232,10 @@
                 list-style: none;
 
                 padding: 16px 20px 24px;
-                background: var(--bg-light);
-                border: 1px solid rgba(124, 58, 237, 0.12);
+                background: rgba(250, 249, 252, 0.72);
+                backdrop-filter: saturate(140%) blur(22px);
+                -webkit-backdrop-filter: saturate(140%) blur(22px);
+                border: 1px solid rgba(124, 58, 237, 0.14);
                 border-radius: 20px;
                 box-shadow: 0 24px 48px rgba(26, 10, 46, 0.18), 0 8px 20px rgba(26, 10, 46, 0.08);
 
