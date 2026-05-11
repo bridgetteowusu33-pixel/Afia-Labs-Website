@@ -232,6 +232,21 @@ const websiteJsonLd = {
             });
         });
 
+        // Tap outside the dropdown panel closes it
+        document.addEventListener('click', (e) => {
+            if (!navLinks.classList.contains('active')) return;
+            if (navLinks.contains(e.target)) return;
+            if (mobileToggle.contains(e.target)) return;
+            setNavOpen(false);
+        });
+
+        // ESC key closes the menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                setNavOpen(false);
+            }
+        });
+
         // Close the menu when crossing back above the mobile breakpoint
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768 && navLinks.classList.contains('active')) {

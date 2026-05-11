@@ -1217,41 +1217,49 @@
         }
 
         @media (max-width: 768px) {
-            /* Full-viewport overlay. Always in the DOM; we toggle opacity + pointer-events
-               for a smooth fade/slide in rather than display: none. */
+            /* Dropdown panel that opens below the nav bar. Does NOT cover the full
+               viewport, so page content stays visible below it as the user scrolls. */
             .nav-links {
                 display: flex;
                 position: fixed;
-                inset: 0;
+                top: calc(env(safe-area-inset-top, 0px) + 64px);
+                left: 12px;
+                right: 12px;
                 flex-direction: column;
                 align-items: stretch;
                 justify-content: flex-start;
                 gap: 0;
                 list-style: none;
 
-                /* Top padding clears the fixed nav bar (~66px) plus iOS safe-area inset.
-                   Bottom padding respects the iPhone home-indicator safe area. */
-                padding: max(84px, calc(env(safe-area-inset-top, 0px) + 76px)) 24px max(40px, calc(env(safe-area-inset-bottom, 0px) + 24px));
-
+                padding: 16px 20px 24px;
                 background: var(--bg-light);
+                border: 1px solid rgba(124, 58, 237, 0.12);
+                border-radius: 20px;
+                box-shadow: 0 24px 48px rgba(26, 10, 46, 0.18), 0 8px 20px rgba(26, 10, 46, 0.08);
+
+                /* Cap the panel height so very tall menus scroll internally instead of
+                   running off the bottom of the screen. Page below the panel is still
+                   visible because we are not occupying the full viewport. */
+                max-height: calc(100vh - 96px);
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 overscroll-behavior: contain;
 
-                /* hidden default state */
+                /* Hidden default state. Smooth slide-down + fade. */
                 opacity: 0;
                 pointer-events: none;
-                transform: translateY(-6px);
-                transition: opacity 0.22s ease, transform 0.22s ease;
+                transform: translateY(-12px) scale(0.985);
+                transform-origin: top center;
+                transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 
-                /* sits inside .nav (z-index 1000); mobile-toggle below is bumped above this */
+                /* Stays inside the .nav stacking context; mobile-toggle below sits above. */
                 z-index: 5;
             }
 
             .nav-links.active {
                 opacity: 1;
                 pointer-events: auto;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
 
             .nav-links li {
