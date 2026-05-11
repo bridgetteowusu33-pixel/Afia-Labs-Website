@@ -450,7 +450,7 @@ const servicesPageJsonLd = {
 
         <div class="services-comparison fade-in">
           <p class="comparison-intro">
-            Most small-business websites get built one of three ways. Each has a place. Here is the honest take on the trade-offs.
+            Most small-business websites get built one of four ways now. Each has a place. Here is the honest take on the trade-offs.
           </p>
 
           <div class="comparison-grid">
@@ -460,6 +460,14 @@ const servicesPageJsonLd = {
               <p class="comparison-col-sub">Squarespace · Wix · Webflow templates</p>
               <p class="comparison-col-best"><strong>Best when:</strong> budget is the only constraint and the brief is small.</p>
               <p class="comparison-col-tradeoff"><strong>Trade-off:</strong> the template was not designed for your offer, so the business gets shaped around the template instead of the other way around.</p>
+            </div>
+
+            <div class="comparison-col">
+              <div class="comparison-col-tag">Instant</div>
+              <h3>AI website generators</h3>
+              <p class="comparison-col-sub">Durable · Framer AI · 10Web · etc.</p>
+              <p class="comparison-col-best"><strong>Best when:</strong> you need a placeholder online today and quality is not the bar.</p>
+              <p class="comparison-col-tradeoff"><strong>Trade-off:</strong> the AI cannot tell you what your business needs to say or which CTA will convert. The output looks generated because it is.</p>
             </div>
 
             <div class="comparison-col">
@@ -475,7 +483,7 @@ const servicesPageJsonLd = {
               <h3>A small product studio</h3>
               <p class="comparison-col-sub">Afia Labs Studio</p>
               <p class="comparison-col-best"><strong>Best when:</strong> how the site reads, ranks, and converts matters to the business.</p>
-              <p class="comparison-col-tradeoff"><strong>What you get:</strong> product thinking, conversion-focused structure, working analytics, sensible SEO, and a clean hand-off.</p>
+              <p class="comparison-col-tradeoff"><strong>What you get:</strong> product thinking, conversion-focused structure, working analytics, sensible SEO, and a clean hand-off. AI used as leverage, not as the output.</p>
             </div>
           </div>
 
@@ -840,7 +848,10 @@ const servicesPageJsonLd = {
           form.style.display = 'none';
           status.className = 'form-status form-status-success';
           status.innerHTML =
-            "Thanks, we received your inquiry. We'll review it and follow up with next steps.";
+            '<strong>Thanks. Your inquiry is in.</strong><br>' +
+            'We reply to every inquiry within one business day during studio hours. ' +
+            'The next step is a short kickoff call (15–20 minutes) on Google Meet, Zoom, or your preferred app, where we scope the project together and confirm whether we are a fit. ' +
+            'No pressure, no hard sell.';
           const finalCta = document.querySelector('.services-final-cta');
           if (finalCta) finalCta.style.display = 'none';
           return;
@@ -1708,8 +1719,8 @@ const servicesPageJsonLd = {
   }
   .comparison-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
   }
   .comparison-col {
     background: var(--bg-card);
@@ -1777,7 +1788,12 @@ const servicesPageJsonLd = {
     margin-left: auto;
     margin-right: auto;
   }
-  @media (max-width: 880px) {
+  @media (max-width: 1080px) {
+    .comparison-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 560px) {
     .comparison-grid {
       grid-template-columns: 1fr;
     }
