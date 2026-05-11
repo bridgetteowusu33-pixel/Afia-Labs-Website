@@ -244,21 +244,33 @@ const servicesPageJsonLd = {
 
         <div class="recent-work-grid fade-in">
           <article class="recent-work-card recent-work-card-rich">
-            <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="recent-work-screenshot" aria-label="View Glam by Cella website">
-              <div class="recent-work-browser-bar">
-                <span class="browser-dot browser-dot-red" aria-hidden="true"></span>
-                <span class="browser-dot browser-dot-yellow" aria-hidden="true"></span>
-                <span class="browser-dot browser-dot-green" aria-hidden="true"></span>
-                <span class="browser-url">glambycella.com</span>
-              </div>
-              <img
-                src="/glambycella-screenshot.jpg"
-                alt="Screenshot of the Glam by Cella website homepage built by Afia Labs Studio"
-                loading="lazy"
-                width="1440"
-                height="900"
-              />
-            </a>
+            <div class="recent-work-visuals">
+              <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="recent-work-screenshot" aria-label="View Glam by Cella website on desktop">
+                <div class="recent-work-browser-bar">
+                  <span class="browser-dot browser-dot-red" aria-hidden="true"></span>
+                  <span class="browser-dot browser-dot-yellow" aria-hidden="true"></span>
+                  <span class="browser-dot browser-dot-green" aria-hidden="true"></span>
+                  <span class="browser-url">glambycella.com</span>
+                </div>
+                <img
+                  src="/glambycella-screenshot.jpg"
+                  alt="Desktop screenshot of the Glam by Cella website homepage built by Afia Labs Studio"
+                  loading="lazy"
+                  width="1440"
+                  height="900"
+                />
+              </a>
+              <a href="https://glambycella.com" target="_blank" rel="noopener noreferrer" class="recent-work-phone" aria-label="View Glam by Cella website on mobile">
+                <span class="phone-notch" aria-hidden="true"></span>
+                <img
+                  src="/glambycella-screenshot-mobile.jpg"
+                  alt="Mobile screenshot of the Glam by Cella website built by Afia Labs Studio"
+                  loading="lazy"
+                  width="390"
+                  height="844"
+                />
+              </a>
+            </div>
             <div class="recent-work-card-body">
               <div class="recent-work-card-eyebrow">Live · Virginia</div>
               <h3 class="recent-work-card-title">Glam by Cella</h3>
@@ -1328,7 +1340,7 @@ const servicesPageJsonLd = {
   }
   .recent-work-card-rich {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     gap: 32px;
     padding: 32px;
     align-items: center;
@@ -1338,6 +1350,11 @@ const servicesPageJsonLd = {
       grid-template-columns: 1fr;
       gap: 24px;
     }
+  }
+  .recent-work-visuals {
+    position: relative;
+    padding-bottom: 40px; /* room for the phone overhang */
+    padding-right: 30px;
   }
   .recent-work-screenshot {
     display: block;
@@ -1387,6 +1404,76 @@ const servicesPageJsonLd = {
   .recent-work-card-body {
     display: flex;
     flex-direction: column;
+  }
+
+  /* Phone frame overlay on Recent Client Work */
+  .recent-work-phone {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 32%;
+    max-width: 150px;
+    aspect-ratio: 9 / 19.5;
+    background: #0b0b10;
+    border-radius: 22px;
+    padding: 6px;
+    box-shadow: 0 24px 50px rgba(26, 10, 46, 0.28), 0 8px 18px rgba(26, 10, 46, 0.12);
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .recent-work-phone:hover {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  .recent-work-phone img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 16px;
+  }
+  .phone-notch {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36%;
+    max-width: 50px;
+    height: 14px;
+    background: #0b0b10;
+    border-radius: 0 0 12px 12px;
+    z-index: 2;
+  }
+  @media (max-width: 880px) {
+    .recent-work-visuals {
+      padding-bottom: 0;
+      padding-right: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .recent-work-screenshot {
+      flex: 1;
+      min-width: 0;
+    }
+    .recent-work-phone {
+      position: static;
+      flex-shrink: 0;
+      width: 30%;
+      max-width: 130px;
+    }
+  }
+  @media (max-width: 520px) {
+    .recent-work-visuals {
+      flex-direction: column;
+    }
+    .recent-work-phone {
+      align-self: flex-end;
+      width: 38%;
+    }
   }
   .recent-work-card-eyebrow {
     display: inline-block;
