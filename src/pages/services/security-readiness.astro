@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Security Readiness for Small Businesses, Startups, and SaaS Teams | Afia Labs Studio';
 const description =
-  'Practical security readiness from Afia Labs Studio. Website and app security reviews, vendor security questionnaire prep, AppSec advisory, security policy starter packs, and ongoing cyber hygiene retainers. Led by a Security+ certified founder with a master\'s in cybersecurity.';
+  'Practical security readiness from Afia Labs Studio. Website and app security reviews, vendor security questionnaire prep, AppSec advisory, security policy starter packs, and ongoing security readiness retainers. Led by a Security+ certified founder with a master\'s in cybersecurity.';
 
 const breadcrumbsJsonLd = {
   '@context': 'https://schema.org',
@@ -58,7 +58,7 @@ const serviceJsonLd = {
       },
       {
         '@type': 'Offer',
-        name: 'Monthly Cyber Hygiene Retainer',
+        name: 'Monthly Security Readiness Retainer',
         priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', minPrice: 200, maxPrice: 1500 },
       },
     ],
@@ -80,7 +80,7 @@ const serviceJsonLd = {
           <span></span>
           Studio Services · Security Readiness
         </div>
-        <h1>Look secure. Sound secure. Be ready when bigger customers ask.</h1>
+        <h1>Look ready. Sound credible. Be prepared when bigger customers ask.</h1>
         <p class="subpage-lede">
           Afia Labs Security Readiness helps small businesses, SaaS startups, agencies, and growing teams look organized, professional, and enterprise-ready before customers, partners, or auditors start asking questions. Led by Bridgette Owusu, who has a master's in cybersecurity, holds CompTIA Security+, and works in security day-to-day.
         </p>
@@ -149,13 +149,17 @@ const serviceJsonLd = {
 
           <article class="readiness-service-card">
             <div class="readiness-service-tier">Retainer</div>
-            <h3>Monthly cyber hygiene retainer</h3>
+            <h3>Monthly security readiness retainer</h3>
             <p class="readiness-service-price">$200 to $1,500 per month (depending on team size and scope)</p>
             <p>
               Light ongoing support so security stays current instead of getting stale. Quarterly checkups, vulnerability and dependency review, policy updates, light employee awareness, vendor security follow-up, and a single shared point of contact for the "should we be worried about this?" questions that come up between projects.
             </p>
           </article>
         </div>
+
+        <p class="readiness-trust-line">
+          Every engagement ends with a plain-English action plan, prioritized by business risk, urgency, and what a customer or partner is most likely to notice.
+        </p>
 
         <h2>Who this is for.</h2>
         <ul class="subpage-checklist">
@@ -199,6 +203,9 @@ const serviceJsonLd = {
           <h2>Need to look ready before the next customer asks?</h2>
           <p>Tell us what you are preparing for (a website, a vendor questionnaire, a contract clause, a board question). We will follow up with a scoped proposal.</p>
           <a href="/services/?tier=Security%20Readiness#contact" class="btn-primary">Start a Readiness Review</a>
+          <p class="readiness-scope-note">
+            Security Readiness is advisory support, not emergency breach response, forensic investigation, legal advice, or formal compliance certification.
+          </p>
         </div>
 
         <h2>Related</h2>
@@ -272,6 +279,25 @@ const serviceJsonLd = {
       font-size: 0.95rem;
       line-height: 1.65;
       color: var(--text-secondary);
+    }
+    .readiness-trust-line {
+      max-width: 720px;
+      margin: 0 auto 40px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--purple-light);
+      background: rgba(124, 58, 237, 0.04);
+      border-radius: 6px;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      font-style: italic;
+    }
+    .readiness-scope-note {
+      margin: 18px 0 0;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      max-width: 640px;
     }
     @media (max-width: 560px) {
       .readiness-service-card {
