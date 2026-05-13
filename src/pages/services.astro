@@ -730,6 +730,7 @@ const servicesPageJsonLd = {
                 <option value="Business Website">Business Website</option>
                 <option value="Growth System">Growth System</option>
                 <option value="Website Audit">Website Audit</option>
+                <option value="Security Readiness">Security Readiness</option>
                 <option value="Not sure yet">Not sure yet</option>
               </select>
             </div>
@@ -812,6 +813,18 @@ const servicesPageJsonLd = {
         if (projectTypeSelect && tier) projectTypeSelect.value = tier;
       });
     });
+
+    // Cross-page CTAs (?tier=...) pre-select the matching tier on load.
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const tierParam = params.get('tier');
+      if (tierParam && projectTypeSelect) {
+        const opt = Array.from(projectTypeSelect.options).find(function (o) {
+          return o.value === tierParam;
+        });
+        if (opt) projectTypeSelect.value = tierParam;
+      }
+    } catch (_) {}
 
     const form = document.getElementById('servicesForm');
     const status = document.getElementById('sf-status');
