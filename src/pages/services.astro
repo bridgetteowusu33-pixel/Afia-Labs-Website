@@ -1711,32 +1711,33 @@ const servicesPageJsonLd = {
   }
   @media (max-width: 880px) {
     .recent-work-visuals {
-      padding-bottom: 0;
-      padding-right: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .recent-work-screenshot {
-      flex: 1;
-      min-width: 0;
+      padding-bottom: 36px;
+      padding-right: 24px;
+      max-width: 520px;
+      margin: 0 auto;
     }
     .recent-work-phone {
-      position: static;
-      flex-shrink: 0;
       width: 30%;
       max-width: 130px;
     }
   }
   @media (max-width: 520px) {
     .recent-work-visuals {
-      flex-direction: column;
+      padding-bottom: 28px;
+      padding-right: 18px;
     }
     .recent-work-phone {
-      align-self: flex-end;
-      width: 38%;
+      width: 32%;
+      max-width: 110px;
     }
+    .recent-work-screenshot img { max-height: 340px; }
+  }
+  @media (max-width: 380px) {
+    .recent-work-visuals {
+      padding-bottom: 24px;
+      padding-right: 14px;
+    }
+    .recent-work-phone { width: 34%; max-width: 96px; }
   }
   .recent-work-card-eyebrow {
     display: inline-block;
