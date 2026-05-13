@@ -387,6 +387,20 @@ const servicesPageJsonLd = {
         <p class="services-disclaimer fade-in">
           Final pricing depends on scope, timeline, content needs, integrations, and revision requirements.
         </p>
+
+        <aside class="services-addon fade-in" aria-label="Security readiness add-on">
+          <div class="services-addon-inner">
+            <div class="services-addon-tag">Add-on · New</div>
+            <h3>Pair any website project with a Security Readiness review.</h3>
+            <p>
+              Build the site, secure the site, prepare the business for bigger opportunities. Led by a Security+ certified founder with a master's in cybersecurity. Covers website and app reviews, security policies, vendor questionnaires, AppSec advisory, and a monthly cyber hygiene retainer. Add-on pricing starts at $500 alongside a website package.
+            </p>
+            <a href="/services/security-readiness/" class="services-addon-cta">
+              See Security Readiness services
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -1274,6 +1288,63 @@ const servicesPageJsonLd = {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.6;
+  }
+
+  /* ===== Security Readiness add-on band (under packages) ===== */
+  .services-addon {
+    margin: 40px auto 0;
+    max-width: 880px;
+  }
+  .services-addon-inner {
+    background: linear-gradient(160deg, rgba(124, 58, 237, 0.07), rgba(245, 158, 11, 0.04));
+    border: 1px solid rgba(124, 58, 237, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-md);
+  }
+  .services-addon-tag {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--purple-light);
+    color: white;
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .services-addon h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--purple-deep);
+    line-height: 1.25;
+    margin: 0;
+  }
+  .services-addon p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .services-addon-cta {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--purple-light);
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  .services-addon-cta:hover { color: var(--purple-deep); }
+  @media (max-width: 560px) {
+    .services-addon-inner { padding: 24px 22px; }
   }
 
   /* ===== Process / "How it works" ===== */

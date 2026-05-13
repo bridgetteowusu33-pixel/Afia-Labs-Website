@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Security Readiness for Small Businesses, Startups, and SaaS Teams | Afia Labs Studio';
+const description =
+  'Practical security readiness from Afia Labs Studio. Website and app security reviews, vendor security questionnaire prep, AppSec advisory, security policy starter packs, and ongoing cyber hygiene retainers. Led by a Security+ certified founder with a master\'s in cybersecurity.';
+
+const breadcrumbsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://afialabs.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://afialabs.net/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Security Readiness', item: 'https://afialabs.net/services/security-readiness/' },
+  ],
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Security Readiness for Small Businesses and Startups',
+  serviceType: 'Cybersecurity readiness, advisory, and policy services',
+  provider: {
+    '@type': 'ProfessionalService',
+    '@id': 'https://afialabs.net/services/#studio',
+    name: 'Afia Labs Studio',
+    url: 'https://afialabs.net/services/',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Virginia' },
+    { '@type': 'AdministrativeArea', name: 'Remote, worldwide' },
+  ],
+  url: 'https://afialabs.net/services/security-readiness/',
+  description,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Afia Labs Security Readiness services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Website/App Security Readiness Review',
+        priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', minPrice: 500, maxPrice: 1500 },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Security Policy Starter Pack',
+        priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', minPrice: 500, maxPrice: 1200 },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Vendor and SaaS Security Questionnaire Prep',
+        priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', minPrice: 1500, maxPrice: 5000 },
+      },
+      {
+        '@type': 'Offer',
+        name: 'AppSec Advisory for Startups',
+        priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', minPrice: 1500, maxPrice: 5000 },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Monthly Cyber Hygiene Retainer',
+        priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', minPrice: 200, maxPrice: 1500 },
+      },
+    ],
+  },
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://afialabs.net/services/security-readiness/" ogType="website">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbsJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
+  <main>
+    <section class="hero subpage-hero" aria-label="Security readiness intro">
+      <div class="container">
+        <div class="subpage-breadcrumbs">
+          <a href="/services/">Services</a> <span>›</span> <span>Security Readiness</span>
+        </div>
+        <div class="hero-badge">
+          <span></span>
+          Studio Services · Security Readiness
+        </div>
+        <h1>Look secure. Sound secure. Be ready when bigger customers ask.</h1>
+        <p class="subpage-lede">
+          Afia Labs Security Readiness helps small businesses, SaaS startups, agencies, and growing teams look organized, professional, and enterprise-ready before customers, partners, or auditors start asking questions. Led by Bridgette Owusu, who has a master's in cybersecurity, holds CompTIA Security+, and works in security day-to-day.
+        </p>
+        <div class="hero-buttons">
+          <a href="/services/#contact" class="btn-primary">Start a Readiness Review</a>
+          <a href="/services/" class="btn-secondary">See all studio services</a>
+        </div>
+        <p class="subpage-location-line">
+          <span class="subpage-location-pin" aria-hidden="true">📍</span>
+          Based in Virginia. Working with founders remote and worldwide.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-band">
+      <div class="container subpage-prose">
+        <h2>Security readiness is not about fear. It is about being ready.</h2>
+        <p>
+          Most small businesses do not have a security problem until a bigger customer, a vendor risk assessment, a SOC 2 questionnaire, or a partner contract asks them to prove something. By that point the deal is already at risk because nobody can find a security policy, the website has issues that look careless on a quick scan, and the team has no shared answer for "how do you handle data?"
+        </p>
+        <p>
+          We help you fix that quietly, before it becomes a deal-blocker. Real policies, real reviews, real answers, written in plain language. Productized where possible, custom where the work demands it.
+        </p>
+
+        <h2>What we offer.</h2>
+        <p>
+          Five productized services. You can buy one as a standalone engagement, or stack them as you grow.
+        </p>
+
+        <div class="readiness-services">
+          <article class="readiness-service-card">
+            <div class="readiness-service-tier">Productized</div>
+            <h3>Website and app security readiness review</h3>
+            <p class="readiness-service-price">$500 to $1,500 (one-time, flat fee)</p>
+            <p>
+              A focused review of your website or app from a security and trust perspective. Login flows, exposed pages, HTTPS and security headers, form handling, outdated plugins or dependencies, risky public data, privacy basics, and the general "does this site look careful or careless to a security-aware visitor" check. You receive a plain-English findings document with prioritized fixes and a recommended remediation order.
+            </p>
+          </article>
+
+          <article class="readiness-service-card">
+            <div class="readiness-service-tier">Productized</div>
+            <h3>Security policy starter pack</h3>
+            <p class="readiness-service-price">$500 to $1,200 (one-time, flat fee)</p>
+            <p>
+              Professional, plain-English starter policies covering data handling, incident response, access control, password and MFA, vendor risk, privacy, and acceptable use. Tailored to your actual business, not a copy-paste template. The result is a policy folder you can hand to a prospect, attach to a contract, or paste into a vendor questionnaire without scrambling.
+            </p>
+          </article>
+
+          <article class="readiness-service-card readiness-service-card-featured">
+            <div class="readiness-service-tier">Custom</div>
+            <h3>Vendor and SaaS security questionnaire prep</h3>
+            <p class="readiness-service-price">$1,500 to $5,000 per questionnaire (custom-scoped)</p>
+            <p>
+              Closing your first enterprise customer? Renewing an MSA with a Fortune 500? Filling out a Vanta-driven security questionnaire? We interpret the questions, organize the evidence you already have, write the responses, identify the small gaps that need real fixes before answering, and prepare you for the follow-up call. Built for small SaaS teams and service businesses trying to sell up-market.
+            </p>
+          </article>
+
+          <article class="readiness-service-card">
+            <div class="readiness-service-tier">Custom</div>
+            <h3>AppSec advisory for startups</h3>
+            <p class="readiness-service-price">$1,500 to $5,000 per engagement (advisory only)</p>
+            <p>
+              You ran a scan and got 200 findings you do not understand. You have a pen-test report and no idea what to fix first. You need to communicate your security posture to a board, an investor, or a customer, and you want it to sound credible without bluffing. We help you read the scans, prioritize the real issues, write the remediation plan, and translate the security story for non-technical stakeholders. This is advisory work. We do not do active incident triage during a live breach.
+            </p>
+          </article>
+
+          <article class="readiness-service-card">
+            <div class="readiness-service-tier">Retainer</div>
+            <h3>Monthly cyber hygiene retainer</h3>
+            <p class="readiness-service-price">$200 to $1,500 per month (depending on team size and scope)</p>
+            <p>
+              Light ongoing support so security stays current instead of getting stale. Quarterly checkups, vulnerability and dependency review, policy updates, light employee awareness, vendor security follow-up, and a single shared point of contact for the "should we be worried about this?" questions that come up between projects.
+            </p>
+          </article>
+        </div>
+
+        <h2>Who this is for.</h2>
+        <ul class="subpage-checklist">
+          <li><strong>Small businesses with websites or apps</strong> that want to look careful, not careless, to security-aware customers and partners.</li>
+          <li><strong>SaaS startups</strong> trying to land their first enterprise customer and getting blocked by security questionnaires.</li>
+          <li><strong>Agencies and online service providers</strong> who handle customer data and want clear policies in place.</li>
+          <li><strong>Healthcare-adjacent and finance-adjacent businesses</strong> that need to look the part for vendors and partners.</li>
+          <li><strong>Companies preparing for vendor onboarding, MSA renewal, or SOC 2 readiness</strong> who need help organizing the answer before paying for a full audit.</li>
+        </ul>
+
+        <h2>Who this is not for.</h2>
+        <ul class="subpage-checklist">
+          <li>Active incident response. If your environment is being breached right now, you need an incident response firm and your insurance carrier, not us.</li>
+          <li>Full SOC 2 Type II audit delivery. We help you get ready and answer questionnaires. A licensed CPA firm completes the audit itself.</li>
+          <li>Penetration testing engagements that need active exploitation. We can read a pentest report and help you act on it.</li>
+          <li>Enterprise security architecture for companies above 100 employees. The work fits, the price band does not.</li>
+        </ul>
+
+        <h2>Why Afia Labs.</h2>
+        <p>
+          Most small-business security consulting is sold by either huge firms (priced for enterprises) or generalists with no actual security background. Afia Labs is neither. Bridgette Owusu has a master's in cybersecurity, holds CompTIA Security+, and works in security as her day-to-day job. The studio adds two things most security consultancies do not: small-business empathy from running the studio, and the ability to write security findings the way a real customer reads them, in plain language with prioritized next steps.
+        </p>
+        <p>
+          You get someone who understands customers, support, escalation, and business trust, not just scan output.
+        </p>
+
+        <h2>Pairs with the website service.</h2>
+        <p>
+          Many readiness reviews start as an add-on to a website build. The sequence is natural: we build or rebuild the website, we secure the website, we prepare your business for bigger opportunities. If you are already a website client, the readiness review price is offered at a paired-engagement rate. Ask about it on the kickoff call.
+        </p>
+
+        <h2>Studio hours and how we communicate.</h2>
+        <p>
+          Project inquiries are reviewed during studio hours: Monday to Thursday 7:00 AM to 9:00 PM, Friday 7:00 AM to 6:00 PM, Saturday 8:00 AM to 8:00 PM. Sunday is closed.
+        </p>
+        <p>
+          Most communication is async via email and Zoom. Calls happen on Google Meet, Microsoft Teams, Zoom, or WhatsApp, whichever method suits you. Phone calls are welcome during studio hours.
+        </p>
+
+        <div class="subpage-cta-card">
+          <h2>Need to look ready before the next customer asks?</h2>
+          <p>Tell us what you are preparing for (a website, a vendor questionnaire, a contract clause, a board question). We will follow up with a scoped proposal.</p>
+          <a href="/services/#contact" class="btn-primary">Start a Readiness Review</a>
+        </div>
+
+        <h2>Related</h2>
+        <ul class="subpage-related">
+          <li><a href="/services/">All studio services</a></li>
+          <li><a href="/services/small-business-websites/">Small business websites</a></li>
+          <li><a href="/services/landing-pages/">Landing page design</a></li>
+          <li><a href="/services/mobile-app-development/">Mobile app development</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .readiness-services {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin: 24px 0 40px;
+    }
+    .readiness-service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .readiness-service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(124, 58, 237, 0.18);
+    }
+    .readiness-service-card-featured {
+      background: linear-gradient(160deg, rgba(124, 58, 237, 0.06), rgba(245, 158, 11, 0.03));
+      border-color: rgba(124, 58, 237, 0.22);
+      box-shadow: var(--shadow-md);
+    }
+    .readiness-service-tier {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(124, 58, 237, 0.08);
+      color: var(--purple-light);
+      border-radius: 100px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .readiness-service-card-featured .readiness-service-tier {
+      background: var(--purple-light);
+      color: white;
+    }
+    .readiness-service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: var(--purple-deep);
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+    .readiness-service-price {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--purple-light);
+      margin: 0 0 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    .readiness-service-card p:last-child {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 560px) {
+      .readiness-service-card {
+        padding: 22px 22px;
+      }
+    }
+  </style>
+</BaseLayout>
